@@ -1,0 +1,12 @@
+ac  = a i u ṛ ḷ e o ai au
+hal = h y v r l ñ m ṅ ṇ n jh bh gh ḍh dh j b g ḍ d kh ph ch ṭh th c ṭ t k p ś ṣ s (33 consonants)
+ik  = i u ṛ ḷ   yaṇ = y v r l
+aṇ (first ṇ) = a i u   aṇ (second ṇ) = a i u ṛ ḷ e o ai au h y v r l
+dadhi + atra -> dadhyatra    by 6.1.77 iko yaṇ aci
+madhu + ari -> madhvari     by 6.1.77 iko yaṇ aci
+deva + ālaya -> devālaya     by 6.1.101 akaḥ savarṇe dīrghaḥ
+guru + upadeśa -> gurūpadeśa   by 6.1.101 akaḥ savarṇe dīrghaḥ
+rāma + iti -> rāmeti       by 6.1.87 ād guṇaḥ
+mahā + indra -> mahendra     by 6.1.87 ād guṇaḥ
+deva + ṛṣi -> devarṣi      by 6.1.87 ād guṇaḥ
+tava + eva -> tavaiva      by 6.1.88 vṛddhir eci

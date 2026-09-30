@@ -1,0 +1,33 @@
+$ hincc HindiC.uhin
+संकलन के परिणाम
+============
+
+The C that gurucc handed to gcc:
+#include <stdio.h>
+
+int main()
+{
+	char _a[80];
+	int ka;
+	printf("आपका नाम क्या है?\n");
+	scanf("%s",_a);
+	printf("नमस्ते %s.\n",_a);
+	for(ka=1; ka<=10; ka++)
+		printf("%d\n",ka);
+	scanf("%s",_a);
+	return 0;
+}
+
+$ ./hin.exe, with राम typed at both prompts
+आपका नाम क्या है?
+नमस्ते राम.
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10

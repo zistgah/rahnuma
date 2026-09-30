@@ -1,0 +1,67 @@
+<!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->
+
+## The ecosystem, term by term {#ch-onto}
+
+Each entry gives what the thing is in this architecture, the nearest analogue a newcomer is likely to reach for, and the exact difference. The analogue is a door into the idea, never a definition of it. The state in brackets says what exists: established (historical record), released (on the forge, with its DOI where minted), executed (run for this guide), under construction, specification, or planned. Entries marked † follow the author's working notes as summarised on 29 September 2026.
+
+### Language and identity
+
+**ILM, Integrative Linguistic Multiscript** (released; ilm.codes live). *In the architecture:* the linguistic pillar and the identity layer for language, with script, language and standard kept as separate axes, and layers for phonology, transliteration, orthography, lexicon, syntax and semantics, and interfaces, supported by data, validation, development tools, language specifications and a language server; its registry lists 7,867 languages and 226 scripts. *Nearest analogue:* localisation, an NLP toolkit, a transliteration library. *Difference:* it keeps the three axes apart, so that any language can travel in any script, and it gives every script a reversible path through the whole computing stack, down to the symbol table.
+
+**Romenagri** (established 2003; released; executed). *In the architecture:* the reversible kernel between scripts and ASCII-7. Its paper states six constraints met together: ASCII-7 closure, case independence, diacritic independence, legality as a C identifier, reversibility and linear time, over the Brahmi, Perso-Arabic and Northwest Semitic families, with a canonical-form layer and an ASCII-reduction layer. *Nearest analogue:* romanisation, such as IAST, ISO 15919 or ITRANS. *Difference:* its output is a valid identifier for every tool from lexer to debugger, and it inverts, so a name survives compilation and comes back.
+
+**HPS, the Hindawi Programming System** (established 15 August 2004; released; executed). *In the architecture:* nine shailis over nine host languages, from assembly, lex and yacc to C++, Java, Python, BASIC and LOGO; a script layer, a language layer and the host standard, composed as transducers over unmodified host toolchains; now HPS's Indic projection under ILM, with an Urdu edition beside it. *Nearest analogue:* a localised programming language. *Difference:* a complete systems stack, not a keyword translation, with names carried through Romenagri.
+
+**tajziya** (released, doi:10.5281/zenodo.22982238). *In the architecture:* the parser federation for the classical languages, by family, with the author's Sanskrit parser; the front end of the PANINI stack beside ILM. *Nearest analogue:* NLP parsers. *Difference:* organised to feed PANINI's construct model and AAB's paintings.
+
+### Computation
+
+**PANINI** (several members released; some under construction). *In the architecture:* the construct model at the core, with ILM and tajziya in front, PANINI's own front ends and language as middleware, and realization backends behind; it runs through all three Acts. Its family includes the prompt-cycle language in which the cyclers are written (zistgah/panini), the general-purpose PANINI of the merged release (zistgah/humanesque), and the realization arms. *Nearest analogue:* a compiler, a programming language, an intermediate representation. *Difference:* programming languages, prompt cycles and physical, biological and quantum realizations are all projections of one construct model.
+
+**PANINIq** (released, doi:10.5281/zenodo.23020648; executed). *In the architecture:* a realization backend: an oscillator substrate, the PEDLER engine and quantum validation. *Nearest analogue:* a quantum simulator. *Difference:* the substrate is an oscillator Ising machine with a learning automaton on it; the quantum circuit validates it rather than replacing it.
+
+**PANINIb and PANINIphy** (released research platforms, version 1.0). *In the architecture:* PANINIb, the biological realization arm, lowers biological intent through semantic, resolution, CISC, RISC and sequence IRs to a realization plan and an execution run; PANINIphy, the physical realization arm, lowers physical intent through a physical IR and physical-domain engines, down to modular blocks and the selection of parts by force, stroke and voltage. *Nearest analogue:* computer-aided design, genome design tools. *Difference:* both share PANINI's common spine, language, verification, provenance and ArtifactGraph, adding only their own domain IR and engines; laboratories and machines are external adapters, and neither claims a result its evidence does not show.
+
+### Cognition
+
+**PEDLER and QEDLER** (established November 2001; record doi:10.5281/zenodo.17497559; QEDLER a research framework). *In the architecture:* the point-event-driven learner, a six-tuple extension of the Turing machine over balanced ternary; the source of the primitives Act (executable intent), Inclination (a signed directional gradient on transition edges) and Natural Justice (a gate on the passage from intent to Act); QEDLER extends it to physics. *Nearest analogue:* an event-driven or neuromorphic learning model. *Difference:* it predates the present generation of models and carries the executable-intent semantics the constitutional corpus is built from.
+
+**PRATIK and Zamin** (released: pratik_core_mvp doi:10.5281/zenodo.21288232, zamin doi:10.5281/zenodo.21297556). *In the architecture:* PRATIK, Participatory Recursive Adaptive Trans-Intelligence Kernels, on the divider between Acts I and II, with a kernel in C++ and CUDA; Zamin, its physical balanced-ternary substrate with a poised zero. *Nearest analogue:* a neuromorphic kernel on novel hardware. *Difference:* balanced ternary and event-driven from the logic up.
+
+**CEM, with CEMb, CEMs and Eco-CEM** (specification; Act II). *In the architecture:* cognitive enablement modules over one kernel, $\mathcal{E} = (E, \mathcal{C}, \Pi, W)$, realised on biological substrates (BCI, prosthetics, closed-loop cognition, operated through Interglial Healthcare), on synthetic ones (processors, distributed systems, robotics) and on ecological ones. *Nearest analogue:* robotics, BCI, prosthetics. *Difference:* one invariant kernel across substrates; the superscript is part of the name.
+
+**The AyeAI Triad** (specification with formal closure). *In the architecture:* AyeAM $= \langle S, R, C\rangle$ for embodiment, AyeAI $= \langle M, I, G\rangle$ for cognition, AyeCNSe $= \langle T, Ch, \Sigma\rangle$ for coordination and communication across media, with AyeAI at the apex. *Nearest analogue:* a perception, cognition and action loop. *Difference:* a triad, not a loop and not a pipeline.
+
+### Knowledge and agency
+
+**UKOP, FAKIR and Dhancha** (FAKIR released, doi:10.5281/zenodo.21436550; Dhancha released, doi:10.5281/zenodo.22821645; UKOP a specification). *In the architecture:* UKOP, the reference architecture for human knowledge; FAKIR, its kernel over ISIC, ISCO and ISCED crossed with AGI layers and language; Dhancha, the spine every domain is built on, whose rule is that the engine is common and the workflow is not. *Nearest analogue:* a knowledge graph or reasoning engine. *Difference:* domain invariants are enforced by tests, and resolution and verification are primitives.
+
+**Cyclers** (six released and minted; Act I). *In the architecture:* matba, khwab, awaz, tilasm, pench and yadein, classified by what they produce, plus genie, each with its own contract, state model and evidence rules, written in PANINI and run by one engine. *Nearest analogue:* an agentic harness or orchestration loop. *Difference:* AI-agnostic by construction, inspected by a person at every step, and the recorded method, never the content, is itself the reproducible work.
+
+**GENIE** (released). *In the architecture:* the Generalized Emotive-Narrative Interaction Engine, storyteller, poet and painter, and the research cycle through its Prompt Operating System, with six verbs (create, verify, execute, measure, falsify, integrate), nine epistemic tags and a gate that a simulation cannot pass in place of an experiment. *Nearest analogue:* a creative or research AI agent. *Difference:* governed by a constitution of primitives; orchestration and composition, not an implementation.
+
+**AAB** (released; Act I). *In the architecture:* the paint program for systems, from painted intent to verified, sealed artifact; the gamified studio of verification-gated quests; home of the process cyclers; the process half of the estate's software factory, with FAKIR as its component registry. In the author's words, AAB and FAKIR together constitute the working definition of AGI used here. *Nearest analogue:* a low-code studio or a software factory. *Difference:* every task is a painting with a manifest, quest stages and oracle-gated verification, and every component keeps its provenance.
+
+**Mez, the Cognitive Workbench** (released). *In the architecture:* the local-first desk that brings independently existing systems together for an exercise: composition, exercise, observation, synthesis, a new artifact. *Nearest analogue:* an IDE or a notebook. *Difference:* composition without absorption; every composed system keeps its own identity and life.
+
+### Method and evidence
+
+**VGC, Verification-Gated Human-AI Co-Development** (released, doi:10.5281/zenodo.21264248). *In the architecture:* the method by which people and AI build together, with every step gated by verification. *Nearest analogue:* test-driven development or human review of AI output. *Difference:* the gate is a verified artifact, not a reviewer's impression, and the AI's report that something passed is never the evidence that it passed.
+
+**COPA, the Cost of Perceived Authority** (released, doi:10.5281/zenodo.21782217). *In the architecture:* a protocol for measuring how much an AI system asserts before it verifies, through the Authority Projection Index, with its hypothesis stated beside a fair null. *Nearest analogue:* an AI evaluation benchmark. *Difference:* it measures projected authority rather than accuracy, and its target is calibrated trust.
+
+### Continuity and civilisation
+
+**Humanesque** (specification; the merged release on the forge). *In the architecture:* the core over which everything above is a typed hypergraph, and the constitutional realm derived from PoIE through recursive sovereignty. *Nearest analogue:* an AGI architecture. *Difference:* a constitutional and epistemic realm as well as a technical substrate, not a product.
+
+**Kaivalyik, Zistgah and Cosmopolis** (projections). As in Chapter [[ch-03]]: parallel cultural projections of the whole, not stages. Kaivalyik carries Synthematic Pragmatic Realism, SPR, the framework that heads Act III ("Kaivalyik: Towards a Synthematic Pragmatic Realism for the AGI Singularity"); Zistgah carries the habitats and the elements.
+
+**TransEg** (released, doi:10.5281/zenodo.21321558). *In the architecture:* the transferred alter ego, the mechanism by which a constituted identity continues; a local digital-twin reference implementation; yadein's staggered upload feeds it. *Nearest analogue:* a digital avatar. *Difference:* continuity of an identity under the constitutional corpus, not a persona.
+
+**PAT.AL, VIDYA, GramSheel, Project VIKRAM and TWISHA** (established). PAT.AL, the Participatory Alliance for Technology, Access and Livelihoods, is participatory infrastructure; VIDYA bridges to AyeAM; Project VIKRAM, Virtualized Infrastructure for Knowledge-driven Rural Ascension Management, runs under the GramSheel Foundation beside TWISHA. They sit on the dividers between the Acts because they distribute capability rather than concentrate it.
+
+**The reference lab** (planned; its launch scripts are the next release). An AGI-capable laboratory for 30 to 40 thousand, able to carry 80 to 90 per cent of the research behind high-end AI, robotics and automation papers, repeated as a pattern for every domain and aligned with GATE-level courses in computer science and in robotics and automation.
+
+### Also in the working notes
+
+**Modular self-reconfiguring robots** †: very simple modular blocks with face-to-face connections and electro-permanent-magnet contacts, assembling into larger structures, ruggedised for decentralised manufacture with low-cost embedded control; PANINIphy's modular-block examples are the compiler side of this. **Further realization families** †: chemical, photonic, and a computational-biological intermediate layer of the AlphaFold class, built as an independent spine rather than a dependency. **The build engine** †: the direction of the whole is a self-reflecting, self-evolving and self-sustaining build engine in which PANINI captures and expresses the construct and the intent, and agency, human or machine, biological or physical, does the building. **INDUS and KHĀK** † are named in the notes among the lineages and the robots, alongside ANGEL, TARA and NI2A2.

@@ -1,0 +1,51 @@
+$ python3 demo.py
+
+============================================================
+1. Point events -> inclination field -> relaxation -> spawn
+============================================================
+event 0: point=[0.85, 0.12, 0.44]
+   order parameter R = 0.3874   |S| = 5   -> SPAWNED a node
+event 1: point=[0.1, 0.9, 0.3]
+   order parameter R = 0.5859   |S| = 5
+event 2: point=[0.83, 0.14, 0.46]
+   order parameter R = 0.4573   |S| = 6   -> SPAWNED a node
+
+============================================================
+2. Lifecycle maintenance (decay priors, then prune/consolidate)
+============================================================
+|S| before maintenance: 8
+pruned=1, merged=0
+|S| after maintenance:  7
+
+============================================================
+3. Compile to Qiskit + statevector validation
+============================================================
+        ┌────────────┐ ░ ┌─┐      
+   q_0: ┤0           ├─░─┤M├──────
+        │            │ ░ └╥┘┌─┐   
+   q_1: ┤1 CTQW(K,t) ├─░──╫─┤M├───
+        │            │ ░  ║ └╥┘┌─┐
+   q_2: ┤2           ├─░──╫──╫─┤M├
+        └────────────┘ ░  ║  ║ └╥┘
+meas: 3/══════════════════╩══╩══╩═
+                          0  1  2 
+statevector dim = 8, sums to 1.000000 (unitarity check)
+
+============================================================
+4. Max-Cut benchmark: oscillator vs. brute force vs. QAOA
+============================================================
+oscillator   cut_value=4.0  time=2.90 ms
+bruteforce   cut_value=4.0  time=0.22 ms
+qaoa         cut_value=4.0  time=52.09 ms
+
+============================================================
+5. Hardware bridge (mocked -- no real serial device exists here)
+============================================================
+21 frame(s) 'sent' to MOCK
+sample frame (hex): aa55000100b3
+This only proves the K-matrix -> byte-frame packing is correct. No physical oscillator was touched -- there's no serial port or USB device available in this sandbox.
+
+============================================================
+6. ClassicalSubstrate (PyTorch) scaling demo
+============================================================
+SKIPPED: torch is not installed in this sandbox (no network access to install it here). pedler/substrate.py::ClassicalSubstrate is written and ready -- `pip install torch` and re-run this script; it will automatically use a GPU if `torch.cuda.is_available()`.

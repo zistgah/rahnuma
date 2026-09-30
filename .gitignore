@@ -1,0 +1,7 @@
+tools/node_modules/
+.build/
+.build-page.html
+.work/
+.work-ident
+__pycache__/
+*.pyc

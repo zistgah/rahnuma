@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this guide, please cite it as below."
+title: "Rahnuma: a working guide to the ILM, PANINI and Zistgah stack, from bytes and scripts to compilers, Pāṇini and quantum substrates"
+version: 1.0.0
+date-released: 2026-09-29
+license: CC-BY-SA-4.0
+repository-code: "https://github.com/zistgah/rahnuma"
+url: "https://zistgah.github.io/rahnuma/"
+authors:
+  - family-names: Choudhary
+    given-names: Abhishek
+    affiliation: AyeAI
+    orcid: "https://orcid.org/0009-0002-0684-8320"
+keywords:
+  - Rahnuma
+  - ILM
+  - PANINI
+  - Zistgah
+  - Panini
+  - transliteration
+  - compilers
+  - quantum computing
+abstract: >-
+  A working guide to the ILM, PANINI and Zistgah stack, as a website, a PDF and one Markdown
+  file: the repositories and their DOIs, exact set-up commands, and the mathematics of encodings,
+  reversible transliteration, Panini's grammar, compilers, hardware and quantum substrates, with
+  every example executed while the guide was built.

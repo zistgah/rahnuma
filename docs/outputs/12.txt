@@ -1,0 +1,12 @@
+     5 =       1TT   negated by flipping every digit:       T11 = -5
+    -5 =       T11   negated by flipping every digit:       1TT = 5
+    13 =       111   negated by flipping every digit:       TTT = -13
+    40 =      1111   negated by flipping every digit:      TTTT = -40
+  -121 =     TTTTT   negated by flipping every digit:     11111 = 121
+  2026 =  10T10001   negated by flipping every digit:  T01T000T = -2026
+
+radix economy b/ln b for b = 2.000: 2.8854
+radix economy b/ln b for b = 2.718: 2.7183
+radix economy b/ln b for b = 3.000: 2.7307
+radix economy b/ln b for b = 4.000: 2.8854
+radix economy b/ln b for b = 10.000: 4.3429

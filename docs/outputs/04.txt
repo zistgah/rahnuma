@@ -1,0 +1,16 @@
+1. The Brahmi hub: a word in Telugu or Bengali goes to Devanagari, to Romenagri, and back
+   ప్రకృతి -> प्रकृति -> prak_ri_ti -> ప్రకృతి
+   తెలుగు -> तॆलुगु -> _taelugu -> తెలుగు
+   প্রকৃতি -> प्रकृति -> prak_ri_ti -> प्रकृति
+   বাংলা -> बांला -> baa_mlaa -> बांला
+
+2. Any language in any script
+   Hindi written in Telugu script:    हिंदी भाषा -> హిందీ భాషా
+   Telugu written in Devanagari:      తెలుగు భాష -> तॆलुगु भाष
+   Urdu written in Devanagari:        ہندوی کتاب -> हनदवी कताब
+   the same, with zer and sukun:      ہِنْدوی کِتاب -> हिन्दवी किताब
+
+3. Measured on the corpora in this tree
+   Hindi, words of letters and vowel signs: 984 distinct, 983 identical after Romenagri and back
+   Telugu, through the hub and back: 1416 distinct, 1347 identical; of the 69 others, 69 carry the long-u sign U+0C42, which fltr_hi_te returns as U+0942
+   Urdu: 1 of 794 words carry any zabar, zer, pesh, sukun, shadda or tanwin

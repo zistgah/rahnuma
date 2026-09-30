@@ -1,0 +1,26 @@
+1. The same letter KA in nine Unicode blocks: every block keeps ISCII's order, offset 0x15
+   Devanagari  block U+0900  KA U+0915 क   virama U+094D
+   Bengali     block U+0980  KA U+0995 ক   virama U+09CD
+   Gurmukhi    block U+0A00  KA U+0A15 ਕ   virama U+0A4D
+   Gujarati    block U+0A80  KA U+0A95 ક   virama U+0ACD
+   Oriya       block U+0B00  KA U+0B15 କ   virama U+0B4D
+   Tamil       block U+0B80  KA U+0B95 க   virama U+0BCD
+   Telugu      block U+0C00  KA U+0C15 క   virama U+0C4D
+   Kannada     block U+0C80  KA U+0C95 ಕ   virama U+0CCD
+   Malayalam   block U+0D00  KA U+0D15 ക   virama U+0D4D
+
+2. UTF-8 by hand for U+0915 (KA): 16 bits split 4 + 6 + 6 into 1110xxxx 10xxxxxx 10xxxxxx
+   0000 100100 010101  ->  11100000 10100100 10010101  =  E0 A4 95
+   Python agrees: E0 A4 95
+   the Devanagari block U+0900 to U+097F is E0 A4 80 to E0 A5 BF
+
+3. Words are sequences of code points; aksharas are clusters of them
+   प्रकृति: 7 code points, 21 UTF-8 bytes: U+092A U+094D U+0930 U+0915 U+0943 U+0924 U+093F
+   पितृ: 4 code points, 12 UTF-8 bytes: U+092A U+093F U+0924 U+0943
+   क्षि: 4 code points, 12 UTF-8 bytes: U+0915 U+094D U+0937 U+093F
+   categories in क्षि: U+0915 Lo, U+094D Mn, U+0937 Lo, U+093F Mc
+
+4. Normalisation: QA U+0958 decomposes, and composition does not rebuild it
+   NFD(U+0958) = U+0915 U+093C
+   NFC(that)   = U+0915 U+093C
+   equal as strings before normalising: False; after NFC on both: True

@@ -1,0 +1,40 @@
+#!/bin/bash
+#Project ILM — اردو driver
+#Copyright (C) 1993-2026 Abhishek Choudhary.  GNU GPL v2 or later.
+#
+#  urducc program.uhin       تالیف اور تعمیر
+#  urducc -s program.uhin    صرف تیار شدہ میزبان زبان
+#  urducc -r file.c گرو      الٹی سمت: میزبان زبان → اردو
+#
+#The chain is the one the live system runs, plus fixarabnum for the
+#Arabic-Indic digits fixuninum does not cover.
+set -u
+HERE="$(cd "$(dirname "$0")" && pwd)"
+R="$HERE/../Romenagri"
+export PATH="$HERE:$R:$PATH"
+die(){ printf '%s\n' "$*" >&2; exit 2; }
+
+chain(){ fixuninum | "$HERE/fixarabnum" | "$R/fltr_ur_hi" \
+         | iconv -f utf-8 -t utf-16 | uni2acii | acii2cf; }
+
+SHOW=0; REV=0
+[ "${1:-}" = "-s" ] && { SHOW=1; shift; }
+[ "${1:-}" = "-r" ] && { REV=1; shift; }
+SRC="${1:-}"; [ -n "$SRC" ] || die "استعمال: urducc [-s|-r] program.uhin"
+[ -f "$SRC" ] || die "فائل نہیں ملی: $SRC"
+
+if [ "$REV" -eq 1 ]; then
+  d=guru; case "${2:-گرو}" in پراتھا)d=praatha;;شرینی)d=shraeni;;کرترم)d=kritrima;;
+    سوچی)d=soochee;;شبد)d=shabda;;ویاک)d=wyaaka;;یانترک)d=yantra;; esac
+  r=$(ls "$HERE/$d"/*2h_urdu 2>/dev/null | head -1)
+  [ -x "$r" ] || die "پہلے تعمیر کریں:  cd ILM/$d && make"
+  cat "$SRC" | "$r" | "$R/fltr_hi_ur"; exit 0
+fi
+
+# The shaili line is transduced with the rest; hincc.awk reads <shailee NAME>
+# and dispatches. One entry point, exactly as the Devanagari side works.
+[ -x "$HERE/guru/h2c_urdu" ] || die "پہلے تعمیر کریں:  cd ILM/guru && make"
+if [ "$SHOW" -eq 1 ]; then
+  cat "$SRC" | chain | "$HERE/guru/h2c_urdu"; exit 0
+fi
+cat "$SRC" | chain | "$HERE/guru/h2c_urdu" | hincc.awk

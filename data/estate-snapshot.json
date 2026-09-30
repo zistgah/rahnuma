@@ -1,0 +1,1748 @@
+{
+ "ayeai/ayeai.github.io": {
+  "owner": "ayeai",
+  "name": "ayeai.github.io",
+  "description": "Aye AI ... the inclusive AI (www repo)",
+  "has_pages": true,
+  "license": "MIT",
+  "updated": "2019-01-14",
+  "fork": false
+ },
+ "ayeai/ayevdi": {
+  "owner": "ayeai",
+  "name": "ayevdi",
+  "description": "Virtual Deployment IaaS (tools) for Scientific & Cognitive Computing",
+  "has_pages": false,
+  "license": "GPL-2.0",
+  "updated": "2019-12-13",
+  "fork": false
+ },
+ "ayeai/shellinabox": {
+  "owner": "ayeai",
+  "name": "shellinabox",
+  "description": "AyeVDI modifications. Original is available at",
+  "has_pages": false,
+  "license": "NOASSERTION",
+  "updated": "2020-01-14",
+  "fork": true
+ },
+ "ayeai/util-linux": {
+  "owner": "ayeai",
+  "name": "util-linux",
+  "description": "",
+  "has_pages": false,
+  "license": "GPL-2.0",
+  "updated": "2021-11-02",
+  "fork": true
+ },
+ "ayeai/shadow": {
+  "owner": "ayeai",
+  "name": "shadow",
+  "description": "",
+  "has_pages": false,
+  "license": null,
+  "updated": "2019-11-27",
+  "fork": false
+ },
+ "ayeai/KodExplorer": {
+  "owner": "ayeai",
+  "name": "KodExplorer",
+  "description": "A web based file manager,web IDE / browser based code editor",
+  "has_pages": false,
+  "license": null,
+  "updated": "2019-11-30",
+  "fork": true
+ },
+ "ayeai/dockerfiles": {
+  "owner": "ayeai",
+  "name": "dockerfiles",
+  "description": "Various Dockerfiles I use on the desktop and on servers.",
+  "has_pages": false,
+  "license": "MIT",
+  "updated": "2019-12-11",
+  "fork": true
+ },
+ "ayeai/x11docker": {
+  "owner": "ayeai",
+  "name": "x11docker",
+  "description": "Run GUI applications and desktops in docker. Focus on security.",
+  "has_pages": false,
+  "license": "MIT",
+  "updated": "2019-12-11",
+  "fork": true
+ },
+ "ayeai/runc": {
+  "owner": "ayeai",
+  "name": "runc",
+  "description": "CLI tool for spawning and running containers according to the OCI specification",
+  "has_pages": false,
+  "license": "Apache-2.0",
+  "updated": "2019-12-11",
+  "fork": true
+ },
+ "ayeai/go-digest": {
+  "owner": "ayeai",
+  "name": "go-digest",
+  "description": "Common digest package used across the container ecosystem",
+  "has_pages": false,
+  "license": "Apache-2.0",
+  "updated": "2019-12-11",
+  "fork": true
+ },
+ "ayeai/image-tools": {
+  "owner": "ayeai",
+  "name": "image-tools",
+  "description": "OCI Image Tooling",
+  "has_pages": false,
+  "license": "Apache-2.0",
+  "updated": "2019-12-11",
+  "fork": true
+ },
+ "ayeai/runtime-tools": {
+  "owner": "ayeai",
+  "name": "runtime-tools",
+  "description": "OCI Runtime Tools",
+  "has_pages": false,
+  "license": "Apache-2.0",
+  "updated": "2019-12-11",
+  "fork": true
+ },
+ "ayeai/AIX360": {
+  "owner": "ayeai",
+  "name": "AIX360",
+  "description": "Interpretability and explainability of data and machine learning models",
+  "has_pages": false,
+  "license": "Apache-2.0",
+  "updated": "2020-07-13",
+  "fork": true
+ },
+ "ayeai/adversarial-robustness-toolbox": {
+  "owner": "ayeai",
+  "name": "adversarial-robustness-toolbox",
+  "description": "Python library for adversarial machine learning, attacks and defences for neural networks, logistic regression, decision trees, SVM, gradient boosted trees, Gaussian processes and more with multiple framework support",
+  "has_pages": false,
+  "license": "MIT",
+  "updated": "2020-07-13",
+  "fork": true
+ },
+ "ayeai/kui": {
+  "owner": "ayeai",
+  "name": "kui",
+  "description": "A hybrid command-line/UI development experience for cloud-native development",
+  "has_pages": false,
+  "license": "Apache-2.0",
+  "updated": "2025-07-30",
+  "fork": true
+ },
+ "ayeai/FHIR": {
+  "owner": "ayeai",
+  "name": "FHIR",
+  "description": "The IBM FHIR® Server and related projects",
+  "has_pages": false,
+  "license": "Apache-2.0",
+  "updated": "2019-12-11",
+  "fork": true
+ },
+ "ayeai/kubernetes-cobol": {
+  "owner": "ayeai",
+  "name": "kubernetes-cobol",
+  "description": "A Code Pattern to teach how to run a COBOL program on Kubernetes",
+  "has_pages": false,
+  "license": "NOASSERTION",
+  "updated": "2019-12-11",
+  "fork": true
+ },
+ "ayeai/insilico": {
+  "owner": "ayeai",
+  "name": "insilico",
+  "description": "Neuronal Network Simulation Library",
+  "has_pages": false,
+  "license": "GPL-3.0",
+  "updated": "2019-12-11",
+  "fork": true
+ },
+ "ayeai/Virtual-Studio": {
+  "owner": "ayeai",
+  "name": "Virtual-Studio",
+  "description": "https://insilico.uk/virtual-studioindex",
+  "has_pages": false,
+  "license": "MIT",
+  "updated": "2019-12-11",
+  "fork": true
+ },
+ "ayeai/sway": {
+  "owner": "ayeai",
+  "name": "sway",
+  "description": "i3-compatible Wayland compositor",
+  "has_pages": false,
+  "license": "MIT",
+  "updated": "2019-12-11",
+  "fork": true
+ },
+ "ayeai/qiskit": {
+  "owner": "ayeai",
+  "name": "qiskit",
+  "description": "Qiskit is an open-source framework for working with noisy quantum computers at the level of pulses, circuits, and algorithms.",
+  "has_pages": false,
+  "license": "Apache-2.0",
+  "updated": "2019-12-11",
+  "fork": true
+ },
+ "ayeai/qiskit-terra": {
+  "owner": "ayeai",
+  "name": "qiskit-terra",
+  "description": "Terra provides the foundations for Qiskit. It allows the user to write quantum circuits easily, and takes care of the constraints of real hardware.",
+  "has_pages": false,
+  "license": "Apache-2.0",
+  "updated": "2019-12-11",
+  "fork": true
+ },
+ "ayeai/qiskit-aer": {
+  "owner": "ayeai",
+  "name": "qiskit-aer",
+  "description": "Aer is a high performance simulator for quantum circuits that includes noise models",
+  "has_pages": false,
+  "license": "Apache-2.0",
+  "updated": "2019-12-11",
+  "fork": true
+ },
+ "ayeai/ayeq": {
+  "owner": "ayeai",
+  "name": "ayeq",
+  "description": "",
+  "has_pages": false,
+  "license": "MIT",
+  "updated": "2019-12-11",
+  "fork": false
+ },
+ "ayeai/SPL-ignore-and-delete": {
+  "owner": "ayeai",
+  "name": "SPL-ignore-and-delete",
+  "description": "Singularity Public License",
+  "has_pages": false,
+  "license": null,
+  "updated": "2019-12-14",
+  "fork": false
+ },
+ "ayeai/spl": {
+  "owner": "ayeai",
+  "name": "spl",
+  "description": "AyeAI Singularity Public License",
+  "has_pages": false,
+  "license": "NOASSERTION",
+  "updated": "2019-12-14",
+  "fork": false
+ },
+ "ayeai/dockersh": {
+  "owner": "ayeai",
+  "name": "dockersh",
+  "description": "A shell which places users into individual docker containers",
+  "has_pages": false,
+  "license": "Apache-2.0",
+  "updated": "2026-01-28",
+  "fork": true
+ },
+ "ayeai/bash2python": {
+  "owner": "ayeai",
+  "name": "bash2python",
+  "description": "A tool that converts a bash script to python script",
+  "has_pages": false,
+  "license": "Apache-2.0",
+  "updated": "2020-01-30",
+  "fork": true
+ },
+ "ayeai/anusaaraka": {
+  "owner": "ayeai",
+  "name": "anusaaraka",
+  "description": "Imported from https://web.archive.org/web/20200218013006/https://sourceforge.net/p/anusaaraka/git/ci/master/tree/",
+  "has_pages": false,
+  "license": null,
+  "updated": "2020-03-02",
+  "fork": false
+ },
+ "ayeai/xmp": {
+  "owner": "ayeai",
+  "name": "xmp",
+  "description": "CUDA accelerated(X) Multi-Precision library",
+  "has_pages": false,
+  "license": "NOASSERTION",
+  "updated": "2020-02-20",
+  "fork": true
+ },
+ "ayeai/ayeam": {
+  "owner": "ayeai",
+  "name": "ayeam",
+  "description": "AyeAI's Autonomous Metaverse - A cyber-physical autnomous metaverse... A nervous system for the Singularity",
+  "has_pages": false,
+  "license": "GPL-3.0",
+  "updated": "2022-03-25",
+  "fork": true
+ },
+ "ayeai/upload": {
+  "owner": "ayeai",
+  "name": "upload",
+  "description": "Staggered Upload (TM)",
+  "has_pages": true,
+  "license": null,
+  "updated": "2022-11-09",
+  "fork": false
+ },
+ "ayeai/chuha": {
+  "owner": "ayeai",
+  "name": "chuha",
+  "description": "Chat Hosting Utility with Hypelink Automation",
+  "has_pages": false,
+  "license": "GPL-2.0",
+  "updated": "2022-11-25",
+  "fork": false
+ },
+ "ayeai/ni2a2": {
+  "owner": "ayeai",
+  "name": "ni2a2",
+  "description": "",
+  "has_pages": true,
+  "license": "GPL-3.0",
+  "updated": "2023-08-09",
+  "fork": false
+ },
+ "ayeai/ChainOfSurvival.github.io": {
+  "owner": "ayeai",
+  "name": "ChainOfSurvival.github.io",
+  "description": "A public information repository on the Chain of Survival",
+  "has_pages": false,
+  "license": "MIT",
+  "updated": "2023-08-20",
+  "fork": true
+ },
+ "ayeai/opssi": {
+  "owner": "ayeai",
+  "name": "opssi",
+  "description": "open public stack for synthetic intelligence",
+  "has_pages": false,
+  "license": "MIT",
+  "updated": "2025-10-05",
+  "fork": false
+ },
+ "ayeai/athena": {
+  "owner": "ayeai",
+  "name": "athena",
+  "description": "GSF VIKRAM - An inclusive rural digitalization platform by GramSheel Foundation",
+  "has_pages": true,
+  "license": "GPL-3.0",
+  "updated": "2024-01-18",
+  "fork": true
+ },
+ "ayeai/join": {
+  "owner": "ayeai",
+  "name": "join",
+  "description": "",
+  "has_pages": false,
+  "license": null,
+  "updated": "2024-08-24",
+  "fork": false
+ },
+ "ayeai/ayeai.ayeam.com": {
+  "owner": "ayeai",
+  "name": "ayeai.ayeam.com",
+  "description": "AyeAI ∴ AyeAM",
+  "has_pages": true,
+  "license": "GPL-3.0",
+  "updated": "2025-01-16",
+  "fork": true
+ },
+ "hindawiai/old-hindawiai.github.io": {
+  "owner": "hindawiai",
+  "name": "old-hindawiai.github.io",
+  "description": "Hindawi AI Community Site",
+  "has_pages": false,
+  "license": null,
+  "updated": "2020-07-05",
+  "fork": false
+ },
+ "hindawiai/hindawi-legacy": {
+  "owner": "hindawiai",
+  "name": "hindawi-legacy",
+  "description": "Legacy files of Hindawi Programming System",
+  "has_pages": false,
+  "license": null,
+  "updated": "2019-01-27",
+  "fork": false
+ },
+ "hindawiai/hindawi-tx": {
+  "owner": "hindawiai",
+  "name": "hindawi-tx",
+  "description": "",
+  "has_pages": false,
+  "license": null,
+  "updated": "2020-09-01",
+  "fork": false
+ },
+ "hindawiai/qb.js": {
+  "owner": "hindawiai",
+  "name": "qb.js",
+  "description": "QBASIC implementation in JavaScript",
+  "has_pages": true,
+  "license": "GPL-3.0",
+  "updated": "2021-08-23",
+  "fork": true
+ },
+ "hindawiai/js-py": {
+  "owner": "hindawiai",
+  "name": "js-py",
+  "description": "PyPy.js website",
+  "has_pages": true,
+  "license": null,
+  "updated": "2021-08-23",
+  "fork": true
+ },
+ "hindawiai/hindawi2020": {
+  "owner": "hindawiai",
+  "name": "hindawi2020",
+  "description": "Hindawi Programming System (Hindawi@Linux) 2008 version",
+  "has_pages": false,
+  "license": null,
+  "updated": "2026-09-14",
+  "fork": true
+ },
+ "hindawiai/hindawiai.github.io": {
+  "owner": "hindawiai",
+  "name": "hindawiai.github.io",
+  "description": "Hindawi Programming System - Programming in every person's own language",
+  "has_pages": true,
+  "license": "GPL-3.0",
+  "updated": "2024-08-20",
+  "fork": true
+ },
+ "hindawiai/chintamani": {
+  "owner": "hindawiai",
+  "name": "chintamani",
+  "description": "HindawiAI in Telugu",
+  "has_pages": false,
+  "license": null,
+  "updated": "2026-06-13",
+  "fork": false
+ },
+ "hindawiai/hinlin": {
+  "owner": "hindawiai",
+  "name": "hinlin",
+  "description": "Linux kernel source tree",
+  "has_pages": false,
+  "license": "NOASSERTION",
+  "updated": "2021-06-25",
+  "fork": true
+ },
+ "hindawiai/hindawi2021": {
+  "owner": "hindawiai",
+  "name": "hindawi2021",
+  "description": "Bootstrapping Hindawi Programming System",
+  "has_pages": false,
+  "license": null,
+  "updated": "2021-07-25",
+  "fork": false
+ },
+ "hindawiai/hi": {
+  "owner": "hindawiai",
+  "name": "hi",
+  "description": "",
+  "has_pages": true,
+  "license": "GPL-3.0",
+  "updated": "2021-07-24",
+  "fork": false
+ },
+ "hindawiai/pyaara": {
+  "owner": "hindawiai",
+  "name": "pyaara",
+  "description": "BASIC Interpreter by @djinn based on Beautiful Racket by @mbutterick",
+  "has_pages": false,
+  "license": "MIT",
+  "updated": "2021-08-05",
+  "fork": true
+ },
+ "hindawiai/beautiful-racket": {
+  "owner": "hindawiai",
+  "name": "beautiful-racket",
+  "description": "Resources for the “Beautiful Racket” book ",
+  "has_pages": false,
+  "license": "MIT",
+  "updated": "2021-08-05",
+  "fork": true
+ },
+ "hindawiai/racketscript": {
+  "owner": "hindawiai",
+  "name": "racketscript",
+  "description": "Racket to JavaScript Compiler",
+  "has_pages": false,
+  "license": "MIT",
+  "updated": "2021-08-05",
+  "fork": true
+ },
+ "hindawiai/autogit": {
+  "owner": "hindawiai",
+  "name": "autogit",
+  "description": "git automations",
+  "has_pages": false,
+  "license": "GPL-3.0",
+  "updated": "2021-09-30",
+  "fork": false
+ },
+ "hindawiai/qbjc": {
+  "owner": "hindawiai",
+  "name": "qbjc",
+  "description": "QBasic to JavaScript compiler",
+  "has_pages": false,
+  "license": null,
+  "updated": "2021-10-02",
+  "fork": true
+ },
+ "hindawiai/v86": {
+  "owner": "hindawiai",
+  "name": "v86",
+  "description": "x86 virtualization in your browser, recompiling x86 to wasm on the fly",
+  "has_pages": false,
+  "license": "BSD-2-Clause",
+  "updated": "2021-10-02",
+  "fork": true
+ },
+ "hindawiai/js-dos": {
+  "owner": "hindawiai",
+  "name": "js-dos",
+  "description": "The best API for running dos programs in browser",
+  "has_pages": false,
+  "license": "GPL-2.0",
+  "updated": "2021-10-02",
+  "fork": true
+ },
+ "hindawiai/em-dosbox": {
+  "owner": "hindawiai",
+  "name": "em-dosbox",
+  "description": "An Emscripten port of DOSBox",
+  "has_pages": false,
+  "license": "GPL-2.0",
+  "updated": "2021-10-02",
+  "fork": true
+ },
+ "hindawiai/JPC": {
+  "owner": "hindawiai",
+  "name": "JPC",
+  "description": "JPC - The fast x86 PC emulator in 100% pure Java",
+  "has_pages": false,
+  "license": "GPL-2.0",
+  "updated": "2021-10-02",
+  "fork": true
+ },
+ "hindawiai/practice": {
+  "owner": "hindawiai",
+  "name": "practice",
+  "description": "",
+  "has_pages": false,
+  "license": null,
+  "updated": "2022-05-25",
+  "fork": false
+ },
+ "hindawiai/2023.12.21": {
+  "owner": "hindawiai",
+  "name": "2023.12.21",
+  "description": "Hindawi AI - Bada Din release (Coding in all ISO supported languages by 25th Dec 2023)",
+  "has_pages": false,
+  "license": null,
+  "updated": "2024-12-10",
+  "fork": false
+ },
+ "project-ilm/praat": {
+  "owner": "project-ilm",
+  "name": "praat",
+  "description": "Praat: Doing Phonetics By Computer",
+  "has_pages": false,
+  "license": null,
+  "updated": "2025-04-19",
+  "fork": true
+ },
+ "project-ilm/legacy": {
+  "owner": "project-ilm",
+  "name": "legacy",
+  "description": "Initial fork of Project ILM from Project Hindawi",
+  "has_pages": false,
+  "license": "NOASSERTION",
+  "updated": "2026-06-11",
+  "fork": true
+ },
+ "project-ilm/ilm-data": {
+  "owner": "project-ilm",
+  "name": "ilm-data",
+  "description": "Data: canonical corpora, dialect maps, phoneme-audio pairs, aligned scripts, acoustic training data, lexical resources.",
+  "has_pages": false,
+  "license": null,
+  "updated": "2025-04-22",
+  "fork": false
+ },
+ "project-ilm/ilm-validation": {
+  "owner": "project-ilm",
+  "name": "ilm-validation",
+  "description": "Validation: native speaker QA, annotation tools, field instruments, crowdsourced schema, cultural-linguistic QA loops.",
+  "has_pages": false,
+  "license": null,
+  "updated": "2025-04-22",
+  "fork": false
+ },
+ "project-ilm/ilm-meta": {
+  "owner": "project-ilm",
+  "name": "ilm-meta",
+  "description": "Meta repo for ILM / علم: vision docs, architecture diagrams, manifestos, research summaries, roadmap, cultural-philosophical grounding.",
+  "has_pages": false,
+  "license": null,
+  "updated": "2025-04-22",
+  "fork": false
+ },
+ "project-ilm/ilm-lexicon": {
+  "owner": "project-ilm",
+  "name": "ilm-lexicon",
+  "description": "Layer 3: Morpho-lexical layer – multilingual lexicons, WordNets, morphology analyzers, clitics, affixation, reduplication.",
+  "has_pages": false,
+  "license": null,
+  "updated": "2025-04-22",
+  "fork": false
+ },
+ "project-ilm/ilm-devtools": {
+  "owner": "project-ilm",
+  "name": "ilm-devtools",
+  "description": "Devtools: reversible compiler infra, script-aware IDEs, debug harnesses. Consumers of core ILM layers, not core layers themselves.",
+  "has_pages": false,
+  "license": null,
+  "updated": "2025-04-22",
+  "fork": false
+ },
+ "project-ilm/ilm-syntax-semantics": {
+  "owner": "project-ilm",
+  "name": "ilm-syntax-semantics",
+  "description": "Layer 4: Syntax-semantics – UD parsing, SRL, AMR/UCCA, discourse segmentation, code-switching awareness.",
+  "has_pages": false,
+  "license": null,
+  "updated": "2025-04-22",
+  "fork": false
+ },
+ "project-ilm/ilm-transliteration": {
+  "owner": "project-ilm",
+  "name": "ilm-transliteration",
+  "description": "Layer 1: Transliteration pivot – reversible, compiler-friendly Romanized layer with diacritics; bridges phonology and scripts.",
+  "has_pages": false,
+  "license": null,
+  "updated": "2025-04-22",
+  "fork": false
+ },
+ "project-ilm/ilm-phonology": {
+  "owner": "project-ilm",
+  "name": "ilm-phonology",
+  "description": "Layer 0: Phonological base – IPA core, phonotactics, prosody, dialect normalization, audio alignment. Reversible sound mapping foundation.",
+  "has_pages": false,
+  "license": null,
+  "updated": "2025-04-22",
+  "fork": false
+ },
+ "project-ilm/ilm-orthography": {
+  "owner": "project-ilm",
+  "name": "ilm-orthography",
+  "description": "Layer 2: Orthographic engine – script-specific shaping, Unicode normalization, ZWJ/ZWNJ handling, grapheme clustering.",
+  "has_pages": false,
+  "license": null,
+  "updated": "2025-04-22",
+  "fork": false
+ },
+ "project-ilm/ilm-interface": {
+  "owner": "project-ilm",
+  "name": "ilm-interface",
+  "description": "Layer 5: Interface & application – multiscript IMEs, NLP/NLU APIs (TTS, ASR, QA), mother-tongue IDEs, educational tools.",
+  "has_pages": false,
+  "license": null,
+  "updated": "2025-04-22",
+  "fork": false
+ },
+ "project-ilm/ilm-site": {
+  "owner": "project-ilm",
+  "name": "ilm-site",
+  "description": "A layered, open-source effort for phonetically accurate, reversible, culturally respectful language tooling across world scripts.",
+  "has_pages": true,
+  "license": null,
+  "updated": "2025-09-23",
+  "fork": false
+ },
+ "project-ilm/.github": {
+  "owner": "project-ilm",
+  "name": ".github",
+  "description": "Org profile for project-ilm",
+  "has_pages": false,
+  "license": null,
+  "updated": "2025-04-22",
+  "fork": false
+ },
+ "project-ilm/ai-scratch": {
+  "owner": "project-ilm",
+  "name": "ai-scratch",
+  "description": "",
+  "has_pages": true,
+  "license": "GPL-2.0",
+  "updated": "2025-12-17",
+  "fork": false
+ },
+ "project-ilm/ilm.codes": {
+  "owner": "project-ilm",
+  "name": "ilm.codes",
+  "description": "ILM / Project ILM — Integrative Linguistic Multiscript (BETA)",
+  "has_pages": true,
+  "license": "NOASSERTION",
+  "updated": "2026-07-24",
+  "fork": false
+ },
+ "project-ilm/romenagri": {
+  "owner": "project-ilm",
+  "name": "romenagri",
+  "description": "Romenagri: reversible transliteration library (Perso-Arabic seed). HPS/ILM. GPL. © 1993-2026 Abhishek Choudhary.",
+  "has_pages": true,
+  "license": "NOASSERTION",
+  "updated": "2026-07-24",
+  "fork": false
+ },
+ "project-ilm/misty-doi": {
+  "owner": "project-ilm",
+  "name": "misty-doi",
+  "description": "Automation-first DOI minting & research publication packaging. Muh Mitha Kijiye!",
+  "has_pages": true,
+  "license": "GPL-3.0",
+  "updated": "2026-07-28",
+  "fork": false
+ },
+ "project-ilm/vscode-ilm": {
+  "owner": "project-ilm",
+  "name": "vscode-ilm",
+  "description": "",
+  "has_pages": false,
+  "license": null,
+  "updated": "2026-06-28",
+  "fork": false
+ },
+ "project-ilm/ilm-lsp": {
+  "owner": "project-ilm",
+  "name": "ilm-lsp",
+  "description": "",
+  "has_pages": false,
+  "license": null,
+  "updated": "2026-06-15",
+  "fork": false
+ },
+ "project-ilm/language-specs": {
+  "owner": "project-ilm",
+  "name": "language-specs",
+  "description": "",
+  "has_pages": false,
+  "license": null,
+  "updated": "2026-06-28",
+  "fork": false
+ },
+ "project-ilm/linguistics-labs": {
+  "owner": "project-ilm",
+  "name": "linguistics-labs",
+  "description": "",
+  "has_pages": false,
+  "license": null,
+  "updated": "2026-06-15",
+  "fork": false
+ },
+ "project-ilm/ops": {
+  "owner": "project-ilm",
+  "name": "ops",
+  "description": "",
+  "has_pages": false,
+  "license": null,
+  "updated": "2026-06-29",
+  "fork": false
+ },
+ "project-ilm/spi-scan": {
+  "owner": "project-ilm",
+  "name": "spi-scan",
+  "description": "",
+  "has_pages": false,
+  "license": "NOASSERTION",
+  "updated": "2026-06-29",
+  "fork": false
+ },
+ "project-ilm/cognitive-fabric": {
+  "owner": "project-ilm",
+  "name": "cognitive-fabric",
+  "description": "",
+  "has_pages": false,
+  "license": "NOASSERTION",
+  "updated": "2026-06-26",
+  "fork": false
+ },
+ "project-ilm/foundry": {
+  "owner": "project-ilm",
+  "name": "foundry",
+  "description": "Canonical engineering substrate for Project ILM.",
+  "has_pages": false,
+  "license": null,
+  "updated": "2026-06-28",
+  "fork": false
+ },
+ "project-ilm/chakra": {
+  "owner": "project-ilm",
+  "name": "chakra",
+  "description": "CHAKRA — Temporal Cycle Observatory: offline multi-tradition astronomical/calendrical observatory, tested library, and URL→JSON API. GPL-3.0.",
+  "has_pages": true,
+  "license": "GPL-3.0",
+  "updated": "2026-08-12",
+  "fork": false
+ },
+ "project-ilm/scripts": {
+  "owner": "project-ilm",
+  "name": "scripts",
+  "description": "",
+  "has_pages": false,
+  "license": "NOASSERTION",
+  "updated": "2026-07-11",
+  "fork": true
+ },
+ "project-ilm/tok-doi": {
+  "owner": "project-ilm",
+  "name": "tok-doi",
+  "description": "Tok DoI",
+  "has_pages": true,
+  "license": "NOASSERTION",
+  "updated": "2026-07-28",
+  "fork": false
+ },
+ "project-ilm/qedler": {
+  "owner": "project-ilm",
+  "name": "qedler",
+  "description": "",
+  "has_pages": true,
+  "license": "NOASSERTION",
+  "updated": "2026-07-26",
+  "fork": false
+ },
+ "project-ilm/vgc-notes": {
+  "owner": "project-ilm",
+  "name": "vgc-notes",
+  "description": "Notes on verification-gated human-AI co-development",
+  "has_pages": false,
+  "license": null,
+  "updated": "2026-07-26",
+  "fork": false
+ },
+ "project-ilm/research-kundali": {
+  "owner": "project-ilm",
+  "name": "research-kundali",
+  "description": "",
+  "has_pages": false,
+  "license": null,
+  "updated": "2026-07-28",
+  "fork": false
+ },
+ "pvjournal/pvjournal.github.io": {
+  "owner": "pvjournal",
+  "name": "pvjournal.github.io",
+  "description": "GSF VIKRAM - An inclusive rural digitalization platform by GramSheel Foundation",
+  "has_pages": true,
+  "license": "GPL-3.0",
+  "updated": "2022-11-24",
+  "fork": true
+ },
+ "pvjournal/journal": {
+  "owner": "pvjournal",
+  "name": "journal",
+  "description": "",
+  "has_pages": false,
+  "license": null,
+  "updated": "2020-06-29",
+  "fork": false
+ },
+ "pvjournal/pajr": {
+  "owner": "pvjournal",
+  "name": "pajr",
+  "description": "Index of PaJR case reports · CC BY-NC-SA 4.0 · not medical advice",
+  "has_pages": true,
+  "license": "NOASSERTION",
+  "updated": "2026-07-28",
+  "fork": false
+ },
+ "pvjournal/pilla": {
+  "owner": "pvjournal",
+  "name": "pilla",
+  "description": "PILLA — Parametric Information Layering Logic (Anatemnein). © 1993–2026 Abhishek Choudhary.",
+  "has_pages": true,
+  "license": null,
+  "updated": "2026-08-02",
+  "fork": false
+ },
+ "zistgah/zistgah.github.io": {
+  "owner": "zistgah",
+  "name": "zistgah.github.io",
+  "description": "Zistgah",
+  "has_pages": true,
+  "license": "NOASSERTION",
+  "updated": "2026-09-19",
+  "fork": false
+ },
+ "zistgah/pratik_core_mvp": {
+  "owner": "zistgah",
+  "name": "pratik_core_mvp",
+  "description": "PRATIK Kernel Core — balanced-ternary, event-driven developmental kernel (PEDLER/AyeAI Triad)",
+  "has_pages": true,
+  "license": "GPL-3.0",
+  "updated": "2026-07-24",
+  "fork": false
+ },
+ "zistgah/zamin": {
+  "owner": "zistgah",
+  "name": "zamin",
+  "description": "Zamin — PRATIK ternary silicon: physicalizing the poised-zero substrate (PEDLER/AyeAI Triad)",
+  "has_pages": true,
+  "license": "GPL-3.0",
+  "updated": "2026-07-24",
+  "fork": false
+ },
+ "zistgah/aab": {
+  "owner": "zistgah",
+  "name": "aab",
+  "description": "",
+  "has_pages": true,
+  "license": null,
+  "updated": "2026-07-11",
+  "fork": false
+ },
+ "zistgah/fiza": {
+  "owner": "zistgah",
+  "name": "fiza",
+  "description": "",
+  "has_pages": true,
+  "license": null,
+  "updated": "2026-07-11",
+  "fork": false
+ },
+ "zistgah/governance": {
+  "owner": "zistgah",
+  "name": "governance",
+  "description": "",
+  "has_pages": false,
+  "license": null,
+  "updated": "2026-09-26",
+  "fork": false
+ },
+ "zistgah/ztools": {
+  "owner": "zistgah",
+  "name": "ztools",
+  "description": "",
+  "has_pages": false,
+  "license": null,
+  "updated": "2026-07-11",
+  "fork": false
+ },
+ "zistgah/transeg": {
+  "owner": "zistgah",
+  "name": "transeg",
+  "description": "Project TransEg — local digital twin reference implementation (identity continuity research platform)",
+  "has_pages": false,
+  "license": "GPL-3.0",
+  "updated": "2026-07-29",
+  "fork": false
+ },
+ "zistgah/transeg-idgov": {
+  "owner": "zistgah",
+  "name": "transeg-idgov",
+  "description": "TransEg identity governance — typed layers, envelope, staged policies, audit",
+  "has_pages": false,
+  "license": "GPL-3.0",
+  "updated": "2026-07-12",
+  "fork": false
+ },
+ "zistgah/transeg-research": {
+  "owner": "zistgah",
+  "name": "transeg-research",
+  "description": "TransEg research — 9-benchmark framework + 7 reference experiments",
+  "has_pages": false,
+  "license": "GPL-3.0",
+  "updated": "2026-07-12",
+  "fork": false
+ },
+ "zistgah/poie": {
+  "owner": "zistgah",
+  "name": "poie",
+  "description": "Proclamation of Individual Equity",
+  "has_pages": true,
+  "license": "NOASSERTION",
+  "updated": "2026-07-24",
+  "fork": false
+ },
+ "zistgah/fakir": {
+  "owner": "zistgah",
+  "name": "fakir",
+  "description": "",
+  "has_pages": true,
+  "license": null,
+  "updated": "2026-07-26",
+  "fork": false
+ },
+ "zistgah/dome": {
+  "owner": "zistgah",
+  "name": "dome",
+  "description": "",
+  "has_pages": true,
+  "license": null,
+  "updated": "2026-07-24",
+  "fork": false
+ },
+ "zistgah/marham": {
+  "owner": "zistgah",
+  "name": "marham",
+  "description": "",
+  "has_pages": false,
+  "license": null,
+  "updated": "2026-07-26",
+  "fork": false
+ },
+ "zistgah/estate": {
+  "owner": "zistgah",
+  "name": "estate",
+  "description": "IP estate: inventory, licensing, offerings, workspace sync",
+  "has_pages": false,
+  "license": null,
+  "updated": "2026-07-29",
+  "fork": false
+ },
+ "zistgah/mez": {
+  "owner": "zistgah",
+  "name": "mez",
+  "description": "mez — the desk. میز. Local-first, no account, no vendor.",
+  "has_pages": true,
+  "license": null,
+  "updated": "2026-08-25",
+  "fork": false
+ },
+ "zistgah/tabdili": {
+  "owner": "zistgah",
+  "name": "tabdili",
+  "description": "",
+  "has_pages": true,
+  "license": null,
+  "updated": "2026-08-02",
+  "fork": false
+ },
+ "zistgah/tarbiyat": {
+  "owner": "zistgah",
+  "name": "tarbiyat",
+  "description": "",
+  "has_pages": true,
+  "license": null,
+  "updated": "2026-08-03",
+  "fork": false
+ },
+ "zistgah/copa": {
+  "owner": "zistgah",
+  "name": "copa",
+  "description": "COPA — Cost of Perceived Authority: a black-box behavioural methodology (measurement framework + open hypothesis)",
+  "has_pages": true,
+  "license": "NOASSERTION",
+  "updated": "2026-08-05",
+  "fork": false
+ },
+ "zistgah/kitab": {
+  "owner": "zistgah",
+  "name": "kitab",
+  "description": "",
+  "has_pages": true,
+  "license": "NOASSERTION",
+  "updated": "2026-08-25",
+  "fork": false
+ },
+ "zistgah/vakil": {
+  "owner": "zistgah",
+  "name": "vakil",
+  "description": "",
+  "has_pages": false,
+  "license": "NOASSERTION",
+  "updated": "2026-08-04",
+  "fork": false
+ },
+ "zistgah/zindagi": {
+  "owner": "zistgah",
+  "name": "zindagi",
+  "description": "",
+  "has_pages": true,
+  "license": "NOASSERTION",
+  "updated": "2026-08-06",
+  "fork": false
+ },
+ "zistgah/qaem": {
+  "owner": "zistgah",
+  "name": "qaem",
+  "description": "",
+  "has_pages": true,
+  "license": "NOASSERTION",
+  "updated": "2026-08-06",
+  "fork": false
+ },
+ "zistgah/varzish": {
+  "owner": "zistgah",
+  "name": "varzish",
+  "description": "",
+  "has_pages": false,
+  "license": null,
+  "updated": "2026-08-06",
+  "fork": false
+ },
+ "zistgah/alam": {
+  "owner": "zistgah",
+  "name": "alam",
+  "description": "Small work, cycled with any AI. Part of the Zistgah ecosystem.",
+  "has_pages": true,
+  "license": null,
+  "updated": "2026-08-11",
+  "fork": false
+ },
+ "zistgah/genie": {
+  "owner": "zistgah",
+  "name": "genie",
+  "description": "",
+  "has_pages": true,
+  "license": null,
+  "updated": "2026-08-25",
+  "fork": false
+ },
+ "zistgah/genie-book": {
+  "owner": "zistgah",
+  "name": "genie-book",
+  "description": "",
+  "has_pages": true,
+  "license": "NOASSERTION",
+  "updated": "2026-08-11",
+  "fork": false
+ },
+ "zistgah/dukedom": {
+  "owner": "zistgah",
+  "name": "dukedom",
+  "description": "The Dukedom of Humanesque",
+  "has_pages": true,
+  "license": null,
+  "updated": "2026-08-13",
+  "fork": false
+ },
+ "zistgah/paradox": {
+  "owner": "zistgah",
+  "name": "paradox",
+  "description": "The Paradox of Innovation",
+  "has_pages": true,
+  "license": null,
+  "updated": "2026-08-14",
+  "fork": false
+ },
+ "zistgah/duke2": {
+  "owner": "zistgah",
+  "name": "duke2",
+  "description": "The Dukedom of Humanesque, Volume II",
+  "has_pages": true,
+  "license": null,
+  "updated": "2026-08-14",
+  "fork": false
+ },
+ "zistgah/matba": {
+  "owner": "zistgah",
+  "name": "matba",
+  "description": "matba — the press. Posters in, book out, sealed, pushed, minted.",
+  "has_pages": true,
+  "license": "NOASSERTION",
+  "updated": "2026-08-25",
+  "fork": false
+ },
+ "zistgah/janapad": {
+  "owner": "zistgah",
+  "name": "janapad",
+  "description": "",
+  "has_pages": true,
+  "license": null,
+  "updated": "2026-08-15",
+  "fork": false
+ },
+ "zistgah/khwab": {
+  "owner": "zistgah",
+  "name": "khwab",
+  "description": "",
+  "has_pages": true,
+  "license": "NOASSERTION",
+  "updated": "2026-08-25",
+  "fork": false
+ },
+ "zistgah/inclinations": {
+  "owner": "zistgah",
+  "name": "inclinations",
+  "description": "",
+  "has_pages": true,
+  "license": null,
+  "updated": "2026-08-16",
+  "fork": false
+ },
+ "zistgah/awaz": {
+  "owner": "zistgah",
+  "name": "awaz",
+  "description": "awaz — the listening room",
+  "has_pages": true,
+  "license": "NOASSERTION",
+  "updated": "2026-08-25",
+  "fork": false
+ },
+ "zistgah/tilasm": {
+  "owner": "zistgah",
+  "name": "tilasm",
+  "description": "tilasm — the immersive cycler. AR, XR, VR.",
+  "has_pages": true,
+  "license": "NOASSERTION",
+  "updated": "2026-08-25",
+  "fork": false
+ },
+ "zistgah/pench": {
+  "owner": "zistgah",
+  "name": "pench",
+  "description": "pench — the embodied cycler. Robotics, cyberphysical, sim2real, real2sim.",
+  "has_pages": true,
+  "license": "NOASSERTION",
+  "updated": "2026-08-25",
+  "fork": false
+ },
+ "zistgah/yadein": {
+  "owner": "zistgah",
+  "name": "yadein",
+  "description": "yadein — the record. A multimodal diary, staggered, toward TransEg.",
+  "has_pages": true,
+  "license": "NOASSERTION",
+  "updated": "2026-08-25",
+  "fork": false
+ },
+ "zistgah/wake": {
+  "owner": "zistgah",
+  "name": "wake",
+  "description": "",
+  "has_pages": true,
+  "license": "GPL-3.0",
+  "updated": "2026-08-21",
+  "fork": false
+ },
+ "zistgah/panini": {
+  "owner": "zistgah",
+  "name": "panini",
+  "description": "PANINI — a language for prompt cycles",
+  "has_pages": true,
+  "license": "NOASSERTION",
+  "updated": "2026-08-25",
+  "fork": false
+ },
+ "zistgah/mrd": {
+  "owner": "zistgah",
+  "name": "mrd",
+  "description": "Market Requirements for the Zistgah / AyeAI estate",
+  "has_pages": true,
+  "license": "NOASSERTION",
+  "updated": "2026-08-25",
+  "fork": false
+ },
+ "zistgah/cycles": {
+  "owner": "zistgah",
+  "name": "cycles",
+  "description": "",
+  "has_pages": true,
+  "license": null,
+  "updated": "2026-08-27",
+  "fork": false
+ },
+ "zistgah/panini_by_grok": {
+  "owner": "zistgah",
+  "name": "panini_by_grok",
+  "description": "",
+  "has_pages": true,
+  "license": "NOASSERTION",
+  "updated": "2026-08-30",
+  "fork": false
+ },
+ "zistgah/panini_by_claude": {
+  "owner": "zistgah",
+  "name": "panini_by_claude",
+  "description": "",
+  "has_pages": false,
+  "license": null,
+  "updated": "2026-08-28",
+  "fork": false
+ },
+ "zistgah/humanesque": {
+  "owner": "zistgah",
+  "name": "humanesque",
+  "description": "Humanesque merged release — PANINI, ILM, Hindawi, cyclers, Mez",
+  "has_pages": true,
+  "license": "NOASSERTION",
+  "updated": "2026-08-30",
+  "fork": false
+ },
+ "zistgah/panini_by_grok_toolchain": {
+  "owner": "zistgah",
+  "name": "panini_by_grok_toolchain",
+  "description": "",
+  "has_pages": false,
+  "license": null,
+  "updated": "2026-08-30",
+  "fork": false
+ },
+ "zistgah/panini_by_grok_toolchain_cgpt_fix": {
+  "owner": "zistgah",
+  "name": "panini_by_grok_toolchain_cgpt_fix",
+  "description": "",
+  "has_pages": false,
+  "license": null,
+  "updated": "2026-08-30",
+  "fork": false
+ },
+ "zistgah/urdu-ilm": {
+  "owner": "zistgah",
+  "name": "urdu-ilm",
+  "description": "",
+  "has_pages": true,
+  "license": null,
+  "updated": "2026-08-31",
+  "fork": false
+ },
+ "zistgah/jugaad28": {
+  "owner": "zistgah",
+  "name": "jugaad28",
+  "description": "Integrated circuits taped out on 28 nm: evidence-gated descriptors and a low-cost open laboratory",
+  "has_pages": true,
+  "license": "NOASSERTION",
+  "updated": "2026-09-17",
+  "fork": false
+ },
+ "zistgah/dhancha": {
+  "owner": "zistgah",
+  "name": "dhancha",
+  "description": "The domain-invariant skeleton every FAKIR domain is built on: ten invariants, a machine-readable domain descriptor, a validator, a cross-domain vocabulary leak check, a correlation graph, and PANINI cycler configuration so the work can be done by any model.",
+  "has_pages": true,
+  "license": "NOASSERTION",
+  "updated": "2026-09-18",
+  "fork": false
+ },
+ "zistgah/ertabat": {
+  "owner": "zistgah",
+  "name": "ertabat",
+  "description": "A FAKIR domain for communication engineering: one capability surface for a link whose geometry is changing, nine conformance conditions with units (two honestly unestablished), a closed four-point integration boundary, and twenty-eight work packages with executable acceptance criteria.",
+  "has_pages": true,
+  "license": null,
+  "updated": "2026-09-18",
+  "fork": false
+ },
+ "zistgah/paninib": {
+  "owner": "zistgah",
+  "name": "paninib",
+  "description": "",
+  "has_pages": false,
+  "license": null,
+  "updated": "2026-09-26",
+  "fork": false
+ },
+ "zistgah/paniniphy": {
+  "owner": "zistgah",
+  "name": "paniniphy",
+  "description": "",
+  "has_pages": false,
+  "license": null,
+  "updated": "2026-09-26",
+  "fork": false
+ },
+ "zistgah/tajziya": {
+  "owner": "zistgah",
+  "name": "tajziya",
+  "description": "",
+  "has_pages": true,
+  "license": null,
+  "updated": "2026-09-28",
+  "fork": false
+ },
+ "zistgah/paniniq": {
+  "owner": "zistgah",
+  "name": "paniniq",
+  "description": "",
+  "has_pages": true,
+  "license": "GPL-3.0",
+  "updated": "2026-09-28",
+  "fork": false
+ },
+ "zistgah/jyotish": {
+  "owner": "zistgah",
+  "name": "jyotish",
+  "description": "A Sanatan panchang and jyotisha, computed and explained; the Kaivalyik projection of CHAKRA, offline",
+  "has_pages": true,
+  "license": "GPL-3.0",
+  "updated": "2026-09-28",
+  "fork": false
+ },
+ "obonac/apothecurry.github.io": {
+  "owner": "obonac",
+  "name": "apothecurry.github.io",
+  "description": "Coming Soon",
+  "has_pages": false,
+  "license": null,
+  "updated": "2019-01-15",
+  "fork": true
+ },
+ "obonac/autogit": {
+  "owner": "obonac",
+  "name": "autogit",
+  "description": "git automations",
+  "has_pages": false,
+  "license": "GPL-3.0",
+  "updated": "2021-09-30",
+  "fork": true
+ },
+ "obonac/avatarify": {
+  "owner": "obonac",
+  "name": "avatarify",
+  "description": "Avatars for Zoom, Skype and other video-conferencing apps.",
+  "has_pages": false,
+  "license": "NOASSERTION",
+  "updated": "2020-07-10",
+  "fork": true
+ },
+ "obonac/ayevdi": {
+  "owner": "obonac",
+  "name": "ayevdi",
+  "description": "Virtualized Deployment IaaS (VDI) by AyeAI",
+  "has_pages": false,
+  "license": "NOASSERTION",
+  "updated": "2020-01-11",
+  "fork": true
+ },
+ "obonac/BLAS-Tester": {
+  "owner": "obonac",
+  "name": "BLAS-Tester",
+  "description": "a tester for BLAS libraries including OpenBLAS and Intel MKL. This project is based on ATLAS BLAS Tester",
+  "has_pages": false,
+  "license": "BSD-3-Clause",
+  "updated": "2021-01-19",
+  "fork": true
+ },
+ "obonac/BrainModel": {
+  "owner": "obonac",
+  "name": "BrainModel",
+  "description": "",
+  "has_pages": true,
+  "license": "NOASSERTION",
+  "updated": "2024-06-10",
+  "fork": true
+ },
+ "obonac/Covid-FLutter": {
+  "owner": "obonac",
+  "name": "Covid-FLutter",
+  "description": "Flutter based mobile app for Covid case tracking, to be connected with rest api to send data on web",
+  "has_pages": false,
+  "license": null,
+  "updated": "2020-03-17",
+  "fork": true
+ },
+ "obonac/digihealthindia.github.io": {
+  "owner": "obonac",
+  "name": "digihealthindia.github.io",
+  "description": "Static Site",
+  "has_pages": false,
+  "license": "GPL-2.0",
+  "updated": "2019-08-15",
+  "fork": true
+ },
+ "obonac/docker-ubuntu-vnc-desktop": {
+  "owner": "obonac",
+  "name": "docker-ubuntu-vnc-desktop",
+  "description": "Docker image to provide HTML5 VNC interface to access Ubuntu LXDE and LXQT desktop environment",
+  "has_pages": false,
+  "license": "Apache-2.0",
+  "updated": "2020-01-17",
+  "fork": true
+ },
+ "obonac/dummyrepo": {
+  "owner": "obonac",
+  "name": "dummyrepo",
+  "description": "for test",
+  "has_pages": false,
+  "license": null,
+  "updated": "2020-01-28",
+  "fork": false
+ },
+ "obonac/fft": {
+  "owner": "obonac",
+  "name": "fft",
+  "description": "An easy-to-use, simple command-line tool for calculating the Finite Fourier Transform",
+  "has_pages": false,
+  "license": "GPL-2.0",
+  "updated": "2021-08-28",
+  "fork": true
+ },
+ "obonac/foundry": {
+  "owner": "obonac",
+  "name": "foundry",
+  "description": "Canonical engineering substrate for Project ILM.",
+  "has_pages": false,
+  "license": null,
+  "updated": "2026-06-28",
+  "fork": true
+ },
+ "obonac/gpconnect": {
+  "owner": "obonac",
+  "name": "gpconnect",
+  "description": "GP Connect API specification",
+  "has_pages": false,
+  "license": "Apache-2.0",
+  "updated": "2020-03-05",
+  "fork": true
+ },
+ "obonac/HIT-Tools.github.io": {
+  "owner": "obonac",
+  "name": "HIT-Tools.github.io",
+  "description": "",
+  "has_pages": false,
+  "license": "MIT",
+  "updated": "2026-06-29",
+  "fork": true
+ },
+ "obonac/ilm.codes": {
+  "owner": "obonac",
+  "name": "ilm.codes",
+  "description": "ILM / Project ILM — Integrative Linguistic Multiscript (BETA)",
+  "has_pages": false,
+  "license": "NOASSERTION",
+  "updated": "2026-06-28",
+  "fork": true
+ },
+ "obonac/ishsi25": {
+  "owner": "obonac",
+  "name": "ishsi25",
+  "description": "",
+  "has_pages": false,
+  "license": null,
+  "updated": "2024-07-09",
+  "fork": true
+ },
+ "obonac/legacy-ilm": {
+  "owner": "obonac",
+  "name": "legacy-ilm",
+  "description": "Initial fork of Project ILM from Project Hindawi",
+  "has_pages": false,
+  "license": null,
+  "updated": "2025-05-05",
+  "fork": true
+ },
+ "obonac/minimal-mistakes": {
+  "owner": "obonac",
+  "name": "minimal-mistakes",
+  "description": ":triangular_ruler: Jekyll theme for building a personal site, blog, project documentation, or portfolio.",
+  "has_pages": false,
+  "license": "MIT",
+  "updated": "2020-06-27",
+  "fork": true
+ },
+ "obonac/misty-doi": {
+  "owner": "obonac",
+  "name": "misty-doi",
+  "description": "Automation-first DOI minting & research publication packaging. Muh Mitha Kijiye!",
+  "has_pages": false,
+  "license": "GPL-3.0",
+  "updated": "2026-06-29",
+  "fork": true
+ },
+ "obonac/ner_spec": {
+  "owner": "obonac",
+  "name": "ner_spec",
+  "description": "",
+  "has_pages": false,
+  "license": "NOASSERTION",
+  "updated": "2026-08-22",
+  "fork": false
+ },
+ "obonac/NeuroMusical.github.io": {
+  "owner": "obonac",
+  "name": "NeuroMusical.github.io",
+  "description": "GSF VIKRAM - An inclusive rural digitalization platform by GramSheel Foundation",
+  "has_pages": true,
+  "license": "GPL-3.0",
+  "updated": "2024-06-23",
+  "fork": true
+ },
+ "obonac/obonac": {
+  "owner": "obonac",
+  "name": "obonac",
+  "description": "",
+  "has_pages": false,
+  "license": null,
+  "updated": "2026-08-20",
+  "fork": false
+ },
+ "obonac/obonac.github.io": {
+  "owner": "obonac",
+  "name": "obonac.github.io",
+  "description": "",
+  "has_pages": true,
+  "license": "GPL-3.0",
+  "updated": "2026-07-11",
+  "fork": false
+ },
+ "obonac/ops": {
+  "owner": "obonac",
+  "name": "ops",
+  "description": "",
+  "has_pages": false,
+  "license": null,
+  "updated": "2026-06-28",
+  "fork": true
+ },
+ "obonac/practice": {
+  "owner": "obonac",
+  "name": "practice",
+  "description": "",
+  "has_pages": false,
+  "license": null,
+  "updated": "2022-05-25",
+  "fork": false
+ },
+ "obonac/privacy-policy-generator": {
+  "owner": "obonac",
+  "name": "privacy-policy-generator",
+  "description": "Use this to create a privacy policy for your website or web app.",
+  "has_pages": false,
+  "license": null,
+  "updated": "2020-09-18",
+  "fork": true
+ },
+ "obonac/research": {
+  "owner": "obonac",
+  "name": "research",
+  "description": "",
+  "has_pages": false,
+  "license": null,
+  "updated": "2026-09-26",
+  "fork": false
+ },
+ "obonac/runtime-tools": {
+  "owner": "obonac",
+  "name": "runtime-tools",
+  "description": "OCI Runtime Tools",
+  "has_pages": false,
+  "license": "Apache-2.0",
+  "updated": "2019-12-11",
+  "fork": true
+ },
+ "obonac/services": {
+  "owner": "obonac",
+  "name": "services",
+  "description": "",
+  "has_pages": false,
+  "license": null,
+  "updated": "2024-10-08",
+  "fork": false
+ },
+ "obonac/services-1": {
+  "owner": "obonac",
+  "name": "services-1",
+  "description": "",
+  "has_pages": false,
+  "license": "Apache-2.0",
+  "updated": "2024-10-10",
+  "fork": true
+ },
+ "obonac/sillyscope": {
+  "owner": "obonac",
+  "name": "sillyscope",
+  "description": "oscilloscope and spectrogram that reads from stdin",
+  "has_pages": false,
+  "license": "NOASSERTION",
+  "updated": "2022-09-17",
+  "fork": false
+ },
+ "obonac/spi-scan": {
+  "owner": "obonac",
+  "name": "spi-scan",
+  "description": "",
+  "has_pages": false,
+  "license": "NOASSERTION",
+  "updated": "2026-06-29",
+  "fork": true
+ },
+ "obonac/tb": {
+  "owner": "obonac",
+  "name": "tb",
+  "description": "",
+  "has_pages": true,
+  "license": "NOASSERTION",
+  "updated": "2026-08-04",
+  "fork": true
+ },
+ "obonac/test-push": {
+  "owner": "obonac",
+  "name": "test-push",
+  "description": "test project to push to",
+  "has_pages": false,
+  "license": null,
+  "updated": "2021-06-21",
+  "fork": true
+ },
+ "obonac/testbook": {
+  "owner": "obonac",
+  "name": "testbook",
+  "description": "",
+  "has_pages": true,
+  "license": "NOASSERTION",
+  "updated": "2026-08-04",
+  "fork": false
+ },
+ "obonac/tui.editor": {
+  "owner": "obonac",
+  "name": "tui.editor",
+  "description": "🍞📝 Markdown WYSIWYG Editor. GFM Standard + Chart & UML Extensible.",
+  "has_pages": false,
+  "license": "MIT",
+  "updated": "2021-06-20",
+  "fork": true
+ },
+ "obonac/Twitter-API-v2-sample-code": {
+  "owner": "obonac",
+  "name": "Twitter-API-v2-sample-code",
+  "description": "Sample code for the Twitter API v2 endpoints",
+  "has_pages": false,
+  "license": "Apache-2.0",
+  "updated": "2022-02-20",
+  "fork": true
+ },
+ "obonac/universal_isic": {
+  "owner": "obonac",
+  "name": "universal_isic",
+  "description": "",
+  "has_pages": false,
+  "license": "GPL-3.0",
+  "updated": "2026-07-18",
+  "fork": true
+ },
+ "obonac/urdu": {
+  "owner": "obonac",
+  "name": "urdu",
+  "description": "Integrative Linguistic Multiscript - Urdu",
+  "has_pages": false,
+  "license": null,
+  "updated": "2025-09-27",
+  "fork": true
+ },
+ "obonac/vbox": {
+  "owner": "obonac",
+  "name": "vbox",
+  "description": "",
+  "has_pages": false,
+  "license": null,
+  "updated": "2020-11-21",
+  "fork": false
+ },
+ "obonac/webLinks": {
+  "owner": "obonac",
+  "name": "webLinks",
+  "description": "",
+  "has_pages": true,
+  "license": "GPL-3.0",
+  "updated": "2024-06-28",
+  "fork": false
+ }
+}

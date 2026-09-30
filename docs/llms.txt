@@ -1,0 +1,45 @@
+# Rahnuma
+
+> A working guide to the ILM, PANINI and Zistgah stack: the map of the repositories and their DOIs, exact set-up commands for Linux, WSL and Windows, and the mathematics of encodings, reversible transliteration, Panini's grammar, compilers, hardware and quantum substrates, with every example executed while the guide was built.
+
+© 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI.
+
+- [The whole guide as one Markdown file](rahnuma.md)
+- [The guide as a PDF](rahnuma.pdf)
+- [The guide as a web page](index.html)
+
+## Chapters
+
+- Part I: Orientation
+  - [1. How to use this guide](index.html#ch-01)
+  - [2. The work, not the worker](index.html#ch-02)
+- Part II: One architecture
+  - [3. Where the work comes from](index.html#ch-hist)
+  - [4. The record, with dates](index.html#ch-05)
+  - [5. Architecture: core, projections, layers](index.html#ch-03)
+  - [6. The ecosystem, term by term](index.html#ch-onto)
+  - [7. The three Acts](index.html#ch-acts)
+  - [8. The repositories](index.html#ch-04)
+- Part III: Setting up
+  - [9. Choosing a platform](index.html#ch-06)
+  - [10. The baseline environment and a first run](index.html#ch-07)
+  - [11. Running every component](index.html#ch-run)
+  - [12. Labs: containers now, launch scripts next](index.html#ch-08)
+- Part IV: Foundations
+  - [13. Numbers inside the machine](index.html#ch-09)
+  - [14. Characters inside the machine](index.html#ch-10)
+  - [15. Writing systems, sound, and reversible transliteration](index.html#ch-11)
+  - [16. Pāṇini’s grammar as a formal system](index.html#ch-12)
+  - [17. Compilers, from lexer to microcode](index.html#ch-13)
+  - [18. Below the software: logic, chips, ternary and qubits](index.html#ch-14)
+  - [19. Quantum computing and PANINIq, with the mathematics](index.html#ch-15)
+- Part V: Working with the estate
+  - [20. AI, from MYCIN to transformers, and how to use any AI here](index.html#ch-16)
+  - [21. Open source, provenance and contributing](index.html#ch-17)
+  - [22. GATE: sit it, whatever your age](index.html#ch-18)
+  - [23. Questions that come up, answered technically](index.html#ch-19)
+- Part VI: Status
+  - [24. This release and the next](index.html#ch-20)
+- Appendices
+  - [A. The estate’s terms, and the nearest common terms](index.html#app-a)
+  - [B. References](index.html#app-b)

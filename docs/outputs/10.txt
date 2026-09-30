@@ -1,0 +1,60 @@
+$ nm --defined-only yog-g, the program's own symbols
+   0000000000001149 T joa_rdoa
+   0000000000001182 T main
+   0000000000004014 B yoaga
+
+$ readelf --debug-dump=info yog-g, the names DWARF records
+   variable yoaga
+   subprogram printf
+   subprogram main
+   subprogram joa_rdoa
+   formal_parameter seemaa
+   variable gina_tee
+
+$ gdb -batch: break joa_rdoa, run, backtrace, info args, finish, print yoaga
+   Breakpoint 1 at 0x1154: file ./tempfil0123.tmphin.c, line 8.
+   
+   Breakpoint 1, joa_rdoa (seemaa=10) at ./tempfil0123.tmphin.c:8
+   8		for(gina_tee=1; gina_tee<=seemaa; gina_tee++)
+   #0  joa_rdoa (seemaa=10) at ./tempfil0123.tmphin.c:8
+   #1  0x0000555555555194 in main () at ./tempfil0123.tmphin.c:15
+   seemaa = 10
+   0x0000555555555194 in main () at ./tempfil0123.tmphin.c:15
+   15		printf("1 से 10 तक का योग = %d\n", joa_rdoa(10));
+   Value returned is $1 = 55
+   $2 = 55
+
+$ addr2line -f -s -e yog-g 0x0000000000001149
+   joa_rdoa
+   tempfil0123.tmphin.c:6
+
+The same, rendered through the Romenagri inverse; the binary is unchanged:
+$ nm --defined-only yog-g, the program's own symbols
+   0000000000001149 T जोड़ो
+   0000000000001182 T मुख्य
+   0000000000004014 B योग
+
+$ readelf --debug-dump=info yog-g, the names DWARF records
+   variable योग
+   subprogram म_लिखो
+   subprogram मुख्य
+   subprogram जोड़ो
+   formal_parameter सीमा
+   variable गिनती
+
+$ gdb -batch: break जोड़ो, run, backtrace, info args, finish, print योग
+   Breakpoint 1 at 0x1154: file ./tempfil0123.tmphin.c, line 8.
+   
+   Breakpoint 1, जोड़ो (सीमा=10) at ./tempfil0123.tmphin.c:8
+   8		for(गिनती=1; गिनती<=सीमा; गिनती++)
+   #0  जोड़ो (सीमा=10) at ./tempfil0123.tmphin.c:8
+   #1  0x0000555555555194 in मुख्य () at ./tempfil0123.tmphin.c:15
+   सीमा = 10
+   0x0000555555555194 in मुख्य () at ./tempfil0123.tmphin.c:15
+   15		म_लिखो("1 से 10 तक का योग = %d\n", जोड़ो(10));
+   Value returned is $1 = 55
+   $2 = 55
+
+$ addr2line -f -s -e yog-g 0x0000000000001149
+   जोड़ो
+   tempfil0123.tmphin.c:6

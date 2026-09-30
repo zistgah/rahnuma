@@ -1,0 +1,36 @@
+scale:
+	lea	eax, 6[0+rdi*4]
+	ret
+	.size	scale, .-scale
+	.p2align 4
+	.globl	sum_to
+	.type	sum_to, @function
+sum_to:
+	test	edi, edi
+	jle	.L6
+	lea	ecx, 1[rdi]
+	xor	edx, edx
+	and	edi, 1
+	mov	eax, 1
+	je	.L5
+	mov	eax, 2
+	mov	edx, 1
+	cmp	eax, ecx
+	je	.L3
+	.p2align 4,,10
+	.p2align 3
+.L5:
+	lea	edx, 1[rdx+rax*2]
+	add	eax, 2
+	cmp	eax, ecx
+	jne	.L5
+.L3:
+	mov	eax, edx
+	ret
+	.p2align 4,,10
+	.p2align 3
+.L6:
+	xor	edx, edx
+	mov	eax, edx
+	ret
+	.size	sum_to, .-sum_to

@@ -1,0 +1,25 @@
+$ hincc yog.uhin
+संकलन के परिणाम
+============
+
+The C that gurucc handed to gcc:
+#include <stdio.h>
+
+int yoaga;
+
+int joa_rdoa(int seemaa)
+{
+	int gina_tee;
+	for(gina_tee=1; gina_tee<=seemaa; gina_tee++)
+		yoaga = yoaga + gina_tee;
+	return yoaga;
+}
+
+int main()
+{
+	printf("1 से 10 तक का योग = %d\n", joa_rdoa(10));
+	return 0;
+}
+
+$ ./hin.exe
+1 से 10 तक का योग = 55

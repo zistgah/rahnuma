@@ -1,0 +1,1125 @@
+{
+ "retrieved": "2026-09-29T04:38Z to 04:45Z, GitHub REST API (orgs/<org>/repos, users/obonac/repos) and raw.githubusercontent.com (CITATION.cff, README.md)",
+ "counts": {
+  "zistgah": 56,
+  "project-ilm": 32,
+  "hindawiai": 22,
+  "pvjournal": 4,
+  "ayeai": 39,
+  "obonac": 41
+ },
+ "empty_orgs": [
+  "hmnsq",
+  "kaivalyik"
+ ],
+ "groups": [
+  {
+   "id": "language",
+   "title": "Language, scripts and compilation",
+   "items": [
+    {
+     "repo": "zistgah/panini",
+     "description": "A language for prompt cycles",
+     "page": "https://zistgah.github.io/panini/",
+     "doi": [
+      "10.5281/zenodo.22103243"
+     ],
+     "updated": "2026-08-25",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/panini_by_claude",
+     "description": "PANINI: parser and interpreter",
+     "page": null,
+     "doi": [],
+     "updated": "2026-08-28",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/panini_by_grok",
+     "description": "PANINI",
+     "page": "https://zistgah.github.io/panini_by_grok/",
+     "doi": [],
+     "updated": "2026-08-30",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/panini_by_grok_toolchain",
+     "description": "",
+     "page": null,
+     "doi": [],
+     "updated": "2026-08-30",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/panini_by_grok_toolchain_cgpt_fix",
+     "description": "",
+     "page": null,
+     "doi": [],
+     "updated": "2026-08-30",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/humanesque",
+     "description": "Humanesque merged release: PANINI, ILM, Hindawi, cyclers, Mez",
+     "page": "https://zistgah.github.io/humanesque/",
+     "doi": [],
+     "updated": "2026-08-30",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/paninib",
+     "description": "PANINI Genetic Compiler",
+     "page": null,
+     "doi": [],
+     "updated": "2026-09-26",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/paniniphy",
+     "description": "PANINI Genetic Compiler",
+     "page": null,
+     "doi": [],
+     "updated": "2026-09-26",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/tajziya",
+     "description": "A parser federation for the classical languages of the human corpus, organised by family",
+     "page": "https://zistgah.github.io/tajziya/",
+     "doi": [
+      "10.5281/zenodo.22982238"
+     ],
+     "updated": "2026-09-28",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/urdu-ilm",
+     "description": "پروجیکٹ اِلم: اردو / Project ILM: Urdu",
+     "page": "https://zistgah.github.io/urdu-ilm/",
+     "doi": [],
+     "updated": "2026-08-31",
+     "fork": false
+    },
+    {
+     "repo": "project-ilm/ilm.codes",
+     "description": "ILM / Project ILM: Integrative Linguistic Multiscript (BETA)",
+     "page": "https://ilm.codes/",
+     "doi": [],
+     "updated": "2026-07-24",
+     "fork": false
+    },
+    {
+     "repo": "project-ilm/romenagri",
+     "description": "Reversible transliteration library (Perso-Arabic seed). HPS/ILM. GPL. © 1993-2026 Abhishek Choudhary.",
+     "page": "https://project-ilm.github.io/romenagri/",
+     "doi": [],
+     "updated": "2026-07-24",
+     "fork": false
+    },
+    {
+     "repo": "project-ilm/ilm-phonology",
+     "description": "Layer 0: Phonological base - IPA core, phonotactics, prosody, dialect normalization, audio alignment. Reversible sound mapping foundation.",
+     "page": null,
+     "doi": [],
+     "updated": "2025-04-22",
+     "fork": false
+    },
+    {
+     "repo": "project-ilm/ilm-transliteration",
+     "description": "Layer 1: Transliteration pivot - reversible, compiler-friendly Romanized layer with diacritics; bridges phonology and scripts.",
+     "page": null,
+     "doi": [],
+     "updated": "2025-04-22",
+     "fork": false
+    },
+    {
+     "repo": "project-ilm/ilm-orthography",
+     "description": "Layer 2: Orthographic engine - script-specific shaping, Unicode normalization, ZWJ/ZWNJ handling, grapheme clustering.",
+     "page": null,
+     "doi": [],
+     "updated": "2025-04-22",
+     "fork": false
+    },
+    {
+     "repo": "project-ilm/ilm-lexicon",
+     "description": "Layer 3: Morpho-lexical layer - multilingual lexicons, WordNets, morphology analyzers, clitics, affixation, reduplication.",
+     "page": null,
+     "doi": [],
+     "updated": "2025-04-22",
+     "fork": false
+    },
+    {
+     "repo": "project-ilm/ilm-syntax-semantics",
+     "description": "Layer 4: Syntax-semantics - UD parsing, SRL, AMR/UCCA, discourse segmentation, code-switching awareness.",
+     "page": null,
+     "doi": [],
+     "updated": "2025-04-22",
+     "fork": false
+    },
+    {
+     "repo": "project-ilm/ilm-interface",
+     "description": "Layer 5: Interface & application - multiscript IMEs, NLP/NLU APIs (TTS, ASR, QA), mother-tongue IDEs, educational tools.",
+     "page": null,
+     "doi": [],
+     "updated": "2025-04-22",
+     "fork": false
+    },
+    {
+     "repo": "project-ilm/ilm-data",
+     "description": "Data: canonical corpora, dialect maps, phoneme-audio pairs, aligned scripts, acoustic training data, lexical resources.",
+     "page": null,
+     "doi": [],
+     "updated": "2025-04-22",
+     "fork": false
+    },
+    {
+     "repo": "project-ilm/ilm-devtools",
+     "description": "Devtools: reversible compiler infra, script-aware IDEs, debug harnesses. Consumers of core ILM layers, not core layers themselves.",
+     "page": null,
+     "doi": [],
+     "updated": "2025-04-22",
+     "fork": false
+    },
+    {
+     "repo": "project-ilm/ilm-validation",
+     "description": "Validation: native speaker QA, annotation tools, field instruments, crowdsourced schema, cultural-linguistic QA loops.",
+     "page": null,
+     "doi": [],
+     "updated": "2025-04-22",
+     "fork": false
+    },
+    {
+     "repo": "project-ilm/ilm-meta",
+     "description": "Meta repo for ILM / علم: vision docs, architecture diagrams, manifestos, research summaries, roadmap, cultural-philosophical grounding.",
+     "page": null,
+     "doi": [],
+     "updated": "2025-04-22",
+     "fork": false
+    },
+    {
+     "repo": "project-ilm/ilm-site",
+     "description": "A layered, open-source effort for phonetically accurate, reversible, culturally respectful language tooling across world scripts.",
+     "page": "https://project-ilm.github.io/ilm-site/",
+     "doi": [],
+     "updated": "2025-09-23",
+     "fork": false
+    },
+    {
+     "repo": "project-ilm/ilm-lsp",
+     "description": "Language server for ILM/Hindawi",
+     "page": null,
+     "doi": [],
+     "updated": "2026-06-15",
+     "fork": false
+    },
+    {
+     "repo": "project-ilm/language-specs",
+     "description": "ILM/Hindawi language specifications",
+     "page": null,
+     "doi": [],
+     "updated": "2026-06-28",
+     "fork": false
+    },
+    {
+     "repo": "project-ilm/vscode-ilm",
+     "description": "Highlighting for localized keywords (.uhin)",
+     "page": null,
+     "doi": [],
+     "updated": "2026-06-28",
+     "fork": false
+    },
+    {
+     "repo": "project-ilm/linguistics-labs",
+     "description": "Dockerised labs for collaborators",
+     "page": null,
+     "doi": [],
+     "updated": "2026-06-15",
+     "fork": false
+    },
+    {
+     "repo": "project-ilm/legacy",
+     "description": "Initial fork of Project ILM from Project Hindawi",
+     "page": null,
+     "doi": [],
+     "updated": "2026-06-11",
+     "fork": true
+    },
+    {
+     "repo": "hindawiai/hindawi2020",
+     "description": "Hindawi Programming System (Hindawi@Linux) 2008 version",
+     "page": null,
+     "doi": [],
+     "updated": "2026-09-14",
+     "fork": true
+    },
+    {
+     "repo": "hindawiai/hindawi2021",
+     "description": "Bootstrapping Hindawi Programming System",
+     "page": null,
+     "doi": [],
+     "updated": "2021-07-25",
+     "fork": false
+    },
+    {
+     "repo": "hindawiai/hindawi-legacy",
+     "description": "Legacy files of Hindawi Programming System",
+     "page": null,
+     "doi": [],
+     "updated": "2019-01-27",
+     "fork": false
+    },
+    {
+     "repo": "hindawiai/hindawi-tx",
+     "description": "",
+     "page": null,
+     "doi": [],
+     "updated": "2020-09-01",
+     "fork": false
+    },
+    {
+     "repo": "hindawiai/chintamani",
+     "description": "HindawiAI in Telugu",
+     "page": null,
+     "doi": [],
+     "updated": "2026-06-13",
+     "fork": false
+    },
+    {
+     "repo": "hindawiai/2023.12.21",
+     "description": "Hindawi AI - Bada Din release (Coding in all ISO supported languages by 25th Dec 2023)",
+     "page": null,
+     "doi": [],
+     "updated": "2024-12-10",
+     "fork": false
+    },
+    {
+     "repo": "hindawiai/hi",
+     "description": "",
+     "page": "https://hindawiai.github.io/hi/",
+     "doi": [],
+     "updated": "2021-07-24",
+     "fork": false
+    },
+    {
+     "repo": "hindawiai/hindawiai.github.io",
+     "description": "Hindawi Programming System - Programming in every person's own language",
+     "page": "https://hindawiai.github.io/",
+     "doi": [],
+     "updated": "2024-08-20",
+     "fork": true
+    },
+    {
+     "repo": "hindawiai/hinlin",
+     "description": "Linux kernel source tree",
+     "page": null,
+     "doi": [],
+     "updated": "2021-06-25",
+     "fork": true
+    }
+   ]
+  },
+  {
+   "id": "quantum",
+   "title": "Quantum, cognition and hardware",
+   "items": [
+    {
+     "repo": "zistgah/paniniq",
+     "description": "Panini Q: an oscillator substrate, the PEDLER engine and quantum validation, as a realization backend of PANINI",
+     "page": "https://zistgah.github.io/paniniq/",
+     "doi": [
+      "10.5281/zenodo.23020648"
+     ],
+     "updated": "2026-09-28",
+     "fork": false
+    },
+    {
+     "repo": "project-ilm/qedler",
+     "description": "A Deterministic Event-Hypergraph Research Programme for Quantum Mechanics, Gravity, Gauge Theory and Cosmology",
+     "page": "https://project-ilm.github.io/qedler/",
+     "doi": [],
+     "updated": "2026-07-26",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/pratik_core_mvp",
+     "description": "PRATIK Kernel Core: balanced-ternary, event-driven developmental kernel (PEDLER/AyeAI Triad)",
+     "page": "https://zistgah.github.io/pratik_core_mvp/",
+     "doi": [
+      "10.5281/zenodo.21288232"
+     ],
+     "updated": "2026-07-24",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/zamin",
+     "description": "PRATIK ternary silicon: physicalizing the poised-zero substrate (PEDLER/AyeAI Triad)",
+     "page": "https://zistgah.github.io/zamin/",
+     "doi": [
+      "10.5281/zenodo.21297556"
+     ],
+     "updated": "2026-07-24",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/jugaad28",
+     "description": "Integrated circuits taped out on 28 nm: evidence-gated descriptors and a low-cost open laboratory",
+     "page": "https://zistgah.github.io/jugaad28/",
+     "doi": [
+      "10.5281/zenodo.22818408"
+     ],
+     "updated": "2026-09-17",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/inclinations",
+     "description": "",
+     "page": "https://zistgah.github.io/inclinations/",
+     "doi": [],
+     "updated": "2026-08-16",
+     "fork": false
+    },
+    {
+     "repo": "project-ilm/cognitive-fabric",
+     "description": "Cognitive Fabric",
+     "page": null,
+     "doi": [],
+     "updated": "2026-06-26",
+     "fork": false
+    },
+    {
+     "repo": "ayeai/ni2a2",
+     "description": "",
+     "page": null,
+     "doi": [],
+     "updated": "2023-08-09",
+     "fork": false
+    },
+    {
+     "repo": "ayeai/opssi",
+     "description": "Open public stack for synthetic intelligence",
+     "page": null,
+     "doi": [],
+     "updated": "2025-10-05",
+     "fork": false
+    }
+   ]
+  },
+  {
+   "id": "domains",
+   "title": "Knowledge kernel, domains and instruments",
+   "items": [
+    {
+     "repo": "zistgah/fakir",
+     "description": "Foundational Architecture for Knowledge, Intelligence & Reasoning (UKOP kernel)",
+     "page": "https://zistgah.github.io/fakir/",
+     "doi": [
+      "10.5281/zenodo.21436550",
+      "10.5281/zenodo.21436552"
+     ],
+     "updated": "2026-07-26",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/dhancha",
+     "description": "The domain-invariant skeleton every FAKIR domain is built on: ten invariants, a machine-readable domain descriptor, a validator, a cross-domain vocabulary leak check, a correlation graph, and PANINI cycler configuration so the work can be done by any model.",
+     "page": "https://zistgah.github.io/dhancha/",
+     "doi": [
+      "10.5281/zenodo.22821645"
+     ],
+     "updated": "2026-09-18",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/ertabat",
+     "description": "A FAKIR domain for communication engineering: one capability surface for a link whose geometry is changing, nine conformance conditions with units (two honestly unestablished), a closed four-point integration boundary, and twenty-eight work packages with executable acceptance criteria.",
+     "page": "https://zistgah.github.io/ertabat/",
+     "doi": [
+      "10.5281/zenodo.22821651"
+     ],
+     "updated": "2026-09-18",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/transeg",
+     "description": "Project TransEg: local digital twin reference implementation (identity continuity research platform)",
+     "page": null,
+     "doi": [
+      "10.5281/zenodo.21321558"
+     ],
+     "updated": "2026-07-29",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/transeg-idgov",
+     "description": "TransEg identity governance: typed layers, envelope, staged policies, audit",
+     "page": null,
+     "doi": [],
+     "updated": "2026-07-12",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/transeg-research",
+     "description": "TransEg research: 9-benchmark framework + 7 reference experiments",
+     "page": null,
+     "doi": [],
+     "updated": "2026-07-12",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/dome",
+     "description": "Zistgah/dome: the Zistgah virtual dome as a reusable app/lib",
+     "page": "https://zistgah.github.io/dome/",
+     "doi": [
+      "10.5281/zenodo.21449034"
+     ],
+     "updated": "2026-07-24",
+     "fork": false
+    },
+    {
+     "repo": "project-ilm/chakra",
+     "description": "Temporal Cycle Observatory: offline multi-tradition astronomical/calendrical observatory, tested library, and URL→JSON API. GPL-3.0.",
+     "page": "https://project-ilm.github.io/chakra/",
+     "doi": [],
+     "updated": "2026-08-12",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/jyotish",
+     "description": "A Sanatan panchang and jyotisha, computed and explained; the Kaivalyik projection of CHAKRA, offline",
+     "page": "https://zistgah.github.io/jyotish/",
+     "doi": [],
+     "updated": "2026-09-28",
+     "fork": false
+    },
+    {
+     "repo": "project-ilm/research-kundali",
+     "description": "Research Kundali · ریسرچ کنڈلی",
+     "page": null,
+     "doi": [],
+     "updated": "2026-07-28",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/janapad",
+     "description": "Humanesque Mahajanapad",
+     "page": "https://zistgah.github.io/janapad/",
+     "doi": [],
+     "updated": "2026-08-15",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/mrd",
+     "description": "Market Requirements for the Zistgah / AyeAI estate",
+     "page": "https://zistgah.github.io/mrd/",
+     "doi": [],
+     "updated": "2026-08-25",
+     "fork": false
+    },
+    {
+     "repo": "project-ilm/foundry",
+     "description": "Canonical engineering substrate for Project ILM.",
+     "page": null,
+     "doi": [],
+     "updated": "2026-06-28",
+     "fork": false
+    }
+   ]
+  },
+  {
+   "id": "cyclers",
+   "title": "Cyclers, desk and publishing",
+   "items": [
+    {
+     "repo": "zistgah/matba",
+     "description": "The press. Posters in, book out, sealed, pushed, minted.",
+     "page": "https://zistgah.github.io/matba/",
+     "doi": [
+      "10.5281/zenodo.21948734"
+     ],
+     "updated": "2026-08-25",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/khwab",
+     "description": "A creativity cycle for turning a reel into a cued, published book",
+     "page": "https://zistgah.github.io/khwab/",
+     "doi": [
+      "10.5281/zenodo.22005507"
+     ],
+     "updated": "2026-08-25",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/awaz",
+     "description": "The listening room",
+     "page": "https://zistgah.github.io/awaz/",
+     "doi": [
+      "10.5281/zenodo.22005575"
+     ],
+     "updated": "2026-08-25",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/tilasm",
+     "description": "The immersive cycler. AR, XR, VR.",
+     "page": "https://zistgah.github.io/tilasm/",
+     "doi": [
+      "10.5281/zenodo.22010869"
+     ],
+     "updated": "2026-08-25",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/pench",
+     "description": "The embodied cycler. Robotics, cyberphysical, sim2real, real2sim.",
+     "page": "https://zistgah.github.io/pench/",
+     "doi": [
+      "10.5281/zenodo.22010962"
+     ],
+     "updated": "2026-08-25",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/yadein",
+     "description": "The record. A multimodal diary, staggered, toward TransEg.",
+     "page": "https://zistgah.github.io/yadein/",
+     "doi": [
+      "10.5281/zenodo.22011073"
+     ],
+     "updated": "2026-08-25",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/genie",
+     "description": "Generalized Emotive-Narrative Interaction Engine",
+     "page": "https://zistgah.github.io/genie/",
+     "doi": [],
+     "updated": "2026-08-25",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/cycles",
+     "description": "Cycles",
+     "page": "https://zistgah.github.io/cycles/",
+     "doi": [],
+     "updated": "2026-08-27",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/alam",
+     "description": "Small work, cycled with any AI. Part of the Zistgah ecosystem.",
+     "page": "https://zistgah.github.io/alam/",
+     "doi": [],
+     "updated": "2026-08-11",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/aab",
+     "description": "The AI · Human Co-Development Studio",
+     "page": "https://zistgah.github.io/aab/",
+     "doi": [],
+     "updated": "2026-07-11",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/fiza",
+     "description": "Verification-Gated Human-AI Co-Development for the Environment (Scaffold)",
+     "page": "https://zistgah.github.io/fiza/",
+     "doi": [],
+     "updated": "2026-07-11",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/mez",
+     "description": "The desk. میز. Local-first, no account, no vendor.",
+     "page": "https://zistgah.github.io/mez/",
+     "doi": [],
+     "updated": "2026-08-25",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/kitab",
+     "description": "A config-driven book template",
+     "page": "https://zistgah.github.io/kitab/",
+     "doi": [],
+     "updated": "2026-08-25",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/genie-book",
+     "description": "Kitab: a config-driven book template",
+     "page": "https://zistgah.github.io/genie-book/",
+     "doi": [],
+     "updated": "2026-08-11",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/varzish",
+     "description": "Varzish",
+     "page": null,
+     "doi": [],
+     "updated": "2026-08-06",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/vakil",
+     "description": "Litigation simulation",
+     "page": null,
+     "doi": [],
+     "updated": "2026-08-04",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/wake",
+     "description": "Wake",
+     "page": "https://zistgah.github.io/wake/",
+     "doi": [],
+     "updated": "2026-08-21",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/marham",
+     "description": "Marham",
+     "page": null,
+     "doi": [],
+     "updated": "2026-07-26",
+     "fork": false
+    }
+   ]
+  },
+  {
+   "id": "corpora",
+   "title": "Written corpora and frameworks",
+   "items": [
+    {
+     "repo": "zistgah/tabdili",
+     "description": "The Geometry of Becoming: Motion, Information, and Thermodynamics Across Scales",
+     "page": "https://zistgah.github.io/tabdili/",
+     "doi": [
+      "10.5281/zenodo.21764943"
+     ],
+     "updated": "2026-08-02",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/zindagi",
+     "description": "Geometry of Living (poster collection)",
+     "page": "https://zistgah.github.io/zindagi/",
+     "doi": [],
+     "updated": "2026-08-06",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/qaem",
+     "description": "Geometry of Persisting (Beyond Life)",
+     "page": "https://zistgah.github.io/qaem/",
+     "doi": [],
+     "updated": "2026-08-06",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/tarbiyat",
+     "description": "Topological Bildung",
+     "page": "https://zistgah.github.io/tarbiyat/",
+     "doi": [],
+     "updated": "2026-08-03",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/dukedom",
+     "description": "The Dukedom of Humanesque",
+     "page": "https://zistgah.github.io/dukedom/",
+     "doi": [],
+     "updated": "2026-08-13",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/duke2",
+     "description": "The Dukedom of Humanesque, Volume II",
+     "page": "https://zistgah.github.io/duke2/",
+     "doi": [],
+     "updated": "2026-08-14",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/paradox",
+     "description": "The Paradox of Innovation",
+     "page": "https://zistgah.github.io/paradox/",
+     "doi": [],
+     "updated": "2026-08-14",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/poie",
+     "description": "Proclamation of Individual Equity",
+     "page": "https://zistgah.github.io/poie/",
+     "doi": [
+      "10.5281/zenodo.21397274"
+     ],
+     "updated": "2026-07-24",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/copa",
+     "description": "Cost of Perceived Authority: a black-box behavioural methodology (measurement framework + open hypothesis)",
+     "page": "https://zistgah.github.io/copa/",
+     "doi": [],
+     "updated": "2026-08-05",
+     "fork": false
+    },
+    {
+     "repo": "project-ilm/vgc-notes",
+     "description": "Notes on verification-gated human-AI co-development",
+     "page": null,
+     "doi": [],
+     "updated": "2026-07-26",
+     "fork": false
+    },
+    {
+     "repo": "pvjournal/pilla",
+     "description": "Parametric Information Layering Logic (Anatemnein). © 1993-2026 Abhishek Choudhary.",
+     "page": "https://pvjournal.github.io/pilla/",
+     "doi": [
+      "10.5281/zenodo.21764570"
+     ],
+     "updated": "2026-08-02",
+     "fork": false
+    },
+    {
+     "repo": "pvjournal/pajr",
+     "description": "Index of PaJR case reports · CC BY-NC-SA 4.0 · not medical advice",
+     "page": "https://pvjournal.github.io/pajr/",
+     "doi": [],
+     "updated": "2026-07-28",
+     "fork": false
+    }
+   ]
+  },
+  {
+   "id": "provenance",
+   "title": "Provenance, governance and operations",
+   "items": [
+    {
+     "repo": "zistgah/governance",
+     "description": "The ecosystem's centralized contracts, contexts & contribution gate",
+     "page": null,
+     "doi": [],
+     "updated": "2026-09-26",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/estate",
+     "description": "IP estate: inventory, licensing, offerings, workspace sync",
+     "page": null,
+     "doi": [],
+     "updated": "2026-07-29",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/ztools",
+     "description": "Zseed + mistyx",
+     "page": null,
+     "doi": [
+      "10.5281/zenodo.21312769"
+     ],
+     "updated": "2026-07-11",
+     "fork": false
+    },
+    {
+     "repo": "project-ilm/misty-doi",
+     "description": "Automation-first DOI minting & research publication packaging. Muh Mitha Kijiye!",
+     "page": "https://project-ilm.github.io/misty-doi/",
+     "doi": [
+      "10.5281/zenodo.20719388"
+     ],
+     "updated": "2026-07-28",
+     "fork": false
+    },
+    {
+     "repo": "project-ilm/tok-doi",
+     "description": "Tok DoI",
+     "page": "https://project-ilm.github.io/tok-doi/",
+     "doi": [
+      "10.5281/zenodo.21402745"
+     ],
+     "updated": "2026-07-28",
+     "fork": false
+    },
+    {
+     "repo": "project-ilm/spi-scan",
+     "description": "Spi-scan",
+     "page": null,
+     "doi": [],
+     "updated": "2026-06-29",
+     "fork": false
+    },
+    {
+     "repo": "project-ilm/ops",
+     "description": "Project ILM operations",
+     "page": null,
+     "doi": [],
+     "updated": "2026-06-29",
+     "fork": false
+    },
+    {
+     "repo": "project-ilm/ai-scratch",
+     "description": "",
+     "page": "https://project-ilm.github.io/ai-scratch/",
+     "doi": [],
+     "updated": "2025-12-17",
+     "fork": false
+    },
+    {
+     "repo": "zistgah/zistgah.github.io",
+     "description": "Zistgah",
+     "page": "https://zistgah.org/",
+     "doi": [],
+     "updated": "2026-09-19",
+     "fork": false
+    }
+   ]
+  },
+  {
+   "id": "field",
+   "title": "Earlier platforms and field work",
+   "items": [
+    {
+     "repo": "ayeai/ayeai.github.io",
+     "description": "Aye AI ... the inclusive AI (www repo)",
+     "page": null,
+     "doi": [],
+     "updated": "2019-01-14",
+     "fork": false
+    },
+    {
+     "repo": "ayeai/ayeai.ayeam.com",
+     "description": "AyeAI ∴ AyeAM",
+     "page": null,
+     "doi": [],
+     "updated": "2025-01-16",
+     "fork": true
+    },
+    {
+     "repo": "ayeai/upload",
+     "description": "Staggered Upload (TM)",
+     "page": null,
+     "doi": [],
+     "updated": "2022-11-09",
+     "fork": false
+    },
+    {
+     "repo": "ayeai/ayevdi",
+     "description": "Virtual Deployment IaaS (tools) for Scientific & Cognitive Computing",
+     "page": null,
+     "doi": [],
+     "updated": "2019-12-13",
+     "fork": false
+    },
+    {
+     "repo": "ayeai/spl",
+     "description": "AyeAI Singularity Public License",
+     "page": null,
+     "doi": [],
+     "updated": "2019-12-14",
+     "fork": false
+    },
+    {
+     "repo": "ayeai/anusaaraka",
+     "description": "Imported from https://web.archive.org/web/20200218013006/https://sourceforge.net/p/anusaaraka/git/ci/master/tree/",
+     "page": null,
+     "doi": [],
+     "updated": "2020-03-02",
+     "fork": false
+    },
+    {
+     "repo": "ayeai/chuha",
+     "description": "Chat Hosting Utility with Hypelink Automation",
+     "page": null,
+     "doi": [],
+     "updated": "2022-11-25",
+     "fork": false
+    },
+    {
+     "repo": "ayeai/ayeq",
+     "description": "",
+     "page": null,
+     "doi": [],
+     "updated": "2019-12-11",
+     "fork": false
+    },
+    {
+     "repo": "pvjournal/pvjournal.github.io",
+     "description": "GSF VIKRAM - An inclusive rural digitalization platform by GramSheel Foundation",
+     "page": "https://pvjournal.github.io/",
+     "doi": [],
+     "updated": "2022-11-24",
+     "fork": true
+    },
+    {
+     "repo": "pvjournal/journal",
+     "description": "Journal",
+     "page": null,
+     "doi": [],
+     "updated": "2020-06-29",
+     "fork": false
+    },
+    {
+     "repo": "obonac/obonac.github.io",
+     "description": "",
+     "page": null,
+     "doi": [],
+     "updated": "2026-07-11",
+     "fork": false
+    },
+    {
+     "repo": "obonac/research",
+     "description": "",
+     "page": null,
+     "doi": [],
+     "updated": "2026-09-26",
+     "fork": false
+    },
+    {
+     "repo": "obonac/ner_spec",
+     "description": "",
+     "page": null,
+     "doi": [],
+     "updated": "2026-08-22",
+     "fork": false
+    },
+    {
+     "repo": "obonac/sillyscope",
+     "description": "Oscilloscope and spectrogram that reads from stdin",
+     "page": null,
+     "doi": [],
+     "updated": "2022-09-17",
+     "fork": false
+    },
+    {
+     "repo": "obonac/webLinks",
+     "description": "",
+     "page": null,
+     "doi": [],
+     "updated": "2024-06-28",
+     "fork": false
+    }
+   ]
+  }
+ ],
+ "records": [
+  {
+   "what": "PEDLER, Point Event-Driven Learner (November 2001): the authoritative record",
+   "doi": "10.5281/zenodo.17497559"
+  },
+  {
+   "what": "NI2A2, Natural-Interfaced Intelligent Adaptive Agents: the 2003 thesis built on PEDLER",
+   "doi": "10.5281/zenodo.17254607"
+  },
+  {
+   "what": "VGC, Verification-Gated Human-AI Co-Development: the methodology paper",
+   "doi": "10.5281/zenodo.21264248"
+  },
+  {
+   "what": "VGC-Health: the research proposal",
+   "doi": "10.5281/zenodo.21303401"
+  },
+  {
+   "what": "CHAKRA: concept DOI of the observatory from which Jyotish is derived",
+   "doi": "10.5281/zenodo.21253628"
+  }
+ ],
+ "forks": {
+  "ayeai": [
+   "shellinabox",
+   "util-linux",
+   "KodExplorer",
+   "dockerfiles",
+   "x11docker",
+   "runc",
+   "go-digest",
+   "image-tools",
+   "runtime-tools",
+   "AIX360",
+   "adversarial-robustness-toolbox",
+   "kui",
+   "FHIR",
+   "kubernetes-cobol",
+   "insilico",
+   "Virtual-Studio",
+   "sway",
+   "qiskit",
+   "qiskit-terra",
+   "qiskit-aer",
+   "dockersh",
+   "bash2python",
+   "xmp",
+   "ayeam",
+   "ChainOfSurvival.github.io",
+   "athena"
+  ],
+  "hindawiai": [
+   "qb.js",
+   "js-py",
+   "pyaara",
+   "beautiful-racket",
+   "racketscript",
+   "qbjc",
+   "v86",
+   "js-dos",
+   "em-dosbox",
+   "JPC"
+  ],
+  "project-ilm": [
+   "praat",
+   "scripts"
+  ],
+  "obonac": [
+   "apothecurry.github.io",
+   "autogit",
+   "avatarify",
+   "ayevdi",
+   "BLAS-Tester",
+   "BrainModel",
+   "Covid-FLutter",
+   "digihealthindia.github.io",
+   "docker-ubuntu-vnc-desktop",
+   "fft",
+   "foundry",
+   "gpconnect",
+   "HIT-Tools.github.io",
+   "ilm.codes",
+   "ishsi25",
+   "legacy-ilm",
+   "minimal-mistakes",
+   "misty-doi",
+   "NeuroMusical.github.io",
+   "ops",
+   "privacy-policy-generator",
+   "runtime-tools",
+   "services-1",
+   "spi-scan",
+   "tb",
+   "test-push",
+   "tui.editor",
+   "Twitter-API-v2-sample-code",
+   "universal_isic",
+   "urdu"
+  ]
+ },
+ "unplaced": [
+  "ayeai/shadow",
+  "ayeai/SPL-ignore-and-delete",
+  "ayeai/join",
+  "hindawiai/old-hindawiai.github.io",
+  "hindawiai/autogit",
+  "hindawiai/practice",
+  "project-ilm/.github",
+  "obonac/dummyrepo",
+  "obonac/obonac",
+  "obonac/practice",
+  "obonac/services",
+  "obonac/testbook",
+  "obonac/vbox"
+ ]
+}

@@ -1,0 +1,29 @@
+Letters, as Devanagari = Romenagri:
+   अ = _a     आ = _aa    इ = _i     ई = _ee    उ = _u     ऊ = _oo    
+   ऋ = _ri    ए = _aee   ऐ = _ai    ओ = _oa    औ = _ou    क = ka     
+   ख = kha    ग = ga     घ = gha    ङ = _nga   च = cha    छ = chha   
+   ज = ja     झ = jha    ञ = _yna   ट = ta     ठ = tha    ड = da     
+   ढ = dha    ण = _nna   त = _ta    थ = _tha   द = _da    ध = _dha   
+   न = na     प = pa     फ = pha    ब = ba     भ = bha    म = ma     
+   य = ya     र = ra     ल = la     व = wa     श = sha    ष = xa     
+   स = sa     ह = _ha    ळ = lvra   क़ = kza    ज़ = jza    फ़ = phza   
+   ड़ = _rda   ढ़ = _rdha  कं = ka_m   कः = ka_hh  
+
+Names, to Romenagri and back through the inverse:
+   योग -> yoaga -> योग
+   जोड़ो -> joa_rdoa -> जोड़ो
+   सीमा -> seemaa -> सीमा
+   गिनती -> gina_tee -> गिनती
+   प्रकृति -> prak_ri_ti -> प्रकृति
+   पितृ -> pi_t_ri -> पितृ
+   क्षि -> kxi -> क्षि
+   ज्ञान -> j_ynaana -> ज्ञान
+   हृदय -> _h_ri_daya -> हृदय
+   उत्तर -> _u_t_tara -> उत्तर
+   क्षेत्रफल -> kxaee_traphala -> क्षेत्रफल
+   त्रिकोण -> _trikoa_nna -> त्रिकोण
+   ख -> kha -> ख
+   कह -> ka_ha -> कह
+   क्ह -> k_ha -> क्ह
+
+67 of 67 come back identical; every Romenagri form uses only A-Z, a-z and _: yes

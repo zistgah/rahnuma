@@ -1,0 +1,27 @@
+$ git log -1 --format='%h %ad' --date=short
+82a5cf2 2026-09-28
+
+$ export PYTHONDONTWRITEBYTECODE=1
+
+$ python3 -c 'import numpy, scipy, qiskit; print(numpy.__version__, scipy.__version__, qiskit.__version__)'
+2.5.3 1.18.1 2.5.2
+
+$ python3 -m unittest discover -s tests
+----------------------------------------------------------------------
+Ran 23 tests in 0.217s
+
+OK
+
+$ bash ops/verify.sh
+Panini Q: contract verification
+  PASS     P01  every source carries the copyright and SPDX lines
+  PASS     P02  no affiliation other than AyeAI is claimed
+  PASS     P03  the test suite passes
+  PASS     P04  the suite catches the anti-ferromagnetic zeroing bug
+  PASS     P05  demo.py runs to completion
+  PASS     P06  LICENSE is the FSF's verbatim GPL-3.0 text
+  PASS     P07  every row the README marks Tested names its test
+  PASS     P08  no build artefacts
+  PASS     P09  no path outside the folder is named
+  PASS     P10  misty.json and CITATION.cff agree; no placeholder DOI
+  10 passed, 0 failed, 0 unjudged

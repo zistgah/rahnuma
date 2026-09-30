@@ -1,0 +1,8 @@
+naive: k, h, kh                D=2  Kraft sum=5/4    (1.250)  uniquely decodable: False
+Romenagri's choice: k, _h, kh  D=3  Kraft sum=5/9    (0.556)  uniquely decodable: True
+not prefix-free: a, ab, bb     D=2  Kraft sum=1      (1.000)  uniquely decodable: True
+prefix code: 0, 10, 110, 111   D=2  Kraft sum=1      (1.000)  uniquely decodable: True
+
+"kh" under the naive code has 2 readings: k + h; kh
+"khk" under the naive code has 2 readings: k + h + k; kh + k
+"abbb" under a, ab, bb has 1 reading: ab + bb
