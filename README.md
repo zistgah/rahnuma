@@ -1,5 +1,7 @@
 # Rahnuma
 
+DOI: [10.5281/zenodo.23062059](https://doi.org/10.5281/zenodo.23062059)
+
 A working guide to the ILM, PANINI and Zistgah stack, from bytes and scripts to compilers, Pāṇini and quantum substrates. Read it at [zistgah.github.io/rahnuma](https://zistgah.github.io/rahnuma/), as a PDF in [docs/rahnuma.pdf](docs/rahnuma.pdf), or as one Markdown file in [docs/rahnuma.md](docs/rahnuma.md), which is also the file to give an AI.
 
 © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI.
