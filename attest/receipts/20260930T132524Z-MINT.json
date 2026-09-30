@@ -1,0 +1,19 @@
+{
+    "_type": "https://in-toto.io/Statement/v1",
+    "predicateType": "https://project-ilm.org/attestations/candor/v1",
+    "subject": [
+        {
+            "name": "zistgah/rahnuma",
+            "digest": {
+                "gitCommit": "9fd08fbb0a62478b4804233c64965257c47d21e8"
+            }
+        }
+    ],
+    "predicate": {
+        "action": "MINT",
+        "reason": "finals",
+        "utc": "20260930T132524Z",
+        "host": "ilm01-lin",
+        "note": "10.5281/zenodo.23062059"
+    }
+}
