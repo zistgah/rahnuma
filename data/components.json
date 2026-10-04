@@ -1,0 +1,721 @@
+{
+ "executed": "3 October 2026",
+ "machine": "Ubuntu 24.04, Python 3.12, Node 22, GCC 13",
+ "groups": [
+  {
+   "title": "Language and identity",
+   "items": [
+    {
+     "id": "hindawi",
+     "name": "Hindawi and Romenagri",
+     "repo": "hindawiai/chintamani",
+     "what": "The Hindawi Programming System's C front end, its driver hincc and the Romenagri script layer.",
+     "needs": "gcc, make, flex, libfl-dev, gawk",
+     "setup": [
+      "mkdir -p .root/usr/bin .root/usr/lib .root/usr/include",
+      "make -C Romenagri all && make -C Romenagri install INSTROOT=\"$PWD/.root\"",
+      "export PATH=\"$PWD/.root/usr/bin:$PATH\"",
+      "make -C Hindawi/guru all && make -C Hindawi/guru install INSTROOT=\"$PWD/.root\"",
+      "make -C Hindawi/hindrv install INSTROOT=\"$PWD/.root\""
+     ],
+     "run": [
+      "cp Hindawi/samples/HindiC.uhin . && hincc HindiC.uhin",
+      "printf 'राम\\nराम\\n' | ./hin.exe"
+     ],
+     "see": "संकलन के परिणाम, then the program asks आपका नाम क्या है? and counts to ten",
+     "status": "executed",
+     "note": "The compilers chapter prints the run.",
+     "aud": [
+      "engineer",
+      "linguist",
+      "gate",
+      "researcher"
+     ]
+    },
+    {
+     "id": "urdu",
+     "name": "The Urdu edition",
+     "repo": "zistgah/urdu-ilm",
+     "what": "Urdu shailis and the driver urducc, which sends an Urdu-script program through the Devanagari hub and Romenagri.",
+     "needs": "the Hindawi build above, on the PATH",
+     "setup": [
+      "mkdir -p .root/usr/bin .root/usr/lib .root/usr/include",
+      "make -C Romenagri all && make -C Romenagri install INSTROOT=\"$PWD/.root\"",
+      "export PATH=\"$PWD/.root/usr/bin:$PATH:<chintamani clone>/.root/usr/bin\"",
+      "make -C ILM/guru all"
+     ],
+     "run": [
+      "bash ILM/urducc -s ILM/samples/UrduC.uhin",
+      "bash ILM/urducc ILM/samples/UrduC.uhin && ./hin.exe"
+     ],
+     "see": "C with the names na and ka, then the prompt in the hub script",
+     "status": "executed",
+     "note": "Replace <chintamani clone> with the folder of the Hindawi clone; the compilers chapter prints the run.",
+     "aud": [
+      "linguist",
+      "engineer",
+      "community"
+     ]
+    },
+    {
+     "id": "tajziya",
+     "name": "tajziya",
+     "repo": "zistgah/tajziya",
+     "what": "The parser federation for the classical languages, by family.",
+     "needs": "python3, make",
+     "setup": [],
+     "run": [
+      "PYTHONPATH=src python3 -m tajziya commonalities",
+      "make check"
+     ],
+     "see": "make check: 19 passed, 0 failed, 1 unjudged",
+     "status": "passed",
+     "note": "Run the module with PYTHONPATH=src, from the clone's root.",
+     "aud": [
+      "linguist",
+      "researcher"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "The PANINI family",
+   "items": [
+    {
+     "id": "panini",
+     "name": "PANINI, the prompt-cycle language",
+     "repo": "zistgah/panini",
+     "what": "The language the cyclers are written in, with its engine and studio.",
+     "needs": "python3, node",
+     "setup": [],
+     "run": [
+      "python3 panini.py check cyclers/pench.pni",
+      "python3 panini.py stages cyclers/yadein.pni",
+      "node tests/panini.test.mjs",
+      "python3 panini.py serve"
+     ],
+     "see": "0 problems; 45 pass, 0 fail; the studio answers on 127.0.0.1:8717",
+     "status": "passed",
+     "note": "",
+     "aud": [
+      "engineer",
+      "maker",
+      "gate",
+      "school"
+     ]
+    },
+    {
+     "id": "panini_by_claude",
+     "name": "PANINI, parser and interpreter",
+     "repo": "zistgah/panini_by_claude",
+     "what": "A general-purpose PANINI implementation with its conformance report.",
+     "needs": "node",
+     "setup": [],
+     "run": [
+      "node bin/panini.mjs conformance",
+      "npm test"
+     ],
+     "see": "145 passed, 0 failed",
+     "status": "passed",
+     "note": "",
+     "aud": [
+      "engineer",
+      "researcher"
+     ]
+    },
+    {
+     "id": "panini_by_grok",
+     "name": "PANINI, the stage-0 bootstrap",
+     "repo": "zistgah/panini_by_grok",
+     "what": "PANINI with a bootstrap that records its own evidence.",
+     "needs": "node",
+     "setup": [],
+     "run": [
+      "node src/cli.js run examples/hello.pni",
+      "node tests/run.mjs",
+      "node scripts/bootstrap.mjs"
+     ],
+     "see": "Hello, PANINI; 32 passed, 0 failed; stage-0 evidence written",
+     "status": "passed",
+     "note": "Its wider report, npm test, passes 81 of 83 here; the two others need tools this machine lacks.",
+     "aud": [
+      "engineer",
+      "researcher"
+     ]
+    },
+    {
+     "id": "humanesque",
+     "name": "The Humanesque merged release",
+     "repo": "zistgah/humanesque",
+     "what": "PANINI, ILM, Hindawi, the cyclers and Mez in one tree.",
+     "needs": "bash, node; optionally zig",
+     "setup": [],
+     "run": [
+      "bash VERIFY.sh",
+      "npm test"
+     ],
+     "see": "79 of 83 checks pass",
+     "status": "partly",
+     "note": "The four that do not pass here need two downloadable model files (wllama.wasm and stories15M.Q4_0.gguf), the zig toolchain, and the Bengali flattening round trip.",
+     "aud": [
+      "engineer",
+      "researcher"
+     ]
+    },
+    {
+     "id": "paniniq",
+     "name": "PANINIq",
+     "repo": "zistgah/paniniq",
+     "what": "The oscillator substrate, the PEDLER engine and quantum validation.",
+     "needs": "python3, numpy, scipy, qiskit",
+     "setup": [
+      "python3 -m venv ../venv-paniniq && . ../venv-paniniq/bin/activate",
+      "export PYTHONDONTWRITEBYTECODE=1",
+      "pip install -r requirements.txt qiskit"
+     ],
+     "run": [
+      "python3 -m unittest discover -s tests",
+      "python3 demo.py",
+      "bash ops/verify.sh"
+     ],
+     "see": "Ran 23 tests, OK; its gate 10 passed",
+     "status": "executed",
+     "note": "The first-run chapter prints the run.",
+     "aud": [
+      "researcher",
+      "gate",
+      "engineer"
+     ]
+    },
+    {
+     "id": "paninib",
+     "name": "PANINIb, biological realization",
+     "repo": "zistgah/paninib",
+     "what": "Biological intent lowered through typed IRs to a realization plan.",
+     "needs": "python3",
+     "setup": [],
+     "run": [
+      "python3 panini compile examples/replace.panini -o out",
+      "python3 panini inspect out --stage sequence-ir",
+      "python3 panini verify out"
+     ],
+     "see": "each step prints its JSON record",
+     "status": "passed",
+     "note": "",
+     "aud": [
+      "researcher"
+     ]
+    },
+    {
+     "id": "paniniphy",
+     "name": "PANINIphy, physical realization",
+     "repo": "zistgah/paniniphy",
+     "what": "Physical intent compiled through a physical IR, with parts chosen by requirement.",
+     "needs": "python3",
+     "setup": [],
+     "run": [
+      "python3 panini compile examples/modular_block.panini -o out",
+      "python3 panini parts --category actuator --force 50N --stroke 20mm --voltage 12V"
+     ],
+     "see": "physical resolution=RESOLVED verify=True",
+     "status": "passed",
+     "note": "",
+     "aud": [
+      "maker",
+      "researcher",
+      "engineer"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Cyclers, desk and studio",
+   "items": [
+    {
+     "id": "matba",
+     "name": "matba, the press",
+     "repo": "zistgah/matba",
+     "what": "Posters in, book out, sealed, pushed, minted.",
+     "needs": "python3",
+     "setup": [],
+     "run": [
+      "python3 matba.py serve"
+     ],
+     "see": "the press answers on 127.0.0.1:8710",
+     "status": "passed",
+     "note": "",
+     "aud": [
+      "maker",
+      "teacher"
+     ]
+    },
+    {
+     "id": "khwab",
+     "name": "khwab, the cutting room",
+     "repo": "zistgah/khwab",
+     "what": "The visual cycler.",
+     "needs": "python3",
+     "setup": [],
+     "run": [
+      "python3 khwab.py serve"
+     ],
+     "see": "the cutting room answers on 127.0.0.1:8711",
+     "status": "passed",
+     "note": "",
+     "aud": [
+      "maker"
+     ]
+    },
+    {
+     "id": "awaz",
+     "name": "awaz, the listening room",
+     "repo": "zistgah/awaz",
+     "what": "The audio cycler.",
+     "needs": "python3",
+     "setup": [],
+     "run": [
+      "python3 awaz.py serve"
+     ],
+     "see": "the listening room answers on 127.0.0.1:8712",
+     "status": "passed",
+     "note": "",
+     "aud": [
+      "maker"
+     ]
+    },
+    {
+     "id": "studios",
+     "name": "tilasm, pench and yadein",
+     "repo": "zistgah/tilasm",
+     "what": "The immersive, embodied and record cyclers; each repository has the same tests and its own page.",
+     "needs": "node",
+     "setup": [],
+     "run": [
+      "node tests/cycler.test.mjs",
+      "node tests/inbox.test.mjs",
+      "node tests/models.test.mjs"
+     ],
+     "see": "20, 23 and 22 pass, 0 fail",
+     "status": "partly",
+     "note": "Run the same three in zistgah/pench and zistgah/yadein. Two further test files, genie.test.mjs and leak.test.mjs, import modules the repositories do not carry.",
+     "aud": [
+      "maker",
+      "researcher"
+     ]
+    },
+    {
+     "id": "genie",
+     "name": "GENIE",
+     "repo": "zistgah/genie",
+     "what": "The Generalized Emotive-Narrative Interaction Engine.",
+     "needs": "node",
+     "setup": [],
+     "run": [
+      "node test/run.js"
+     ],
+     "see": "191 passed, 0 failed",
+     "status": "passed",
+     "note": "Open index.html, or its page, for the engine itself.",
+     "aud": [
+      "maker",
+      "researcher",
+      "school"
+     ]
+    },
+    {
+     "id": "alam",
+     "name": "alam",
+     "repo": "zistgah/alam",
+     "what": "Small work, cycled with any AI.",
+     "needs": "node, npm",
+     "setup": [
+      "npm install jsdom"
+     ],
+     "run": [
+      "node test/alam-test.js",
+      "node test/dom-test.js"
+     ],
+     "see": "alam dom: 9 passed, 0 failed",
+     "status": "passed",
+     "note": "The page test needs jsdom, installed by the first line.",
+     "aud": [
+      "maker",
+      "engineer"
+     ]
+    },
+    {
+     "id": "mez",
+     "name": "Mez, the Cognitive Workbench",
+     "repo": "zistgah/mez",
+     "what": "The local-first desk.",
+     "needs": "python3",
+     "setup": [],
+     "run": [
+      "./mez doctor",
+      "./mez bearings",
+      "./mez serve"
+     ],
+     "see": "no account, no API key, no network required; the desk answers on 127.0.0.1:7373",
+     "status": "passed",
+     "note": "",
+     "aud": [
+      "engineer",
+      "researcher",
+      "teacher"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Knowledge, domains and instruments",
+   "items": [
+    {
+     "id": "fakir",
+     "name": "FAKIR",
+     "repo": "zistgah/fakir",
+     "what": "The knowledge kernel and its explorer.",
+     "needs": "bash",
+     "setup": [],
+     "run": [
+      "bash ops/verify.sh"
+     ],
+     "see": "CONTRACT SATISFIED, 6 checks",
+     "status": "passed",
+     "note": "The explorer is its page: zistgah.org/fakir.",
+     "aud": [
+      "researcher",
+      "teacher",
+      "community",
+      "school"
+     ]
+    },
+    {
+     "id": "dhancha",
+     "name": "Dhancha",
+     "repo": "zistgah/dhancha",
+     "what": "The domain spine every FAKIR domain is built on.",
+     "needs": "bash, python3, make",
+     "setup": [],
+     "run": [
+      "make check"
+     ],
+     "see": "site matches the registries; pr_gate bites on a claim and passes a clean change",
+     "status": "passed",
+     "note": "",
+     "aud": [
+      "engineer",
+      "researcher"
+     ]
+    },
+    {
+     "id": "ertabat",
+     "name": "ertabat",
+     "repo": "zistgah/ertabat",
+     "what": "The communication-engineering domain.",
+     "needs": "bash",
+     "setup": [],
+     "run": [
+      "bash ops/verify.sh"
+     ],
+     "see": "CONTRACT OK",
+     "status": "passed",
+     "note": "",
+     "aud": [
+      "engineer"
+     ]
+    },
+    {
+     "id": "jugaad28",
+     "name": "jugaad28",
+     "repo": "zistgah/jugaad28",
+     "what": "The 28 nm tape-out catalogue.",
+     "needs": "bash",
+     "setup": [],
+     "run": [
+      "bash ops/verify.sh"
+     ],
+     "see": "VERIFY GREEN",
+     "status": "passed",
+     "note": "",
+     "aud": [
+      "engineer",
+      "gate"
+     ]
+    },
+    {
+     "id": "transeg",
+     "name": "TransEg",
+     "repo": "zistgah/transeg",
+     "what": "The local digital-twin reference implementation.",
+     "needs": "bash, python3; Docker for the stand-up",
+     "setup": [],
+     "run": [
+      "./scripts/test.sh",
+      "./scripts/bootstrap.sh --dry-run"
+     ],
+     "see": "10 passed; the stand-up plan",
+     "status": "passed",
+     "note": "The full stand-up, ./scripts/bootstrap.sh and docker compose, needs Docker and a GPU; it was not run here.",
+     "aud": [
+      "researcher",
+      "engineer"
+     ]
+    },
+    {
+     "id": "idgov",
+     "name": "TransEg identity governance",
+     "repo": "zistgah/transeg-idgov",
+     "what": "Typed layers, envelope, staged policies and audit.",
+     "needs": "python3, jsonschema, pytest",
+     "setup": [
+      "pip install jsonschema pytest"
+     ],
+     "run": [
+      "python3 tools/idgov_validate.py policies",
+      "python3 -m pytest -q tests/"
+     ],
+     "see": "VALID: 8 stage policies; 14 passed",
+     "status": "passed",
+     "note": "",
+     "aud": [
+      "researcher",
+      "engineer"
+     ]
+    },
+    {
+     "id": "chakra",
+     "name": "CHAKRA",
+     "repo": "project-ilm/chakra",
+     "what": "The offline observatory and its calendars.",
+     "needs": "node",
+     "setup": [],
+     "run": [
+      "node test/run.js"
+     ],
+     "see": "ALL SUITES PASSED",
+     "status": "passed",
+     "note": "Open index.html for the observatory.",
+     "aud": [
+      "school",
+      "gate",
+      "researcher",
+      "community"
+     ]
+    },
+    {
+     "id": "jyotish",
+     "name": "Jyotish",
+     "repo": "zistgah/jyotish",
+     "what": "The panchang, the Kaivalyik projection of CHAKRA.",
+     "needs": "bash, node",
+     "setup": [],
+     "run": [
+      "bash ops/verify.sh"
+     ],
+     "see": "PASSED, with 1 check skipped and named",
+     "status": "passed",
+     "note": "Open index.html for the panchang.",
+     "aud": [
+      "community",
+      "school"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Cognition and hardware",
+   "items": [
+    {
+     "id": "pratik",
+     "name": "PRATIK kernel",
+     "repo": "zistgah/pratik_core_mvp",
+     "what": "The balanced-ternary, event-driven kernel.",
+     "needs": "g++; nvcc for CUDA",
+     "setup": [],
+     "run": [
+      "bash build.sh",
+      "bash build.sh cuda"
+     ],
+     "see": "ALL CHECKS PASSED",
+     "status": "passed",
+     "note": "The CPU build passed here; the CUDA build needs nvcc and an NVIDIA GPU. The script is not marked executable, so call it with bash.",
+     "aud": [
+      "engineer",
+      "researcher"
+     ]
+    },
+    {
+     "id": "zamin",
+     "name": "Zamin",
+     "repo": "zistgah/zamin",
+     "what": "Ternary silicon: SPICE cells, layout and a simulator.",
+     "needs": "ngspice, python3",
+     "setup": [],
+     "run": [
+      "cd spice && ngspice -b sign_frustration_tb.sp"
+     ],
+     "see": "a SPICE run of the ternary cells",
+     "status": "does not run as is",
+     "note": "On ngspice 42 the testbench stops: the source v_gnd is reported as a shorted voltage source. The interactive simulator is its page.",
+     "aud": [
+      "engineer",
+      "researcher"
+     ]
+    },
+    {
+     "id": "qedler",
+     "name": "QEDLER",
+     "repo": "project-ilm/qedler",
+     "what": "The event-hypergraph physics programme.",
+     "needs": "bash",
+     "setup": [],
+     "run": [
+      "bash ops/verify.sh",
+      "bash ops/resume.sh && cat RESUME.md"
+     ],
+     "see": "5 of 6 clauses pass",
+     "status": "partly",
+     "note": "Clause C2, manifest completeness, fails: 15 files are not in MANIFEST.sha256. Resealing the manifest clears it.",
+     "aud": [
+      "researcher"
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Provenance, tools and labs",
+   "items": [
+    {
+     "id": "misty",
+     "name": "Misty DOI",
+     "repo": "project-ilm/misty-doi",
+     "what": "DOI minting and packaging for Zenodo.",
+     "needs": "python3, pip",
+     "setup": [
+      "pip install misty-doi"
+     ],
+     "run": [
+      "misty --help",
+      "misty init",
+      "misty validate -m misty.json"
+     ],
+     "see": "`usage: misty [-h] [--version] {init,validate,transform,package,ots,publish}`",
+     "status": "passed",
+     "note": "Publishing needs a Zenodo token in ZENODO_TOKEN.",
+     "aud": [
+      "researcher",
+      "engineer"
+     ]
+    },
+    {
+     "id": "kundali",
+     "name": "Research Kundali",
+     "repo": "project-ilm/research-kundali",
+     "what": "A research map of a person, a lab or a paper.",
+     "needs": "python3 and network access to the public records it reads",
+     "setup": [],
+     "run": [
+      "python3 kundali/kundali.py <ORCID, lab name or DOI> --out out"
+     ],
+     "see": "a research map in out/",
+     "status": "needs network",
+     "note": "It reads public records such as ORCID; it could not reach them from this build machine, and stops rather than write an empty chart.",
+     "aud": [
+      "researcher",
+      "community"
+     ]
+    },
+    {
+     "id": "labs",
+     "name": "The linguistics lab",
+     "repo": "project-ilm/linguistics-labs",
+     "what": "A starter lab in a container.",
+     "needs": "Docker",
+     "setup": [],
+     "run": [
+      "docker build -t ilm-lab .",
+      "docker run --rm -p 8888:8888 -v \"$PWD\":/lab ilm-lab"
+     ],
+     "see": "the lab on localhost:8888",
+     "status": "needs Docker",
+     "note": "Not run here: this build machine has no Docker.",
+     "aud": [
+      "linguist",
+      "teacher"
+     ]
+    },
+    {
+     "id": "rahnuma",
+     "name": "This guide",
+     "repo": "zistgah/rahnuma",
+     "what": "The site, the PDF and the Markdown, with their gate.",
+     "needs": "python3, gcc, make, flex, libfl-dev, gawk, gdb; for a rebuild also pandoc, node, graphviz",
+     "setup": [],
+     "run": [
+      "bash ops/verify.sh",
+      "bash examples/hindawi.sh words",
+      "python3 tools/build.py"
+     ],
+     "see": "12 passed, 0 failed, 0 unjudged",
+     "status": "passed",
+     "note": "",
+     "aud": [
+      "engineer",
+      "teacher",
+      "gate"
+     ]
+    }
+   ]
+  }
+ ],
+ "pages": [
+  [
+   "FAKIR's explorer",
+   "https://zistgah.org/fakir/"
+  ],
+  [
+   "The shared dome",
+   "https://zistgah.github.io/dome/"
+  ],
+  [
+   "AAB, the factory process",
+   "https://zistgah.org/aab/"
+  ],
+  [
+   "GENIE",
+   "https://zistgah.github.io/genie/"
+  ],
+  [
+   "tilasm, pench and yadein",
+   "https://zistgah.github.io/tilasm/"
+  ],
+  [
+   "Kitab",
+   "https://zistgah.github.io/kitab/"
+  ],
+  [
+   "Tok DOI",
+   "https://project-ilm.github.io/tok-doi/"
+  ],
+  [
+   "CHAKRA",
+   "https://project-ilm.github.io/chakra/"
+  ],
+  [
+   "Jyotish",
+   "https://zistgah.github.io/jyotish/"
+  ],
+  [
+   "ILM",
+   "https://ilm.codes/"
+  ],
+  [
+   "PANINI's studio",
+   "https://zistgah.github.io/panini/"
+  ],
+  [
+   "The estate",
+   "https://zistgah.org/"
+  ]
+ ]
+}

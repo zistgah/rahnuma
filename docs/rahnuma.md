@@ -2,7 +2,7 @@
 
 © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI.
 
-Version 1.0.0, 29 September 2026. Abhishek Choudhary, AyeAI. ORCID 0009-0002-0684-8320.
+Version 1.3.0, 3 October 2026. Abhishek Choudhary, AyeAI. ORCID 0009-0002-0684-8320.
 
 Text: CC BY-SA 4.0. Scripts: GPL-3.0-or-later. Site: https://zistgah.github.io/rahnuma/
 
@@ -12,6 +12,11 @@ Text: CC BY-SA 4.0. Scripts: GPL-3.0-or-later. Site: https://zistgah.github.io/r
 # Part I: Orientation {#part-i}
 
 ## 1. How to use this guide {#ch-01}
+
+::: {.plain}
+**In plain words.** This guide explains a large body of work on computers, languages and intelligence. You can read it, run the programs on your own computer, or ask an AI to help you, and every example in it was really run.
+:::
+
 This guide is for anyone who wants to use, check or extend the work gathered in the zistgah, project-ilm and hindawiai organisations on GitHub: students preparing for GATE, engineers who write compilers, firmware or chip layouts, linguists who work with scripts and sound, and researchers in quantum computing and AI. It asks for curiosity and a laptop, and nothing else.
 
 There are four ways in.
@@ -19,25 +24,31 @@ There are four ways in.
 - **Understand.** Part II gives the whole architecture first: where the work comes from, how the parts compose, each term with its nearest analogue and the difference, and the three Acts.
 - **Read.** Parts IV and V explain the ideas the work rests on, with the mathematics written out: how numbers and letters sit in memory, what makes a transliteration reversible, how Pāṇini's grammar computes, how a compiler turns text into machine instructions, and how an oscillator network and a quantum circuit attack the same problem.
 - **Run.** Part III gives the exact commands to set up Linux, Windows with WSL, or macOS, and to run every component of the estate on your own machine.
-- **Ask.** Chapter 20 shows how to put any AI assistant to work on these repositories, and how to check what it tells you.
+- **Ask.** Chapter 22 shows how to put any AI assistant to work on these repositories, and how to check what it tells you.
 
 Conventions used throughout:
 
 - Every example that could run while this guide was being built did run, and the text shows its real output, marked *Executed while this guide was built*. The package's own gate, `bash ops/verify.sh`, runs those examples again and fails if any output differs from what is printed here.
 - Status words are used exactly. **Tested**: a test in the repository asserts it. **Executed**: it ran and its output is shown. **Written**: the code exists but has not been run here. **Mocked**: a stand-in replaces hardware that is not attached. **Planned**: described, not built.
 - Everything said about the repositories was retrieved from the repositories themselves on 29 September 2026: their listings on GitHub, their `CITATION.cff` files and their READMEs. Where a repository does not record something, this guide says so instead of filling the gap.
+- A dagger, †, marks a statement that follows the author's working notes and write-ups as supplied on 29 September and 3 October 2026, rather than the repositories.
 - Sanskrit is transliterated in IAST. The spelling is British.
 
-The work lives at [github.com/zistgah](https://github.com/zistgah), [github.com/project-ilm](https://github.com/project-ilm) and [github.com/hindawiai](https://github.com/hindawiai), on the site [zistgah.org](https://zistgah.org), and in the Zenodo records listed in Chapter 8.
+The work lives at [github.com/zistgah](https://github.com/zistgah), [github.com/project-ilm](https://github.com/project-ilm) and [github.com/hindawiai](https://github.com/hindawiai), on the site [zistgah.org](https://zistgah.org), and in the Zenodo records listed in Chapter 10.
 
 ## 2. The work, not the worker {#ch-02}
-We know Pāṇini almost entirely through his grammar. Tradition gives a birthplace, Śalātura in Gandhāra, and very little else that can be checked. Close to four thousand sūtras survive; the person does not. The grammar still works, and Chapter 16 runs part of it. That is the standard this guide keeps. Work has to stand without its author, because titles, affiliations and biographies do not compile, and code, derivations and measurements do.
+
+::: {.plain}
+**In plain words.** What matters is whether the work holds up, whether the code runs and the reasoning is sound, not who made it. The aim is that people build technology in their own languages.
+:::
+
+We know Pāṇini almost entirely through his grammar. Tradition gives a birthplace, Śalātura in Gandhāra, and very little else that can be checked. Close to four thousand sūtras survive; the person does not. The grammar still works, and Chapter 18 runs part of it. That is the standard this guide keeps. Work has to stand without its author, because titles, affiliations and biographies do not compile, and code, derivations and measurements do.
 
 Two consequences follow for how the estate is built.
 
 The first is enablement. Linguistic and cultural equity is not achieved by making AI available everywhere. Systems have to work within the languages, scripts, cultural contexts and knowledge traditions of the people they serve, so that those people become producers of technology in their own languages rather than remaining users of someone else's.
 
-The second is openness. Every repository in Chapter 8 can be read, run, forked and criticised. Nothing here needs anyone's permission to use; each repository states its licence.
+The second is openness. Every repository in Chapter 10 can be read, run, forked and criticised. Nothing here needs anyone's permission to use; each repository states its licence.
 
 The programme stands on two pillars. The linguistic pillar standardises at the level of the dialect, with the idiolect as a later overlay, and grows through linguists working across the world. The technological pillar, the older of the two, is now the enabler: the transliteration engines, compilers, parsers and substrates that make a language usable for building. This guide deals mostly with the second pillar, because that is where a newcomer can start contributing today.
 
@@ -47,11 +58,20 @@ The programme stands on two pillars. The linguistic pillar standardises at the l
 # Part II: One architecture {#part-ii}
 
 ## 3. Where the work comes from {#ch-hist}
+
+::: {.plain}
+**In plain words.** This work began long before today's AI. It grew along five connected lines: languages and computers, learning machines, robots and medicine, organised knowledge, and the future of people and their homes.
+:::
+
 This work did not begin with today's language models, and it is not a collection of separate projects. It is one architecture built along several lines of work that started at different times, and it reads correctly only in that order. The dated record, with the place where each entry can be checked, is the next chapter; this one gives the lines themselves.
 
 ### Five lines that intersect
 
 **Linguistic and computational identity.** Romenagri (2003), the reversible ASCII-7 kernel, came first; the Hindawi Programming System (15 August 2004) built a complete systems-programming stack on it; ILM, Integrative Linguistic Multiscript, succeeds Hindawi and generalises it to every script and language; PANINI's construct model now sits above ILM as the common core of programming, prompting and realization.
+
+![Figure 1: PEDLER's branches: cognition, embodiment, physics and silicon](fig-pedler.svg)
+
+*Figure 1. PEDLER's branches: cognition, embodiment, physics and silicon.*
 
 **Cognition and event-driven computation.** PEDLER, the Point Event-Driven Learner (November 2001, Indian patent application 3033/CHE/2011), is not one genealogy but two branches: a cognitive branch through LVF and MLCNE to the cognitive enablement modules, CEMb and CEMs, and an embodiment branch through NI2A2 (2003) to the cognitive robot ANGEL (2003). QEDLER carries PEDLER into physics. PRATIK and Zamin take its balanced-ternary, event-driven logic towards silicon.
 
@@ -65,11 +85,11 @@ The lines cross constantly. PEDLER supplies the Act, the executable intent that 
 
 ### The invariant
 
-What the architecture preserves, whatever changes around it, is meaning, intent, identity, agency, capability, provenance, equity and continuity, while the representation, the language, the script, the formalism, the machine, the substrate, the embodiment, the social setting and eventually the habitat all change. Romenagri is the smallest instance of the principle: a name keeps its identity through every tool of a toolchain. TransEg is the largest: a person's constituted identity keeps its continuity beyond the substrate that first carried it.
+† What the architecture preserves, whatever changes around it, is meaning, intent, identity, agency, capability, provenance, equity and continuity, while the representation, the language, the script, the formalism, the machine, the substrate, the embodiment, the social setting and eventually the habitat all change. Romenagri is the smallest instance of the principle: a name keeps its identity through every tool of a toolchain. TransEg is the largest: a person's constituted identity keeps its continuity beyond the substrate that first carried it.
 
 ### Sovereignty and equity
 
-The Proclamation of Individual Equity, PoIE ([zistgah/poie](https://github.com/zistgah/poie), doi:10.5281/zenodo.21397274), makes the individual the primary locus of equity, identity and agency. Sovereignty is recursive from there: individual, family, community, institution, province, nation and beyond, across political, economic, social and technological dimensions. Technological sovereignty, in this sense, is the capacity to determine, govern, develop, reproduce, modify and deploy one's own domain; the precise, testable form of it for software is given in Chapter 17. The aim that follows is enablement: that people become producers, builders, researchers and owners of computing in their own languages, not permanent consumers of systems built elsewhere.
+The Proclamation of Individual Equity, PoIE ([zistgah/poie](https://github.com/zistgah/poie), doi:10.5281/zenodo.21397274), makes the individual the primary locus of equity, identity and agency. Sovereignty is recursive from there: individual, family, community, institution, province, nation and beyond, across political, economic, social and technological dimensions. Technological sovereignty, in this sense, is the capacity to determine, govern, develop, reproduce, modify and deploy one's own domain; the precise, testable form of it for software is given in Chapter 19. The aim that follows is enablement: that people become producers, builders, researchers and owners of computing in their own languages, not permanent consumers of systems built elsewhere.
 
 ### The orientation map
 
@@ -79,10 +99,16 @@ His poster "The Expanse of Our Epistemic Realms" runs one axis from the inner to
 <!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->
 
 ## 4. The record, with dates {#ch-05}
+
+::: {.plain}
+**In plain words.** A list of what was made and when, from 1993 onwards, with where each item can be checked.
+:::
+
 Dates settle questions of priority without argument, so the record of the work is given here with the place where each entry can be checked.
 
 | When | What | Where to check |
 |:-----|:---------------------------------------------|:------------------|
+| 1993 | The Nature Welfare Society, which became the GramSheel Foundation | The author's account |
 | September 1998 | Labyrinths of Xanadu, a game, on the PCQuest cover CD | The author's provenance record |
 | November 2001 | PEDLER, the Point Event-Driven Learner; Indian patent application 3033/CHE/2011 | [doi:10.5281/zenodo.17497559](https://doi.org/10.5281/zenodo.17497559) |
 | 2002 | HMSEI, a medical wearable | The author's provenance record |
@@ -100,7 +126,8 @@ Dates settle questions of priority without argument, so the record of the work i
 | 2010 | Stockholm Challenge finalist: GramSheel Foundation, Village Knowledge Center (Universal Device) | Certificate held by the author |
 | 2011 | Intel India Embedded Challenge | Certificate held by the author |
 | 2014 | IET Innovation Awards, finalist and Highly Commended: Dr Rho, the TARA and RDK medical telepresence platform | Certificate held by the author |
-| 2026 | The repositories and records of this estate | Chapter 8 |
+| 3 May 2020 | Project VIKRAM launched as the Project Vikram Journal by the GramSheel Foundation | [pvjournal.github.io](https://pvjournal.github.io/) |
+| 2026 | The repositories and records of this estate | Chapter 10 |
 
 Hindawi was also reviewed in *Linux Magazine*, issue 76, and has been cited in academic work, including at the University of the Punjab and the University of Ibadan. Its current source trees are in the [hindawiai](https://github.com/hindawiai) organisation, and its description, with the SourceForge home, is on the [AyeAI site](https://ayeai.xyz/site/hindawi-programming-system/). Every item the author publishes carries his ORCID, [0009-0002-0684-8320](https://orcid.org/0009-0002-0684-8320).
 
@@ -108,9 +135,18 @@ Hindawi was also reviewed in *Linux Magazine*, issue 76, and has been cited in a
 <!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->
 
 ## 5. Architecture: core, projections, layers {#ch-03}
+
+::: {.plain}
+**In plain words.** One shared core, Humanesque, is seen through three cultures: Indian, Persian and Western. Around it sit the parts that turn an idea, in any language, into something real.
+:::
+
 ### One core, three projections
 
 Humanesque is the core: one shared, multidimensional, executable typed hypergraph, with a federated ontology of 26 positions, $O_0$ to $O_{25}$, a common execution and evidence spine, and components that can be implemented independently. Its GitHub organisation is hmnsq, where every core stem repository is to live.
+
+![Figure 2: Humanesque and its projections: parallel cultural traversals, not stages](fig-projections.svg)
+
+*Figure 2. Humanesque and its projections: parallel cultural traversals, not stages.*
 
 Kaivalyik, Zistgah and Cosmopolis are three projections over it, running in parallel: the Indic, including the Advaita framing; the Persian and Islamicate; and the Greek, Western and classical. A projection is a domain-specific view and traversal of the whole architecture, with its own culturally sensitive naming and branding. The projections are not stages, not levels of a hierarchy and not versions of one another; they intersect, diverge and reconverge, and none completes another. Zistgah is not the parent of the other two. Their organisations are kaivalyik, zistgah and c-polis; today zistgah carries the working repositories.
 
@@ -123,7 +159,11 @@ Kaivalyik, Zistgah and Cosmopolis are three projections over it, running in para
 | Core PANINI | The construct model: common semantics plus decorators | zistgah/humanesque, `ilm/constructs.csv` and `ilm/decorators.csv` |
 | Realization backends | Where a program meets a substrate: host toolchains for code; PANINIq for oscillator and quantum substrates; PANINIb for biology; PANINIphy for physical systems | zistgah/paniniq, zistgah/paninib, zistgah/paniniphy |
 
-Beneath every front end lies the script layer, Romenagri. Every keyword and every name of a program becomes a word over A to Z, a to z and the underscore, reversibly, so that the whole existing toolchain, from lexer to linker to debugger, carries it unchanged, and the inverse renders it back in the script wherever a person reads it. Chapters 14, 15 and 17 explain it and run it.
+![Figure 3: The PANINI stack, with Romenagri as the script layer beneath every front end](fig-stack.svg)
+
+*Figure 3. The PANINI stack, with Romenagri as the script layer beneath every front end.*
+
+Beneath every front end lies the script layer, Romenagri. Every keyword and every name of a program becomes a word over A to Z, a to z and the underscore, reversibly, so that the whole existing toolchain, from lexer to linker to debugger, carries it unchanged, and the inverse renders it back in the script wherever a person reads it. Chapters 16, 17 and 19 explain it and run it.
 
 A construct such as a counted loop is defined once in the core and translated once per human language. A decorator carries what a particular host language drags in with it, such as `stdio.h` for printing in C. Core PANINI, in his words, "does not violate anything"; the front ends and the realization backends are all projections of it.
 
@@ -149,6 +189,10 @@ Around the stack: the cyclers are written in PANINI and run by one engine; GENIE
 
 The realization repositories state the spine they share. PANINI lowers declarative intent through language, semantic IR, a realization requirement, domain resolution and a domain IR, and then a common layer of geometry, trajectory, animation, observation, verification and an ArtifactGraph. PANINIb lowers biological intent through semantic, resolution, CISC, RISC and sequence IRs and emits two coupled artifacts, a physical realization plan and a digital execution run; PANINIphy lowers physical intent through a physical IR and physical-domain engines. "IR contracts are the product. Laboratories and machines are external adapters." And the same repositories keep the states of a result apart: desired, predicted, observed and validated phenotype are four different things, as are compilation success, execution success, target satisfaction and biological validation.
 
+![Figure 4: The realization spine the realization arms share](fig-spine.svg)
+
+*Figure 4. The realization spine the realization arms share.*
+
 ### The habitat elements
 
 Zamin is the ground: the balanced-ternary hardware of PRATIK. AAB is the water: the paint program for systems, from painted intent to verified, sealed artifact, where the verification-gated quests run. Fiza is the air: the environmental replica. Chakra is the turning sky: the observatory and its calendars. All of them mount in one shared virtual dome, which the habitats on the Moon and Mars replicate.
@@ -157,15 +201,51 @@ Zamin is the ground: the balanced-ternary hardware of PRATIK. AAB is the water: 
 
 A cycler is a sequence of prompts and the outputs they produce, written down so that it can be edited, shared and run with any AI. Six are classified by what they produce: matba (print), khwab (visual), awaz (audio), tilasm (immersive), pench (embodied) and yadein (the record); genie runs research cycles. Each has its own purpose, contract, context, state model, invariants, failure modes, evidence requirements, workflow and artifact model; only the engine is shared. The protocol behind every cycle, in the author's words: intent, then context, then a meaningful prompt; any AI answers and the human inspects; the artifacts and responses are kept under configuration management; the next prompt follows, until a final artifact that the human authored with intention.
 
+![Figure 5: The cyclers: one engine, configured in PANINI, and the protocol every cycle follows](fig-cyclers.svg)
+
+*Figure 5. The cyclers: one engine, configured in PANINI, and the protocol every cycle follows.*
+
 ### Provenance, in a fixed order
 
-Four systems, never collapsed into one. **Tok DOI** proves that a thing existed by a given time. **spiguard** is the disclosure gate, which fails closed. **Candor** records signed intent as in-toto statements. **Misty DOI** is the one that reaches the world, through Zenodo. The order is always seal, clear, attest, mint. Chapter 21 explains the machinery.
+Four systems, never collapsed into one. **Tok DOI** proves that a thing existed by a given time. **spiguard** is the disclosure gate, which fails closed. **Candor** records signed intent as in-toto statements. **Misty DOI** is the one that reaches the world, through Zenodo. The order is always seal, clear, attest, mint. Chapter 23 explains the machinery.
+
+
+![Figure 6: Provenance in its fixed order: seal, clear, attest, mint](fig-provenance.svg)
+
+*Figure 6. Provenance in its fixed order: seal, clear, attest, mint.*
+
+<!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->
+
+## 6. The dependency graph {#ch-graph}
+
+::: {.plain}
+**In plain words.** A map of how the parts connect, like a city map with roads between places. Any route you follow is one journey; the map is the whole picture.
+:::
+
+The estate is a typed graph, and any account of it in words is one traversal through that graph. Read a traversal, then return to the graph: adjacency is not dependency, a projection is not a hierarchy, composition is not absorption, and an Act is not a stage of maturity.
+
+Every node and every edge below is taken from the retrieved record: the repositories, their READMEs and the author's statements. Clusters group the nodes by family, not by layer, and an edge label names the relation it records. The graph's source is `data/graph.json`; `python3 tools/graph.py` renders it, and the build keeps the rendered `dependency-graph.svg` and its Graphviz source `dependency-graph.dot` beside this guide.
+
+![The estate as a typed graph: nodes by family, edges by relation](dependency-graph.svg)
+
+### Three traversals
+
+**A name, from a Devanagari source to a debugger.** Romenagri is the script layer of HPS and the script axis of ILM; through the symbol bridge it carries every name into the host toolchain, and the inverse brings it back (Chapters 17 and 19).
+
+**A task, from a domain and a language to a sealed artifact.** FAKIR seeds the domain and ILM the language; AAB builds; the cyclers, written in the PANINI language and composed in Mez, produce the work; matba publishes it through Kitab; Tok DOI, spiguard, Candor and Misty DOI seal, clear, attest and mint it, in that order; VGC gates the work between people and AI throughout.
+
+**A mind, from an event to a substrate.** PEDLER's cognitive branch runs through LVF and MLCNE to the cognitive enablement modules, which Interglial Healthcare operates on the biological side; its embodiment branch runs through NI2A2 to ANGEL; its balanced-ternary logic runs into PRATIK and down to Zamin, the ground of the dome; and its engine drives PANINIq.
 
 
 <!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->
 
-## 6. The ecosystem, term by term {#ch-onto}
-Each entry gives what the thing is in this architecture, the nearest analogue a newcomer is likely to reach for, and the exact difference. The analogue is a door into the idea, never a definition of it. The state in brackets says what exists: established (historical record), released (on the forge, with its DOI where minted), executed (run for this guide), under construction, specification, or planned. Entries marked † follow the author's working notes as summarised on 29 September 2026.
+## 7. The ecosystem, term by term {#ch-onto}
+
+::: {.plain}
+**In plain words.** A dictionary of the special words used here, each with the nearest everyday idea and what makes it different.
+:::
+
+Each entry gives what the thing is in this architecture, the nearest analogue a newcomer is likely to reach for, and the exact difference. The analogue is a door into the idea, never a definition of it. The state in brackets says what exists: established (historical record), released (on the forge, with its DOI where minted), executed (run for this guide), under construction, specification, or planned. Entries marked † follow the author's working notes and write-ups as supplied on 29 September and 3 October 2026, rather than the repositories.
 
 ### Language and identity
 
@@ -199,9 +279,13 @@ Each entry gives what the thing is in this architecture, the nearest analogue a 
 
 **UKOP, FAKIR and Dhancha** (FAKIR released, doi:10.5281/zenodo.21436550; Dhancha released, doi:10.5281/zenodo.22821645; UKOP a specification). *In the architecture:* UKOP, the reference architecture for human knowledge; FAKIR, its kernel over ISIC, ISCO and ISCED crossed with AGI layers and language; Dhancha, the spine every domain is built on, whose rule is that the engine is common and the workflow is not. *Nearest analogue:* a knowledge graph or reasoning engine. *Difference:* domain invariants are enforced by tests, and resolution and verification are primitives.
 
-**Cyclers** (six released and minted; Act I). *In the architecture:* matba, khwab, awaz, tilasm, pench and yadein, classified by what they produce, plus genie, each with its own contract, state model and evidence rules, written in PANINI and run by one engine. *Nearest analogue:* an agentic harness or orchestration loop. *Difference:* AI-agnostic by construction, inspected by a person at every step, and the recorded method, never the content, is itself the reproducible work.
+**Cyclers** (six released and minted; Act I). *In the architecture:* matba, khwab, awaz, tilasm, pench and yadein, classified by what they produce, plus genie, each with its own contract, state model and evidence rules, written in PANINI and run by one engine. *Nearest analogue:* an agentic harness or orchestration loop. *Difference:* AI-agnostic by construction, inspected by a person at every step, and the recorded method, never the content, is itself the reproducible work. † An older form of the corpus names SAFAR in the sixth position, where the current corpus has yadein.
 
-**GENIE** (released). *In the architecture:* the Generalized Emotive-Narrative Interaction Engine, storyteller, poet and painter, and the research cycle through its Prompt Operating System, with six verbs (create, verify, execute, measure, falsify, integrate), nine epistemic tags and a gate that a simulation cannot pass in place of an experiment. *Nearest analogue:* a creative or research AI agent. *Difference:* governed by a constitution of primitives; orchestration and composition, not an implementation.
+**Kitab** (released). *In the architecture:* the config-driven book template that matba publishes through, and † in the author's notes the persistent artifact and publication layer that keeps an artifact's state, its creative lineage, its execution trace and evaluations, its forks and descendants. *Nearest analogue:* a publishing template. *Difference:* a cycler publishes through Kitab; Kitab is not a seventh cycler.
+
+**Research Kundali** (released). *In the architecture:* a research map of a person, a lab or a paper, built from an ORCID, a lab name or a DOI ([project-ilm/research-kundali](https://github.com/project-ilm/research-kundali)); † in the author's notes, the systematic record of claims, artifacts, chronology, provenance, objections, evidence and responses, so that every claim can be checked against its evidence. *Nearest analogue:* a researcher profile. *Difference:* it records evidence and discrepancies, not reputation.
+
+**GENIE** (released). *In the architecture:* the Generalized Emotive-Narrative Interaction Engine, storyteller, poet and painter, and the research cycle through its Prompt Operating System, with six verbs (create, verify, execute, measure, falsify, integrate), nine epistemic tags and a gate that a simulation cannot pass in place of an experiment. † In the author's own formulation GENIE is itself a cycler, the creative cycler, which can decorate the modality cyclers without erasing their identities. *Nearest analogue:* a creative or research AI agent. *Difference:* governed by a constitution of primitives; orchestration and composition, not an implementation.
 
 **AAB** (released; Act I). *In the architecture:* the paint program for systems, from painted intent to verified, sealed artifact; the gamified studio of verification-gated quests; home of the process cyclers; the process half of the estate's software factory, with FAKIR as its component registry. In the author's words, AAB and FAKIR together constitute the working definition of AGI used here. *Nearest analogue:* a low-code studio or a software factory. *Difference:* every task is a painting with a manifest, quest stages and oracle-gated verification, and every component keeps its provenance.
 
@@ -213,6 +297,8 @@ Each entry gives what the thing is in this architecture, the nearest analogue a 
 
 **COPA, the Cost of Perceived Authority** (released, doi:10.5281/zenodo.21782217). *In the architecture:* a protocol for measuring how much an AI system asserts before it verifies, through the Authority Projection Index, with its hypothesis stated beside a fair null. *Nearest analogue:* an AI evaluation benchmark. *Difference:* it measures projected authority rather than accuracy, and its target is calibrated trust.
 
+† One rule binds all of these: a record that has not been retrieved is not thereby false. Unretrieved is a state of the reader's context, not of the world, and a claim moves from unknown to false only on evidence.
+
 ### Continuity and civilisation
 
 **Humanesque** (specification; the merged release on the forge). *In the architecture:* the core over which everything above is a typed hypergraph, and the constitutional realm derived from PoIE through recursive sovereignty. *Nearest analogue:* an AGI architecture. *Difference:* a constitutional and epistemic realm as well as a technical substrate, not a product.
@@ -221,7 +307,7 @@ Each entry gives what the thing is in this architecture, the nearest analogue a 
 
 **TransEg** (released, doi:10.5281/zenodo.21321558). *In the architecture:* the transferred alter ego, the mechanism by which a constituted identity continues; a local digital-twin reference implementation; yadein's staggered upload feeds it. *Nearest analogue:* a digital avatar. *Difference:* continuity of an identity under the constitutional corpus, not a persona.
 
-**PAT.AL, VIDYA, GramSheel, Project VIKRAM and TWISHA** (established). PAT.AL, the Participatory Alliance for Technology, Access and Livelihoods, is participatory infrastructure; VIDYA bridges to AyeAM; Project VIKRAM, Virtualized Infrastructure for Knowledge-driven Rural Ascension Management, runs under the GramSheel Foundation beside TWISHA. They sit on the dividers between the Acts because they distribute capability rather than concentrate it.
+**PAT.AL, VIDYA, GramSheel, Project VIKRAM and TWISHA** (established). PAT.AL, the Participatory Alliance for Technology, Access and Livelihoods, is participatory infrastructure; VIDYA bridges to AyeAM; Project VIKRAM, Virtualized Infrastructure for Knowledge-driven Rural Ascension Management, runs under the GramSheel Foundation beside TWISHA. They sit on the dividers between the Acts. The question the author puts to them is whether technology can distribute capability without concentrating power.
 
 **The reference lab** (planned; its launch scripts are the next release). An AGI-capable laboratory for 30 to 40 thousand, able to carry 80 to 90 per cent of the research behind high-end AI, robotics and automation papers, repeated as a pattern for every domain and aligned with GATE-level courses in computer science and in robotics and automation.
 
@@ -232,8 +318,17 @@ Each entry gives what the thing is in this architecture, the nearest analogue a 
 
 <!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->
 
-## 7. The three Acts {#ch-acts}
+## 8. The three Acts {#ch-acts}
+
+::: {.plain}
+**In plain words.** Three stages of one long story: machines that think with us; machines that help us build with living, synthetic and natural materials; and people and their worlds carrying on into the future.
+:::
+
 The author's note "3 Act ASI ∧ Panini" and his dictation of 27 September 2026 place the components in time. An Act says when a piece becomes most consequential, not when work on it began: much of Act III is being worked on now. The Acts are a temporal coordinate; the projections of Chapter 5 are cultural ones; neither is a ladder of maturity.
+
+![Figure 7: The three Acts, with their dividers; PANINI runs through all three](fig-acts.svg)
+
+*Figure 7. The three Acts, with their dividers; PANINI runs through all three.*
 
 | Act | What it holds |
 |:----|:--------------------------------------------|
@@ -251,7 +346,7 @@ The machinery of Act I is the front end (ILM and tajziya), the cyclers with geni
 
 ### Act II: from agency to realization
 
-† In the author's notes, Act II is where the architecture moves from cognitive and digital agency to cognitive enablement and realization on substrates. The cognitive enablement modules carry one kernel to biological, synthetic and ecological substrates; FAKIR supplies the knowledge they act on; the accelerators carry the load. The notes tie this Act to realization on substrates, which PANINI's realization arms carry out: PANINIb for biology and PANINIphy for physical systems, each lowering intent through the common spine of Chapter 5 and each keeping desired, predicted, observed and validated results apart. † In the author's notes the same spine runs intent, specification, knowledge resolution, construct, realization selection, planning, geometry and trajectory, execution, observation, evidence, verification and validation, provenance and a knowledge update, and the states of a result are kept apart all the way: desired, designed, predicted, planned, realized, executed, observed, verified, validated. On the second divider stand GramSheel and Project VIKRAM, the rural knowledge infrastructure under the GramSheel Foundation.
+† In the author's notes, Act II is where the architecture moves from cognitive and digital agency to cognitive enablement and realization on substrates. The cognitive enablement modules carry one kernel to biological, synthetic and ecological substrates; FAKIR supplies the knowledge they act on; the accelerators carry the load. The notes tie this Act to realization on substrates, which PANINI's realization arms carry out: PANINIb for biology and PANINIphy for physical systems, each lowering intent through the common spine of Chapter 5 and each keeping desired, predicted, observed and validated results apart. † In the author's notes the same spine runs intent, specification, knowledge resolution, construct, realization selection, planning, geometry and trajectory, execution, observation, evidence, verification and validation, provenance and a knowledge update, and the states of a result are kept apart all the way: desired, designed, predicted, planned, realized, executed, observed, verified, validated. On the second divider stand GramSheel and Project VIKRAM: the foundation with its principles, and the rural digitalisation platform inspired by them.
 
 ### Act III: continuity
 
@@ -262,7 +357,119 @@ PANINI runs through all three Acts.
 
 <!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->
 
-## 8. The repositories {#ch-04}
+## 9. Three families, set apart: the AyeAI Triad, GramSheel and Project VIKRAM, Humanesque and its projections {#ch-families}
+
+::: {.plain}
+**In plain words.** Three groups explained one at a time: the AyeAI Triad of thinking, body and communication; GramSheel and Project VIKRAM for villages; and Humanesque with the names it takes in each culture.
+:::
+
+Three families of work are easy to blur into each other or into the rest of the estate. This chapter sets each apart, with what its own record says.
+
+### The AyeAI Triad
+
+The Triad has three members, AyeAI®, AyeAM® and AyeCNSe®, with AyeAI at the apex and AyeCNSe and AyeAM at the base. It is a triad, not a pipeline and not a loop: a loop running from the environment through AyeCNSe, AyeAI and AyeAM back to the environment was proposed elsewhere and rejected. Its formal closure gives each member a tuple:
+
+![Figure 8: The AyeAI Triad: a triad with AyeAI at the apex, not a loop and not a pipeline](fig-triad.svg)
+
+*Figure 8. The AyeAI Triad: a triad with AyeAI at the apex, not a loop and not a pipeline.*
+
+$$ \text{AyeAM} = \langle S, R, C \rangle, \qquad \text{AyeAI} = \langle M, I, G \rangle, \qquad \text{AyeCNSe} = \langle T, Ch, \Sigma \rangle . $$
+
+**AyeAI** is cognition, the apex: "the inclusive AI", in the words of its site, and the organisation [ayeai](https://github.com/ayeai) holds its platforms, among them an open public stack for synthetic intelligence (opssi), virtual deployment infrastructure for scientific and cognitive computing (ayevdi), Staggered Upload™ (upload), the AyeAI Singularity Public License (spl) and the NI2A2 work.
+
+**AyeAM** is embodiment: the body through which intelligence acts, across ground, air, water, space and habitat. VIDYA bridges to AyeAM without being a member of the Triad.
+
+**AyeCNSe** is coordination and communication across media: the form studio at forms.ayecnse.site and the Human Context Model paper at hcm.ayecnse.site are its published faces.
+
+Two repositories mark themselves as PEDLER and AyeAI Triad work: PRATIK's kernel and Zamin's ternary silicon.
+
+### GramSheel and Project VIKRAM
+
+**The GramSheel Foundation** is the social architecture of the estate and the older of its lines: † it began as the Nature Welfare Society in 1993. Its principles, HEJLP, are health, education, justice, livelihood and peace. Its Village Knowledge Center (Universal Device) was a Stockholm Challenge finalist in 2010, and TWISHA runs under the same foundation.
+
+![Figure 9: GramSheel and Project VIKRAM, with VIKRAM's sections as its own pages name them](fig-vikram.svg)
+
+*Figure 9. GramSheel and Project VIKRAM, with VIKRAM's sections as its own pages name them.*
+
+**Project VIKRAM**, Virtualized Infrastructure for Knowledge-driven Rural Ascension Management, is † the technical implementation of GramSheel's principles. It was launched on 3 May 2020 as the Project Vikram Journal, "an inclusive rural digitalization platform inspired by the principles of GramSheel", under the motto गाँव बढ़ेंगे तो सब बढ़ेंगे, when the villages grow, everyone grows. Its own pages ([pvjournal.github.io](https://pvjournal.github.io/)) name its components:
+
+| Component | What its page covers |
+|:----------|:------------------------------------------|
+| Education | learning and schooling |
+| Health | healthcare, open to submissions as issues, with tools for an accessible virtual hospital |
+| Livelihood | the ISIC domains of economic activity |
+| Justice | social justice |
+| Environment and Habitat | the living environment |
+| Food Processing and Agriculture | agriculture and food |
+| Peace | harmony through social dialogue |
+| Industries, Technology and Space Exploration | the technical frontiers it reaches towards |
+| Socialising, Projects and Resources | the community and its shared material |
+
+With Project Hindawi, its page says, VIKRAM works towards language neutrality across technical fields. In the three Acts, GramSheel and Project VIKRAM stand on the divider between Acts II and III.
+
+### Gram Swaraj and the questions behind GramSheel and VIKRAM
+
+Gandhi's *Hind Swaraj* (1909) argued that self-rule is more than a transfer of authority, and his *Constructive Programme: Its Meaning and Place* (1941) placed the rebuilding of daily life inside the work of independence: its eighteen items include village industries, village sanitation, basic and adult education, the provincial languages and a national language, economic equality, the kisans, labour, the adivasis and women. The estate does not present itself as a restatement of these ideas. The point of contact is a question that becomes unavoidable once computation is infrastructure: can a community govern itself if the knowledge and the machines its decisions depend on are controlled elsewhere?
+
+On Gandhi Jayanti, 2 October 2026, the author put the questions behind GramSheel, Project VIKRAM and Humanesque in his own words. Among them:
+
+- Can rural communities become producers of knowledge and technology, not merely consumers of systems designed elsewhere?
+- Can technology distribute capability without concentrating power?
+- Can artificial intelligence strengthen individual and community sovereignty rather than replace it?
+- Can knowledge remain plural, multilingual and culturally grounded while becoming computationally executable?
+- Can verification, provenance and human agency become constitutional properties of intelligent systems?
+- Can GramSheel build the local knowledge infrastructure, can Project VIKRAM turn that infrastructure into practical capability, and can Humanesque provide a larger architecture in which intelligence, identity, agency, provenance and equity remain connected?
+
+His answer to the old division of the world is a direction rather than a side: to march together, not as a Global South or a Global North, but towards a Global Centre, where capability is distributed and humanity remains sovereign.
+
+### Humanesque and its projections, with their names
+
+**Humanesque** is the core, with its site at humanesque.site and its organisation at [hmnsq](https://github.com/hmnsq): the shared executable typed hypergraph, the ontology federation, the common execution and evidence spine, and the components every projection reuses. Its constitutional ground is PoIE, from which sovereignty recurses to every level. Its core stem repositories all belong to Humanesque; each projection gives them its own culturally sensitive names and sites.
+
+**Kaivalyik**, the Indic projection, including the Advaita framing (kaivalyik.org, organisation kaivalyik): consciousness, intelligence and transcendence; it carries Synthematic Pragmatic Realism, Kaivalyik AGI and Jyotish. **Zistgah**, زیستگاه, the Persian and Islamicate projection (zistgah.org, organisation zistgah): life, planet and ecology, a habitat to live and work in; it carries the elements, the dome and the habitats on Earth (Asli Zistgah), the Moon (Zistgah-e-Mahtab) and Mars (Zistgah-e-Bahram, † conceived earlier as Mangal Kamna). **Cosmopolis**, the Greek, Western and classical projection (cosmopolis.org, organisation c-polis): societies, civilisations, space and deep time.
+
+The stem names below are the projection-neutral names of the components. Today the working repositories live in the zistgah organisation, so most of them carry their Zistgah names; two stems already show a second projection, HPS in Hindawi and CHAKRA in Jyotish.
+
+| Stem, in Humanesque | Zistgah | Kaivalyik |
+|:--------------------|:--------|:----------|
+| The programming system | Urdu edition (urdu-ilm) | Hindawi |
+| The observatory and its calendars | Chakra, the turning sky | Jyotish |
+| The ground: balanced-ternary silicon | Zamin, زمین | |
+| The water: the factory process | AAB, آب | |
+| The air: the environmental replica | Fiza, فضا | |
+| The shared virtual dome | the dome | |
+| The Cognitive Workbench | Mez, میز | |
+| The press | Matba, مطبع | |
+| The cutting room, the visual cycler | Khwab, خواب | |
+| The listening room, the audio cycler | Awaz, آواز | |
+| The immersive cycler | Tilasm, طلسم | |
+| The embodied cycler | Pench | |
+| The record | Yadein, یادیں | |
+| The book template | Kitab, کتاب | |
+| The domain spine | Dhancha, ڈھانچہ | |
+| Communication engineering | Ertabat, ارتباط | |
+| Device control | Zasab, اعصاب | |
+| The door for any AI | Darwaza, دروازہ | |
+| Scan and store | Tasvir, تصویر | |
+| The plates | Lawh, لوح | |
+| The parser federation | Tajziya, تجزیہ | |
+| The guide | Rahnuma, رہنما | |
+| The Geometry of Becoming | Tabdili, تبدیلی | |
+| The Geometry of Living | Zindagi, زندگی | |
+| The Geometry of Persisting | Qaem, قائم | |
+| Topological Bildung | Tarbiyat, تربیت | |
+
+Some stems keep one name in every projection: Humanesque, ILM, Romenagri, PANINI with PANINIq, PANINIb and PANINIphy, PEDLER, QEDLER, PRATIK, CEM, UKOP, FAKIR, GENIE, TransEg, PoIE, VGC, COPA, and the provenance systems Tok DOI, spiguard, Candor and Misty DOI. Kaivalyik's and Cosmopolis's own names for the rest are given with their organisations, as each projection takes its repositories.
+
+
+<!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->
+
+## 10. The repositories {#ch-04}
+
+::: {.plain}
+**In plain words.** A catalogue of every public project folder, what each one does, and its permanent reference number where it has one.
+:::
+
 This chapter was generated from what the forge itself reported on 29 September 2026: the GitHub REST API's listing of each organisation, and each repository's own `CITATION.cff` and README. The DOI column shows only what a repository records about itself. A repository with no DOI is public and pushed but not minted: a DOI is a dated public disclosure, and minting is decided repository by repository.
 
 | Organisation | Public repositories |
@@ -440,7 +647,12 @@ The tables below place 113 of these repositories by what they do; 23 of them rec
 
 # Part III: Setting up {#part-iii}
 
-## 9. Choosing a platform {#ch-06}
+## 11. Choosing a platform {#ch-06}
+
+::: {.plain}
+**In plain words.** Which computer set-up to use: Linux works best, Windows works through WSL, and a Mac works for most things.
+:::
+
 | Platform | What works | What is limited |
 |:---------|:------------------------------|:------------------------------|
 | Linux, native: Ubuntu 24.04 LTS or 26.04 LTS | Everything in the estate: shell scripts, compilers, Docker, GPU work, serial devices | Nothing; this is the reference platform |
@@ -533,7 +745,12 @@ macOS ships a bison from 2006 and BSD versions of `sed`, `grep` and `date`. Home
 
 <!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->
 
-## 10. The baseline environment and a first run {#ch-07}
+## 12. The baseline environment and a first run {#ch-07}
+
+::: {.plain}
+**In plain words.** How to install the basic tools and run your first real program from this work.
+:::
+
 ### Packages
 
 On Ubuntu, native or in WSL:
@@ -547,7 +764,7 @@ gcc --version | head -1; flex --version; bison --version | head -1
 python3 --version; node --version
 ```
 
-This brings GCC and binutils, the lexer and parser generators of Chapter 17 with flex's library and the gawk that Hindawi's driver needs, Python with virtual environments, Node for the JavaScript engines of PANINI, CHAKRA and Jyotish, and fonts for the Indic scripts.
+This brings GCC and binutils, the lexer and parser generators of Chapter 19 with flex's library and the gawk that Hindawi's driver needs, Python with virtual environments, Node for the JavaScript engines of PANINI, CHAKRA and Jyotish, and fonts for the Indic scripts.
 
 ### Git and GitHub
 
@@ -698,21 +915,34 @@ This only proves the K-matrix -> byte-frame packing is correct. No physical osci
 SKIPPED: torch is not installed in this sandbox (no network access to install it here). pedler/substrate.py::ClassicalSubstrate is written and ready -- `pip install torch` and re-run this script; it will automatically use a GPU if `torch.cuda.is_available()`.
 ```
 
-Chapter 19 explains every number in it: the order parameter $R$, the spawned states, the continuous-time quantum walk on three qubits, and why the oscillator, brute force and QAOA agree on a cut of 4.
+Chapter 21 explains every number in it: the order parameter $R$, the spawned states, the continuous-time quantum walk on three qubits, and why the oscillator, brute force and QAOA agree on a cut of 4.
 
 ### Every other component
 
-Chapter 11 gives the commands for every component of the estate: the ones executed for this guide, and the rest as their own READMEs state them.
+Chapter 13 gives the commands for every component of the estate: the ones executed for this guide, and the rest as their own READMEs state them.
 
 
 <!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->
 
-## 11. Running every component {#ch-run}
-Every repository can be cloned with `git clone https://github.com/<organisation>/<repository>.git` and read, and most have a live page. This chapter gives the commands to run each component. The first four were executed for this guide and their output appears in these pages; the rest are quoted from each repository's README as retrieved on 29 September 2026. Set up the machine first (Chapters 9 and 10); for Hindawi also install `flex`, `libfl-dev` and `gawk`.
+## 13. Running every component {#ch-run}
 
-### Hindawi and Romenagri
+::: {.plain}
+**In plain words.** Step-by-step commands to start each part on your own computer, with what you should see when it works and what to do when it does not.
+:::
 
-The repository's own `install` script installs the whole system into `/usr/bin`, including its KDE-era interfaces. These lines build only the command-line toolchain, into a folder inside the clone:
+Every component below was cloned and run on a clean machine on 3 October 2026, with the commands its own README gives, and each card says exactly what happened. Where a step needed something the README does not mention, the card adds it; where a component did not pass, the card says why. Set up the machine first (Chapters 11 and 12).
+
+Each card has the same shape: what the component is, what it needs, the commands to type in order, what you should see, and its status. Every card starts with a clone of the repository into a folder of the same name; the commands that follow are typed inside that folder.
+
+*Machine:* Ubuntu 24.04, Python 3.12, Node 22, GCC 13. *Run on:* 3 October 2026.
+
+### Language and identity
+
+#### Hindawi and Romenagri {#c-hindawi}
+
+::: {.component aud="engineer linguist gate researcher" state="executed"}
+
+*What it is.* The Hindawi Programming System's C front end, its driver hincc and the Romenagri script layer. *Needs:* gcc, make, flex, libfl-dev, gawk.
 
 ```bash
 git clone https://github.com/hindawiai/chintamani.git && cd chintamani
@@ -721,104 +951,554 @@ make -C Romenagri all && make -C Romenagri install INSTROOT="$PWD/.root"
 export PATH="$PWD/.root/usr/bin:$PATH"
 make -C Hindawi/guru all && make -C Hindawi/guru install INSTROOT="$PWD/.root"
 make -C Hindawi/hindrv install INSTROOT="$PWD/.root"
-cp Hindawi/samples/HindiC.uhin . && hincc HindiC.uhin && ./hin.exe
+cp Hindawi/samples/HindiC.uhin . && hincc HindiC.uhin
+printf 'राम\nराम\n' | ./hin.exe
 ```
 
-To see a word in Romenagri and back:
+*You should see:* संकलन के परिणाम, then the program asks आपका नाम क्या है? and counts to ten. *Status:* Executed for this guide. The compilers chapter prints the run.
 
-```bash
-printf 'प्रकृति' | iconv -f utf-8 -t utf-16 | uni2acii | acii2cf; echo
-printf 'prak_ri_ti' | rmn2acii | acii2uni | iconv -f utf-16 -t utf-8; echo
-```
+:::
 
-To bring a Telugu, Bengali or other Brahmi-script word to the Devanagari hub, build the flattening lexer, and use the filters beside it for other directions:
+#### The Urdu edition {#c-urdu}
 
-```bash
-flex -8 -oRomenagri/flat.c Romenagri/flatten_uni_dev.lex
-gcc -o Romenagri/flatten_uni_dev Romenagri/flat.c -lfl
-echo 'ప్రకృతి' | Romenagri/flatten_uni_dev          # Telugu to the hub
-echo 'प्रकृति' | bash Romenagri/fltr_hi_te           # the hub to Telugu
-echo 'ہِنْدوی' | bash Romenagri/fltr_ur_hi           # Urdu to the hub
-```
+::: {.component aud="linguist engineer community" state="executed"}
 
-### The Urdu edition
-
-zistgah/urdu-ilm (default branch `master`) carries the Urdu shailis and the driver `urducc`, which sends an Urdu-script program through the Devanagari hub and Romenagri. It uses the standard Hindawi driver from the build above:
+*What it is.* Urdu shailis and the driver urducc, which sends an Urdu-script program through the Devanagari hub and Romenagri. *Needs:* the Hindawi build above, on the PATH.
 
 ```bash
 git clone https://github.com/zistgah/urdu-ilm.git && cd urdu-ilm
 mkdir -p .root/usr/bin .root/usr/lib .root/usr/include
 make -C Romenagri all && make -C Romenagri install INSTROOT="$PWD/.root"
-export PATH="$PWD/.root/usr/bin:$PATH:<path to chintamani>/.root/usr/bin"
+export PATH="$PWD/.root/usr/bin:$PATH:<chintamani clone>/.root/usr/bin"
 make -C ILM/guru all
-bash ILM/urducc -s ILM/samples/UrduC.uhin     # show the C it generates
+bash ILM/urducc -s ILM/samples/UrduC.uhin
 bash ILM/urducc ILM/samples/UrduC.uhin && ./hin.exe
 ```
 
-Replace `<path to chintamani>` with the folder of the clone above.
+*You should see:* C with the names na and ka, then the prompt in the hub script. *Status:* Executed for this guide. Replace <chintamani clone> with the folder of the Hindawi clone; the compilers chapter prints the run.
 
-### PANINIq
+:::
 
-Chapter 10 gives the commands and the recorded run: tests, the demonstration and the repository's own gate.
+#### tajziya {#c-tajziya}
 
-### This guide
+::: {.component aud="linguist researcher" state="passed"}
+
+*What it is.* The parser federation for the classical languages, by family. *Needs:* python3, make.
+
+```bash
+git clone https://github.com/zistgah/tajziya.git && cd tajziya
+PYTHONPATH=src python3 -m tajziya commonalities
+make check
+```
+
+*You should see:* make check: 19 passed, 0 failed, 1 unjudged. *Status:* Passed when run on 3 October 2026. Run the module with PYTHONPATH=src, from the clone's root.
+
+:::
+
+### The PANINI family
+
+#### PANINI, the prompt-cycle language {#c-panini}
+
+::: {.component aud="engineer maker gate school" state="passed"}
+
+*What it is.* The language the cyclers are written in, with its engine and studio. *Needs:* python3, node.
+
+```bash
+git clone https://github.com/zistgah/panini.git && cd panini
+python3 panini.py check cyclers/pench.pni
+python3 panini.py stages cyclers/yadein.pni
+node tests/panini.test.mjs
+python3 panini.py serve
+```
+
+*You should see:* 0 problems; 45 pass, 0 fail; the studio answers on 127.0.0.1:8717. *Status:* Passed when run on 3 October 2026.
+
+:::
+
+#### PANINI, parser and interpreter {#c-panini_by_claude}
+
+::: {.component aud="engineer researcher" state="passed"}
+
+*What it is.* A general-purpose PANINI implementation with its conformance report. *Needs:* node.
+
+```bash
+git clone https://github.com/zistgah/panini_by_claude.git && cd panini_by_claude
+node bin/panini.mjs conformance
+npm test
+```
+
+*You should see:* 145 passed, 0 failed. *Status:* Passed when run on 3 October 2026.
+
+:::
+
+#### PANINI, the stage-0 bootstrap {#c-panini_by_grok}
+
+::: {.component aud="engineer researcher" state="passed"}
+
+*What it is.* PANINI with a bootstrap that records its own evidence. *Needs:* node.
+
+```bash
+git clone https://github.com/zistgah/panini_by_grok.git && cd panini_by_grok
+node src/cli.js run examples/hello.pni
+node tests/run.mjs
+node scripts/bootstrap.mjs
+```
+
+*You should see:* Hello, PANINI; 32 passed, 0 failed; stage-0 evidence written. *Status:* Passed when run on 3 October 2026. Its wider report, npm test, passes 81 of 83 here; the two others need tools this machine lacks.
+
+:::
+
+#### The Humanesque merged release {#c-humanesque}
+
+::: {.component aud="engineer researcher" state="partly"}
+
+*What it is.* PANINI, ILM, Hindawi, the cyclers and Mez in one tree. *Needs:* bash, node; optionally zig.
+
+```bash
+git clone https://github.com/zistgah/humanesque.git && cd humanesque
+bash VERIFY.sh
+npm test
+```
+
+*You should see:* 79 of 83 checks pass. *Status:* Partly passes, as run on 3 October 2026. The four that do not pass here need two downloadable model files (wllama.wasm and stories15M.Q4_0.gguf), the zig toolchain, and the Bengali flattening round trip.
+
+:::
+
+#### PANINIq {#c-paniniq}
+
+::: {.component aud="researcher gate engineer" state="executed"}
+
+*What it is.* The oscillator substrate, the PEDLER engine and quantum validation. *Needs:* python3, numpy, scipy, qiskit.
+
+```bash
+git clone https://github.com/zistgah/paniniq.git && cd paniniq
+python3 -m venv ../venv-paniniq && . ../venv-paniniq/bin/activate
+export PYTHONDONTWRITEBYTECODE=1
+pip install -r requirements.txt qiskit
+python3 -m unittest discover -s tests
+python3 demo.py
+bash ops/verify.sh
+```
+
+*You should see:* Ran 23 tests, OK; its gate 10 passed. *Status:* Executed for this guide. The first-run chapter prints the run.
+
+:::
+
+#### PANINIb, biological realization {#c-paninib}
+
+::: {.component aud="researcher" state="passed"}
+
+*What it is.* Biological intent lowered through typed IRs to a realization plan. *Needs:* python3.
+
+```bash
+git clone https://github.com/zistgah/paninib.git && cd paninib
+python3 panini compile examples/replace.panini -o out
+python3 panini inspect out --stage sequence-ir
+python3 panini verify out
+```
+
+*You should see:* each step prints its JSON record. *Status:* Passed when run on 3 October 2026.
+
+:::
+
+#### PANINIphy, physical realization {#c-paniniphy}
+
+::: {.component aud="maker researcher engineer" state="passed"}
+
+*What it is.* Physical intent compiled through a physical IR, with parts chosen by requirement. *Needs:* python3.
+
+```bash
+git clone https://github.com/zistgah/paniniphy.git && cd paniniphy
+python3 panini compile examples/modular_block.panini -o out
+python3 panini parts --category actuator --force 50N --stroke 20mm --voltage 12V
+```
+
+*You should see:* physical resolution=RESOLVED verify=True. *Status:* Passed when run on 3 October 2026.
+
+:::
+
+### Cyclers, desk and studio
+
+#### matba, the press {#c-matba}
+
+::: {.component aud="maker teacher" state="passed"}
+
+*What it is.* Posters in, book out, sealed, pushed, minted. *Needs:* python3.
+
+```bash
+git clone https://github.com/zistgah/matba.git && cd matba
+python3 matba.py serve
+```
+
+*You should see:* the press answers on 127.0.0.1:8710. *Status:* Passed when run on 3 October 2026.
+
+:::
+
+#### khwab, the cutting room {#c-khwab}
+
+::: {.component aud="maker" state="passed"}
+
+*What it is.* The visual cycler. *Needs:* python3.
+
+```bash
+git clone https://github.com/zistgah/khwab.git && cd khwab
+python3 khwab.py serve
+```
+
+*You should see:* the cutting room answers on 127.0.0.1:8711. *Status:* Passed when run on 3 October 2026.
+
+:::
+
+#### awaz, the listening room {#c-awaz}
+
+::: {.component aud="maker" state="passed"}
+
+*What it is.* The audio cycler. *Needs:* python3.
+
+```bash
+git clone https://github.com/zistgah/awaz.git && cd awaz
+python3 awaz.py serve
+```
+
+*You should see:* the listening room answers on 127.0.0.1:8712. *Status:* Passed when run on 3 October 2026.
+
+:::
+
+#### tilasm, pench and yadein {#c-studios}
+
+::: {.component aud="maker researcher" state="partly"}
+
+*What it is.* The immersive, embodied and record cyclers; each repository has the same tests and its own page. *Needs:* node.
+
+```bash
+git clone https://github.com/zistgah/tilasm.git && cd tilasm
+node tests/cycler.test.mjs
+node tests/inbox.test.mjs
+node tests/models.test.mjs
+```
+
+*You should see:* 20, 23 and 22 pass, 0 fail. *Status:* Partly passes, as run on 3 October 2026. Run the same three in zistgah/pench and zistgah/yadein. Two further test files, genie.test.mjs and leak.test.mjs, import modules the repositories do not carry.
+
+:::
+
+#### GENIE {#c-genie}
+
+::: {.component aud="maker researcher school" state="passed"}
+
+*What it is.* The Generalized Emotive-Narrative Interaction Engine. *Needs:* node.
+
+```bash
+git clone https://github.com/zistgah/genie.git && cd genie
+node test/run.js
+```
+
+*You should see:* 191 passed, 0 failed. *Status:* Passed when run on 3 October 2026. Open index.html, or its page, for the engine itself.
+
+:::
+
+#### alam {#c-alam}
+
+::: {.component aud="maker engineer" state="passed"}
+
+*What it is.* Small work, cycled with any AI. *Needs:* node, npm.
+
+```bash
+git clone https://github.com/zistgah/alam.git && cd alam
+npm install jsdom
+node test/alam-test.js
+node test/dom-test.js
+```
+
+*You should see:* alam dom: 9 passed, 0 failed. *Status:* Passed when run on 3 October 2026. The page test needs jsdom, installed by the first line.
+
+:::
+
+#### Mez, the Cognitive Workbench {#c-mez}
+
+::: {.component aud="engineer researcher teacher" state="passed"}
+
+*What it is.* The local-first desk. *Needs:* python3.
+
+```bash
+git clone https://github.com/zistgah/mez.git && cd mez
+./mez doctor
+./mez bearings
+./mez serve
+```
+
+*You should see:* no account, no API key, no network required; the desk answers on 127.0.0.1:7373. *Status:* Passed when run on 3 October 2026.
+
+:::
+
+### Knowledge, domains and instruments
+
+#### FAKIR {#c-fakir}
+
+::: {.component aud="researcher teacher community school" state="passed"}
+
+*What it is.* The knowledge kernel and its explorer. *Needs:* bash.
+
+```bash
+git clone https://github.com/zistgah/fakir.git && cd fakir
+bash ops/verify.sh
+```
+
+*You should see:* CONTRACT SATISFIED, 6 checks. *Status:* Passed when run on 3 October 2026. The explorer is its page: zistgah.org/fakir.
+
+:::
+
+#### Dhancha {#c-dhancha}
+
+::: {.component aud="engineer researcher" state="passed"}
+
+*What it is.* The domain spine every FAKIR domain is built on. *Needs:* bash, python3, make.
+
+```bash
+git clone https://github.com/zistgah/dhancha.git && cd dhancha
+make check
+```
+
+*You should see:* site matches the registries; pr_gate bites on a claim and passes a clean change. *Status:* Passed when run on 3 October 2026.
+
+:::
+
+#### ertabat {#c-ertabat}
+
+::: {.component aud="engineer" state="passed"}
+
+*What it is.* The communication-engineering domain. *Needs:* bash.
+
+```bash
+git clone https://github.com/zistgah/ertabat.git && cd ertabat
+bash ops/verify.sh
+```
+
+*You should see:* CONTRACT OK. *Status:* Passed when run on 3 October 2026.
+
+:::
+
+#### jugaad28 {#c-jugaad28}
+
+::: {.component aud="engineer gate" state="passed"}
+
+*What it is.* The 28 nm tape-out catalogue. *Needs:* bash.
+
+```bash
+git clone https://github.com/zistgah/jugaad28.git && cd jugaad28
+bash ops/verify.sh
+```
+
+*You should see:* VERIFY GREEN. *Status:* Passed when run on 3 October 2026.
+
+:::
+
+#### TransEg {#c-transeg}
+
+::: {.component aud="researcher engineer" state="passed"}
+
+*What it is.* The local digital-twin reference implementation. *Needs:* bash, python3; Docker for the stand-up.
+
+```bash
+git clone https://github.com/zistgah/transeg.git && cd transeg
+./scripts/test.sh
+./scripts/bootstrap.sh --dry-run
+```
+
+*You should see:* 10 passed; the stand-up plan. *Status:* Passed when run on 3 October 2026. The full stand-up, ./scripts/bootstrap.sh and docker compose, needs Docker and a GPU; it was not run here.
+
+:::
+
+#### TransEg identity governance {#c-idgov}
+
+::: {.component aud="researcher engineer" state="passed"}
+
+*What it is.* Typed layers, envelope, staged policies and audit. *Needs:* python3, jsonschema, pytest.
+
+```bash
+git clone https://github.com/zistgah/transeg-idgov.git && cd transeg-idgov
+pip install jsonschema pytest
+python3 tools/idgov_validate.py policies
+python3 -m pytest -q tests/
+```
+
+*You should see:* VALID: 8 stage policies; 14 passed. *Status:* Passed when run on 3 October 2026.
+
+:::
+
+#### CHAKRA {#c-chakra}
+
+::: {.component aud="school gate researcher community" state="passed"}
+
+*What it is.* The offline observatory and its calendars. *Needs:* node.
+
+```bash
+git clone https://github.com/project-ilm/chakra.git && cd chakra
+node test/run.js
+```
+
+*You should see:* ALL SUITES PASSED. *Status:* Passed when run on 3 October 2026. Open index.html for the observatory.
+
+:::
+
+#### Jyotish {#c-jyotish}
+
+::: {.component aud="community school" state="passed"}
+
+*What it is.* The panchang, the Kaivalyik projection of CHAKRA. *Needs:* bash, node.
+
+```bash
+git clone https://github.com/zistgah/jyotish.git && cd jyotish
+bash ops/verify.sh
+```
+
+*You should see:* PASSED, with 1 check skipped and named. *Status:* Passed when run on 3 October 2026. Open index.html for the panchang.
+
+:::
+
+### Cognition and hardware
+
+#### PRATIK kernel {#c-pratik}
+
+::: {.component aud="engineer researcher" state="passed"}
+
+*What it is.* The balanced-ternary, event-driven kernel. *Needs:* g++; nvcc for CUDA.
+
+```bash
+git clone https://github.com/zistgah/pratik_core_mvp.git && cd pratik_core_mvp
+bash build.sh
+bash build.sh cuda
+```
+
+*You should see:* ALL CHECKS PASSED. *Status:* Passed when run on 3 October 2026. The CPU build passed here; the CUDA build needs nvcc and an NVIDIA GPU. The script is not marked executable, so call it with bash.
+
+:::
+
+#### Zamin {#c-zamin}
+
+::: {.component aud="engineer researcher" state="does-not-run-as-is"}
+
+*What it is.* Ternary silicon: SPICE cells, layout and a simulator. *Needs:* ngspice, python3.
+
+```bash
+git clone https://github.com/zistgah/zamin.git && cd zamin
+cd spice && ngspice -b sign_frustration_tb.sp
+```
+
+*You should see:* a SPICE run of the ternary cells. *Status:* Does not run as is, as run on 3 October 2026. On ngspice 42 the testbench stops: the source v_gnd is reported as a shorted voltage source. The interactive simulator is its page.
+
+:::
+
+#### QEDLER {#c-qedler}
+
+::: {.component aud="researcher" state="partly"}
+
+*What it is.* The event-hypergraph physics programme. *Needs:* bash.
+
+```bash
+git clone https://github.com/project-ilm/qedler.git && cd qedler
+bash ops/verify.sh
+bash ops/resume.sh && cat RESUME.md
+```
+
+*You should see:* 5 of 6 clauses pass. *Status:* Partly passes, as run on 3 October 2026. Clause C2, manifest completeness, fails: 15 files are not in MANIFEST.sha256. Resealing the manifest clears it.
+
+:::
+
+### Provenance, tools and labs
+
+#### Misty DOI {#c-misty}
+
+::: {.component aud="researcher engineer" state="passed"}
+
+*What it is.* DOI minting and packaging for Zenodo. *Needs:* python3, pip.
+
+```bash
+git clone https://github.com/project-ilm/misty-doi.git && cd misty-doi
+pip install misty-doi
+misty --help
+misty init
+misty validate -m misty.json
+```
+
+*You should see:* `usage: misty [-h] [--version] {init,validate,transform,package,ots,publish}`. *Status:* Passed when run on 3 October 2026. Publishing needs a Zenodo token in ZENODO_TOKEN.
+
+:::
+
+#### Research Kundali {#c-kundali}
+
+::: {.component aud="researcher community" state="needs-network"}
+
+*What it is.* A research map of a person, a lab or a paper. *Needs:* python3 and network access to the public records it reads.
+
+```bash
+git clone https://github.com/project-ilm/research-kundali.git && cd research-kundali
+python3 kundali/kundali.py <ORCID, lab name or DOI> --out out
+```
+
+*You should see:* a research map in out/. *Status:* Not run here: needs network access. It reads public records such as ORCID; it could not reach them from this build machine, and stops rather than write an empty chart.
+
+:::
+
+#### The linguistics lab {#c-labs}
+
+::: {.component aud="linguist teacher" state="needs-Docker"}
+
+*What it is.* A starter lab in a container. *Needs:* Docker.
+
+```bash
+git clone https://github.com/project-ilm/linguistics-labs.git && cd linguistics-labs
+docker build -t ilm-lab .
+docker run --rm -p 8888:8888 -v "$PWD":/lab ilm-lab
+```
+
+*You should see:* the lab on localhost:8888. *Status:* Not run here: needs Docker. Not run here: this build machine has no Docker.
+
+:::
+
+#### This guide {#c-rahnuma}
+
+::: {.component aud="engineer teacher gate" state="passed"}
+
+*What it is.* The site, the PDF and the Markdown, with their gate. *Needs:* python3, gcc, make, flex, libfl-dev, gawk, gdb; for a rebuild also pandoc, node, graphviz.
 
 ```bash
 git clone https://github.com/zistgah/rahnuma.git && cd rahnuma
-bash ops/verify.sh                         # the twelve clauses, re-running every example
-bash examples/hindawi.sh words             # also: sample, yog, debug, cover, scripts, urdu
-python3 tools/build.py                     # rebuild the site, the Markdown and the PDF
+bash ops/verify.sh
+bash examples/hindawi.sh words
+python3 tools/build.py
 ```
 
-### Components run from the command line
+*You should see:* 12 passed, 0 failed, 0 unjudged. *Status:* Passed when run on 3 October 2026.
 
-| Component | Commands, from its README | What you get |
-|:----------|:---------------------------------|:-------------------|
-| zistgah/panini | `python3 panini.py check cyclers/pench.pni`; `python3 panini.py stages cyclers/yadein.pni`; `python3 panini.py prompt cyclers/matba.pni`; `python3 panini.py serve` | static checks, the stages at each resolution, a cycle's first prompt, the studio on 127.0.0.1:8717 |
-| zistgah/panini_by_claude | `node bin/panini.mjs conformance`; `npm test` | the conformance report; 145 assertions |
-| zistgah/panini_by_grok | `node src/cli.js run examples/hello.pni`; `node tests/run.mjs`; `node scripts/bootstrap.mjs` | a PANINI program run; the tests; the bootstrap |
-| zistgah/humanesque | `bash VERIFY.sh` | 36 checks on the merged release |
-| zistgah/paninib | `python3 panini compile examples/replace.panini -o out`; `python3 panini inspect out --stage sequence-ir`; `python3 panini verify out` | a biological intent lowered to sequence IR, inspected and verified |
-| zistgah/paniniphy | `python3 panini compile examples/modular_block.panini -o out`; `python3 panini parts --category actuator --force 50N --stroke 20mm --voltage 12V` | a physical intent compiled; parts selected by requirement |
-| zistgah/matba | `python3 matba.py serve` | the press on 127.0.0.1:8710 |
-| zistgah/khwab | `python3 khwab.py serve` | the cutting room on 127.0.0.1:8711 |
-| zistgah/awaz | `python3 awaz.py serve` | the listening room on 127.0.0.1:8712 |
-| zistgah/mez | `./mez doctor`; `./mez bearings`; `./mez serve` | what is built and installed; where you are; the desk on 127.0.0.1:7373 |
-| zistgah/alam | `node test/alam-test.js`; `node test/dom-test.js` | the engine and its vendor-neutrality gate; a full cycle driven in the real page |
-| zistgah/tajziya | `python3 -m tajziya commonalities`; `make check` | the commonality computation; the gate |
-| project-ilm/chakra | `node test/run.js` | 10 suites and 115 assertions; open `index.html` for the observatory |
-| zistgah/jyotish | open `index.html`; `bash ops/verify.sh` | the panchang, offline; its gate |
-| zistgah/transeg | `./scripts/bootstrap.sh --dry-run`; `./scripts/bootstrap.sh`; `docker compose -f compose/docker-compose.yml --profile tts up -d --build` | the stand-up plan; the stand-up; the services with speech |
-| zistgah/transeg-idgov | `python3 tools/idgov_validate.py policies`; `python3 -m pytest tests/` | the eight stage policies checked; the tests |
-| project-ilm/qedler | `bash ops/verify.sh`; `bash ops/resume.sh && cat RESUME.md` | the contract check; the generated state |
-| zistgah/jugaad28, zistgah/ertabat | `bash ops/verify.sh` | each repository's gate |
-| zistgah/zamin | `cd spice && ngspice sign_frustration_tb.sp`; `python layout/pratik_fluidic_interposer.py` | a SPICE testbench of the ternary cells; the microfluidic interposer layout |
-| zistgah/pratik_core_mvp | `./build.sh cuda` | the kernel built for CPU and CUDA |
-| project-ilm/research-kundali | `python3 kundali/kundali.py <ORCID, lab name or DOI> --out out` | a research map of a person, a lab or a paper |
-| project-ilm/misty-doi | `pip install misty-doi`; `misty init`; `misty publish -m misty.json -f artifact.zip --output result.json` | the DOI tool, a metadata file, a deposit |
-| project-ilm/linguistics-labs | `docker build -t ilm-lab .`; `docker run --rm -p 8888:8888 -v "$PWD":/lab ilm-lab` | the starter linguistics lab on localhost:8888 |
-| zistgah/estate | `bash seed_estate.sh` | the inventory of the estate |
+:::
 
 ### Components you open in a browser
 
 | Component | Page |
 |:----------|:-----|
-| FAKIR's explorer, the domain lattice | [zistgah.github.io/fakir](https://zistgah.github.io/fakir/) |
+
+| FAKIR's explorer | [zistgah.org/fakir](https://zistgah.org/fakir/) |
 | The shared dome | [zistgah.github.io/dome](https://zistgah.github.io/dome/) |
+| AAB, the factory process | [zistgah.org/aab](https://zistgah.org/aab/) |
 | GENIE | [zistgah.github.io/genie](https://zistgah.github.io/genie/) |
-| AAB | [zistgah.github.io/aab](https://zistgah.github.io/aab/) |
-| The cycler studios: tilasm, pench, yadein | [tilasm](https://zistgah.github.io/tilasm/), [pench](https://zistgah.github.io/pench/), [yadein](https://zistgah.github.io/yadein/) |
-| Dhancha, the domain spine | [zistgah.github.io/dhancha](https://zistgah.github.io/dhancha/) |
-| Tok DOI, the registrar | [project-ilm.github.io/tok-doi](https://project-ilm.github.io/tok-doi/) |
-| CHAKRA and Jyotish | [project-ilm.github.io/chakra](https://project-ilm.github.io/chakra/), [zistgah.github.io/jyotish](https://zistgah.github.io/jyotish/) |
-| ILM, with its explorer and registry | [ilm.codes](https://ilm.codes/) |
+| tilasm, pench and yadein | [zistgah.github.io/tilasm](https://zistgah.github.io/tilasm/) |
+| Kitab | [zistgah.github.io/kitab](https://zistgah.github.io/kitab/) |
+| Tok DOI | [project-ilm.github.io/tok-doi](https://project-ilm.github.io/tok-doi/) |
+| CHAKRA | [project-ilm.github.io/chakra](https://project-ilm.github.io/chakra/) |
+| Jyotish | [zistgah.github.io/jyotish](https://zistgah.github.io/jyotish/) |
+| ILM | [ilm.codes](https://ilm.codes/) |
 | PANINI's studio | [zistgah.github.io/panini](https://zistgah.github.io/panini/) |
-| The estate index | [zistgah.org](https://zistgah.org/) |
+| The estate | [zistgah.org](https://zistgah.org/) |
 
 
 <!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->
 
-## 12. Labs: containers now, launch scripts next {#ch-08}
+## 14. Labs: containers now, launch scripts next {#ch-08}
+
+::: {.plain}
+**In plain words.** How a container packs a whole laboratory into one box that runs the same on every computer, and what comes next.
+:::
+
 ### What a container is
 
 A container is an ordinary process given its own view of the file system, the process table and the network through Linux namespaces, and held to a share of processor and memory by control groups. It starts from an image built in layers, each layer a set of file changes identified by its hash. The same image gives the same environment on every laptop, which is exactly what a teaching or research lab needs: the lab stops depending on what happens to be installed on the machine in front of you.
@@ -851,7 +1531,12 @@ The next release of this package carries the lab launch scripts: one script per 
 
 # Part IV: Foundations {#part-iv}
 
-## 13. Numbers inside the machine {#ch-09}
+## 15. Numbers inside the machine {#ch-09}
+
+::: {.plain}
+**In plain words.** How a computer stores numbers using only ones and zeros, including negative numbers and fractions.
+:::
+
 A processor holds voltages that stand for bits. Everything else on this page, including the hexadecimal digits, is notation for people.
 
 ### Positional notation
@@ -894,12 +1579,17 @@ Integers and reals
    0.1 + 0.2 == 0.3 is False; the sum is 0.30000000000000004
 ```
 
-These are the facts the GATE syllabus asks for under number representation and computer arithmetic, fixed and floating point (Chapter 22).
+These are the facts the GATE syllabus asks for under number representation and computer arithmetic, fixed and floating point (Chapter 24).
 
 
 <!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->
 
-## 14. Characters inside the machine {#ch-10}
+## 16. Characters inside the machine {#ch-10}
+
+::: {.plain}
+**In plain words.** How letters from any script become numbers inside a computer, and why a name must survive every tool a program passes through.
+:::
+
 ### ASCII
 
 Seven bits, 128 codes: 0 to 31 and 127 are control codes, 32 to 126 are printable, and `A` is 65, or 0x41. It was designed in the 1960s for English teleprinters, and nearly every later character code keeps it as its first 128 positions.
@@ -972,9 +1662,9 @@ The bits of $U$ fill the `x` positions from the left. Every Devanagari code poin
 
 Python 3 accepts identifiers in any script under PEP 3131, and GCC has accepted UTF-8 identifiers in C since version 10. That settles only the first step, and for systems work it settles the wrong one.
 
-A keyword disappears during compilation. By the time a program is machine code, a loop written with `for` and the same loop written with `क्रम` have both become a comparison and a branch (Chapter 17). A name does not disappear. Every function, global variable, parameter and register mapping lives on: in the object file's symbol table, `.symtab` with its strings in `.strtab`; in the DWARF debugging information; in linker scripts and map files; in the kernel's own symbol table, from which a panic trace is printed; and in every tool a developer points at the binary: `nm`, `objdump`, `addr2line`, GDB, OpenOCD driving a JTAG or SWD probe on a microcontroller, a vendor's IDE. Each of these has its own rules about which bytes a symbol may contain, and the one alphabet every one of them accepts is letters, digits and the underscore.
+A keyword disappears during compilation. By the time a program is machine code, a loop written with `for` and the same loop written with `क्रम` have both become a comparison and a branch (Chapter 19). A name does not disappear. Every function, global variable, parameter and register mapping lives on: in the object file's symbol table, `.symtab` with its strings in `.strtab`; in the DWARF debugging information; in linker scripts and map files; in the kernel's own symbol table, from which a panic trace is printed; and in every tool a developer points at the binary: `nm`, `objdump`, `addr2line`, GDB, OpenOCD driving a JTAG or SWD probe on a microcontroller, a vendor's IDE. Each of these has its own rules about which bytes a symbol may contain, and the one alphabet every one of them accepts is letters, digits and the underscore.
 
-So the question for firmware, kernels and microcontrollers is not whether a compiler accepts a name written in Devanagari. It is whether that name comes back, byte for byte, at every one of those tools, and can still be read against the source. Hindawi's answer, since 2003, is Romenagri: every name travels as a word over A to Z, a to z and the underscore, which every tool in the chain accepts, and the mapping is bijective, so the name in the script can be recovered from the binary at any point. Chapter 15 sets out the scheme and Chapter 17 runs it through GCC, the ELF symbol table, DWARF and GDB.
+So the question for firmware, kernels and microcontrollers is not whether a compiler accepts a name written in Devanagari. It is whether that name comes back, byte for byte, at every one of those tools, and can still be read against the source. Hindawi's answer, since 2003, is Romenagri: every name travels as a word over A to Z, a to z and the underscore, which every tool in the chain accepts, and the mapping is bijective, so the name in the script can be recovered from the binary at any point. Chapter 17 sets out the scheme and Chapter 19 runs it through GCC, the ELF symbol table, DWARF and GDB.
 
 ### Composing conjuncts
 
@@ -983,7 +1673,12 @@ Hindawi's APCISR composed half-consonant conjuncts of any length in software, in
 
 <!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->
 
-## 15. Writing systems, sound, and reversible transliteration {#ch-11}
+## 17. Writing systems, sound, and reversible transliteration {#ch-11}
+
+::: {.plain}
+**In plain words.** How Romenagri turns Indian scripts into plain English letters and back again without losing anything, and why Urdu written without its vowel marks is harder.
+:::
+
 ### Kinds of writing system
 
 - An **alphabet** writes consonants and vowels as separate letters of equal standing: Latin, Greek, Cyrillic.
@@ -1004,7 +1699,7 @@ ILM keeps three things apart.
 | Language | The words: the vocabulary of keywords and names | Devanagari for Hindi, Marathi, Nepali and Sanskrit: one script, four languages |
 | Standard | The computational construct and its host realisation | the C11 and C17 standards; a `for` loop in C, Python and Rust |
 
-A programming system that confuses these axes cannot grow past its first language. The pipeline in Chapter 17 applies them in order: script first, then language, then standard.
+A programming system that confuses these axes cannot grow past its first language. The pipeline in Chapter 19 applies them in order: script first, then language, then standard.
 
 ### One spelling, several pronunciations
 
@@ -1083,6 +1778,10 @@ The first three columns are from `iso15919_map.csv`; the Romenagri column is the
 
 ISCII gave every Brahmi script one layout, and Hindawi builds on that. Its `flatten_uni_dev`, generated from `iscii_map.csv`, maps each letter of Bengali, Assamese, Gurmukhi, Gujarati, Oriya, Tamil, Telugu, Kannada and Malayalam to its Devanagari counterpart. Devanagari is the hub; Romenagri runs on the hub; filters such as `fltr_hi_te` carry the hub back out to a script. The same word written in three scripts therefore has one identity, `prak_ri_ti`, which the cover of this guide shows.
 
+![Figure 10: One identity across scripts: Brahmi scripts meet Devanagari in one hub; Perso-Arabic meets it at its written, canonical form](fig-hub.svg)
+
+*Figure 10. One identity across scripts: Brahmi scripts meet Devanagari in one hub; Perso-Arabic meets it at its written, canonical form.*
+
 This is the second pillar of linguistic equity at work. Because the script layer is independent of the language layer, any language can be written in any script, Hindi in Telugu letters or Telugu in Devanagari, and a program written either way is the same program to the compiler and the same names to the debugger.
 
 *Executed while this guide was built:* `bash examples/hindawi.sh scripts`
@@ -1114,7 +1813,7 @@ An abjad writes consonants and long vowels. The short vowels, zabar, zer and pes
 
 With the marks written, the hub form is exact: ہِنْدوی arrives as हिन्दवी, the author's own example in `hindawi_tashkil.txt`. So the difficulty is phonetic rather than a failure of the mapping. Which vowel a word carries has to come from knowledge of the language, its lexicon and its phonology, and that is precisely why ILM keeps the language axis apart from the script axis: the script layer maps what is written, exactly, and the language layer supplies what speakers know. The author estimates the words that need it at some 15 to 20 per cent.
 
-Urdu programs already compile through the hub, as Chapter 17 shows. The reverse filter that renders hub text back into Urdu script, `fltr_hi_ur`, used by `urducc -r`, is a first cut in these trees; hardening the Perso-Arabic direction is the next step his seed release of Romenagri names. The Northwest Semitic abjads follow the same route to the Arabic hub: Hebrew final letter forms merge there, a documented many-to-one, and are reversible to the canonical form.
+Urdu programs already compile through the hub, as Chapter 19 shows. The reverse filter that renders hub text back into Urdu script, `fltr_hi_ur`, used by `urducc -r`, is a first cut in these trees; hardening the Perso-Arabic direction is the next step his seed release of Romenagri names. The Northwest Semitic abjads follow the same route to the Arabic hub: Hebrew final letter forms merge there, a documented many-to-one, and are reversible to the canonical form.
 
 ### When is a transliteration reversible?
 
@@ -1154,7 +1853,12 @@ The third code shows that a code can be uniquely decodable without being a prefi
 
 <!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->
 
-## 16. Pāṇini's grammar as a formal system {#ch-12}
+## 18. Pāṇini's grammar as a formal system {#ch-12}
+
+::: {.plain}
+**In plain words.** Pāṇini's grammar of Sanskrit, written well over two thousand years ago, works like a computer program, and this chapter runs part of it.
+:::
+
 The Aṣṭādhyāyī, "eight chapters", is a generative grammar of Sanskrit, usually dated between the sixth and the fourth centuries BCE. It has close to four thousand sūtras, 3,959 in the usual count, arranged in eight *adhyāyas* of four *pādas* each and cited by chapter, quarter and number, so that 6.1.77 is the seventy-seventh sūtra of the first quarter of the sixth chapter. It works with auxiliary lists: the Śiva Sūtras, which order the sounds; the Dhātupāṭha, the list of verbal roots; and the Gaṇapāṭha, lists of words that rules refer to as classes. Around it grew a review tradition: Kātyāyana's *vārttikas* on individual rules (around the third century BCE), Patañjali's *Mahābhāṣya* (around the second century BCE), the *Kāśikā* (seventh century CE), and Bhaṭṭoji Dīkṣita's *Siddhāntakaumudī* (seventeenth century), which rearranged the rules by topic for learners.
 
 What follows treats the grammar the way a computer scientist would: as data structures and a rewriting system. Every claim below can be checked by running the program at the end of the chapter.
@@ -1317,20 +2021,25 @@ A modern reader will recognise context-sensitive rewrite rules, ordered rule app
 2. Why must *h* appear twice in the Śiva Sūtras?
 3. Derive *madhu* + *ari* by hand. Which rule applies, and why does 6.1.101 not apply?
 4. What would go wrong in a derivation if 8.2.1 were removed?
-5. Compare 1.4.2 with the way a parser generator settles a shift-reduce conflict by precedence (Chapter 17).
+5. Compare 1.4.2 with the way a parser generator settles a shift-reduce conflict by precedence (Chapter 19).
 6. Pāṇini's inventory lists sounds; Unicode's Devanagari block lists written signs. Which of the two is a phonology and which a script, and what does each leave out?
 
 
 <!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->
 
-## 17. Compilers, from lexer to microcode {#ch-13}
+## 19. Compilers, from lexer to microcode {#ch-13}
+
+::: {.plain}
+**In plain words.** How a program written in Hindi or Urdu becomes instructions a machine can run, with every name kept intact all the way to the debugger.
+:::
+
 A compiler is a chain of translations, each into a representation closer to the machine: source text, tokens, a syntax tree, a checked tree, an intermediate representation, optimised intermediate code, assembly, an object file, an executable, a running process, and finally, inside the processor, micro-operations.
 
 ### Lexing: regular languages and automata
 
 Tokens are described by regular expressions. Thompson's construction turns a regular expression of length $n$ into a nondeterministic finite automaton with at most $2n$ states; the subset construction turns that into a deterministic automaton whose states are sets of the original states, up to $2^{n}$ in the worst case and few in practice; Hopcroft's algorithm minimises the result in $O(n \log n)$ time.
 
-lex (Lesk and Schmidt, Bell Labs, 1975) generates such a scanner in C from a list of patterns and actions; flex is the fast, free lex that Linux systems carry. flex works on bytes, so a keyword written in Devanagari is simply a pattern of UTF-8 bytes, and the whole Devanagari block is the pattern `\xE0\xA4[\x80-\xBF]|\xE0\xA5[\x80-\xBF]`, whose end points the output in Chapter 14 printed.
+lex (Lesk and Schmidt, Bell Labs, 1975) generates such a scanner in C from a list of patterns and actions; flex is the fast, free lex that Linux systems carry. flex works on bytes, so a keyword written in Devanagari is simply a pattern of UTF-8 bytes, and the whole Devanagari block is the pattern `\xE0\xA4[\x80-\xBF]|\xE0\xA5[\x80-\xBF]`, whose end points the output in Chapter 16 printed.
 
 ### Parsing: context-free grammars
 
@@ -1461,7 +2170,7 @@ The back end never sees keywords. By the time a program is GIMPLE or RTL, a loop
 
 A compiler has three languages: the source $S$ it reads, the target $T$ it writes, and the language $I$ it is written in, drawn as a T-shaped tombstone diagram. Diagrams chain: a compiler for $X$ written in C, built by an existing C compiler, runs on the machine; with it you compile a compiler for $X$ written in $X$, and from then on the language compiles itself. The test of self-hosting is a fixed point: stage 1, built by the old compiler, builds stage 2; stage 2 builds stage 3; stages 2 and 3 must be identical. GCC's own `make bootstrap` performs this three-stage build and compares the last two stages.
 
-A reversible transliteration (Chapter 15) plays the part of the first compiler in such a chain. It lets the whole existing toolchain process programs written in the script, and its inverse restores the script in the output and the diagnostics, so the native-script tools can then be brought up the same way. Hindawi's own keyword lexer was brought up exactly so, through Romenagri, as the next sections show.
+A reversible transliteration (Chapter 17) plays the part of the first compiler in such a chain. It lets the whole existing toolchain process programs written in the script, and its inverse restores the script in the output and the diagnostics, so the native-script tools can then be brought up the same way. Hindawi's own keyword lexer was brought up exactly so, through Romenagri, as the next sections show.
 
 ### Trust: the precise meaning of a sovereign stack
 
@@ -1547,6 +2256,10 @@ $ ./hin.exe, with राम typed at both prompts
 ### The symbol bridge, from source to debugger
 
 This program, in the guru shaili, has a global, a function, a parameter and a local, all named in Hindi:
+
+![Figure 11: The symbol bridge: a Hindi program through hincc, GCC and the debugger, its names carried in Romenagri and rendered back](fig-bridge.svg)
+
+*Figure 11. The symbol bridge: a Hindi program through hincc, GCC and the debugger, its names carried in Romenagri and rendered back.*
 
 *File:* `examples/yog.uhin`
 
@@ -1730,7 +2443,7 @@ $ ./hin.exe, with Ali typed at the prompt
 10
 ```
 
-The keywords are C and the names are Romenagri, reached through the hub: ن is `na` and ک is `ka`. The strings print in the hub script and show the frontier of Chapter 15 at work: کیا, written without its short vowel, arrives as कया rather than क्या, and ہے as हे rather than है. Rendering them back into Urdu is the reverse filter's job.
+The keywords are C and the names are Romenagri, reached through the hub: ن is `na` and ک is `ka`. The strings print in the hub script and show the frontier of Chapter 17 at work: کیا, written without its short vowel, arrives as कया rather than क्या, and ہے as हे rather than है. Rendering them back into Urdu is the reverse filter's job.
 
 ### ILM's construct model
 
@@ -1739,7 +2452,12 @@ In the merged release, `ilm/constructs.csv` holds 39 constructs in 27 human lang
 
 <!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->
 
-## 18. Below the software: logic, chips, ternary and qubits {#ch-14}
+## 20. Below the software: logic, chips, ternary and qubits {#ch-14}
+
+::: {.plain}
+**In plain words.** What happens inside chips: switches, circuits, three-valued logic, and the very cold machines that hold qubits.
+:::
+
 ### From logic to CMOS
 
 Every digital function reduces to Boolean algebra, and NAND alone is enough to build all of it. In CMOS, a network of p-type transistors pulls the output up and a dual network of n-type transistors pulls it down, so that in a settled state no current flows from supply to ground. Power is spent mainly in switching, $P \approx \alpha\, C\, V^{2} f$, with $\alpha$ the fraction of nodes switching per cycle, $C$ the capacitance switched, $V$ the supply voltage and $f$ the clock frequency; the $V^2$ is why every generation of chips has lowered its voltage.
@@ -1754,11 +2472,11 @@ Every digital function reduces to Boolean algebra, and NAND alone is enough to b
 6. Write the layout as GDSII or OASIS and send it to the foundry: the tapeout.
 7. Fabricate, test and package.
 
-Open process design kits let anyone take this path to real silicon: SkyWater SKY130 (130 nm), GlobalFoundries GF180MCU (180 nm) and IHP SG13G2 (130 nm, SiGe BiCMOS). [zistgah/jugaad28](https://github.com/zistgah/jugaad28) catalogues integrated circuits taped out on 28 nm, with evidence-gated descriptors and a low-cost open laboratory. A hardware description language is a language like any other: its front end can be given native-language keywords by the three-axis method of Chapter 17, and what reaches the synthesiser is a netlist, not words.
+Open process design kits let anyone take this path to real silicon: SkyWater SKY130 (130 nm), GlobalFoundries GF180MCU (180 nm) and IHP SG13G2 (130 nm, SiGe BiCMOS). [zistgah/jugaad28](https://github.com/zistgah/jugaad28) catalogues integrated circuits taped out on 28 nm, with evidence-gated descriptors and a low-cost open laboratory. A hardware description language is a language like any other: its front end can be given native-language keywords by the three-axis method of Chapter 19, and what reaches the synthesiser is a netlist, not words.
 
 ### Instruction sets and the boot chain
 
-The instruction set is the contract between software and hardware. RISC-V is an open one: a small base, RV32I or RV64I, with standard extensions for multiplication (M), atomics (A), floating point (F and D), compressed instructions (C) and vectors (V), which anyone may implement without a licence fee. An open instruction set, open design tools and reproducible toolchains carry the argument of Chapter 17 down to the silicon.
+The instruction set is the contract between software and hardware. RISC-V is an open one: a small base, RV32I or RV64I, with standard extensions for multiplication (M), atomics (A), floating point (F and D), compressed instructions (C) and vectors (V), which anyone may implement without a licence fee. An open instruction set, open design tools and reproducible toolchains carry the argument of Chapter 19 down to the silicon.
 
 A computer starts through a chain of programs: a boot ROM, the firmware (BIOS or UEFI), a boot loader such as GRUB, the kernel, the first user process such as systemd, and then everything else. Each is a program in some language, and each can be given a native-language front end without changing what the hardware executes; the hindawiai organisation keeps a fork of the Linux kernel tree, [hinlin](https://github.com/hindawiai/hinlin), for exactly this work.
 
@@ -1809,12 +2527,17 @@ The cold follows from that frequency. Thermal energy has to be far below the ene
 
 That chip is an integrated circuit: aluminium or niobium films on silicon or sapphire, patterned by lithography from a layout file like any other chip, through processes related to, but distinct from, CMOS logic processes. Qiskit Metal is IBM's open tool for laying out and analysing such chips. Other ways to build qubits are trapped ions, neutral atoms, photons and spins in silicon; nitrogen-vacancy centres in diamond keep their spin coherence at room temperature and are used today as sensors.
 
-PANINIq's oscillator substrate, Chapter 19, is different in kind: a classical network of coupled oscillators that can be built from ordinary electronics and behaves as an Ising machine. Its hardware bridge is mocked today; its mathematics is not.
+PANINIq's oscillator substrate, Chapter 21, is different in kind: a classical network of coupled oscillators that can be built from ordinary electronics and behaves as an Ising machine. Its hardware bridge is mocked today; its mathematics is not.
 
 
 <!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->
 
-## 19. Quantum computing and PANINIq, with the mathematics {#ch-15}
+## 21. Quantum computing and PANINIq, with the mathematics {#ch-15}
+
+::: {.plain}
+**In plain words.** How quantum computers work, and how a network of swinging oscillators can solve the same kind of puzzle.
+:::
+
 ### States, gates and measurement
 
 A qubit's state is a unit vector in $\mathbb{C}^2$,
@@ -1917,7 +2640,7 @@ PANINIq implements PEDLER as a six-tuple $P = (I, G, U, S, F, *)$. $U$ is the st
 
 ### What is tested, and what is open
 
-From the repository's own status table: the Jelly Substrate, the PEDLER engine, the Max-Cut solvers, the frame packing of the hardware bridge, the Hamiltonian and unitary mathematics, the Qiskit circuit and QAOA are **tested**; the PyTorch substrate is **written** and not executed; the hardware port is **mocked**; a Duffing extension with amplitude as well as phase, a real firmware protocol, and the larger system running from brain signals through symbolic orchestration to a physical instruction set and manufacturing are **planned**. The run in Chapter 10 shows all of it: states spawning as the order parameter drops, a three-qubit walk whose statevector sums to one, and the oscillator, brute force and QAOA agreeing on a cut of 4.
+From the repository's own status table: the Jelly Substrate, the PEDLER engine, the Max-Cut solvers, the frame packing of the hardware bridge, the Hamiltonian and unitary mathematics, the Qiskit circuit and QAOA are **tested**; the PyTorch substrate is **written** and not executed; the hardware port is **mocked**; a Duffing extension with amplitude as well as phase, a real firmware protocol, and the larger system running from brain signals through symbolic orchestration to a physical instruction set and manufacturing are **planned**. The run in Chapter 12 shows all of it: states spawning as the order parameter drops, a three-qubit walk whose statevector sums to one, and the oscillator, brute force and QAOA agreeing on a cut of 4.
 
 ### Exercises
 
@@ -1932,7 +2655,12 @@ From the repository's own status table: the Jelly Substrate, the PEDLER engine, 
 
 # Part V: Working with the estate {#part-v}
 
-## 20. AI, from MYCIN to transformers, and how to use any AI here {#ch-16}
+## 22. AI, from MYCIN to transformers, and how to use any AI here {#ch-16}
+
+::: {.plain}
+**In plain words.** How AI grew from rule books to today's language models, and how to use any AI, safely, to help with this work.
+:::
+
 ### Two traditions
 
 The first tradition in AI wrote knowledge down as rules. MYCIN, built at Stanford in the 1970s (Shortliffe, 1976), identified the bacteria behind severe infections and recommended antibiotics with about six hundred production rules of the form *if these findings, then this conclusion, with this certainty*. Each rule carried a certainty factor between $-1$ and $+1$, and two positive factors for the same conclusion combined as
@@ -1999,7 +2727,12 @@ Four rules keep this safe. Never paste a password, token or private key into any
 
 <!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->
 
-## 21. Open source, provenance and contributing {#ch-17}
+## 23. Open source, provenance and contributing {#ch-17}
+
+::: {.plain}
+**In plain words.** How to share, copy and improve this work in the open, and how each piece is stamped with its date and a permanent reference.
+:::
+
 ### Git as a data structure
 
 A Git repository is a directed acyclic graph of commits. Each commit names a tree, the hash of the directory's contents, its parent commits, its author and its message, and every object is addressed by the hash of its content. Change one byte anywhere and every hash above it changes, which is why a commit hash pins an exact state of every file. A branch is a movable name for a commit; a merge commit has two parents.
@@ -2030,7 +2763,7 @@ The Aṣṭādhyāyī's review tradition is an old form of the same practice. K�
 
 ### DOIs
 
-A DOI is a persistent identifier that doi.org resolves to a landing page. Zenodo, run by CERN, issues DOIs through DataCite and keeps two kinds: a concept DOI that always points to the latest version, and a version DOI for each release. project-ilm/misty-doi writes the metadata and makes the deposit; its commands are in Chapter 10.
+A DOI is a persistent identifier that doi.org resolves to a landing page. Zenodo, run by CERN, issues DOIs through DataCite and keeps two kinds: a concept DOI that always points to the latest version, and a version DOI for each release. project-ilm/misty-doi writes the metadata and makes the deposit; its commands are in Chapter 12.
 
 ### Timestamps with OpenTimestamps
 
@@ -2051,7 +2784,12 @@ Every repository carries a `CONTRACT.md` of numbered clauses and an `ops/verify.
 
 <!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->
 
-## 22. GATE: sit it, whatever your age {#ch-18}
+## 24. GATE: sit it, whatever your age {#ch-18}
+
+::: {.plain}
+**In plain words.** India's national engineering examination: what it covers, how to apply, and why it is worth sitting at any age.
+:::
+
 ### The facts for 2027
 
 The Graduate Aptitude Test in Engineering 2027 is organised by IIT Madras. There are 30 test papers, including Robotics and Automation (RA) for the first time; a candidate may sit one paper or an allowed pair of two. The regular registration, first due to close on 27 September 2026, has been extended to 5 October 2026 without a late fee, and the extended registration, with a late fee, closes on 12 October 2026, all on the portal [gate2027.iitm.ac.in](https://gate2027.iitm.ac.in). Registration goes through DigiLocker for Indian nationals. The application correction window runs from 14 to 21 October 2026, the examination is held in February 2027, and results are due on 19 March 2027. There is no upper age limit: a candidate needs to be in the third or a later year of an undergraduate degree, or to have completed one. A GATE score is valid for three years and opens postgraduate admissions and recruitment in public-sector undertakings.
@@ -2087,28 +2825,33 @@ Courses at GATE level for both CS and RA, aligned with the reference lab and its
 
 <!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->
 
-## 23. Questions that come up, answered technically {#ch-19}
+## 25. Questions that come up, answered technically {#ch-19}
+
+::: {.plain}
+**In plain words.** Short technical answers to questions people often ask, such as whether AI needs English, and who controls it.
+:::
+
 These questions are asked whenever the work is discussed. Each answer points to the chapter that carries the evidence.
 
 ### If it uses GCC, or Qiskit, does it not still depend on foreign technology?
 
-A compiler is front ends and back ends joined by an intermediate representation (Chapter 17). By the time a program reaches GCC's GIMPLE, a loop written with `for` and the same loop written with `क्रम` are the same basic blocks; the language of the keywords is settled and discarded at the front end. What does reach the back end is the program's names, and Hindawi hands those over in Romenagri, so that they come out of the binary intact and map back to the script (Chapter 17). Reusing a mature back end is how Rust, Swift and Julia were all built on LLVM, and nobody calls them dependent on C++. PANINIq hands Qiskit a Hamiltonian, which is a matrix of complex numbers. The dependency that does matter is on source code and on people who can rebuild it, which is the next answer.
+A compiler is front ends and back ends joined by an intermediate representation (Chapter 19). By the time a program reaches GCC's GIMPLE, a loop written with `for` and the same loop written with `क्रम` are the same basic blocks; the language of the keywords is settled and discarded at the front end. What does reach the back end is the program's names, and Hindawi hands those over in Romenagri, so that they come out of the binary intact and map back to the script (Chapter 19). Reusing a mature back end is how Rust, Swift and Julia were all built on LLVM, and nobody calls them dependent on C++. PANINIq hands Qiskit a Hamiltonian, which is a matrix of complex numbers. The dependency that does matter is on source code and on people who can rebuild it, which is the next answer.
 
 ### What would a sovereign stack actually require?
 
-Source code for every layer, builds that reproduce bit for bit, independent verification of the compilers by diverse double-compiling, and enough trained people to rebuild, verify and modify each layer (Chapter 17). None of this depends on the alphabet of the keywords, and all of it depends on skills. That is why the next steps here are courses and laboratories, not a logo.
+Source code for every layer, builds that reproduce bit for bit, independent verification of the compilers by diverse double-compiling, and enough trained people to rebuild, verify and modify each layer (Chapter 19). None of this depends on the alphabet of the keywords, and all of it depends on skills. That is why the next steps here are courses and laboratories, not a logo.
 
 ### Is this not white-labelling borrowed technology?
 
-White-labelling sells someone else's product under a new brand, often closed. Everything here is the opposite: public source under the GPL, dated DOIs, and forks and pull requests invited (Chapter 21). What is new is stated precisely: the language front ends, the construct model with its decorators, the reversible transliteration, the transducers and the substrates. What is reused is reused openly and named, as every serious compiler project reuses back ends, libraries and standards.
+White-labelling sells someone else's product under a new brand, often closed. Everything here is the opposite: public source under the GPL, dated DOIs, and forks and pull requests invited (Chapter 23). What is new is stated precisely: the language front ends, the construct model with its decorators, the reversible transliteration, the transducers and the substrates. What is reused is reused openly and named, as every serious compiler project reuses back ends, libraries and standards.
 
 ### Are Unicode and InScript not enough?
 
-Unicode encodes characters and InScript is a keyboard layout. Together they let you type and store Indic text (Chapter 14). Neither translates keywords, libraries, compiler messages or documentation; neither tells a program which language a Devanagari string is in; and neither makes a name written in the script survive an assembler, a linker script, an ELF symbol table, DWARF, a debugger and a JTAG probe and come back readable. The first two gaps are the language front end's; the third is the script layer's, Romenagri's (Chapters 15 and 17).
+Unicode encodes characters and InScript is a keyboard layout. Together they let you type and store Indic text (Chapter 16). Neither translates keywords, libraries, compiler messages or documentation; neither tells a program which language a Devanagari string is in; and neither makes a name written in the script survive an assembler, a linker script, an ELF symbol table, DWARF, a debugger and a JTAG probe and come back readable. The first two gaps are the language front end's; the third is the script layer's, Romenagri's (Chapters 17 and 19).
 
 ### Is a script not the same as a language?
 
-No. Punjabi is written in Gurmukhi and in Shahmukhi; Devanagari writes Hindi, Marathi, Nepali and Sanskrit, and pronounces the same letters differently in each (Chapter 15). A system that ties language to script cannot grow past its first language, which is why ILM keeps script, language and standard on separate axes.
+No. Punjabi is written in Gurmukhi and in Shahmukhi; Devanagari writes Hindi, Marathi, Nepali and Sanskrit, and pronounces the same letters differently in each (Chapter 17). A system that ties language to script cannot grow past its first language, which is why ILM keeps script, language and standard on separate axes.
 
 ### Should there not be a conference first?
 
@@ -2116,35 +2859,35 @@ A conference is where results are presented and checked against each other, and 
 
 ### Is 2047 the horizon, or 2030?
 
-The number of people who can build decides the date. Courses at GATE level and reference labs are how that number grows, which is why they come next (Chapters 12 and 22). The estate's own schedule is in Chapter 24.
+The number of people who can build decides the date. Courses at GATE level and reference labs are how that number grows, which is why they come next (Chapters 14 and 24). The estate's own schedule is in Chapter 27.
 
 ### Is quantum hardware not out of reach?
 
-Much less than it looks. A laptop simulates about thirty qubits exactly (Chapter 19), and PANINIq runs its quantum walk and QAOA baseline on one. Cloud services give access to real quantum processors, some with free tiers. Oscillator Ising machines can be built from ordinary electronics, and chips can be designed and taped out on open process design kits (Chapter 18). What is out of reach is building a dilution refrigerator from scratch, and that is not where the work starts.
+Much less than it looks. A laptop simulates about thirty qubits exactly (Chapter 21), and PANINIq runs its quantum walk and QAOA baseline on one. Cloud services give access to real quantum processors, some with free tiers. Oscillator Ising machines can be built from ordinary electronics, and chips can be designed and taped out on open process design kits (Chapter 20). What is out of reach is building a dilution refrigerator from scratch, and that is not where the work starts.
 
 ### What has the Indian knowledge tradition contributed that is technical?
 
-Specific, checkable things. Pāṇini's grammar is a formal generative system with character classes, ordered rewrite rules and meta-rules for conflict (Chapter 16). Piṅgala's *Chandaḥśāstra* enumerates the patterns of long and short syllables in metres with rules equivalent to counting in binary, and its *meru-prastāra* is the triangle of binomial coefficients later named after Pascal. Brahmagupta stated rules for arithmetic with zero in 628 CE. Āryabhaṭa's *kuṭṭaka* solves linear equations in integers, the problem the extended Euclidean algorithm solves. Mādhava of Saṅgamagrāma, in the fourteenth century, gave infinite series for the arctangent, sine and cosine, including
+Specific, checkable things. Pāṇini's grammar is a formal generative system with character classes, ordered rewrite rules and meta-rules for conflict (Chapter 18). Piṅgala's *Chandaḥśāstra* enumerates the patterns of long and short syllables in metres with rules equivalent to counting in binary, and its *meru-prastāra* is the triangle of binomial coefficients later named after Pascal. Brahmagupta stated rules for arithmetic with zero in 628 CE. Āryabhaṭa's *kuṭṭaka* solves linear equations in integers, the problem the extended Euclidean algorithm solves. Mādhava of Saṅgamagrāma, in the fourteenth century, gave infinite series for the arctangent, sine and cosine, including
 
 $$ \frac{\pi}{4} = 1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \cdots , $$
 
-about two centuries before they appeared in Europe. Where a tradition is said to be not yet understood, the useful response is the one Chapter 16 takes: encode it, run it, and let the output speak.
+about two centuries before they appeared in Europe. Where a tradition is said to be not yet understood, the useful response is the one Chapter 18 takes: encode it, run it, and let the output speak.
 
 ### Does AI depend on ASCII, and would it stop working without it? {#q-ascii}
 
-There is no separate "ASCII foundation" to cut off. ASCII is the first 128 code points of Unicode and the one-byte range of UTF-8 (Chapter 14). A current language model reads text as tokens built over UTF-8 bytes or Unicode characters, and it processes Devanagari, Urdu or Chinese through the same machinery as English.
+There is no separate "ASCII foundation" to cut off. ASCII is the first 128 code points of Unicode and the one-byte range of UTF-8 (Chapter 16). A current language model reads text as tokens built over UTF-8 bytes or Unicode characters, and it processes Devanagari, Urdu or Chinese through the same machinery as English.
 
-What does exist is an asymmetry, in three places. The training data are mostly English. The tokenisers, trained mostly on English, cut Indic text into more tokens for the same content: every Devanagari letter is already three bytes in UTF-8, so the same sentence costs more to process and fills the context window sooner. And the toolchains beneath the models keep their keywords, libraries and symbol alphabets in ASCII (Chapters 14 and 17). None of the three is a law to surrender to. Each has a technical remedy: more native text, tokenisers with script-aware merges and, at the toolchain, Romenagri, which uses ASCII-7 as a carrier while the script's identity stays reversible.
+What does exist is an asymmetry, in three places. The training data are mostly English. The tokenisers, trained mostly on English, cut Indic text into more tokens for the same content: every Devanagari letter is already three bytes in UTF-8, so the same sentence costs more to process and fills the context window sooner. And the toolchains beneath the models keep their keywords, libraries and symbol alphabets in ASCII (Chapters 16 and 19). None of the three is a law to surrender to. Each has a technical remedy: more native text, tokenisers with script-aware merges and, at the toolchain, Romenagri, which uses ASCII-7 as a carrier while the script's identity stays reversible.
 
 Romenagri's own measurements are recorded in [project-ilm/romenagri](https://github.com/project-ilm/romenagri) and should be quoted as they stand. Written in Romenagri, the test corpus takes 1.76 times fewer bytes, and its alphabet shrinks from 51 symbols to 24, with nothing lost. In the recorded tokeniser sweep, however, Romenagri did not reduce the number of tokens at matched numbers of merges: the ratio ran from 0.62 to 1.0. The three- to five-fold token gain predicted in the author's tokenisation paper therefore stands as a falsifiable prediction still to be shown, and his runbook asks for exactly this result to be reported, not hidden.
 
 ### Who owns the leading AI engines, and does ownership decide which languages and nations are sovereign? {#q-ownership}
 
-Ownership of the leading models changes by the quarter and is not an engineering property; summaries of it, including AI-generated ones, need checking against primary sources before they are repeated. What owners decide is what their own tools do. They do not decide what a community can build. In the technical sense of Chapter 17, sovereignty belongs to whoever can rebuild, verify, modify and run the stack from source. The estate is built to that standard and to be independent of any one model: the cyclers run with any AI, Romenagri, ILM and PANINI are open and run on a laptop, and open-weight models can be run locally (Chapter 20). A community that holds its scripts' path through the toolchain, its tokenisers and its corpora does not depend on who owns the most popular engine.
+Ownership of the leading models changes by the quarter and is not an engineering property; summaries of it, including AI-generated ones, need checking against primary sources before they are repeated. What owners decide is what their own tools do. They do not decide what a community can build. In the technical sense of Chapter 19, sovereignty belongs to whoever can rebuild, verify, modify and run the stack from source. The estate is built to that standard and to be independent of any one model: the cyclers run with any AI, Romenagri, ILM and PANINI are open and run on a laptop, and open-weight models can be run locally (Chapter 22). A community that holds its scripts' path through the toolchain, its tokenisers and its corpora does not depend on who owns the most popular engine.
 
 ### What is the state of the art for Indic and Chinese text in AI? {#q-sota}
 
-The field moves monthly, so this answer gives the mechanisms rather than model names and scores, which should be taken from published model cards and papers. Chinese and the Indic scripts pose different problems. A Chinese character is a single code point, three bytes in UTF-8, and usually carries a morpheme, so the question is how large a vocabulary of characters and words a tokeniser can afford. An Indic akshara is a cluster of several code points (Chapter 14), so the question is whether the tokeniser keeps clusters and morphemes whole. The approaches in use are larger vocabularies with merges learned from native text, pre-tokenisation that respects grapheme clusters, byte-level and character-level models, more native training data, and evaluation written in the languages themselves rather than translated from English. Reversible transliteration such as Romenagri is a further route, with the measured gains and limits given above.
+The field moves monthly, so this answer gives the mechanisms rather than model names and scores, which should be taken from published model cards and papers. Chinese and the Indic scripts pose different problems. A Chinese character is a single code point, three bytes in UTF-8, and usually carries a morpheme, so the question is how large a vocabulary of characters and words a tokeniser can afford. An Indic akshara is a cluster of several code points (Chapter 16), so the question is whether the tokeniser keeps clusters and morphemes whole. The approaches in use are larger vocabularies with merges learned from native text, pre-tokenisation that respects grapheme clusters, byte-level and character-level models, more native training data, and evaluation written in the languages themselves rather than translated from English. Reversible transliteration such as Romenagri is a further route, with the measured gains and limits given above.
 
 ### What is a software factory, and what is the estate's? {#q-factory}
 
@@ -2158,30 +2901,151 @@ By what it has run, not by how certain it sounds. [COPA](https://github.com/zist
 
 ### Can I point any AI at Romenagri and have it check the claims? {#q-verify-ai}
 
-Yes, provided the AI can execute code: Claude with code execution, Claude Code, Codex CLI, Gemini CLI or Aider on your own machine (Chapter 20). Give it this:
+Yes, provided the AI can execute code: Claude with code execution, Claude Code, Codex CLI, Gemini CLI or Aider on your own machine (Chapter 22). Give it this:
 
 > Clone https://github.com/hindawiai/chintamani. Read `Romenagri/` and `Hindawi/hindrv/hincc`. Build Romenagri with `make`, then the guru shaili and the driver, installing into a folder inside the clone. Run a few Devanagari words through `uni2acii | acii2cf` and back through `rmn2acii | acii2uni`, and compare. Compile `Hindawi/samples/HindiC.uhin` with `hincc` and run it. Then build it with `-g` and show the names in `nm` and in GDB. Show every command and its output, and report nothing you did not run.
 
-Chapter 11 gives the same steps as commands, and Chapters 15 and 17 show what they print.
+Chapter 13 gives the same steps as commands, and Chapters 17 and 19 show what they print.
 
+
+
+<!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->
+
+## 26. The roadmap, for every collaborator and every domain {#ch-roadmap}
+
+::: {.plain}
+**In plain words.** The plan to finish the releases and open the work to everyone: what happens when, which lane each kind of person can join, and every field of work, from farming to medicine to software.
+:::
+
+The plan to complete the releases and to open the estate to collaborators is kept as data and run as a GitHub project: one board, an epic for each phase, and an issue for every piece of work, each with its finding, its task, the exact gate that proves it done, the evidence to attach, and what it depends on. The same data gives every collaborator a lane and every domain a lane, so anyone can find where they fit and what is open to them. The roadmap page filters it all by phase, by collaborator lane, by domain family and by owner, at [zistgah.org/roadmap](https://zistgah.org/roadmap/).
+
+![Figure 12: The plan's phases; the lanes run alongside from P3](fig-plan.svg)
+
+*Figure 12. The plan's phases; the lanes run alongside from P3.*
+
+### Phases
+
+| Phase | Window | Goal | Issues |
+|:--|:--|:--|--:|
+| P0 Baseline | Weekend of 3 to 4 October 2026 | One measured inventory, the board, tokens with the right scopes, and the list of rulings. | 4 |
+| P1 Close the releases | 10 to 25 October 2026 | Everything built is released, and every defect found by execution is fixed. | 19 |
+| P2 Licences and DOIs | 24 October to 8 November 2026 | Every repository carries a licence file and correct metadata; minting covers the estate by family. | 5 |
+| P3 Collaboration infrastructure | 31 October to 15 November 2026 | A newcomer can go from Rahnuma to a merged pull request in one sitting. | 7 |
+| P4 Reference lab and courses | November to December 2026 | The reference lab runs from launch scripts, with GATE-aligned modules and a pilot. | 5 |
+| P5 Papers and IPR | Rolling, from October 2026 | Disclosure ledger first, then preprints of the four papers with results. | 7 |
+| P6 Monetisation | From November 2026 | Two offers defined and priced, on the dossier standard. | 3 |
+| Lanes: every collaborator and every domain | Continuous, from October 2026 | Every collaborator type and every domain family has a visible lane on the board, with an entry point, open work and a way to propose more. | 62 |
+
+#### Collaborator lanes
+
+| Lane | Start here | Contribute | Issues |
+|:--|:--|:--|--:|
+| School students, 10 to 17 | the Rahnuma view for school students; CHAKRA, PANINI's studio, GENIE and the FAKIR dome | learning paths, translations of plain-words summaries, questions | 1 |
+| Undergraduates: BE, BTech, BSc, BS | the GATE view; Running every component | good first issues, component fixes, capstones seeded from FAKIR | 52 |
+| Postgraduates and doctoral researchers | the researcher views; Appendices C and D | theses and papers on the open questions, measured results, reviews | 52 |
+| Teachers, lecturers and lab builders | the teacher view; the reference lab | course modules, lab sheets, pilots, reviews of plain-words text | 9 |
+| Software engineers | the engineer view; the compilers chapter | code, tests, gates, tooling, pull requests | 22 |
+| Hardware, embedded and chip engineers | Below the software; zamin, pratik_core_mvp, jugaad28 | SPICE, layouts, firmware, device control, ESP32 work | 8 |
+| Linguists, translators and language workers | the linguist view; writing systems and Pāṇini | language tables, corpora, transliteration rules, measurements | 7 |
+| Researchers in AI, quantum and cognition | the researcher view; PANINIq; PEDLER | models, experiments, validation, papers | 7 |
+| Researchers in the humanities and social sciences | the humanities view; Appendix C | studies of agency, language, knowledge and community | 4 |
+| Clinicians, health workers and medical researchers | VIKRAM's health section; CEMb and QNBCI | clinical questions, partnerships, review, health-domain tasks | 3 |
+| Community workers, NGOs and village institutions | GramSheel and Project VIKRAM | local needs, pilots, language and field knowledge | 30 |
+| Farmers, artisans and local enterprises | FAKIR's domain lanes; VIKRAM's livelihood and agriculture sections | domain knowledge, problems worth solving, field testing | 24 |
+| Artists, writers, filmmakers and musicians | the maker view; the cyclers | works made with the cyclers, recorded as method | 3 |
+| Makers, roboticists and manufacturers | PANINIphy, pench, transeg | physical realizations, parts, embodiment | 6 |
+| Policy makers, administrators and public bodies | Appendices C and E; sovereignty in Chapter 19 | policy questions, adoption, public infrastructure | 5 |
+| Lawyers, IPR and standards professionals | provenance and licences; the disclosure ledger | licence review, IPR clearance, standards work | 14 |
+| Industry partners and companies | Appendix E's adoption path; the component cards | integration, pilots, paid offers, support | 9 |
+| Funders, sponsors and investors | this roadmap and its measures | funding of lanes, labs and pilots | 4 |
+| Institutions: colleges, universities and labs | the reference lab and the GATE modules | pilots, courses, joint research | 13 |
+| AI agents working under a human | any issue's URL; Chapter 22, how to use any AI | issue work through pull requests, with gate output attached | 65 |
+
+#### Domain families
+
+From FAKIR's lattice: zistgah/fakir data/lattice.json (ISIC Rev.4, ISCO-08, ISCED-F 2013), 1,505 nodes.
+
+| Family | Name | Domains within | Issues |
+|:--|:--|--:|--:|
+| ISIC A | Agriculture, forestry and fishing | 54 | 1 |
+| ISIC B | Mining and quarrying | 29 | 1 |
+| ISIC C | Manufacturing | 232 | 4 |
+| ISIC D | Electricity, gas, steam and air conditioning supply | 7 | 1 |
+| ISIC E | Water supply; sewerage, waste management and remediation activities | 18 | 1 |
+| ISIC F | Construction | 22 | 1 |
+| ISIC G | Wholesale and retail trade; repair of motor vehicles and motorcycles | 66 | 1 |
+| ISIC H | Transportation and storage | 36 | 1 |
+| ISIC I | Accommodation and food service activities | 15 | 1 |
+| ISIC J | Information and communication | 42 | 22 |
+| ISIC K | Financial and insurance activities | 31 | 1 |
+| ISIC L | Real estate activities | 5 | 1 |
+| ISIC M | Professional, scientific and technical activities | 35 | 11 |
+| ISIC N | Administrative and support service activities | 51 | 1 |
+| ISIC O | Public administration and defence; compulsory social security | 11 | 1 |
+| ISIC P | Education | 14 | 7 |
+| ISIC Q | Human health and social work activities | 21 | 1 |
+| ISIC R | Arts, entertainment and recreation | 19 | 1 |
+| ISIC S | Other service activities | 26 | 1 |
+| ISIC T | Activities of households as employers; undifferentiated goods- and services-producing activities of households for own use | 8 | 1 |
+| ISIC U | Activities of extraterritorial organizations and bodies | 3 | 1 |
+| ISCO 1 | Managers | 46 | 1 |
+| ISCO 2 | Professionals | 125 | 1 |
+| ISCO 3 | Technicians and Associate Professionals | 109 | 1 |
+| ISCO 4 | Clerical Support Workers | 41 | 1 |
+| ISCO 5 | Service and Sales Workers | 57 | 1 |
+| ISCO 6 | Skilled Agricultural, Forestry and Fishery Workers | 30 | 1 |
+| ISCO 7 | Craft and Related Trades Workers | 85 | 1 |
+| ISCO 8 | Plant and Machine Operators, and Assemblers | 57 | 1 |
+| ISCO 9 | Elementary Occupations | 50 | 1 |
+| ISCO 0 | Armed Forces Occupations | 9 | 1 |
+| ISCED 00 | Generic programmes and qualifications | 6 | 1 |
+| ISCED 01 | Education | 5 | 4 |
+| ISCED 02 | Arts and humanities | 13 | 5 |
+| ISCED 03 | Social sciences, journalism and information | 8 | 5 |
+| ISCED 04 | Business, administration and law | 10 | 7 |
+| ISCED 05 | Natural sciences, mathematics and statistics | 13 | 4 |
+| ISCED 06 | Information and Communication Technologies (ICTs) | 4 | 16 |
+| ISCED 07 | Engineering, manufacturing and construction | 15 | 4 |
+| ISCED 08 | Agriculture, forestry, fisheries and veterinary | 9 | 1 |
+| ISCED 09 | Health and welfare | 12 | 1 |
+| ISCED 10 | Services | 14 | 1 |
+
+The AGI layers are L0 Hardware Definition, L1 Verification, L2 Synthesis/Compilation, L3 Firmware/Embedded, L4 Systems, L5 Parallel, L6 Distributed/Cloud, L7 AI/Deep Learning, L8 Robotics/Embodiment, L9 AGI/ASI. Every domain node, crossed with every layer and every language in ILM's registry, is a possible seed:
+
+$$ |S| = |D| \times |L| \times |\Lambda| = 1{,}505 \times 10 \times 7{,}867 = 118{,}398{,}350. $$
+
+### How a collaborator comes in
+
+![Figure 13: How any collaborator, in any domain, goes from the guide to a sealed contribution](fig-collab.svg)
+
+*Figure 13. How any collaborator, in any domain, goes from the guide to a sealed contribution.*
+
+Four issue forms in [zistgah/governance](https://github.com/zistgah/governance) are the ways in: **Join as a collaborator**, with your lane, domains and languages; **Propose a domain task**, seeded the way FAKIR seeds it, with a domain code, an AGI layer, a language, an intent and a gate; **Report a finding**, with the commands run and what they printed; and **Request a ruling**, for the questions only the author can settle. Every issue says which owner class takes it: a Claude Code session, ChatGPT, Gemini or Fable as workers, or the author himself for push, Pages, mint, merges and rulings.
+
+The work flows the same way for everyone. A worker, a person or an AI, opens a pull request with the gate's output attached; the author merges what is green; anything pushed or minted carries its Candor receipt and goes through seal, clear, attest and mint. Each Saturday the status digest shows every issue as closed, ready, or blocked and by what.
 
 
 <!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->
 
 # Part VI: Status {#part-vi}
 
-## 24. This release and the next {#ch-20}
+## 27. This release and the next {#ch-20}
+
+::: {.plain}
+**In plain words.** What this edition contains, what changed in it, and what comes next.
+:::
+
 ### This release
 
-Rahnuma 1.0.0, dated 29 September 2026, is this guide, in three forms: the site, the PDF, and one Markdown file for reading or for giving to an AI. It comes with its examples, its build and its gate. Every example shown as executed was executed, and `bash ops/verify.sh` runs them again. That includes Hindawi's C shaili, built with Romenagri from its retrieved sources and run through GCC and GDB in Chapter 17.
+Rahnuma 1.3.0, dated 3 October 2026, is this guide. It adds fourteen diagrams drawn from the recorded relations, an appendix of formal definitions, and the roadmap, with a lane for every collaborator and every domain family (Chapter 26). Version 1.2.0, of the same date, added appendices for researchers in the humanities and social sciences, in science, technology, engineering and mathematics, and for practitioners, an appendix on reading the architecture without flattening it, and the questions behind GramSheel and VIKRAM as the author put them on Gandhi Jayanti. Version 1.1.0, of the same date, supersedes both printings of 1.0.0, one of 53 pages and one of 67, which carried the same version number. It adds the dependency graph of the estate (Chapter 6), the AyeAI Triad, GramSheel and Project VIKRAM, and Humanesque with its projections and their names, each set apart (Chapter 9), the dated entries for GramSheel's beginning in 1993 and VIKRAM's launch in 2020, the entries for Kitab and Research Kundali, and the rule that a record not yet retrieved is not thereby false. It also runs every component of the estate on a clean machine and reports each one as it ran, with the set-up a README leaves out and the reason when a component does not pass (Chapter 13); it gives every chapter a summary in plain words; and on the site it lets a reader choose a background and an age, and shows a reading path, the components to try first, the depth of text, a larger type and a light or dark page. Version 1.0.0 is deposited at [doi:10.5281/zenodo.23062059](https://doi.org/10.5281/zenodo.23062059). Like 1.0.0, it is this guide, in three forms: the site, the PDF, and one Markdown file for reading or for giving to an AI. It comes with its examples, its build and its gate. Every example shown as executed was executed, and `bash ops/verify.sh` runs them again. That includes Hindawi's C shaili, built with Romenagri from its retrieved sources and run through GCC and GDB in Chapter 19.
 
 ### The estate today
 
-Chapter 8 lists every public repository and every DOI a repository records about itself. Most repositories are pushed and public without a DOI of their own. One case is worth naming because it is often asked about: zistgah/jyotish, the offline panchang, is pushed and its site is live, and it has not been minted. A repository already pushed can be minted later with the estate's seeder; minting is the author's decision, taken repository by repository.
+Chapter 10 lists every public repository and every DOI a repository records about itself. Most repositories are pushed and public without a DOI of their own. One case is worth naming because it is often asked about: zistgah/jyotish, the offline panchang, is pushed and its site is live, and it has not been minted. A repository already pushed can be minted later with the estate's seeder; minting is the author's decision, taken repository by repository.
 
 ### Next
 
-The next release of this package carries the lab launch scripts: one script per lab, the software dockerised and retrieved from the existing repositories, not rebuilt (Chapter 12). The GATE-level courses in computer science and in robotics and automation follow, aligned with the reference lab (Chapter 22).
+The next release of this package carries the lab launch scripts: one script per lab, the software dockerised and retrieved from the existing repositories, not rebuilt (Chapter 14). The GATE-level courses in computer science and in robotics and automation follow, aligned with the reference lab (Chapter 24).
 
 ### The consolidated release
 
@@ -2204,6 +3068,11 @@ Typeset in Tiro Devanagari Sanskrit, Noto Serif and its script families, and Not
 
 ## A. The estate's terms, and the nearest common terms {#app-a}
 
+
+::: {.plain}
+**In plain words.** A table matching the special terms used here with the closest common terms.
+:::
+
 This table is retrieved from `GLOSSARY.md` in zistgah/paniniq at commit 82a5cf2. The terms are the author's and are kept; the right-hand columns exist so that a reader, or another AI, who knows the market vocabulary can find their footing, and where the two differ the difference is stated.
 
 | His term | What it means here | Nearest common terms | Where they differ |
@@ -2223,7 +3092,266 @@ This table is retrieved from `GLOSSARY.md` in zistgah/paniniq at commit 82a5cf2.
 | Candor, Tok DOI, Misty DOI | Signed intent receipts; atomic timestamps; DOI minting, in the order seal, clear, attest, mint. | in-toto and SLSA attestations, OpenTimestamps, Zenodo DOI deposit | |
 | Reference lab | His laboratory pattern for doing most of the research behind high-end AI, robotics and automation papers at modest cost, alongside the courses built on it. | AI research lab, robotics and automation lab | Public name pending his choice. |
 
-## B. References {#app-b}
+
+<!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->
+
+## B. Reading the architecture without flattening it {#app-read}
+
+
+::: {.plain}
+**In plain words.** How to read the architecture without squashing it into a straight line: what an arrow can mean, and the loops that run at different scales.
+:::
+
+The architecture is dense because what it addresses is dense: language, cognition, knowledge, participation, embodiment, verification, provenance, community capability, identity and continuity. This appendix does not simplify it by removing parts. It shows how to read it so that its structure stays open to questioning. Statements marked † follow the author's working notes and write-ups as supplied on 29 September and 3 October 2026.
+
+### A graph read one route at a time
+
+Any sequence printed on a page, A then B then C, is one route through the graph of Chapter 6, chosen because a sequence is easier to read. Before trusting an arrow, ask which of seven things it means:
+
+| The arrow is | Example in this guide |
+|:-------------|:----------------------|
+| temporal: one thing came before another | the dated record; PEDLER (2001) before Romenagri (2003) |
+| causal: one thing brings about another | an observation changing a knowledge state |
+| a dependency: one cannot be built or understood without the other | the cyclers are written in the PANINI language |
+| an interface: two things meet at a defined boundary | Romenagri names crossing into the host toolchain |
+| a composition: things used together without merging | Mez composing GENIE, Kitab and the cyclers |
+| an expository order: the order of explanation only | the reading paths of the reader views |
+| an interpretive mapping: a reader's bridge between vocabularies | the nearest analogue in each term entry |
+
+These are not interchangeable. The estate itself keeps three of its orderings apart: the Acts are temporal, the projections are cultural, and the edges of the graph are architectural; none of them is a ladder of maturity.
+
+### Loops at different scales
+
+The architecture has several loops, and they run at different scales; collapsing them into one "AI feedback loop" loses what each is for.
+
+![Figure 14: Loops at four scales: PEDLER's, GENIE's, the realization spine's, and continuity as the write-ups read it (†)](fig-loops.svg)
+
+*Figure 14. Loops at four scales: PEDLER's, GENIE's, the realization spine's, and continuity as the write-ups read it (†).*
+
+**The cognitive loop, PEDLER's.** State, observation, counter-observation, evaluation, inclination, selection, intent, Act, execution, event, and a new state. Inclination is a signed directional gradient, not yet an intention; the Act is executable intent; Natural Justice gates the passage from intent to Act.
+
+**The research loop, GENIE's.** Create, verify, execute, measure, falsify, integrate, with nine epistemic tags on every statement and a gate that a simulation cannot pass in place of an experiment.
+
+**The realization loop, PANINI's.** Language, semantic IR, realization requirement, domain resolution, domain IR, then a common layer of geometry, trajectory, animation, observation, verification and an ArtifactGraph. The realization repositories keep desired, predicted, observed and validated results apart, and compilation success, execution success, target satisfaction and validation apart; † the notes extend the separation to desired, designed, predicted, planned, realized, executed, observed, verified and validated.
+
+**The continuity loop.** † The write-ups read a fourth loop at civilisational scale: identity, memory, provenance, transformation, a new substrate or embodiment, continuity. Its components in the record are yadein, which records, TransEg, which continues a constituted identity, and the provenance systems that keep what happened.
+
+In every loop the gates do work in both directions. Verification is not only a last inspection: a failed gate stops the next step. Provenance is not only storage: it fixes what can legitimately be claimed about an artifact. Observation is not only telemetry: it changes the state from which the next action is chosen. VGC states the rule plainly: the gate is a verified artifact, and an AI's report that something passed is not evidence that it passed.
+
+### One component, several cycles
+
+A component is not exhausted by the place it appears in one diagram. ILM belongs to the linguistic line, yet language shapes how knowledge and intent are represented. FAKIR is a knowledge kernel, yet the knowledge it supplies shapes what is done. PEDLER is a cognitive architecture, yet its Act, Inclination and Natural Justice are also the primitives of the constitutional corpus. VGC concerns verification, yet verification decides what may become accepted knowledge. GramSheel is a foundation for villages, yet it touches education, livelihood, health and technology at once. The graph records relations of dependence, interaction and constraint, not modules stacked in a tower.
+
+### Names are interfaces, and analogies are doorways
+
+The density of names cannot be removed without removing distinctions; each name denotes a different object. What helps is a functional handle at first meeting, which the term-by-term chapter and Appendix A give, and an analogy used as a doorway rather than a definition. † In the write-ups' phrase, the analogy opens the door; the formal definition decides what is inside the room.
+
+
+<!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->
+
+## C. For researchers in the humanities and social sciences {#app-hum}
+
+
+::: {.plain}
+**In plain words.** A guide for researchers in the humanities and social sciences: the questions each field can ask of this work, and where to find and test the answers.
+:::
+
+Each discipline below is given a question the architecture makes concrete, where to look, what can be examined or run, and what must be kept distinct. These are research questions, not claims that any discipline has validated the architecture. The technical components specify relations; the disciplines bring the questions through which those relations can be investigated. Neither vocabulary replaces the other: PEDLER is a computational object that psychologists and philosophers can interrogate as a model of agency, not psychology; GramSheel is an infrastructure that sociologists can interrogate as a model of capability distribution, not a development programme; ILM is a computational object that linguists can interrogate as a model of multilingual representation, not linguistics.
+
+### Political science, law and governance
+
+**The question.** Who holds agency and computational authority, and what counts as admissible evidence when machines take part in decisions? **Where to look.** The Proclamation of Individual Equity and recursive sovereignty (Chapter 3); Humanesque and its projections (Chapter 9); PAT.AL, GramSheel and Project VIKRAM; Natural Justice as a gate in PEDLER; VGC and the provenance order seal, clear, attest, mint (Chapter 23). **What can be examined.** The text of PoIE ([zistgah/poie](https://github.com/zistgah/poie), doi:10.5281/zenodo.21397274); the executable contracts that gate every repository ([zistgah/governance](https://github.com/zistgah/governance)), each a set of clauses a machine checks; the Candor receipts, which record signed intent as in-toto statements. **Keep distinct.** PAT.AL is not democracy, and Humanesque is not political theory; Natural Justice in PEDLER is a gate on the passage from intent to Act, not a general ethics.
+
+### Sociology and development studies
+
+**The question.** Can technological capability be distributed through communities rather than concentrated in distant institutions, and can villages produce knowledge and technology rather than only consume it? **Where to look.** GramSheel and its principles, health, education, justice, livelihood and peace; Project VIKRAM and its thirteen sections; FAKIR's lattice of every lawful economic activity under ISIC, ISCO and ISCED; the reference lab. **What can be examined.** VIKRAM's journal and its section pages ([pvjournal.github.io](https://pvjournal.github.io/)), launched on 3 May 2020; FAKIR's explorer, where each point seeds a task for a domain, a language and a layer; the open contribution model of the repositories, through issues and pull requests. **Keep distinct.** GramSheel is the foundation and its principles; VIKRAM is the technical platform; neither is a market segment or a programme of delivery to passive recipients.
+
+### Psychology and cognitive science
+
+**The question.** How does an agent move from a state and an inclination to an action, and how does a machine's projected authority affect what people accept? **Where to look.** PEDLER's loop and its primitives (Appendix B); COPA and its Authority Projection Index (Chapter 7); the Quantum Neuromorphic BCI programme, with its active research and its directions needing clinical partners. **What can be examined.** The PEDLER engine in PANINIq, with its tests (Chapter 21); COPA's index, which can be computed on any transcript as explanatory tokens before the first empirical action over all tokens. **Keep distinct.** Inclination is not intention, and intention is not an Act; COPA measures projected authority, not accuracy or intent, and a single reading proves nothing about intent.
+
+### Linguistics
+
+**The question.** How are language, script and meaning preserved when linguistic structures become computational representations, and can any language travel in any script? **Where to look.** Writing systems and reversible transliteration (Chapter 17); Pāṇini's grammar as a formal system (Chapter 18); Hindawi and the symbol bridge (Chapter 19); ILM and tajziya. **What can be examined.** Every Romenagri result in this guide can be rerun on your own corpus with the commands of Chapter 13: the Brahmi hub, the round trip, the Urdu projection with and without tashkil. ILM's registry lists 7,867 languages and 226 scripts, and its keyword standards number 13,668, every one a valid ASCII identifier. **Open.** The share of Urdu words whose vowels must come from the language layer, which the author estimates at 15 to 20 per cent, awaits measurement, and the reverse filter into Perso-Arabic script is a first cut. **Keep distinct.** ILM is not linguistics and Romenagri is not romanisation; script, language and standard are three axes.
+
+### Anthropology and cultural studies
+
+**The question.** How do identity, situated knowledge and cultural plurality survive technological transformation? **Where to look.** The three projections, Kaivalyik, Zistgah and Cosmopolis, and the names table (Chapter 9); Jyotish as the Kaivalyik projection of CHAKRA; the second pillar of linguistic equity, any language in any script. **What can be examined.** What the Devanagari hub keeps and loses when Urdu passes through it, printed in Chapter 19; how a component keeps one stem and takes a culturally sensitive name in each projection. **Keep distinct.** A projection is a complete traversal of the whole architecture, not a translation of a master copy; Zistgah's Persian and Islamicate dimension stays explicit.
+
+### Philosophy
+
+**The question.** What constitutes knowledge, action, identity and continuity when the substrate changes? **Where to look.** PEDLER's primitives; VGC; the provenance systems; TransEg; Synthematic Pragmatic Realism; the rule that a record not yet retrieved is not thereby false. **What can be examined.** An applied epistemology already in use: GENIE's nine epistemic tags (definition, axiom, assumption, derivation, conjecture, hypothesis, empirical, open, failed), the four provenance states of a statement (retrieved, inferred, proposed, unresolved), and the status words of this guide (tested, executed, written, mocked, planned). † The write-ups put the underlying problem as an unconstrained system making an epistemic state transition without an admissible reason. **Keep distinct.** SPR is a stated primitive of the architecture; generic metaphysics must not be substituted for it.
+
+### Education
+
+**The question.** Does technology hand out answers, or does it increase human capability? **Where to look.** The reference lab and the GATE chapter (Chapters 14 and 24); the reader views of this guide; the cyclers as recorded, reproducible method; VIDYA, the bridge to AyeAM. **What can be examined.** The component cards of Chapter 13 as laboratory sheets, each with what to type and what you should see. † The write-ups also name AYE Learn and AYE Sum among the educational work.
+
+### History and the history of computing
+
+**The question.** What was built, when, and how can priority be checked without argument? **Where to look.** The dated record (Chapter 4) and its primary sources: the SourceForge and Savannah projects, the announcement of 19 December 2005, and the Zenodo records. For context rather than lineage, Gandhi's *Constructive Programme* (1941) placed village industries, education and the provincial and national languages inside the work of self-rule; Chapter 9 sets out where the estate's questions meet it.
+
+### Economics and political economy
+
+**The question.** Can advanced capability become locally reproducible and sustainable rather than externally concentrated? **Where to look.** FAKIR's ISIC lattice as a map of economic activity; the open licences of the repositories (Chapter 23); the reference lab's cost target. † The notes treat monetisation, through products, services, courses, labs and licensing, as the mechanism that sustains the open work.
+
+
+<!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->
+
+## D. For researchers in science, technology, engineering and mathematics {#app-stem}
+
+
+::: {.plain}
+**In plain words.** A guide for researchers in science, technology, engineering and mathematics: what can be read, run and tested now, and what is still open.
+:::
+
+Each field below lists what in the estate can be read, run and tested now, and what is open. Status words keep their meaning from Chapter 1: tested, executed, written, mocked, planned.
+
+### Computer science
+
+**Programming languages and compilers.** Hindawi's composed transducers over unmodified host toolchains; the Romenagri symbol bridge through ELF, DWARF and GDB; the PANINI construct model, with 39 constructs in 27 languages and 216 decorators across 8 host languages; the bootstrap and its self-hosting fixed point (Chapters 19 and 5). Executed here. **Open:** `std2hin` doubles every underscore, so vowel-initial names do not round-trip back from C; the guru shaili emits no `#line` directives; the YACC shaili awaits a fresh conformance run.
+
+**Systems.** The hinlin kernel tree and the mass conversion of real C sources, including kernel trace code, into Hindi and back (hindawiai/chintamani, `Romenagri/mass_hindawi`).
+
+**AI and machine learning.** The cyclers and GENIE as AI-agnostic, human-inspected method (Chapter 7); Romenagri as a tokenisation substrate, where bytes fall 1.76 times and the alphabet from 51 to 24 symbols without loss, but token counts did not fall at matched merges, so the predicted gain is still to be shown; COPA's Authority Projection Index as a measurable property of a model's behaviour.
+
+**Software engineering.** Executable contracts and gates in every repository; the provenance chain, Tok DOI, spiguard, Candor and Misty DOI; VGC; the component cards of Chapter 13, each the result of a real run.
+
+**Data.** ILM's registry of 7,867 languages and 226 scripts; 13,668 keyword standards; the corpora in the Romenagri tree.
+
+### Electrical and electronic engineering
+
+The open chip-design flow and the 28 nm tape-out catalogue, jugaad28, with its evidence-gated descriptors (Chapter 20); Zamin's ternary cells in SPICE, whose testbench needs attention on ngspice 42 (Chapter 13); the PRATIK kernel, whose CPU build passes and whose CUDA build needs an NVIDIA toolchain; device control on ESP32, zasab, built but not yet pushed.
+
+### Physics
+
+QEDLER, the event-hypergraph research programme for physics, self-declared as a framework with open problems; oscillator Ising machines and Kuramoto dynamics in PANINIq, with their Lyapunov function (Chapter 21); superconducting qubits and the physics of the cold (Chapter 20).
+
+### Mathematics
+
+Coding theory for reversible transliteration: Kraft and McMillan, and Sardinas and Patterson (Chapter 17); formal languages and rewriting in Pāṇini's grammar, with pratyāhāras as interval classes over an ordered list (Chapter 18); graph theory in the typed hypergraph and in Max-Cut; dynamical systems in the order parameter and in the oscillators' energy; the formal tuples of the CEM kernel, $\mathcal{E} = (E, \mathcal{C}, \Pi, W)$, and of the AyeAI Triad.
+
+### Biology and medicine
+
+PANINIb, the biological realization arm, which lowers intent to sequence IR and claims no wet-laboratory result; CEMb, operated through Interglial Healthcare; the Quantum Neuromorphic BCI programme, with brain-to-text, cognitive prosthetics and intelligent rehabilitation as directions needing clinical collaboration; VIKRAM's Health section and its tools for an accessible virtual hospital; the earlier HMSEI wearable and the Dr Rho telepresence platform.
+
+### Cognitive science and neuroscience
+
+PEDLER's two branches, through LVF and MLCNE to the cognitive enablement modules, and through NI2A2 to ANGEL; its primitives; the brain-computer interface work of Act III.
+
+### Astronomy and the earth and space sciences
+
+CHAKRA, the offline observatory and calendars, whose JavaScript and C99 versions produce byte-identical output; Jyotish, derived from it; the habitats, with a lander embodiment on the Moon and a quadrotor on Mars inside the shared dome.
+
+### Robotics and manufacturing
+
+PANINIphy, the physical realization arm, which compiles physical intent and chooses parts by force, stroke and voltage; pench, the embodied cycler; † the modular self-reconfiguring robots of the notes.
+
+
+<!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->
+
+## E. For practitioners: teachers, policy makers, communities, makers and engineers {#app-prac}
+
+
+::: {.plain}
+**In plain words.** A guide for teachers, policy makers, community workers, artists and engineers: where to start and how to take part.
+:::
+
+**Teachers and lab builders.** Start from the reference lab, the GATE chapter and the component cards, which double as laboratory sheets: each says what to install, what to type and what a student should see (Chapters 14, 24 and 13). The reader views let each student follow a path suited to their age and background, and remember what they have read.
+
+**Policy makers and administrators.** The questions that matter are in Chapter 9 and Appendix C: sovereignty in its testable technical sense, the ability to rebuild, verify, modify and run (Chapter 19); provenance that makes claims checkable; and infrastructure that leaves capability with communities. The executable contracts of the repositories show what verifiable governance of software looks like in practice.
+
+**Community workers and health practitioners.** Project VIKRAM's sections cover education, health, livelihood, justice, environment and habitat, food and agriculture, and peace; its health section accepts submissions as issues. The Urdu edition and the Brahmi hub show work in people's own scripts; CHAKRA and Jyotish run offline.
+
+**Artists, writers and makers.** The cyclers produce print, film, sound, immersive work, embodied work and the record; matba turns posters into a sealed book; GENIE writes and paints; PANINIphy turns a physical idea into parts. Every cycle is recorded as method, so a piece of work can be repeated, shared and credited.
+
+**Engineers in industry.** Adopt one component at a time: read its card, clone it, run it, read its `CONTRACT.md` and its gate, check its DOI and provenance, then integrate it through its interface. † The notes give the full adoption ladder: the canonical artifact, a one-page explanation, the nearest industry analogue and the exact difference, a working demonstration, the repository, the DOI and timestamp, the interface, a case study, and the commercial route.
+
+**Contributors.** Fork, open an issue, send a pull request. Every repository's gate runs on your change; every claim must point to its evidence; the AI you use is welcome, and its report that something passed is not the evidence that it did.
+
+
+<!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->
+
+## F. Formal definitions {#app-math}
+
+
+::: {.plain}
+**In plain words.** The same ideas written as mathematics, for readers who want the formal version.
+:::
+
+This appendix states in symbols what the chapters state in words. Where the record gives a formal object, the PEDLER six-tuple, the CEM kernel or the Triad's tuples, it is reproduced as recorded. Where the record gives only words, the formalisation is this guide's reading, and is said to be.
+
+### The estate as a typed graph
+
+The estate is a typed graph
+$$ H = (V,\; E,\; \tau_V,\; \tau_E), \qquad E \subseteq V \times V \times R, $$
+where $V$ is the set of components, $R$ the set of relations (projects, script layer, realized by, front end, mounts and the rest), $\tau_V : V \to \mathcal{F}$ assigns each component its family, and $\tau_E$ each edge its relation. The core is described as a typed hypergraph, in which one edge may join several components at once: $E \subseteq 2^{V} \times R$. A traversal is a walk $v_0 \xrightarrow{r_1} v_1 \xrightarrow{r_2} \cdots \xrightarrow{r_k} v_k$; every sequence printed in this guide, and every reading path of the reader views, is one.
+
+In this guide's reading, a projection $p \in \{\text{Kaivalyik}, \text{Zistgah}, \text{Cosmopolis}\}$ is a map $\pi_p : H \to H_p$ that keeps every component's stem and every relation and changes names: $\operatorname{stem}(\pi_p(v)) = \operatorname{stem}(v)$ and $(u,v,r) \in E \Rightarrow (\pi_p(u), \pi_p(v), r) \in E_p$. The Acts are a separate, partial labelling $\alpha : V \rightharpoonup \{\mathrm{I}, \mathrm{I|II}, \mathrm{II}, \mathrm{II|III}, \mathrm{III}\}$, with PANINI in every Act.
+
+### Romenagri as a code
+
+Let $\Sigma$ be the Devanagari alphabet and $\Gamma = \{\texttt{a}, \ldots, \texttt{z}, \texttt{\_}\}$, a subset of the alphabet of C identifiers. Romenagri's compiler form is a map
+$$ T : W \to \Gamma^{*}, \qquad W \subseteq \Sigma^{*}, $$
+injective on well-formed text $W$, with an inverse $T^{-1}$ on $T(W)$. Text outside $W$ is first brought to its canonical form by $c : \Sigma^{*} \to W$, so that for every string
+$$ T^{-1}\bigl(T(s)\bigr) = c(s), \qquad c(s) = s \text{ whenever } s \in W . $$
+On the 984 words of the Hindi corpus, $T^{-1}T(w) = w$ for 983; the one exception is a misspelling in the corpus.
+
+For a Brahmi script $\sigma$ whose Unicode block follows the ISCII layout from base $b_\sigma$, the hub map is $h_\sigma(x) = x - b_\sigma + \texttt{0x900}$ on the aligned letters, a bijection onto the corresponding Devanagari letters; `flatten_uni_dev` applies it by table. A word in script $\sigma$ therefore has the identity $T(h_\sigma(w))$, and returns by $h_\sigma^{-1}(T^{-1}(\cdot))$.
+
+Urdu meets the hub through $\varphi : \Sigma_{\text{ur}}^{*} \to \Sigma^{*}$, which is many-to-one on unmarked text: the fibre $\varphi^{-1}(w)$ over a hub word can hold several spoken readings, because the short vowels are not written. With tashkil, the restriction of $\varphi$ to marked text distinguishes them: unmarked ہندوی maps to हनदवी, and marked ہِنْدوی to हिन्दवी. In the corpus, 1 word in 794 carries a vowel mark.
+
+### The symbol bridge
+
+For every name $n$ in a program, the toolchain sees $\operatorname{sym}(n) = T(n) \in \Gamma^{*}$. Each stage $t_k$ between source and debugger (compiler, assembler, linker, ELF writer, DWARF writer, debugger) carries identifiers over $\Gamma$ unchanged: $t_k(\operatorname{sym}(n)) = \operatorname{sym}(n)$. Hence
+$$ T^{-1}\bigl(t_m \circ \cdots \circ t_1(\operatorname{sym}(n))\bigr) = c(n), $$
+which is the name as written. Chapter 19 runs this for every name of a program.
+
+### The construct model
+
+Let $C$ be the constructs (39), $\mathcal{L}$ the languages (27) and $\mathcal{H}$ the host languages (8). Each language $\ell$ has a keyword map $\kappa_\ell : C \to W_\ell$, and each host $h$ a realisation $\rho_h : C \rightharpoonup W_h$, partial because not every host has every construct. Translation from $\ell$ to $h$ is
+$$ \tau_{\ell \to h} = \rho_h \circ \kappa_\ell^{-1}, $$
+defined when $\kappa_\ell$ is injective, which is the reversibility check ILM runs on every keyword table. Direct pairings of a language with a host would number $|\mathcal{L}| \cdot |\mathcal{H}| = 27 \times 8 = 216$ tables; the construct model needs $|\mathcal{L}| + |\mathcal{H}| = 35$.
+
+### PEDLER, as PANINIq implements it
+
+PANINIq implements PEDLER as the six-tuple
+$$ P = (I,\; G,\; U,\; S,\; F,\; \ast), $$
+with events $U \subset \mathbb{R}^{3}$, states $S$, a feature map $F : S \to \mathbb{R}^{3}$, and the resolution kernel
+$$ G(v, r) = e^{-\gamma \lVert F(v) - r \rVert}. $$
+The inclination of a state is its historical prior plus the weighted match, $I(v) = \eta(v) + w\, G(v, r)$. The operator $\ast$ grows and prunes the state set: a new state is spawned when the relaxed network's order parameter falls below a novelty threshold, $R < \theta$. The Act is the transition $A(I, S_t) \to S_{t+1}$. In this guide's reading, Natural Justice is an admissibility predicate on the passage from intent to Act: a transition fires only if $\mathrm{NJ}(\text{intent}, S_t)$ holds.
+
+### Kernels and closures, as recorded
+
+The record gives the CEM kernel and the AyeAI Triad's closure as tuples, and they are reproduced here as given; the expansions of their letters are not part of the retrieved record:
+$$ \mathcal{E} = (E,\; \mathcal{C},\; \Pi,\; W), \qquad \text{AyeAM} = \langle S, R, C \rangle, \quad \text{AyeAI} = \langle M, I, G \rangle, \quad \text{AyeCNSe} = \langle T, Ch, \Sigma \rangle . $$
+
+### Gates and evidence
+
+A gate is a function $g : \mathcal{A} \to \{\text{pass}, \text{fail}, \text{unjudged}\}$ on artifacts, computed by running it. An issue is done exactly when
+$$ g(a) = \text{pass} \;\wedge\; \text{merged}(a) \;\wedge\; \bigl(\text{published}(a) \Rightarrow \text{receipt}(a)\bigr). $$
+VGC's rule is that a worker's report $r(a)$ is not an argument of $g$: the gate is computed from the artifact, never read from the claim.
+
+### Provenance
+
+A repository's manifest is the list $m = \bigl[(p_i, H(f_i))\bigr]_i$ of every tracked path with the SHA-256 of its file. Sealing commits the digest $d = H(m)$ to OpenTimestamps, whose calendars aggregate many digests in a Merkle tree anchored in a Bitcoin block; the proof for one digest among $N$ is a path of length $\lceil \log_2 N \rceil$, and verifying it recomputes the root. The four systems are ordered by implication:
+$$ \text{mint}(a) \Rightarrow \text{attest}(a) \Rightarrow \text{clear}(a) \Rightarrow \text{seal}(a). $$
+
+### The seed space and the reading paths
+
+FAKIR seeds a task from a domain node, an AGI layer and a language: $S = D \times L \times \Lambda$, with $|D| = 1{,}505$ nodes across ISIC, ISCO and ISCED, $|L| = 10$ layers and $|\Lambda| = 7{,}867$ languages, so
+$$ |S| = 1{,}505 \times 10 \times 7{,}867 = 118{,}398{,}350 . $$
+A cross-domain task is seeded from a set of nodes, a subset of $D$, rather than one.
+
+A reader view is a sequence of chapters $(c_1, \ldots, c_k)$, a walk on the chapters. A chapter of $w$ words is estimated at $t(c) = \max\bigl(1, \operatorname{round}(w / 200)\bigr)$ minutes, and a path at $\sum_j t(c_j)$.
+
+
+<!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->
+## G. References {#app-refs}
+
+
+::: {.plain}
+**In plain words.** The books and papers this guide draws on.
+:::
 
 - Aho, A. V., Lam, M. S., Sethi, R. and Ullman, J. D. (2006). *Compilers: Principles, Techniques, and Tools*, 2nd edition. Addison-Wesley.
 - Bureau of Indian Standards (1991). IS 13194:1991, Indian Script Code for Information Interchange (ISCII).
@@ -2233,6 +3361,8 @@ This table is retrieved from `GLOSSARY.md` in zistgah/paniniq at commit 82a5cf2.
 - Cytron, R., Ferrante, J., Rosen, B. K., Wegman, M. N. and Zadeck, F. K. (1991). Efficiently computing static single assignment form and the control dependence graph. *ACM Transactions on Programming Languages and Systems* 13(4), 451 to 490.
 - Farhi, E. and Gutmann, S. (1998). Quantum computation and decision trees. *Physical Review A* 58, 915.
 - Farhi, E., Goldstone, J. and Gutmann, S. (2014). A quantum approximate optimization algorithm. arXiv:1411.4028.
+- Gandhi, M. K. (1909). *Hind Swaraj, or Indian Home Rule*. Navajivan Publishing House, Ahmedabad.
+- Gandhi, M. K. (1941). *Constructive Programme: Its Meaning and Place*. Navajivan Publishing House, Ahmedabad.
 - Goemans, M. X. and Williamson, D. P. (1995). Improved approximation algorithms for maximum cut and satisfiability problems using semidefinite programming. *Journal of the ACM* 42(6), 1115 to 1145.
 - Ingerman, P. Z. (1967). "Pāṇini-Backus Form" suggested. *Communications of the ACM* 10(3), 137.
 - Katre, S. M. (1987). *Aṣṭādhyāyī of Pāṇini*. University of Texas Press.

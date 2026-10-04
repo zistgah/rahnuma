@@ -4,7 +4,7 @@
 
 Read this first, cold.
 
-**What it is.** One guide to the whole estate, built from one source into a site (`docs/index.html`, served by GitHub Pages from `/docs`), a PDF (`docs/rahnuma.pdf`) and a single Markdown file (`docs/rahnuma.md`), with `docs/llms.txt` as the index for AI readers. Version 1.0.0, 29 September 2026. The name, रहनुमा, رہنما, means the guide; the slug `zistgah/rahnuma` can be renamed without changing anything inside.
+**What it is.** One guide to the whole estate, built from one source into a site (`docs/index.html`, served by GitHub Pages from `/docs`), a PDF (`docs/rahnuma.pdf`) and a single Markdown file (`docs/rahnuma.md`), with `docs/llms.txt` as the index for AI readers. Version 1.3.0, 29 September 2026. The name, रहनुमा, رہنما, means the guide; the slug `zistgah/rahnuma` can be renamed without changing anything inside.
 
 **Where it sits.** It documents the Humanesque substrate and its projections, the PANINI stack from the ILM front end to realisation backends such as PANINIq, the cyclers, the habitat elements and the provenance systems, as the author has laid them out. It adds no component of its own; its examples are teaching code.
 

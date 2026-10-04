@@ -121,7 +121,54 @@ def md_include(arg):
         die(f"md: no file {arg}")
     return p.read_text(encoding="utf-8").strip()
 
-DIRECTIVE = re.compile(r"<!--\s*(run|capture|include|log|estate|records|counts|md)\s*(?::\s*(.*?))?\s*-->")
+STATUS_TEXT = {"executed": "Executed for this guide", "passed": "Passed when run on {date}", "partly": "Partly passes, as run on {date}",
+               "does not run as is": "Does not run as is, as run on {date}", "needs network": "Not run here: needs network access",
+               "needs Docker": "Not run here: needs Docker"}
+
+def components_block():
+    d = json.loads((DATA / "components.json").read_text(encoding="utf-8"))
+    out = [f"*Machine:* {d['machine']}. *Run on:* {d['executed']}."]
+    for grp in d["groups"]:
+        out.append(f"### {grp['title']}")
+        for c in grp["items"]:
+            name = c["repo"].split("/")[1]
+            status = STATUS_TEXT[c["status"]].format(date=d["executed"])
+            lines = [f"git clone https://github.com/{c['repo']}.git && cd {name}"] + c["setup"] + c["run"]
+            out.append(f"#### {c['name']} {{#c-{c['id']}}}")
+            out.append(f"::: {{.component aud=\"{' '.join(c['aud'])}\" state=\"{c['status'].replace(' ', '-')}\"}}")
+            out.append(f"*What it is.* {c['what']} *Needs:* {c['needs']}.")
+            out.append(fence("\n".join(lines), "bash"))
+            note = f" {c['note']}" if c["note"] else ""
+            out.append(f"*You should see:* {c['see']}. *Status:* {status}.{note}")
+            out.append(":::")
+    out.append("### Components you open in a browser")
+    out.append("| Component | Page |\n|:----------|:-----|")
+    out.append("\n".join(f"| {n} | [{u.split('//')[1].rstrip('/')}]({u}) |" for n, u in d["pages"]))
+    return "\n\n".join(out)
+
+FIG = {"n": 0}
+
+def figure_block(fid):
+    spec = json.loads((DATA / "diagrams.json").read_text(encoding="utf-8"))[fid]
+    FIG["n"] += 1
+    return f"![Figure {FIG['n']}: {spec['caption']}](fig-{fid}.svg)\n\n*Figure {FIG['n']}. {spec['caption']}.*"
+
+def roadmap_block():
+    R = json.loads((DATA / "roadmap.json").read_text(encoding="utf-8"))
+    iss = R["issues"]
+    out = ["| Phase | Window | Goal | Issues |", "|:--|:--|:--|--:|"]
+    out += [f"| {p['title']} | {p['window']} | {p['goal']} | {sum(1 for i in iss if i['phase'] == p['id'])} |" for p in R["phases"]]
+    out += ["", "#### Collaborator lanes", "", "| Lane | Start here | Contribute | Issues |", "|:--|:--|:--|--:|"]
+    out += [f"| {c['name']} | {c['start']} | {c['contribute']} | {sum(1 for i in iss if c['id'] in (i.get('collab') or []))} |" for c in R["collaborators"]]
+    out += ["", "#### Domain families", "", f"From FAKIR's lattice: {R['domains']['source']}.", "", "| Family | Name | Domains within | Issues |", "|:--|:--|--:|--:|"]
+    out += [f"| {f['scheme']} {f['code']} | {f['name']} | {f['all']} | {sum(1 for i in iss if f['scheme'] + ':' + f['code'] in (i.get('domains') or []))} |" for f in R["domains"]["families"]]
+    layers = ", ".join(f"{l['id']} {l['name']}" for l in R["domains"]["layers"])
+    ss = R["seed_space"]
+    out += ["", f"The AGI layers are {layers}. Every domain node, crossed with every layer and every language in ILM's registry, is a possible seed:",
+            "", f"$$ |S| = |D| \\times |L| \\times |\\Lambda| = {ss['nodes']:,} \\times {ss['layers']} \\times {ss['languages']:,} = {ss['points']:,}. $$".replace(",", "{,}")]
+    return "\n".join(out)
+
+DIRECTIVE = re.compile(r"<!--\s*(run|capture|include|log|estate|records|counts|md|components|figure|roadmap)\s*(?::\s*(.*?))?\s*-->")
 
 def expand(md):
     def rep(m):
@@ -143,11 +190,26 @@ def expand(md):
             return counts_block()
         if kind == "md":
             return md_include(arg)
+        if kind == "components":
+            return components_block()
+        if kind == "figure":
+            return figure_block(arg)
+        if kind == "roadmap":
+            return roadmap_block()
         return m.group(0)
     return DIRECTIVE.sub(rep, md)
 
 # ------------------------------------------------------------------ assembly
 CHAPTER = re.compile(r"^## (.+?) \{#(ch-[\w-]+)\}\s*$", re.M)
+
+def add_plain(md):
+    plain = json.loads((DATA / "plain.json").read_text(encoding="utf-8"))
+    def rep(m):
+        cid = m.group(2)
+        if cid not in plain:
+            return m.group(0)
+        return m.group(0) + f"\n\n::: {{.plain}}\n**In plain words.** {plain[cid]}\n:::\n"
+    return re.sub(r"^## (.+?) \{#([\w-]+)\}\s*$", rep, md, flags=re.M)
 
 def number_chapters(md):
     """Chapters are numbered in reading order; [[ch-id]] in the text becomes that chapter's number."""
@@ -258,6 +320,37 @@ def hero():
 <p class="byline">Abhishek Choudhary, AyeAI. Version {META['version']}, {REL['date_text']}.</p>
 </div>"""
 
+def wrap_chapters(body):
+    """Each chapter becomes a section the reader views can show, fold or mark; returns the chapter list too."""
+    parts = re.split(r'(?=<h[12] id="[^"]+")', body)
+    out, chapters = [], []
+    for seg in parts:
+        m = re.match(r'<h2 id="([^"]+)"[^>]*>(.*?)</h2>', seg, re.S)
+        if not m:
+            out.append(seg)
+            continue
+        cid, title = m.group(1), strip_tags(m.group(2))
+        words = len(re.sub(r"<[^>]+>", " ", seg).split())
+        mins = max(1, round(words / 200))
+        head, rest = seg[:m.end()], seg[m.end():]
+        pm = re.match(r'\s*(<div class="plain">.*?</div>)', rest, re.S)
+        plain_html = pm.group(1) if pm else ""
+        rest = rest[pm.end():] if pm else rest
+        chapters.append({"id": cid, "title": title, "mins": mins})
+        out.append(f'<section class="chapter" id="sec-{cid}" data-ch="{cid}" data-mins="{mins}">{head}'
+                   f'<p class="ch-meta"><span class="mins">{mins} min read</span></p>{plain_html}'
+                   f'<div class="chapter-body">{rest}</div></section>')
+    return "".join(out), chapters
+
+def inline_graph(body):
+    svg = (DOCS / "dependency-graph.svg").read_text(encoding="utf-8")
+    svg = svg[svg.index("<svg"):]
+    svg = re.sub(r'<svg width="[^"]*" height="[^"]*"', '<svg class="graph-svg" role="img" aria-label="The dependency graph of the estate"', svg, count=1)
+    ctrl = ('<div class="graph-ctrl" aria-hidden="true"><button type="button" data-z="in">+</button>'
+            '<button type="button" data-z="out">&minus;</button><button type="button" data-z="reset">Fit</button>'
+            '<span>Drag to move; select a box to open its chapter.</span><a class="graph-full" href="dependency-graph.svg">Open full size</a></div>')
+    return re.sub(r'<p><img src="dependency-graph.svg"[^>]*></p>', f'<!--PROTECT--><div class="graph-wrap">{ctrl}{svg}</div><!--/PROTECT-->', body, count=1)
+
 def wrap_tables(body):
     return re.sub(r"(<table>.*?</table>)", r'<div class="tablewrap">\1</div>', body, flags=re.S)
 
@@ -344,7 +437,9 @@ def main():
     chapters = sorted(CONTENT.glob("*.md"))
     if not chapters:
         die("no content/*.md")
-    body_md = number_chapters("\n\n".join(expand(p.read_text(encoding="utf-8")) for p in chapters))
+    sh("python3 tools/graph.py")
+    sh("python3 tools/diagrams.py")
+    body_md = add_plain(number_chapters("\n\n".join(expand(p.read_text(encoding="utf-8")) for p in chapters)))
     for bad in ("\u2014",):
         if bad in body_md:
             i = body_md.index(bad)
@@ -353,17 +448,33 @@ def main():
     (DOCS / "rahnuma.md").write_text(full_md, encoding="utf-8")
     body = wrap_tables(pandoc(body_md))
     toc_side, toc_print, items = build_toc(body)
+    body, chapter_list = wrap_chapters(inline_graph(body))
+    comps = json.loads((DATA / "components.json").read_text(encoding="utf-8"))
+    view_data = dict(json.loads((DATA / "audiences.json").read_text(encoding="utf-8")), chapters=chapter_list,
+                     components={c["id"]: {"name": c["name"], "aud": c["aud"]} for g in comps["groups"] for c in g["items"]})
+    data_json = json.dumps(view_data, ensure_ascii=False).replace("</", "<\\/")
     tpl = (TOOLS / "template.html").read_text(encoding="utf-8")
     style = (TOOLS / "style.css").read_text(encoding="utf-8")
     ensure_node_modules()
     page = (tpl.replace("{{FONTS}}", fonts()).replace("{{STYLE}}", style).replace("{{HERO}}", hero())
                .replace("{{TOC}}", toc_side).replace("{{TOC_PRINT}}", toc_print).replace("{{CONTENT}}", body)
                .replace("{{VERSION}}", META["version"]).replace("{{DATE}}", REL["date_text"])
-               .replace("{{TITLE}}", html.escape(META["title"])).replace("{{DESCRIPTION}}", html.escape(REL["summary"])))
+               .replace("{{TITLE}}", html.escape(META["title"])).replace("{{DESCRIPTION}}", html.escape(REL["summary"]))
+               .replace("{{DATA}}", data_json))
+    # regions MathJax must not parse (the inline graph, the view data and script) are set aside and restored
+    kept = re.findall(r"<!--PROTECT-->(.*?)<!--/PROTECT-->", page, re.S)
+    for i, region in enumerate(kept):
+        page = page.replace(f"<!--PROTECT-->{region}<!--/PROTECT-->", f"<!--KEPT-{i}-->", 1)
     raw = ROOT / ".build-page.html"
     raw.write_text(page, encoding="utf-8")
     sh(f"node tools/mathjax_page.mjs {raw.name} docs/index.html")
     raw.unlink()
+    out = (DOCS / "index.html").read_text(encoding="utf-8")
+    for i, region in enumerate(kept):
+        if f"<!--KEPT-{i}-->" not in out:
+            die(f"a protected region was lost in the maths step: {i}")
+        out = out.replace(f"<!--KEPT-{i}-->", region, 1)
+    (DOCS / "index.html").write_text(out, encoding="utf-8")
     (DOCS / ".nojekyll").write_text("", encoding="utf-8")
     llms = ["# Rahnuma", "", f"> {REL['summary']}", "", LINE, "",
             "- [The whole guide as one Markdown file](rahnuma.md)", "- [The guide as a PDF](rahnuma.pdf)",

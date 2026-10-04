@@ -14,10 +14,24 @@
 </head>
 <body>
 <!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->
+<div class="progress" aria-hidden="true"><span></span></div>
 <a class="skip" href="#main">Skip to the text</a>
 <header class="cover" id="top">
 {{HERO}}
 </header>
+<section class="start" id="start" aria-label="Read it your way">
+<div class="start-inner">
+<h2 class="start-title">Read it your way</h2>
+<p class="start-lede">Choose who you are, and the guide lays out your path through it, with the components to try first. Nothing is hidden for good: every chapter stays one tap away.</p>
+<div class="aud-grid" id="aud-grid"></div>
+<div class="controls">
+<div class="ctl"><span class="ctl-label">Age</span><div class="chips" id="age-chips"></div></div>
+<div class="ctl"><span class="ctl-label">Depth</span><div class="seg" id="depth-seg"><button type="button" data-depth="plain">Plain words</button><button type="button" data-depth="standard">Standard</button><button type="button" data-depth="deep">Full depth</button></div></div>
+<div class="ctl"><button type="button" class="tog" id="tog-size" aria-pressed="false">Larger text</button><button type="button" class="tog" id="tog-theme">Light or dark</button><button type="button" class="tog" id="tog-reset">Start again</button></div>
+</div>
+<div class="yourpath" id="yourpath" hidden></div>
+</div>
+</section>
 <details class="toc-mobile">
 <summary>Contents</summary>
 <nav aria-label="Contents">{{TOC}}</nav>
@@ -25,6 +39,7 @@
 <div class="frame">
 <nav class="toc-side" aria-label="Contents">
 <p class="toc-head"><a href="#top">Rahnuma</a></p>
+<input type="search" id="toc-search" class="toc-search" placeholder="Find a chapter" aria-label="Find a chapter">
 {{TOC}}
 <p class="toc-foot"><a href="rahnuma.pdf">PDF</a><a href="rahnuma.md">Markdown</a><a href="llms.txt">llms.txt</a><a href="https://github.com/zistgah/rahnuma">Repository</a></p>
 </nav>
@@ -40,5 +55,101 @@
 </footer>
 </main>
 </div>
+<a class="totop" href="#top" aria-label="Back to the top">&#8593;</a>
+<!--PROTECT--><script id="rahnuma-data" type="application/json">{{DATA}}</script>
+<script>
+(function () {
+  var D = JSON.parse(document.getElementById("rahnuma-data").textContent);
+  var KEY = "rahnuma.view.v1";
+  var S = { aud: null, age: null, depth: "standard", large: false, theme: null, done: {} };
+  try { var saved = JSON.parse(localStorage.getItem(KEY) || "null"); if (saved) { for (var k in saved) S[k] = saved[k]; } } catch (e) {}
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+  var byId = {}; D.chapters.forEach(function (c) { byId[c.id] = c; });
+  var grid = document.getElementById("aud-grid");
+  D.audiences.forEach(function (a) {
+    var b = document.createElement("button"); b.type = "button"; b.className = "aud"; b.dataset.aud = a.id;
+    b.innerHTML = '<span class="mono">' + a.mono + '</span><span class="aud-label">' + a.label + '</span><span class="aud-blurb">' + a.blurb + "</span>";
+    b.onclick = function () { S.aud = S.aud === a.id ? null : a.id; if (S.aud) S.depth = a.depth; save(); apply(true); };
+    grid.appendChild(b);
+  });
+  var chips = document.getElementById("age-chips");
+  D.ages.forEach(function (g) {
+    var b = document.createElement("button"); b.type = "button"; b.className = "chip"; b.dataset.age = g.id; b.textContent = g.label;
+    b.onclick = function () { S.age = S.age === g.id ? null : g.id; if (S.age) { S.depth = g.depth; S.large = g.large; } save(); apply(false); };
+    chips.appendChild(b);
+  });
+  document.querySelectorAll("#depth-seg button").forEach(function (b) { b.onclick = function () { S.depth = b.dataset.depth; save(); apply(false); }; });
+  document.getElementById("tog-size").onclick = function () { S.large = !S.large; save(); apply(false); };
+  document.getElementById("tog-theme").onclick = function () {
+    var dark = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches;
+    var cur = S.theme || (dark ? "dark" : "light"); S.theme = cur === "dark" ? "light" : "dark"; save(); apply(false);
+  };
+  document.getElementById("tog-reset").onclick = function () { S = { aud: null, age: null, depth: "standard", large: false, theme: S.theme, done: {} }; save(); apply(false); };
+  document.querySelectorAll("section.chapter").forEach(function (sec) {
+    var b = document.createElement("button"); b.type = "button"; b.className = "unfold"; b.textContent = "Read the whole chapter";
+    b.onclick = function () { sec.classList.toggle("open"); b.textContent = sec.classList.contains("open") ? "Fold the chapter" : "Read the whole chapter"; };
+    sec.insertBefore(b, sec.querySelector(".chapter-body"));
+  });
+  function apply(scroll) {
+    var R = document.documentElement, B = document.body;
+    B.classList.remove("depth-plain", "depth-standard", "depth-deep"); B.classList.add("depth-" + S.depth);
+    B.classList.toggle("text-large", !!S.large);
+    if (S.theme) R.setAttribute("data-theme", S.theme); else R.removeAttribute("data-theme");
+    document.querySelectorAll(".aud").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.aud === S.aud)); });
+    document.querySelectorAll(".chip").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.age === S.age)); });
+    document.querySelectorAll("#depth-seg button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.depth === S.depth)); });
+    document.getElementById("tog-size").setAttribute("aria-pressed", String(!!S.large));
+    var a = D.audiences.filter(function (x) { return x.id === S.aud; })[0], path = a ? a.path : [];
+    document.querySelectorAll("section.chapter").forEach(function (sec) {
+      var on = path.indexOf(sec.dataset.ch) >= 0; sec.classList.toggle("on-path", on); sec.classList.toggle("off-path", !!a && !on);
+    });
+    document.querySelectorAll(".toc a").forEach(function (l) { l.classList.toggle("on-path", path.indexOf((l.getAttribute("href") || "").slice(1)) >= 0); });
+    document.querySelectorAll(".component").forEach(function (c) { c.classList.toggle("for-you", !!a && (c.dataset.aud || "").split(" ").indexOf(a.id) >= 0); });
+    var box = document.getElementById("yourpath");
+    if (!a) { box.hidden = true; box.innerHTML = ""; return; }
+    var total = 0, h = '<h3>Your path: ' + a.label + '</h3><ol class="pathlist">';
+    path.forEach(function (id) {
+      var c = byId[id]; if (!c) return; total += c.mins; var d = !!S.done[id];
+      h += "<li class='" + (d ? "done" : "") + "'><label><input type='checkbox' data-done='" + id + "'" + (d ? " checked" : "") + "> <a href='#" + id + "'>" + c.title + "</a></label><span class='mins'>" + c.mins + " min</span></li>";
+    });
+    h += '</ol><p class="pathnote">About ' + total + " minutes in all. Tick a chapter when you have read it; this browser remembers.</p>";
+    if (a.tryit && a.tryit.length) {
+      h += '<h4>Try these first</h4><ul class="trylist">';
+      a.tryit.forEach(function (t) { var c = D.components[t]; if (c) h += "<li><a href='#c-" + t + "'>" + c.name + "</a></li>"; });
+      h += "</ul>";
+    }
+    box.innerHTML = h; box.hidden = false;
+    box.querySelectorAll("input[data-done]").forEach(function (cb) {
+      cb.onchange = function () { if (cb.checked) S.done[cb.dataset.done] = 1; else delete S.done[cb.dataset.done]; save(); cb.closest("li").classList.toggle("done", cb.checked); };
+    });
+    if (scroll) box.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+  apply(false);
+  var q = document.getElementById("toc-search");
+  if (q) q.oninput = function () {
+    var v = q.value.toLowerCase();
+    document.querySelectorAll(".toc-side .toc li").forEach(function (li) { li.style.display = !v || li.textContent.toLowerCase().indexOf(v) >= 0 ? "" : "none"; });
+  };
+  var bar = document.querySelector(".progress span");
+  function prog() { var e = document.documentElement, p = e.scrollTop / ((e.scrollHeight - e.clientHeight) || 1); if (bar) bar.style.width = (100 * p).toFixed(1) + "%"; }
+  addEventListener("scroll", prog, { passive: true }); prog();
+  var svg = document.querySelector(".graph-svg");
+  if (svg && svg.getAttribute("viewBox")) {
+    var vb0 = svg.getAttribute("viewBox").split(/[ ,]+/).map(Number), vb = vb0.slice();
+    var setvb = function () { svg.setAttribute("viewBox", vb.join(" ")); };
+    var zoom = function (f) { var cx = vb[0] + vb[2] / 2, cy = vb[1] + vb[3] / 2; vb[2] *= f; vb[3] *= f; vb[0] = cx - vb[2] / 2; vb[1] = cy - vb[3] / 2; setvb(); };
+    document.querySelectorAll(".graph-ctrl button").forEach(function (b) {
+      b.onclick = function () { var z = b.dataset.z; if (z === "in") zoom(0.8); else if (z === "out") zoom(1.25); else { vb = vb0.slice(); setvb(); } };
+    });
+    var drag = null;
+    svg.addEventListener("pointerdown", function (e) { if (e.target.closest("a")) return; drag = { x: e.clientX, y: e.clientY, v: vb.slice() }; svg.setPointerCapture(e.pointerId); });
+    svg.addEventListener("pointermove", function (e) {
+      if (!drag) return; var r = svg.getBoundingClientRect();
+      vb[0] = drag.v[0] - (e.clientX - drag.x) * vb[2] / r.width; vb[1] = drag.v[1] - (e.clientY - drag.y) * vb[3] / r.height; setvb();
+    });
+    svg.addEventListener("pointerup", function () { drag = null; });
+  }
+})();
+</script><!--/PROTECT-->
 </body>
 </html>

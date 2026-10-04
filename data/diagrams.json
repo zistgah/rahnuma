@@ -1,0 +1,2056 @@
+{
+ "stack": {
+  "caption": "The PANINI stack, with Romenagri as the script layer beneath every front end",
+  "rankdir": "TB",
+  "clusters": {
+   "h": "Humanesque, the core"
+  },
+  "nodes": [
+   [
+    "front",
+    "Front end\nILM: script | language | standard\ntajziya, Sanskrit first",
+    "h",
+    null
+   ],
+   [
+    "rom",
+    "Romenagri\nthe script axis, ASCII-7",
+    "h",
+    null
+   ],
+   [
+    "mid",
+    "Middleware\nPANINI's front ends and language",
+    "h",
+    null
+   ],
+   [
+    "core",
+    "Core PANINI\nconstructs + decorators",
+    "h",
+    null
+   ],
+   [
+    "host",
+    "Host toolchains\nGCC, linker, debugger",
+    "h",
+    null
+   ],
+   [
+    "pq",
+    "PANINIq\noscillators, quantum",
+    "h",
+    null
+   ],
+   [
+    "pb",
+    "PANINIb\nbiology",
+    "h",
+    null
+   ],
+   [
+    "pp",
+    "PANINIphy\nphysical systems",
+    "h",
+    null
+   ]
+  ],
+  "edges": [
+   [
+    "front",
+    "mid",
+    "",
+    ""
+   ],
+   [
+    "mid",
+    "core",
+    "",
+    ""
+   ],
+   [
+    "core",
+    "host",
+    "realized by",
+    ""
+   ],
+   [
+    "core",
+    "pq",
+    "realized by",
+    ""
+   ],
+   [
+    "core",
+    "pb",
+    "realized by",
+    ""
+   ],
+   [
+    "core",
+    "pp",
+    "realized by",
+    ""
+   ],
+   [
+    "rom",
+    "front",
+    "script layer",
+    ""
+   ],
+   [
+    "rom",
+    "host",
+    "symbol bridge",
+    "dashed"
+   ]
+  ]
+ },
+ "bridge": {
+  "caption": "The symbol bridge: a Hindi program through hincc, GCC and the debugger, its names carried in Romenagri and rendered back",
+  "rankdir": "TB",
+  "clusters": {
+   "s": "Script layer, in hincc",
+   "l": "Language layer, in the shaili",
+   "t": "The toolchain, unchanged",
+   "r": "Presentation"
+  },
+  "nodes": [
+   [
+    "src",
+    ".uhin source\nin Devanagari",
+    null,
+    null
+   ],
+   [
+    "fix",
+    "fixuninum\nnumerals",
+    "s",
+    null
+   ],
+   [
+    "uni",
+    "iconv, uni2acii\nUnicode to ACII",
+    "s",
+    null
+   ],
+   [
+    "cf",
+    "acii2cf\nRomenagri compiler form",
+    "s",
+    null
+   ],
+   [
+    "awk",
+    "hincc.awk\nreads the shaili line",
+    "l",
+    null
+   ],
+   [
+    "lit",
+    "acii2uni\nliterals back to Unicode",
+    "l",
+    null
+   ],
+   [
+    "h2c",
+    "h2c\nkeywords to C",
+    "l",
+    null
+   ],
+   [
+    "gcc",
+    "gcc, as, ld",
+    "t",
+    null
+   ],
+   [
+    "elf",
+    "ELF .symtab, .strtab\nDWARF",
+    "t",
+    null
+   ],
+   [
+    "dbg",
+    "nm, addr2line, GDB\nJTAG and SWD probes",
+    "t",
+    null
+   ],
+   [
+    "inv",
+    "rmn2acii, acii2uni\nthe inverse",
+    "r",
+    null
+   ],
+   [
+    "out",
+    "names shown\nin Devanagari",
+    "r",
+    null
+   ]
+  ],
+  "edges": [
+   [
+    "src",
+    "fix",
+    "",
+    ""
+   ],
+   [
+    "fix",
+    "uni",
+    "",
+    ""
+   ],
+   [
+    "uni",
+    "cf",
+    "",
+    ""
+   ],
+   [
+    "cf",
+    "awk",
+    "",
+    ""
+   ],
+   [
+    "awk",
+    "lit",
+    "",
+    ""
+   ],
+   [
+    "lit",
+    "h2c",
+    "",
+    ""
+   ],
+   [
+    "h2c",
+    "gcc",
+    "C with Romenagri names",
+    ""
+   ],
+   [
+    "gcc",
+    "elf",
+    "",
+    ""
+   ],
+   [
+    "elf",
+    "dbg",
+    "",
+    ""
+   ],
+   [
+    "dbg",
+    "inv",
+    "names as ASCII-7",
+    ""
+   ],
+   [
+    "inv",
+    "out",
+    "",
+    ""
+   ]
+  ]
+ },
+ "hub": {
+  "caption": "One identity across scripts: Brahmi scripts meet Devanagari in one hub; Perso-Arabic meets it at its written, canonical form",
+  "rankdir": "LR",
+  "clusters": {
+   "b": "Brahmi scripts",
+   "p": "Perso-Arabic"
+  },
+  "nodes": [
+   [
+    "s0",
+    "Bengali",
+    "b",
+    null
+   ],
+   [
+    "s1",
+    "Gurmukhi",
+    "b",
+    null
+   ],
+   [
+    "s2",
+    "Gujarati",
+    "b",
+    null
+   ],
+   [
+    "s3",
+    "Oriya",
+    "b",
+    null
+   ],
+   [
+    "s4",
+    "Tamil",
+    "b",
+    null
+   ],
+   [
+    "s5",
+    "Telugu",
+    "b",
+    null
+   ],
+   [
+    "s6",
+    "Kannada",
+    "b",
+    null
+   ],
+   [
+    "s7",
+    "Malayalam",
+    "b",
+    null
+   ],
+   [
+    "flat",
+    "flatten_uni_dev\nfrom iscii_map.csv",
+    null,
+    null
+   ],
+   [
+    "hub",
+    "Devanagari hub",
+    null,
+    null
+   ],
+   [
+    "rmn",
+    "Romenagri\none ASCII-7 identity",
+    null,
+    null
+   ],
+   [
+    "ur",
+    "Urdu",
+    "p",
+    null
+   ],
+   [
+    "fur",
+    "fixarabnum, fltr_ur_hi\nto the canonical form",
+    "p",
+    null
+   ],
+   [
+    "tout",
+    "fltr_hi_te\nback to Telugu",
+    null,
+    null
+   ],
+   [
+    "uout",
+    "fltr_hi_ur\nback to Urdu, a first cut",
+    null,
+    null
+   ]
+  ],
+  "edges": [
+   [
+    "s0",
+    "flat",
+    "",
+    ""
+   ],
+   [
+    "s1",
+    "flat",
+    "",
+    ""
+   ],
+   [
+    "s2",
+    "flat",
+    "",
+    ""
+   ],
+   [
+    "s3",
+    "flat",
+    "",
+    ""
+   ],
+   [
+    "s4",
+    "flat",
+    "",
+    ""
+   ],
+   [
+    "s5",
+    "flat",
+    "",
+    ""
+   ],
+   [
+    "s6",
+    "flat",
+    "",
+    ""
+   ],
+   [
+    "s7",
+    "flat",
+    "",
+    ""
+   ],
+   [
+    "flat",
+    "hub",
+    "",
+    ""
+   ],
+   [
+    "hub",
+    "rmn",
+    "T",
+    ""
+   ],
+   [
+    "rmn",
+    "hub",
+    "T⁻¹",
+    "dashed"
+   ],
+   [
+    "ur",
+    "fur",
+    "",
+    ""
+   ],
+   [
+    "fur",
+    "hub",
+    "",
+    ""
+   ],
+   [
+    "hub",
+    "tout",
+    "",
+    ""
+   ],
+   [
+    "hub",
+    "uout",
+    "",
+    "dashed"
+   ]
+  ]
+ },
+ "acts": {
+  "caption": "The three Acts, with their dividers; PANINI runs through all three",
+  "rankdir": "LR",
+  "clusters": {},
+  "nodes": [
+   [
+    "a1",
+    "Act I, AGI complete\nILM, tajziya\ncyclers and genie, AAB",
+    null,
+    null
+   ],
+   [
+    "d1",
+    "PAT.AL\nPRATIK\nVIDYA",
+    null,
+    null
+   ],
+   [
+    "a2",
+    "Act II, post-AGI to ASI\nCEMb, CEMs, Eco-CEM\nFAKIR, accelerators",
+    null,
+    null
+   ],
+   [
+    "d2",
+    "GramSheel\nProject VIKRAM",
+    null,
+    null
+   ],
+   [
+    "a3",
+    "Act III, post-ASI\nBCI; SPR, then TransEg\nhabitats",
+    null,
+    null
+   ],
+   [
+    "pan",
+    "PANINI",
+    null,
+    null
+   ]
+  ],
+  "edges": [
+   [
+    "a1",
+    "d1",
+    "",
+    ""
+   ],
+   [
+    "d1",
+    "a2",
+    "",
+    ""
+   ],
+   [
+    "a2",
+    "d2",
+    "",
+    ""
+   ],
+   [
+    "d2",
+    "a3",
+    "",
+    ""
+   ],
+   [
+    "pan",
+    "a1",
+    "runs through",
+    "dashed"
+   ],
+   [
+    "pan",
+    "a2",
+    "",
+    "dashed"
+   ],
+   [
+    "pan",
+    "a3",
+    "",
+    "dashed"
+   ]
+  ]
+ },
+ "projections": {
+  "caption": "Humanesque and its projections: parallel cultural traversals, not stages",
+  "rankdir": "TB",
+  "clusters": {
+   "k": "Kaivalyik",
+   "z": "Zistgah",
+   "c": "Cosmopolis"
+  },
+  "nodes": [
+   [
+    "poie",
+    "PoIE\nindividual equity",
+    null,
+    null
+   ],
+   [
+    "hum",
+    "Humanesque\nthe core, a typed hypergraph",
+    null,
+    null
+   ],
+   [
+    "kai",
+    "Kaivalyik\nIndic, Advaita",
+    "k",
+    null
+   ],
+   [
+    "spr",
+    "SPR",
+    "k",
+    null
+   ],
+   [
+    "kagi",
+    "Kaivalyik AGI",
+    "k",
+    null
+   ],
+   [
+    "jy",
+    "Jyotish",
+    "k",
+    null
+   ],
+   [
+    "zis",
+    "Zistgah\nPersian, Islamicate",
+    "z",
+    null
+   ],
+   [
+    "el",
+    "Zamin, AAB, Fiza, Chakra",
+    "z",
+    null
+   ],
+   [
+    "dome",
+    "the dome",
+    "z",
+    null
+   ],
+   [
+    "hab",
+    "Earth, Moon, Mars",
+    "z",
+    null
+   ],
+   [
+    "cos",
+    "Cosmopolis\nGreek, Western",
+    "c",
+    null
+   ],
+   [
+    "soc",
+    "societies, civilisations\nspace, deep time",
+    "c",
+    null
+   ]
+  ],
+  "edges": [
+   [
+    "poie",
+    "hum",
+    "grounds",
+    ""
+   ],
+   [
+    "hum",
+    "kai",
+    "projects",
+    ""
+   ],
+   [
+    "hum",
+    "zis",
+    "projects",
+    ""
+   ],
+   [
+    "hum",
+    "cos",
+    "projects",
+    ""
+   ],
+   [
+    "kai",
+    "spr",
+    "",
+    ""
+   ],
+   [
+    "kai",
+    "kagi",
+    "",
+    ""
+   ],
+   [
+    "kai",
+    "jy",
+    "",
+    ""
+   ],
+   [
+    "zis",
+    "el",
+    "",
+    ""
+   ],
+   [
+    "el",
+    "dome",
+    "mount in",
+    ""
+   ],
+   [
+    "dome",
+    "hab",
+    "replicated",
+    ""
+   ],
+   [
+    "cos",
+    "soc",
+    "",
+    ""
+   ]
+  ]
+ },
+ "triad": {
+  "caption": "The AyeAI Triad: a triad with AyeAI at the apex, not a loop and not a pipeline",
+  "rankdir": "TB",
+  "clusters": {},
+  "nodes": [
+   [
+    "ai",
+    "AyeAI ⟨M, I, G⟩\ncognition",
+    null,
+    null
+   ],
+   [
+    "cn",
+    "AyeCNSe ⟨T, Ch, Σ⟩\ncoordination and communication",
+    null,
+    null
+   ],
+   [
+    "am",
+    "AyeAM ⟨S, R, C⟩\nembodiment",
+    null,
+    null
+   ],
+   [
+    "vi",
+    "VIDYA",
+    null,
+    null
+   ]
+  ],
+  "edges": [
+   [
+    "ai",
+    "cn",
+    "",
+    "triad"
+   ],
+   [
+    "ai",
+    "am",
+    "",
+    "triad"
+   ],
+   [
+    "cn",
+    "am",
+    "",
+    "triad"
+   ],
+   [
+    "vi",
+    "am",
+    "bridges to",
+    ""
+   ]
+  ],
+  "same": [
+   [
+    "cn",
+    "am"
+   ]
+  ]
+ },
+ "pedler": {
+  "caption": "PEDLER's branches: cognition, embodiment, physics and silicon",
+  "rankdir": "TB",
+  "clusters": {},
+  "nodes": [
+   [
+    "p",
+    "PEDLER\nNovember 2001, balanced ternary",
+    null,
+    null
+   ],
+   [
+    "q",
+    "QEDLER\nphysics",
+    null,
+    null
+   ],
+   [
+    "lvf",
+    "LVF",
+    null,
+    null
+   ],
+   [
+    "ml",
+    "MLCNE",
+    null,
+    null
+   ],
+   [
+    "cem",
+    "CEMb, CEMs, Eco-CEM",
+    null,
+    null
+   ],
+   [
+    "ni",
+    "NI2A2\n2003",
+    null,
+    null
+   ],
+   [
+    "an",
+    "ANGEL\n2003",
+    null,
+    null
+   ],
+   [
+    "pr",
+    "PRATIK",
+    null,
+    null
+   ],
+   [
+    "za",
+    "Zamin",
+    null,
+    null
+   ],
+   [
+    "pq",
+    "PANINIq",
+    null,
+    null
+   ]
+  ],
+  "edges": [
+   [
+    "q",
+    "p",
+    "extends",
+    ""
+   ],
+   [
+    "p",
+    "lvf",
+    "cognitive branch",
+    ""
+   ],
+   [
+    "lvf",
+    "ml",
+    "",
+    ""
+   ],
+   [
+    "ml",
+    "cem",
+    "",
+    ""
+   ],
+   [
+    "p",
+    "ni",
+    "embodiment branch",
+    ""
+   ],
+   [
+    "ni",
+    "an",
+    "",
+    ""
+   ],
+   [
+    "p",
+    "pr",
+    "ternary logic",
+    ""
+   ],
+   [
+    "pr",
+    "za",
+    "substrate",
+    ""
+   ],
+   [
+    "p",
+    "pq",
+    "engine",
+    ""
+   ]
+  ]
+ },
+ "loops": {
+  "caption": "Loops at four scales: PEDLER's, GENIE's, the realization spine's, and continuity as the write-ups read it (†)",
+  "rankdir": "LR",
+  "clusters": {
+   "c": "Cognitive, PEDLER",
+   "r": "Research, GENIE",
+   "z": "Realization",
+   "t": "Continuity †"
+  },
+  "nodes": [
+   [
+    "c1",
+    "state",
+    "c",
+    null
+   ],
+   [
+    "c2",
+    "observation\ncounter-observation",
+    "c",
+    null
+   ],
+   [
+    "c3",
+    "evaluation",
+    "c",
+    null
+   ],
+   [
+    "c4",
+    "inclination",
+    "c",
+    null
+   ],
+   [
+    "c5",
+    "selection\nintent",
+    "c",
+    null
+   ],
+   [
+    "c6",
+    "Act",
+    "c",
+    null
+   ],
+   [
+    "c7",
+    "execution\nevent",
+    "c",
+    null
+   ],
+   [
+    "r1",
+    "create",
+    "r",
+    null
+   ],
+   [
+    "r2",
+    "verify",
+    "r",
+    null
+   ],
+   [
+    "r3",
+    "execute",
+    "r",
+    null
+   ],
+   [
+    "r4",
+    "measure",
+    "r",
+    null
+   ],
+   [
+    "r5",
+    "falsify",
+    "r",
+    null
+   ],
+   [
+    "r6",
+    "integrate",
+    "r",
+    null
+   ],
+   [
+    "z1",
+    "intent",
+    "z",
+    null
+   ],
+   [
+    "z2",
+    "semantic and domain IR",
+    "z",
+    null
+   ],
+   [
+    "z3",
+    "realization",
+    "z",
+    null
+   ],
+   [
+    "z4",
+    "observation",
+    "z",
+    null
+   ],
+   [
+    "z5",
+    "verification",
+    "z",
+    null
+   ],
+   [
+    "z6",
+    "ArtifactGraph",
+    "z",
+    null
+   ],
+   [
+    "t1",
+    "identity",
+    "t",
+    null
+   ],
+   [
+    "t2",
+    "memory",
+    "t",
+    null
+   ],
+   [
+    "t3",
+    "provenance",
+    "t",
+    null
+   ],
+   [
+    "t4",
+    "new substrate",
+    "t",
+    null
+   ],
+   [
+    "t5",
+    "continuity",
+    "t",
+    null
+   ]
+  ],
+  "edges": [
+   [
+    "c1",
+    "c2",
+    "",
+    ""
+   ],
+   [
+    "c2",
+    "c3",
+    "",
+    ""
+   ],
+   [
+    "c3",
+    "c4",
+    "",
+    ""
+   ],
+   [
+    "c4",
+    "c5",
+    "",
+    ""
+   ],
+   [
+    "c5",
+    "c6",
+    "",
+    ""
+   ],
+   [
+    "c6",
+    "c7",
+    "",
+    ""
+   ],
+   [
+    "c7",
+    "c1",
+    "",
+    ""
+   ],
+   [
+    "r1",
+    "r2",
+    "",
+    ""
+   ],
+   [
+    "r2",
+    "r3",
+    "",
+    ""
+   ],
+   [
+    "r3",
+    "r4",
+    "",
+    ""
+   ],
+   [
+    "r4",
+    "r5",
+    "",
+    ""
+   ],
+   [
+    "r5",
+    "r6",
+    "",
+    ""
+   ],
+   [
+    "r6",
+    "r1",
+    "",
+    ""
+   ],
+   [
+    "z1",
+    "z2",
+    "",
+    ""
+   ],
+   [
+    "z2",
+    "z3",
+    "",
+    ""
+   ],
+   [
+    "z3",
+    "z4",
+    "",
+    ""
+   ],
+   [
+    "z4",
+    "z5",
+    "",
+    ""
+   ],
+   [
+    "z5",
+    "z6",
+    "",
+    ""
+   ],
+   [
+    "t1",
+    "t2",
+    "",
+    ""
+   ],
+   [
+    "t2",
+    "t3",
+    "",
+    ""
+   ],
+   [
+    "t3",
+    "t4",
+    "",
+    ""
+   ],
+   [
+    "t4",
+    "t5",
+    "",
+    ""
+   ],
+   [
+    "t5",
+    "t1",
+    "",
+    ""
+   ],
+   [
+    "z6",
+    "z1",
+    "knowledge update †",
+    "dashed"
+   ]
+  ]
+ },
+ "provenance": {
+  "caption": "Provenance in its fixed order: seal, clear, attest, mint",
+  "rankdir": "LR",
+  "clusters": {},
+  "nodes": [
+   [
+    "f",
+    "tracked files",
+    null,
+    null
+   ],
+   [
+    "m",
+    "MANIFEST.sha256\nSHA-256 of every file",
+    null,
+    null
+   ],
+   [
+    "o",
+    "Tok DOI, OpenTimestamps\na Merkle path into Bitcoin",
+    null,
+    null
+   ],
+   [
+    "s",
+    "spiguard\nthe disclosure gate",
+    null,
+    null
+   ],
+   [
+    "c",
+    "Candor\nan in-toto statement",
+    null,
+    null
+   ],
+   [
+    "z",
+    "Misty DOI\na Zenodo record",
+    null,
+    null
+   ]
+  ],
+  "edges": [
+   [
+    "f",
+    "m",
+    "",
+    ""
+   ],
+   [
+    "m",
+    "o",
+    "seal",
+    ""
+   ],
+   [
+    "o",
+    "s",
+    "clear",
+    ""
+   ],
+   [
+    "s",
+    "c",
+    "attest",
+    ""
+   ],
+   [
+    "c",
+    "z",
+    "mint",
+    ""
+   ]
+  ]
+ },
+ "spine": {
+  "caption": "The realization spine the realization arms share",
+  "rankdir": "TB",
+  "clusters": {
+   "arms": "Domain IRs and engines"
+  },
+  "nodes": [
+   [
+    "l",
+    "language",
+    null,
+    null
+   ],
+   [
+    "s",
+    "semantic IR",
+    null,
+    null
+   ],
+   [
+    "r",
+    "realization requirement",
+    null,
+    null
+   ],
+   [
+    "d",
+    "domain resolution",
+    null,
+    null
+   ],
+   [
+    "b",
+    "PANINIb\nCISC, RISC, sequence IR",
+    "arms",
+    null
+   ],
+   [
+    "p",
+    "PANINIphy\nphysical IR, parts",
+    "arms",
+    null
+   ],
+   [
+    "q",
+    "PANINIq\nHamiltonian, oscillators, circuit",
+    "arms",
+    null
+   ],
+   [
+    "g",
+    "geometry, trajectory, animation",
+    null,
+    null
+   ],
+   [
+    "o",
+    "observation",
+    null,
+    null
+   ],
+   [
+    "v",
+    "verification",
+    null,
+    null
+   ],
+   [
+    "a",
+    "ArtifactGraph",
+    null,
+    null
+   ]
+  ],
+  "edges": [
+   [
+    "l",
+    "s",
+    "",
+    ""
+   ],
+   [
+    "s",
+    "r",
+    "",
+    ""
+   ],
+   [
+    "r",
+    "d",
+    "",
+    ""
+   ],
+   [
+    "d",
+    "b",
+    "",
+    ""
+   ],
+   [
+    "d",
+    "p",
+    "",
+    ""
+   ],
+   [
+    "d",
+    "q",
+    "",
+    ""
+   ],
+   [
+    "b",
+    "g",
+    "",
+    ""
+   ],
+   [
+    "p",
+    "g",
+    "",
+    ""
+   ],
+   [
+    "q",
+    "g",
+    "",
+    ""
+   ],
+   [
+    "g",
+    "o",
+    "",
+    ""
+   ],
+   [
+    "o",
+    "v",
+    "",
+    ""
+   ],
+   [
+    "v",
+    "a",
+    "",
+    ""
+   ]
+  ]
+ },
+ "collab": {
+  "caption": "How any collaborator, in any domain, goes from the guide to a sealed contribution",
+  "rankdir": "TB",
+  "clusters": {},
+  "nodes": [
+   [
+    "c",
+    "a collaborator\nany lane, any domain",
+    null,
+    null
+   ],
+   [
+    "v",
+    "Rahnuma\nread it your way",
+    null,
+    null
+   ],
+   [
+    "r",
+    "the roadmap\nphase, lane, domain",
+    null,
+    null
+   ],
+   [
+    "s",
+    "FAKIR seed\ndomain × language × layer",
+    null,
+    null
+   ],
+   [
+    "a",
+    "AAB task\nmanifest, VGC stages",
+    null,
+    null
+   ],
+   [
+    "f",
+    "issue form",
+    null,
+    null
+   ],
+   [
+    "i",
+    "an issue\nfinding, task, gate",
+    null,
+    null
+   ],
+   [
+    "w",
+    "a worker\nperson or AI",
+    null,
+    null
+   ],
+   [
+    "p",
+    "pull request\ngate output attached",
+    null,
+    null
+   ],
+   [
+    "g",
+    "gate green",
+    null,
+    null
+   ],
+   [
+    "m",
+    "AC merges",
+    null,
+    null
+   ],
+   [
+    "d",
+    "seal, clear, attest, mint",
+    null,
+    null
+   ]
+  ],
+  "edges": [
+   [
+    "c",
+    "v",
+    "",
+    ""
+   ],
+   [
+    "v",
+    "r",
+    "",
+    ""
+   ],
+   [
+    "c",
+    "s",
+    "",
+    ""
+   ],
+   [
+    "s",
+    "a",
+    "",
+    ""
+   ],
+   [
+    "a",
+    "i",
+    "",
+    ""
+   ],
+   [
+    "c",
+    "f",
+    "",
+    ""
+   ],
+   [
+    "f",
+    "i",
+    "",
+    ""
+   ],
+   [
+    "r",
+    "i",
+    "",
+    ""
+   ],
+   [
+    "i",
+    "w",
+    "",
+    ""
+   ],
+   [
+    "w",
+    "p",
+    "",
+    ""
+   ],
+   [
+    "p",
+    "g",
+    "",
+    ""
+   ],
+   [
+    "g",
+    "m",
+    "",
+    ""
+   ],
+   [
+    "m",
+    "d",
+    "",
+    ""
+   ]
+  ]
+ },
+ "cyclers": {
+  "caption": "The cyclers: one engine, configured in PANINI, and the protocol every cycle follows",
+  "rankdir": "LR",
+  "clusters": {
+   "e": "The family",
+   "p": "The protocol"
+  },
+  "nodes": [
+   [
+    "eng",
+    "one engine\n.pni configuration",
+    "e",
+    null
+   ],
+   [
+    "y0",
+    "matba\nprint",
+    "e",
+    null
+   ],
+   [
+    "y1",
+    "khwab\nvisual",
+    "e",
+    null
+   ],
+   [
+    "y2",
+    "awaz\naudio",
+    "e",
+    null
+   ],
+   [
+    "y3",
+    "tilasm\nimmersive",
+    "e",
+    null
+   ],
+   [
+    "y4",
+    "pench\nembodied",
+    "e",
+    null
+   ],
+   [
+    "y5",
+    "yadein\nrecord",
+    "e",
+    null
+   ],
+   [
+    "y6",
+    "genie\nresearch",
+    "e",
+    null
+   ],
+   [
+    "p1",
+    "intent",
+    "p",
+    null
+   ],
+   [
+    "p2",
+    "context",
+    "p",
+    null
+   ],
+   [
+    "p3",
+    "a meaningful prompt",
+    "p",
+    null
+   ],
+   [
+    "p4",
+    "any AI answers",
+    "p",
+    null
+   ],
+   [
+    "p5",
+    "a person inspects",
+    "p",
+    null
+   ],
+   [
+    "p6",
+    "configuration\nmanagement",
+    "p",
+    null
+   ],
+   [
+    "p7",
+    "final artifact\nauthored with intention",
+    "p",
+    null
+   ]
+  ],
+  "edges": [
+   [
+    "eng",
+    "y0",
+    "",
+    ""
+   ],
+   [
+    "eng",
+    "y1",
+    "",
+    ""
+   ],
+   [
+    "eng",
+    "y2",
+    "",
+    ""
+   ],
+   [
+    "eng",
+    "y3",
+    "",
+    ""
+   ],
+   [
+    "eng",
+    "y4",
+    "",
+    ""
+   ],
+   [
+    "eng",
+    "y5",
+    "",
+    ""
+   ],
+   [
+    "eng",
+    "y6",
+    "",
+    ""
+   ],
+   [
+    "p1",
+    "p2",
+    "",
+    ""
+   ],
+   [
+    "p2",
+    "p3",
+    "",
+    ""
+   ],
+   [
+    "p3",
+    "p4",
+    "",
+    ""
+   ],
+   [
+    "p4",
+    "p5",
+    "",
+    ""
+   ],
+   [
+    "p5",
+    "p6",
+    "",
+    ""
+   ],
+   [
+    "p6",
+    "p3",
+    "next prompt",
+    "dashed"
+   ],
+   [
+    "p6",
+    "p7",
+    "",
+    ""
+   ]
+  ]
+ },
+ "vikram": {
+  "caption": "GramSheel and Project VIKRAM, with VIKRAM's sections as its own pages name them",
+  "rankdir": "TB",
+  "clusters": {
+   "v": "Project VIKRAM's sections"
+  },
+  "nodes": [
+   [
+    "g",
+    "GramSheel Foundation\nhealth, education, justice, livelihood, peace",
+    null,
+    null
+   ],
+   [
+    "t",
+    "TWISHA",
+    null,
+    null
+   ],
+   [
+    "k",
+    "Project VIKRAM\nlaunched 3 May 2020",
+    null,
+    null
+   ],
+   [
+    "h",
+    "Project Hindawi",
+    null,
+    null
+   ],
+   [
+    "x0",
+    "Education",
+    "v",
+    null
+   ],
+   [
+    "x1",
+    "Health",
+    "v",
+    null
+   ],
+   [
+    "x2",
+    "Livelihood",
+    "v",
+    null
+   ],
+   [
+    "x3",
+    "Justice",
+    "v",
+    null
+   ],
+   [
+    "x4",
+    "Environment\nand Habitat",
+    "v",
+    null
+   ],
+   [
+    "x5",
+    "Food Processing\nand Agriculture",
+    "v",
+    null
+   ],
+   [
+    "x6",
+    "Peace",
+    "v",
+    null
+   ],
+   [
+    "x7",
+    "Industries",
+    "v",
+    null
+   ],
+   [
+    "x8",
+    "Technology",
+    "v",
+    null
+   ],
+   [
+    "x9",
+    "Space\nExploration",
+    "v",
+    null
+   ],
+   [
+    "x10",
+    "Socialising",
+    "v",
+    null
+   ],
+   [
+    "x11",
+    "Projects",
+    "v",
+    null
+   ],
+   [
+    "x12",
+    "Resources",
+    "v",
+    null
+   ]
+  ],
+  "edges": [
+   [
+    "g",
+    "k",
+    "principles",
+    ""
+   ],
+   [
+    "g",
+    "t",
+    "",
+    ""
+   ],
+   [
+    "h",
+    "k",
+    "language neutrality",
+    "dashed"
+   ],
+   [
+    "k",
+    "x0",
+    "",
+    ""
+   ],
+   [
+    "k",
+    "x1",
+    "",
+    ""
+   ],
+   [
+    "k",
+    "x2",
+    "",
+    ""
+   ],
+   [
+    "k",
+    "x3",
+    "",
+    ""
+   ],
+   [
+    "k",
+    "x4",
+    "",
+    ""
+   ],
+   [
+    "k",
+    "x5",
+    "",
+    ""
+   ],
+   [
+    "k",
+    "x6",
+    "",
+    ""
+   ],
+   [
+    "k",
+    "x7",
+    "",
+    ""
+   ],
+   [
+    "k",
+    "x8",
+    "",
+    ""
+   ],
+   [
+    "k",
+    "x9",
+    "",
+    ""
+   ],
+   [
+    "k",
+    "x10",
+    "",
+    ""
+   ],
+   [
+    "k",
+    "x11",
+    "",
+    ""
+   ],
+   [
+    "k",
+    "x12",
+    "",
+    ""
+   ]
+  ]
+ },
+ "plan": {
+  "caption": "The plan's phases; the lanes run alongside from P3",
+  "rankdir": "LR",
+  "clusters": {},
+  "nodes": [
+   [
+    "p0",
+    "P0 Baseline\n3 to 4 October",
+    null,
+    null
+   ],
+   [
+    "p1",
+    "P1 Close the releases\nOctober",
+    null,
+    null
+   ],
+   [
+    "p2",
+    "P2 Licences and DOIs\nlate October",
+    null,
+    null
+   ],
+   [
+    "p3",
+    "P3 Collaboration\nNovember",
+    null,
+    null
+   ],
+   [
+    "p4",
+    "P4 Lab and courses\nNovember, December",
+    null,
+    null
+   ],
+   [
+    "p5",
+    "P5 Papers and IPR\nrolling",
+    null,
+    null
+   ],
+   [
+    "p6",
+    "P6 Monetisation\nfrom November",
+    null,
+    null
+   ],
+   [
+    "pl",
+    "Lanes: every collaborator\nand every domain",
+    null,
+    null
+   ]
+  ],
+  "edges": [
+   [
+    "p0",
+    "p1",
+    "",
+    ""
+   ],
+   [
+    "p1",
+    "p2",
+    "",
+    ""
+   ],
+   [
+    "p2",
+    "p3",
+    "",
+    ""
+   ],
+   [
+    "p3",
+    "p4",
+    "",
+    ""
+   ],
+   [
+    "p0",
+    "p5",
+    "",
+    ""
+   ],
+   [
+    "p3",
+    "p6",
+    "",
+    ""
+   ],
+   [
+    "p3",
+    "pl",
+    "",
+    ""
+   ]
+  ]
+ }
+}

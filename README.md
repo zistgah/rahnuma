@@ -35,7 +35,7 @@ A working guide to the ILM, PANINI and Zistgah stack, from bytes and scripts to 
 On Ubuntu:
 
 ```bash
-sudo apt install -y pandoc nodejs npm gcc make flex libfl-dev gawk gdb python3-venv
+sudo apt install -y pandoc nodejs npm gcc make flex libfl-dev gawk gdb graphviz python3-venv
 python3 -m venv ~/work/venv-rahnuma && . ~/work/venv-rahnuma/bin/activate
 pip install playwright pypdf && python3 -m playwright install --with-deps chromium
 npm ci --prefix tools

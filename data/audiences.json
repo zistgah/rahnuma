@@ -1,0 +1,286 @@
+{
+ "audiences": [
+  {
+   "id": "curious",
+   "mono": "Cu",
+   "label": "Curious, any age",
+   "blurb": "A short tour of the big picture.",
+   "depth": "plain",
+   "path": [
+    "ch-01",
+    "ch-02",
+    "ch-hist",
+    "ch-03",
+    "ch-graph",
+    "ch-families",
+    "ch-acts",
+    "ch-roadmap"
+   ],
+   "tryit": [
+    "fakir",
+    "chakra",
+    "panini"
+   ]
+  },
+  {
+   "id": "school",
+   "mono": "St",
+   "label": "School student",
+   "blurb": "How computers hold numbers and letters, then Pāṇini and the big picture.",
+   "depth": "plain",
+   "path": [
+    "ch-01",
+    "ch-09",
+    "ch-10",
+    "ch-11",
+    "ch-12",
+    "ch-hist",
+    "ch-families",
+    "ch-roadmap"
+   ],
+   "tryit": [
+    "chakra",
+    "panini",
+    "genie",
+    "fakir"
+   ]
+  },
+  {
+   "id": "gate",
+   "mono": "GA",
+   "label": "College student or GATE aspirant",
+   "blurb": "The engineering core, mapped to the GATE syllabus.",
+   "depth": "standard",
+   "path": [
+    "ch-18",
+    "ch-09",
+    "ch-10",
+    "ch-13",
+    "ch-14",
+    "ch-15",
+    "ch-06",
+    "ch-07",
+    "ch-run",
+    "ch-roadmap",
+    "app-math"
+   ],
+   "tryit": [
+    "hindawi",
+    "paniniq",
+    "panini",
+    "jugaad28"
+   ]
+  },
+  {
+   "id": "engineer",
+   "mono": "En",
+   "label": "Software or hardware engineer",
+   "blurb": "Set up, run every component, then the compilers and the symbol bridge.",
+   "depth": "deep",
+   "path": [
+    "ch-06",
+    "ch-07",
+    "ch-run",
+    "ch-13",
+    "ch-11",
+    "ch-14",
+    "ch-17",
+    "ch-16",
+    "ch-graph",
+    "app-stem",
+    "ch-roadmap",
+    "app-math"
+   ],
+   "tryit": [
+    "hindawi",
+    "humanesque",
+    "panini_by_claude",
+    "dhancha",
+    "pratik"
+   ]
+  },
+  {
+   "id": "linguist",
+   "mono": "Li",
+   "label": "Linguist or language worker",
+   "blurb": "Scripts, sounds, reversible transliteration and Pāṇini.",
+   "depth": "standard",
+   "path": [
+    "ch-10",
+    "ch-11",
+    "ch-12",
+    "ch-03",
+    "ch-onto",
+    "ch-families",
+    "ch-run",
+    "app-hum",
+    "ch-roadmap",
+    "app-math"
+   ],
+   "tryit": [
+    "hindawi",
+    "urdu",
+    "tajziya",
+    "labs"
+   ]
+  },
+  {
+   "id": "researcher",
+   "mono": "Re",
+   "label": "Researcher in science or technology",
+   "blurb": "The architecture, its terms and Acts, the mathematics, and what is open.",
+   "depth": "deep",
+   "path": [
+    "ch-hist",
+    "ch-03",
+    "ch-graph",
+    "ch-onto",
+    "ch-acts",
+    "ch-15",
+    "ch-16",
+    "ch-14",
+    "ch-19",
+    "app-stem",
+    "ch-roadmap",
+    "app-math"
+   ],
+   "tryit": [
+    "paniniq",
+    "paninib",
+    "paniniphy",
+    "genie",
+    "qedler",
+    "kundali"
+   ]
+  },
+  {
+   "id": "humanities",
+   "mono": "Hu",
+   "label": "Researcher in the humanities or social sciences",
+   "blurb": "Agency, language, knowledge, community and continuity, with your discipline's questions.",
+   "depth": "standard",
+   "path": [
+    "ch-02",
+    "ch-hist",
+    "ch-03",
+    "ch-graph",
+    "ch-onto",
+    "ch-families",
+    "ch-acts",
+    "app-read",
+    "app-hum",
+    "ch-roadmap"
+   ],
+   "tryit": [
+    "fakir",
+    "urdu",
+    "hindawi",
+    "kundali"
+   ]
+  },
+  {
+   "id": "teacher",
+   "mono": "Te",
+   "label": "Teacher or lab builder",
+   "blurb": "Labs, the GATE map, and running everything in a classroom.",
+   "depth": "standard",
+   "path": [
+    "ch-01",
+    "ch-08",
+    "ch-run",
+    "ch-18",
+    "ch-06",
+    "ch-07",
+    "ch-16",
+    "app-prac",
+    "ch-roadmap"
+   ],
+   "tryit": [
+    "mez",
+    "matba",
+    "fakir",
+    "labs",
+    "rahnuma"
+   ]
+  },
+  {
+   "id": "community",
+   "mono": "Co",
+   "label": "Health, community or policy",
+   "blurb": "Equity, villages, health, and the questions people ask.",
+   "depth": "plain",
+   "path": [
+    "ch-02",
+    "ch-hist",
+    "ch-families",
+    "ch-acts",
+    "ch-19",
+    "app-hum",
+    "app-prac",
+    "ch-roadmap"
+   ],
+   "tryit": [
+    "fakir",
+    "jyotish",
+    "chakra",
+    "urdu"
+   ]
+  },
+  {
+   "id": "maker",
+   "mono": "Ma",
+   "label": "Artist, writer or maker",
+   "blurb": "The cyclers for print, film, sound, immersion and robots.",
+   "depth": "standard",
+   "path": [
+    "ch-03",
+    "ch-onto",
+    "ch-run",
+    "ch-16",
+    "ch-families",
+    "app-prac",
+    "ch-roadmap"
+   ],
+   "tryit": [
+    "matba",
+    "khwab",
+    "awaz",
+    "studios",
+    "genie",
+    "paniniphy"
+   ]
+  }
+ ],
+ "ages": [
+  {
+   "id": "u12",
+   "label": "Under 12",
+   "depth": "plain",
+   "large": false
+  },
+  {
+   "id": "t",
+   "label": "12 to 17",
+   "depth": "plain",
+   "large": false
+  },
+  {
+   "id": "y",
+   "label": "18 to 25",
+   "depth": "standard",
+   "large": false
+  },
+  {
+   "id": "a",
+   "label": "26 to 59",
+   "depth": "standard",
+   "large": false
+  },
+  {
+   "id": "s",
+   "label": "60 and over",
+   "depth": "standard",
+   "large": true
+  }
+ ]
+}

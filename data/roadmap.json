@@ -1,0 +1,3122 @@
+{
+ "title": "Estate: releases and collaboration",
+ "version": "1.1",
+ "created": "3 October 2026",
+ "generated_utc": "20261003T213743Z",
+ "guide": "https://zistgah.org/rahnuma/",
+ "phases": [
+  {
+   "id": "P0",
+   "title": "P0 Baseline",
+   "window": "Weekend of 3 to 4 October 2026",
+   "goal": "One measured inventory, the board, tokens with the right scopes, and the list of rulings.",
+   "exit": "estate.sh walk published; board live; rulings issue open; sandbox Zenodo token stored by path."
+  },
+  {
+   "id": "P1",
+   "title": "P1 Close the releases",
+   "window": "10 to 25 October 2026",
+   "goal": "Everything built is released, and every defect found by execution is fixed.",
+   "exit": "All P1 gates green; Rahnuma 1.3.0 frozen on the rulings."
+  },
+  {
+   "id": "P2",
+   "title": "P2 Licences and DOIs",
+   "window": "24 October to 8 November 2026",
+   "goal": "Every repository carries a licence file and correct metadata; minting covers the estate by family.",
+   "exit": "The walk shows no repository without a licence and no record missing AyeAI, ORCID or version."
+  },
+  {
+   "id": "P3",
+   "title": "P3 Collaboration infrastructure",
+   "window": "31 October to 15 November 2026",
+   "goal": "A newcomer can go from Rahnuma to a merged pull request in one sitting.",
+   "exit": "Kit synced to all active repositories; ten good first issues open; darwaza seeded; enablement brief published."
+  },
+  {
+   "id": "P4",
+   "title": "P4 Reference lab and courses",
+   "window": "November to December 2026",
+   "goal": "The reference lab runs from launch scripts, with GATE-aligned modules and a pilot.",
+   "exit": "Lab scripts released; CS and robotics modules reviewed; one pilot institution running."
+  },
+  {
+   "id": "P5",
+   "title": "P5 Papers and IPR",
+   "window": "Rolling, from October 2026",
+   "goal": "Disclosure ledger first, then preprints of the four papers with results.",
+   "exit": "Ledger published internally; four preprints cleared and posted; patent decision memo signed off."
+  },
+  {
+   "id": "P6",
+   "title": "P6 Monetisation",
+   "window": "From November 2026",
+   "goal": "Two offers defined and priced, on the dossier standard.",
+   "exit": "Dossier Phase 0 confirmed; two offers with MRD and commercial dossier."
+  },
+  {
+   "id": "PL",
+   "title": "Lanes: every collaborator and every domain",
+   "window": "Continuous, from October 2026",
+   "goal": "Every collaborator type and every domain family has a visible lane on the board, with an entry point, open work and a way to propose more.",
+   "exit": "every lane has a steward or a pinned open call; every domain family has at least one seeded task"
+  }
+ ],
+ "collaborators": [
+  {
+   "id": "school",
+   "name": "School students, 10 to 17",
+   "start": "the Rahnuma view for school students; CHAKRA, PANINI's studio, GENIE and the FAKIR dome",
+   "contribute": "learning paths, translations of plain-words summaries, questions"
+  },
+  {
+   "id": "ug",
+   "name": "Undergraduates: BE, BTech, BSc, BS",
+   "start": "the GATE view; Running every component",
+   "contribute": "good first issues, component fixes, capstones seeded from FAKIR"
+  },
+  {
+   "id": "pg",
+   "name": "Postgraduates and doctoral researchers",
+   "start": "the researcher views; Appendices C and D",
+   "contribute": "theses and papers on the open questions, measured results, reviews"
+  },
+  {
+   "id": "teacher",
+   "name": "Teachers, lecturers and lab builders",
+   "start": "the teacher view; the reference lab",
+   "contribute": "course modules, lab sheets, pilots, reviews of plain-words text"
+  },
+  {
+   "id": "swe",
+   "name": "Software engineers",
+   "start": "the engineer view; the compilers chapter",
+   "contribute": "code, tests, gates, tooling, pull requests"
+  },
+  {
+   "id": "hwe",
+   "name": "Hardware, embedded and chip engineers",
+   "start": "Below the software; zamin, pratik_core_mvp, jugaad28",
+   "contribute": "SPICE, layouts, firmware, device control, ESP32 work"
+  },
+  {
+   "id": "linguist",
+   "name": "Linguists, translators and language workers",
+   "start": "the linguist view; writing systems and Pāṇini",
+   "contribute": "language tables, corpora, transliteration rules, measurements"
+  },
+  {
+   "id": "ai",
+   "name": "Researchers in AI, quantum and cognition",
+   "start": "the researcher view; PANINIq; PEDLER",
+   "contribute": "models, experiments, validation, papers"
+  },
+  {
+   "id": "humanities",
+   "name": "Researchers in the humanities and social sciences",
+   "start": "the humanities view; Appendix C",
+   "contribute": "studies of agency, language, knowledge and community"
+  },
+  {
+   "id": "health",
+   "name": "Clinicians, health workers and medical researchers",
+   "start": "VIKRAM's health section; CEMb and QNBCI",
+   "contribute": "clinical questions, partnerships, review, health-domain tasks"
+  },
+  {
+   "id": "community",
+   "name": "Community workers, NGOs and village institutions",
+   "start": "GramSheel and Project VIKRAM",
+   "contribute": "local needs, pilots, language and field knowledge"
+  },
+  {
+   "id": "practitioner",
+   "name": "Farmers, artisans and local enterprises",
+   "start": "FAKIR's domain lanes; VIKRAM's livelihood and agriculture sections",
+   "contribute": "domain knowledge, problems worth solving, field testing"
+  },
+  {
+   "id": "artist",
+   "name": "Artists, writers, filmmakers and musicians",
+   "start": "the maker view; the cyclers",
+   "contribute": "works made with the cyclers, recorded as method"
+  },
+  {
+   "id": "maker",
+   "name": "Makers, roboticists and manufacturers",
+   "start": "PANINIphy, pench, transeg",
+   "contribute": "physical realizations, parts, embodiment"
+  },
+  {
+   "id": "policy",
+   "name": "Policy makers, administrators and public bodies",
+   "start": "Appendices C and E; sovereignty in Chapter 19",
+   "contribute": "policy questions, adoption, public infrastructure"
+  },
+  {
+   "id": "legal",
+   "name": "Lawyers, IPR and standards professionals",
+   "start": "provenance and licences; the disclosure ledger",
+   "contribute": "licence review, IPR clearance, standards work"
+  },
+  {
+   "id": "industry",
+   "name": "Industry partners and companies",
+   "start": "Appendix E's adoption path; the component cards",
+   "contribute": "integration, pilots, paid offers, support"
+  },
+  {
+   "id": "funder",
+   "name": "Funders, sponsors and investors",
+   "start": "this roadmap and its measures",
+   "contribute": "funding of lanes, labs and pilots"
+  },
+  {
+   "id": "institution",
+   "name": "Institutions: colleges, universities and labs",
+   "start": "the reference lab and the GATE modules",
+   "contribute": "pilots, courses, joint research"
+  },
+  {
+   "id": "agent",
+   "name": "AI agents working under a human",
+   "start": "any issue's URL; Chapter 22, how to use any AI",
+   "contribute": "issue work through pull requests, with gate output attached"
+  }
+ ],
+ "domains": {
+  "source": "zistgah/fakir data/lattice.json (ISIC Rev.4, ISCO-08, ISCED-F 2013), 1,505 nodes",
+  "layers": [
+   {
+    "id": "L0",
+    "name": "Hardware Definition"
+   },
+   {
+    "id": "L1",
+    "name": "Verification"
+   },
+   {
+    "id": "L2",
+    "name": "Synthesis/Compilation"
+   },
+   {
+    "id": "L3",
+    "name": "Firmware/Embedded"
+   },
+   {
+    "id": "L4",
+    "name": "Systems"
+   },
+   {
+    "id": "L5",
+    "name": "Parallel"
+   },
+   {
+    "id": "L6",
+    "name": "Distributed/Cloud"
+   },
+   {
+    "id": "L7",
+    "name": "AI/Deep Learning"
+   },
+   {
+    "id": "L8",
+    "name": "Robotics/Embodiment"
+   },
+   {
+    "id": "L9",
+    "name": "AGI/ASI"
+   }
+  ],
+  "families": [
+   {
+    "scheme": "ISIC",
+    "code": "A",
+    "name": "Agriculture, forestry and fishing",
+    "sub": 3,
+    "all": 54
+   },
+   {
+    "scheme": "ISIC",
+    "code": "B",
+    "name": "Mining and quarrying",
+    "sub": 5,
+    "all": 29
+   },
+   {
+    "scheme": "ISIC",
+    "code": "C",
+    "name": "Manufacturing",
+    "sub": 24,
+    "all": 232
+   },
+   {
+    "scheme": "ISIC",
+    "code": "D",
+    "name": "Electricity, gas, steam and air conditioning supply",
+    "sub": 1,
+    "all": 7
+   },
+   {
+    "scheme": "ISIC",
+    "code": "E",
+    "name": "Water supply; sewerage, waste management and remediation activities",
+    "sub": 4,
+    "all": 18
+   },
+   {
+    "scheme": "ISIC",
+    "code": "F",
+    "name": "Construction",
+    "sub": 3,
+    "all": 22
+   },
+   {
+    "scheme": "ISIC",
+    "code": "G",
+    "name": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+    "sub": 3,
+    "all": 66
+   },
+   {
+    "scheme": "ISIC",
+    "code": "H",
+    "name": "Transportation and storage",
+    "sub": 5,
+    "all": 36
+   },
+   {
+    "scheme": "ISIC",
+    "code": "I",
+    "name": "Accommodation and food service activities",
+    "sub": 2,
+    "all": 15
+   },
+   {
+    "scheme": "ISIC",
+    "code": "J",
+    "name": "Information and communication",
+    "sub": 6,
+    "all": 42
+   },
+   {
+    "scheme": "ISIC",
+    "code": "K",
+    "name": "Financial and insurance activities",
+    "sub": 3,
+    "all": 31
+   },
+   {
+    "scheme": "ISIC",
+    "code": "L",
+    "name": "Real estate activities",
+    "sub": 1,
+    "all": 5
+   },
+   {
+    "scheme": "ISIC",
+    "code": "M",
+    "name": "Professional, scientific and technical activities",
+    "sub": 7,
+    "all": 35
+   },
+   {
+    "scheme": "ISIC",
+    "code": "N",
+    "name": "Administrative and support service activities",
+    "sub": 6,
+    "all": 51
+   },
+   {
+    "scheme": "ISIC",
+    "code": "O",
+    "name": "Public administration and defence; compulsory social security",
+    "sub": 1,
+    "all": 11
+   },
+   {
+    "scheme": "ISIC",
+    "code": "P",
+    "name": "Education",
+    "sub": 1,
+    "all": 14
+   },
+   {
+    "scheme": "ISIC",
+    "code": "Q",
+    "name": "Human health and social work activities",
+    "sub": 3,
+    "all": 21
+   },
+   {
+    "scheme": "ISIC",
+    "code": "R",
+    "name": "Arts, entertainment and recreation",
+    "sub": 4,
+    "all": 19
+   },
+   {
+    "scheme": "ISIC",
+    "code": "S",
+    "name": "Other service activities",
+    "sub": 3,
+    "all": 26
+   },
+   {
+    "scheme": "ISIC",
+    "code": "T",
+    "name": "Activities of households as employers; undifferentiated goods- and services-producing activities of households for own use",
+    "sub": 2,
+    "all": 8
+   },
+   {
+    "scheme": "ISIC",
+    "code": "U",
+    "name": "Activities of extraterritorial organizations and bodies",
+    "sub": 1,
+    "all": 3
+   },
+   {
+    "scheme": "ISCO",
+    "code": "1",
+    "name": "Managers",
+    "sub": 4,
+    "all": 46
+   },
+   {
+    "scheme": "ISCO",
+    "code": "2",
+    "name": "Professionals",
+    "sub": 6,
+    "all": 125
+   },
+   {
+    "scheme": "ISCO",
+    "code": "3",
+    "name": "Technicians and Associate Professionals",
+    "sub": 5,
+    "all": 109
+   },
+   {
+    "scheme": "ISCO",
+    "code": "4",
+    "name": "Clerical Support Workers",
+    "sub": 4,
+    "all": 41
+   },
+   {
+    "scheme": "ISCO",
+    "code": "5",
+    "name": "Service and Sales Workers",
+    "sub": 4,
+    "all": 57
+   },
+   {
+    "scheme": "ISCO",
+    "code": "6",
+    "name": "Skilled Agricultural, Forestry and Fishery Workers",
+    "sub": 3,
+    "all": 30
+   },
+   {
+    "scheme": "ISCO",
+    "code": "7",
+    "name": "Craft and Related Trades Workers",
+    "sub": 5,
+    "all": 85
+   },
+   {
+    "scheme": "ISCO",
+    "code": "8",
+    "name": "Plant and Machine Operators, and Assemblers",
+    "sub": 3,
+    "all": 57
+   },
+   {
+    "scheme": "ISCO",
+    "code": "9",
+    "name": "Elementary Occupations",
+    "sub": 6,
+    "all": 50
+   },
+   {
+    "scheme": "ISCO",
+    "code": "0",
+    "name": "Armed Forces Occupations",
+    "sub": 3,
+    "all": 9
+   },
+   {
+    "scheme": "ISCED",
+    "code": "00",
+    "name": "Generic programmes and qualifications",
+    "sub": 3,
+    "all": 6
+   },
+   {
+    "scheme": "ISCED",
+    "code": "01",
+    "name": "Education",
+    "sub": 1,
+    "all": 5
+   },
+   {
+    "scheme": "ISCED",
+    "code": "02",
+    "name": "Arts and humanities",
+    "sub": 3,
+    "all": 13
+   },
+   {
+    "scheme": "ISCED",
+    "code": "03",
+    "name": "Social sciences, journalism and information",
+    "sub": 2,
+    "all": 8
+   },
+   {
+    "scheme": "ISCED",
+    "code": "04",
+    "name": "Business, administration and law",
+    "sub": 2,
+    "all": 10
+   },
+   {
+    "scheme": "ISCED",
+    "code": "05",
+    "name": "Natural sciences, mathematics and statistics",
+    "sub": 4,
+    "all": 13
+   },
+   {
+    "scheme": "ISCED",
+    "code": "06",
+    "name": "Information and Communication Technologies (ICTs)",
+    "sub": 1,
+    "all": 4
+   },
+   {
+    "scheme": "ISCED",
+    "code": "07",
+    "name": "Engineering, manufacturing and construction",
+    "sub": 3,
+    "all": 15
+   },
+   {
+    "scheme": "ISCED",
+    "code": "08",
+    "name": "Agriculture, forestry, fisheries and veterinary",
+    "sub": 4,
+    "all": 9
+   },
+   {
+    "scheme": "ISCED",
+    "code": "09",
+    "name": "Health and welfare",
+    "sub": 2,
+    "all": 12
+   },
+   {
+    "scheme": "ISCED",
+    "code": "10",
+    "name": "Services",
+    "sub": 4,
+    "all": 14
+   }
+  ],
+  "languages": 7867,
+  "scripts": 226
+ },
+ "issues": [
+  {
+   "id": "walk",
+   "phase": "P0",
+   "repo": "zistgah/governance",
+   "title": "Walk the estate and freeze the inventory",
+   "owner": "human-only",
+   "area": "release",
+   "gate": "bash estate.sh --publish",
+   "expect": "the walk page on zistgah.org shows today's date and counts",
+   "depends": [],
+   "domains": [
+    "ISIC:J",
+    "ISCED:06"
+   ],
+   "collab": [
+    "swe",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "rulings",
+   "phase": "P0",
+   "repo": "zistgah/governance",
+   "title": "Rulings needed before the next freeze",
+   "owner": "human-only",
+   "area": "ruling",
+   "gate": "read the issue",
+   "expect": "every item answered in a comment",
+   "depends": [],
+   "domains": [
+    "cross"
+   ],
+   "collab": [
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "tokens",
+   "phase": "P0",
+   "repo": "zistgah/governance",
+   "title": "Tokens and scopes for the plan and the sandbox",
+   "owner": "human-only",
+   "area": "release",
+   "gate": "gh auth status",
+   "expect": "the token scopes include project",
+   "depends": [],
+   "domains": [
+    "ISIC:J",
+    "ISCED:06"
+   ],
+   "collab": [
+    "swe",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "command",
+   "phase": "P0",
+   "repo": "zistgah/governance",
+   "title": "Command centre: the board and the weekly cycle",
+   "owner": "human-only",
+   "area": "collab",
+   "gate": "bash seed_plan.sh --status",
+   "expect": "a digest with every phase and epic",
+   "depends": [
+    "walk"
+   ],
+   "domains": [
+    "cross"
+   ],
+   "collab": [
+    "community",
+    "institution",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "rahnuma12",
+   "phase": "P1",
+   "repo": "zistgah/rahnuma",
+   "title": "Seed Rahnuma 1.3.0 and verify the site",
+   "owner": "human-only",
+   "area": "release",
+   "gate": "visit https://zistgah.org/rahnuma/",
+   "expect": "the cover reads Version 1.3.0",
+   "depends": [],
+   "domains": [
+    "ISIC:J",
+    "ISCED:06"
+   ],
+   "collab": [
+    "swe",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "mistynv",
+   "phase": "P1",
+   "repo": "project-ilm/misty-doi",
+   "title": "Publish new versions of existing Zenodo records",
+   "owner": "ai:claude",
+   "area": "release",
+   "gate": "misty publish --help",
+   "expect": "an option for a new version of an existing record",
+   "depends": [
+    "tokens"
+   ],
+   "domains": [
+    "ISIC:J",
+    "ISCED:06"
+   ],
+   "collab": [
+    "swe",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "mistypypi",
+   "phase": "P1",
+   "repo": "project-ilm/misty-doi",
+   "title": "Release misty 1.1.x to PyPI",
+   "owner": "human-only",
+   "area": "release",
+   "gate": "pip index versions misty-doi",
+   "expect": "the new version is listed",
+   "depends": [
+    "mistynv"
+   ],
+   "domains": [
+    "ISIC:J",
+    "ISCED:06"
+   ],
+   "collab": [
+    "swe",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "rahnumadoi",
+   "phase": "P1",
+   "repo": "zistgah/rahnuma",
+   "title": "Version DOIs for Rahnuma 1.1.0 and 1.2.0",
+   "owner": "human-only",
+   "area": "doi",
+   "gate": "grep ^doi: CITATION.cff",
+   "expect": "a DOI distinct from 23062059, under the same concept",
+   "depends": [
+    "mistypypi"
+   ],
+   "domains": [
+    "ISIC:M",
+    "ISCED:03"
+   ],
+   "collab": [
+    "pg",
+    "legal"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "qedler",
+   "phase": "P1",
+   "repo": "project-ilm/qedler",
+   "title": "Reseal the manifest: clause C2",
+   "owner": "ai:claude",
+   "area": "defect",
+   "gate": "bash ops/verify.sh",
+   "expect": "6 of 6 clauses pass",
+   "depends": [],
+   "domains": [
+    "ISIC:J",
+    "ISCED:06"
+   ],
+   "collab": [
+    "swe",
+    "ug",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "studios",
+   "phase": "P1",
+   "repo": "zistgah/tilasm",
+   "title": "Restore genie.js and workflows.js for the studio tests",
+   "owner": "ai:claude",
+   "area": "defect",
+   "gate": "node tests/genie.test.mjs && node tests/leak.test.mjs",
+   "expect": "both pass, in tilasm, pench and yadein",
+   "depends": [],
+   "domains": [
+    "ISIC:J",
+    "ISCED:06"
+   ],
+   "collab": [
+    "swe",
+    "ug",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "zamin",
+   "phase": "P1",
+   "repo": "zistgah/zamin",
+   "title": "Make the sign-frustration testbench run on ngspice 42",
+   "owner": "ai:gemini",
+   "area": "defect",
+   "gate": "cd spice && ngspice -b sign_frustration_tb.sp",
+   "expect": "exit status 0 and the expected transient output",
+   "depends": [],
+   "domains": [
+    "ISIC:C",
+    "ISCED:07"
+   ],
+   "collab": [
+    "hwe"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "pratikx",
+   "phase": "P1",
+   "repo": "zistgah/pratik_core_mvp",
+   "title": "Mark build.sh executable",
+   "owner": "ai:claude",
+   "area": "defect",
+   "gate": "./build.sh",
+   "expect": "ALL CHECKS PASSED",
+   "depends": [],
+   "domains": [
+    "ISIC:C",
+    "ISCED:07"
+   ],
+   "collab": [
+    "hwe",
+    "ug"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "humanesque",
+   "phase": "P1",
+   "repo": "zistgah/humanesque",
+   "title": "Four failing checks of the merged release",
+   "owner": "ai:claude",
+   "area": "defect",
+   "gate": "bash VERIFY.sh",
+   "expect": "every check passes or is reported unjudged with its reason",
+   "depends": [],
+   "domains": [
+    "ISIC:J",
+    "ISCED:06"
+   ],
+   "collab": [
+    "swe",
+    "ug",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "telugu",
+   "phase": "P1",
+   "repo": "hindawiai/chintamani",
+   "title": "fltr_hi_te: add the Telugu long-u sign",
+   "owner": "ai:claude",
+   "area": "defect",
+   "gate": "echo 'కర్నూల్' | Romenagri/flatten_uni_dev | bash Romenagri/fltr_hi_te",
+   "expect": "the same word, కర్నూల్, comes back",
+   "depends": [],
+   "domains": [
+    "ISCED:02",
+    "ISIC:J"
+   ],
+   "collab": [
+    "linguist",
+    "ug",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "std2hin",
+   "phase": "P1",
+   "repo": "hindawiai/chintamani",
+   "title": "std2hin: escape only the keyword output",
+   "owner": "ai:claude",
+   "area": "defect",
+   "gate": "hin2std HindiC.uhin && std2hin hin.std && diff HindiC.uhin hin.uhin",
+   "expect": "no differences",
+   "depends": [],
+   "domains": [
+    "ISCED:02",
+    "ISIC:J"
+   ],
+   "collab": [
+    "linguist",
+    "swe"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lineno",
+   "phase": "P1",
+   "repo": "hindawiai/chintamani",
+   "title": "Guru shaili: emit #line directives",
+   "owner": "ai:claude",
+   "area": "defect",
+   "gate": "gdb -batch -ex 'break main' -ex run ./hin-g",
+   "expect": "GDB lists lines of the .uhin file",
+   "depends": [],
+   "domains": [
+    "ISIC:J",
+    "ISCED:06"
+   ],
+   "collab": [
+    "swe",
+    "hwe"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "yacc",
+   "phase": "P1",
+   "repo": "hindawiai/chintamani",
+   "title": "Rerun the YACC shaili conformance",
+   "owner": "ai:claude",
+   "area": "defect",
+   "gate": "the wyaaka sample through hincc",
+   "expect": "the sample builds and runs; the table updated",
+   "depends": [],
+   "domains": [
+    "ISIC:J",
+    "ISCED:06"
+   ],
+   "collab": [
+    "swe",
+    "ug",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "paniniqp08",
+   "phase": "P1",
+   "repo": "zistgah/paniniq",
+   "title": "P08: ignore gitignored caches and an in-clone venv",
+   "owner": "ai:claude",
+   "area": "defect",
+   "gate": "python3 -m unittest discover -s tests && bash ops/verify.sh",
+   "expect": "10 of 10 pass",
+   "depends": [],
+   "domains": [
+    "ISIC:J",
+    "ISCED:06"
+   ],
+   "collab": [
+    "swe",
+    "ug",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "hiur",
+   "phase": "P1",
+   "repo": "zistgah/urdu-ilm",
+   "title": "fltr_hi_ur: complete the reverse Perso-Arabic filter",
+   "owner": "ai:gemini",
+   "area": "defect",
+   "gate": "the round trip on Romenagri/corp_hi.txt",
+   "expect": "the measured rate reported, with every residue listed",
+   "depends": [],
+   "domains": [
+    "ISCED:02",
+    "ISIC:J"
+   ],
+   "collab": [
+    "linguist"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "jyotish",
+   "phase": "P1",
+   "repo": "zistgah/jyotish",
+   "title": "Mint Jyotish",
+   "owner": "human-only",
+   "area": "release",
+   "gate": "grep ^doi: CITATION.cff",
+   "expect": "a DOI recorded",
+   "depends": [],
+   "domains": [
+    "ISIC:J",
+    "ISCED:06"
+   ],
+   "collab": [
+    "swe",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "unreleased",
+   "phase": "P1",
+   "repo": "zistgah/governance",
+   "title": "Release the built but unreleased",
+   "owner": "human-only",
+   "area": "release",
+   "gate": "bash estate.sh --publish",
+   "expect": "each shows as live, with its gate green",
+   "depends": [
+    "walk"
+   ],
+   "domains": [
+    "ISIC:J",
+    "ISCED:06"
+   ],
+   "collab": [
+    "swe",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "labs",
+   "phase": "P1",
+   "repo": "zistgah/rahnuma",
+   "title": "Lab launch scripts, retrieved and dockerised",
+   "owner": "ai:claude",
+   "area": "lab",
+   "gate": "bash labs/<lab>/launch.sh --check",
+   "expect": "every lab starts and answers on its port",
+   "depends": [
+    "rulings"
+   ],
+   "domains": [
+    "ISIC:P",
+    "ISCED:01"
+   ],
+   "collab": [
+    "teacher",
+    "institution",
+    "ug"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "rahnuma13",
+   "phase": "P1",
+   "repo": "zistgah/rahnuma",
+   "title": "Rahnuma 1.4.0: apply the rulings and the fixes",
+   "owner": "ai:claude",
+   "area": "release",
+   "gate": "bash ops/verify.sh",
+   "expect": "12 of 12, with the component catalogue rerun on the build date",
+   "depends": [
+    "rulings",
+    "qedler",
+    "studios",
+    "zamin",
+    "humanesque",
+    "telugu",
+    "std2hin",
+    "lineno",
+    "yacc",
+    "paniniqp08",
+    "labs"
+   ],
+   "domains": [
+    "ISIC:J",
+    "ISCED:06"
+   ],
+   "collab": [
+    "swe",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lickit",
+   "phase": "P2",
+   "repo": "zistgah/governance",
+   "title": "Licence kit: one file per category",
+   "owner": "ai:claude",
+   "area": "licence",
+   "gate": "the kit's own check",
+   "expect": "every active repository mapped to its licences",
+   "depends": [],
+   "domains": [
+    "ISCED:04",
+    "ISIC:J"
+   ],
+   "collab": [
+    "legal",
+    "swe"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "licsync",
+   "phase": "P2",
+   "repo": "zistgah/governance",
+   "title": "Licence files across the estate",
+   "owner": "human-only",
+   "area": "licence",
+   "gate": "bash estate.sh --publish",
+   "expect": "no repository without a licence file",
+   "depends": [
+    "lickit"
+   ],
+   "domains": [
+    "ISCED:04",
+    "ISIC:J"
+   ],
+   "collab": [
+    "legal",
+    "swe"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "rewrite",
+   "phase": "P2",
+   "repo": "project-ilm/misty-doi",
+   "title": "Correct the Zenodo metadata: affiliation, ORCID, version",
+   "owner": "human-only",
+   "area": "doi",
+   "gate": "the record walk",
+   "expect": "no record missing affiliation, ORCID or version",
+   "depends": [],
+   "domains": [
+    "ISIC:M",
+    "ISCED:03"
+   ],
+   "collab": [
+    "pg",
+    "legal"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "mintfam",
+   "phase": "P2",
+   "repo": "zistgah/governance",
+   "title": "Mint the unminted repositories by family",
+   "owner": "human-only",
+   "area": "doi",
+   "gate": "bash estate.sh --publish",
+   "expect": "the minted count rises to every repository meant for release",
+   "depends": [
+    "rewrite",
+    "licsync"
+   ],
+   "domains": [
+    "ISIC:M",
+    "ISCED:03"
+   ],
+   "collab": [
+    "pg",
+    "legal"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "aabdoi",
+   "phase": "P2",
+   "repo": "zistgah/aab",
+   "title": "Merge AAB's split concept DOI",
+   "owner": "human-only",
+   "area": "doi",
+   "gate": "the two records",
+   "expect": "one lineage, cross-referenced",
+   "depends": [],
+   "domains": [
+    "ISIC:M",
+    "ISCED:03"
+   ],
+   "collab": [
+    "pg",
+    "legal"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "forms",
+   "phase": "P3",
+   "repo": "zistgah/governance",
+   "title": "Install the collaboration issue forms",
+   "owner": "human-only",
+   "area": "collab",
+   "gate": "visit https://github.com/zistgah/governance/issues/new/choose",
+   "expect": "four forms and the links to Rahnuma, the roadmap and the FAKIR explorer",
+   "depends": [],
+   "domains": [
+    "cross"
+   ],
+   "collab": [
+    "agent",
+    "swe"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "kit",
+   "phase": "P3",
+   "repo": "zistgah/governance",
+   "title": "Contribution kit",
+   "owner": "ai:claude",
+   "area": "collab",
+   "gate": "the template repository's own check",
+   "expect": "the kit renders and its links resolve",
+   "depends": [
+    "forms",
+    "lickit"
+   ],
+   "domains": [
+    "cross"
+   ],
+   "collab": [
+    "community",
+    "institution",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "kitsync",
+   "phase": "P3",
+   "repo": "zistgah/governance",
+   "title": "Sync the contribution kit to all active repositories",
+   "owner": "human-only",
+   "area": "collab",
+   "gate": "bash estate.sh --publish",
+   "expect": "the kit present in every active repository",
+   "depends": [
+    "kit"
+   ],
+   "domains": [
+    "cross"
+   ],
+   "collab": [
+    "community",
+    "institution",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "gfi",
+   "phase": "P3",
+   "repo": "zistgah/governance",
+   "title": "Ten good first issues from the component cards",
+   "owner": "ai:claude",
+   "area": "collab",
+   "gate": "gh issue list --label 'good first issue'",
+   "expect": "ten open issues across the estate",
+   "depends": [
+    "kit"
+   ],
+   "domains": [
+    "cross"
+   ],
+   "collab": [
+    "community",
+    "institution",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "darwaza",
+   "phase": "P3",
+   "repo": "zistgah/governance",
+   "title": "Seed darwaza, the MCP door",
+   "owner": "human-only",
+   "area": "collab",
+   "gate": "the repository's gate",
+   "expect": "green, with Pages if it has a page",
+   "depends": [
+    "unreleased"
+   ],
+   "domains": [
+    "cross"
+   ],
+   "collab": [
+    "community",
+    "institution",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "brief",
+   "phase": "P3",
+   "repo": "zistgah/governance",
+   "title": "Enablement brief, version 1",
+   "owner": "ai:chatgpt",
+   "area": "collab",
+   "gate": "AC's review",
+   "expect": "approved and linked from Rahnuma",
+   "depends": [],
+   "domains": [
+    "cross"
+   ],
+   "collab": [
+    "community",
+    "industry",
+    "institution"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "labname",
+   "phase": "P4",
+   "repo": "zistgah/governance",
+   "title": "The reference lab's public name",
+   "owner": "human-only",
+   "area": "ruling",
+   "gate": "read the issue",
+   "expect": "a name recorded",
+   "depends": [
+    "rulings"
+   ],
+   "domains": [
+    "cross"
+   ],
+   "collab": [
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "gatecs",
+   "phase": "P4",
+   "repo": "zistgah/governance",
+   "title": "GATE-aligned module: computer science",
+   "owner": "ai:chatgpt",
+   "area": "lab",
+   "gate": "AC's review",
+   "expect": "approved",
+   "depends": [],
+   "domains": [
+    "ISIC:P",
+    "ISCED:06"
+   ],
+   "collab": [
+    "teacher"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "gatera",
+   "phase": "P4",
+   "repo": "zistgah/governance",
+   "title": "GATE-aligned module: robotics and automation",
+   "owner": "ai:chatgpt",
+   "area": "lab",
+   "gate": "AC's review",
+   "expect": "approved",
+   "depends": [],
+   "domains": [
+    "ISIC:P",
+    "ISCED:07"
+   ],
+   "collab": [
+    "teacher",
+    "maker"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "pilot",
+   "phase": "P4",
+   "repo": "zistgah/governance",
+   "title": "Pilot with one institution",
+   "owner": "human-only",
+   "area": "lab",
+   "gate": "the pilot report",
+   "expect": "one institution running",
+   "depends": [
+    "labs",
+    "gatecs",
+    "gatera",
+    "labname"
+   ],
+   "domains": [
+    "ISIC:P",
+    "ISCED:01"
+   ],
+   "collab": [
+    "institution",
+    "teacher"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "capstone",
+   "phase": "P4",
+   "repo": "zistgah/fakir",
+   "title": "Capstone pipeline: a FAKIR seed to an AAB task",
+   "owner": "ai:claude",
+   "area": "lab",
+   "gate": "open one seeded task",
+   "expect": "an issue with manifest, stages and gate",
+   "depends": [],
+   "domains": [
+    "ISIC:P",
+    "ISCED:01"
+   ],
+   "collab": [
+    "ug",
+    "pg",
+    "teacher"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "ledger",
+   "phase": "P5",
+   "repo": "zistgah/governance",
+   "title": "Disclosure ledger: what is already public",
+   "owner": "ai:gemini",
+   "area": "paper",
+   "gate": "AC's review",
+   "expect": "the ledger, every entry dated and linked",
+   "depends": [],
+   "domains": [
+    "ISCED:04"
+   ],
+   "collab": [
+    "legal"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "spiguard",
+   "phase": "P5",
+   "repo": "zistgah/governance",
+   "title": "Clearance procedure for papers",
+   "owner": "ai:claude",
+   "area": "paper",
+   "gate": "the gate on a test paper",
+   "expect": "blocks without clearance, passes with it",
+   "depends": [
+    "ledger"
+   ],
+   "domains": [
+    "ISCED:04",
+    "ISIC:J"
+   ],
+   "collab": [
+    "legal",
+    "swe"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "p-romenagri",
+   "phase": "P5",
+   "repo": "project-ilm/romenagri",
+   "title": "Preprint: Romenagri",
+   "owner": "ai:fable",
+   "area": "paper",
+   "gate": "spiguard clearance",
+   "expect": "cleared and posted",
+   "depends": [
+    "spiguard",
+    "rulings"
+   ],
+   "domains": [
+    "ISCED:02",
+    "ISIC:M"
+   ],
+   "collab": [
+    "linguist",
+    "pg"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "p-bridge",
+   "phase": "P5",
+   "repo": "hindawiai/chintamani",
+   "title": "Preprint: the symbol bridge",
+   "owner": "ai:fable",
+   "area": "paper",
+   "gate": "spiguard clearance",
+   "expect": "cleared and posted",
+   "depends": [
+    "spiguard",
+    "lineno"
+   ],
+   "domains": [
+    "ISIC:M",
+    "ISCED:05"
+   ],
+   "collab": [
+    "pg",
+    "ai",
+    "legal"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "p-hps",
+   "phase": "P5",
+   "repo": "zistgah/urdu-ilm",
+   "title": "Preprint: Hindawi and ILM as composed transducers",
+   "owner": "ai:fable",
+   "area": "paper",
+   "gate": "spiguard clearance",
+   "expect": "cleared and posted",
+   "depends": [
+    "spiguard",
+    "yacc"
+   ],
+   "domains": [
+    "ISIC:M",
+    "ISCED:05"
+   ],
+   "collab": [
+    "pg",
+    "ai",
+    "legal"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "p-paniniq",
+   "phase": "P5",
+   "repo": "zistgah/paniniq",
+   "title": "Preprint: PANINIq validation",
+   "owner": "ai:fable",
+   "area": "paper",
+   "gate": "spiguard clearance",
+   "expect": "cleared and posted",
+   "depends": [
+    "spiguard"
+   ],
+   "domains": [
+    "ISIC:M",
+    "ISCED:05"
+   ],
+   "collab": [
+    "ai",
+    "pg"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "patent",
+   "phase": "P5",
+   "repo": "zistgah/governance",
+   "title": "Patent decision memo",
+   "owner": "human-only",
+   "area": "paper",
+   "gate": "AC's signature",
+   "expect": "memo signed",
+   "depends": [
+    "ledger"
+   ],
+   "domains": [
+    "ISCED:04"
+   ],
+   "collab": [
+    "legal"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "phase0",
+   "phase": "P6",
+   "repo": "zistgah/governance",
+   "title": "Product dossiers: confirm the Phase 0 inventory",
+   "owner": "human-only",
+   "area": "money",
+   "gate": "read the issue",
+   "expect": "inventory confirmed",
+   "depends": [],
+   "domains": [
+    "ISIC:M",
+    "ISCED:04"
+   ],
+   "collab": [
+    "industry",
+    "funder"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "offerlab",
+   "phase": "P6",
+   "repo": "zistgah/governance",
+   "title": "Offer 1: the reference-lab kit and course",
+   "owner": "ai:fable",
+   "area": "money",
+   "gate": "AC's review",
+   "expect": "both documents approved",
+   "depends": [
+    "phase0",
+    "pilot"
+   ],
+   "domains": [
+    "ISIC:P",
+    "ISIC:M"
+   ],
+   "collab": [
+    "industry",
+    "institution",
+    "funder"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "offertool",
+   "phase": "P6",
+   "repo": "zistgah/governance",
+   "title": "Offer 2: Indic toolchain integration",
+   "owner": "ai:fable",
+   "area": "money",
+   "gate": "AC's review",
+   "expect": "both documents approved",
+   "depends": [
+    "phase0",
+    "p-bridge"
+   ],
+   "domains": [
+    "ISIC:J",
+    "ISIC:C"
+   ],
+   "collab": [
+    "industry",
+    "hwe"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "roadmap",
+   "phase": "P3",
+   "repo": "zistgah/governance",
+   "title": "Publish the roadmap page",
+   "owner": "human-only",
+   "area": "collab",
+   "gate": "visit https://zistgah.org/roadmap/",
+   "expect": "the roadmap filters by phase, collaborator lane and domain family",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "cross"
+   ],
+   "collab": [
+    "funder",
+    "policy",
+    "institution",
+    "industry"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isic-a",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISIC A, Agriculture, forestry and fishing",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISIC:A"
+   ],
+   "collab": [
+    "practitioner",
+    "community",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isic-b",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISIC B, Mining and quarrying",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISIC:B"
+   ],
+   "collab": [
+    "practitioner",
+    "community",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isic-c",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISIC C, Manufacturing",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISIC:C"
+   ],
+   "collab": [
+    "hwe",
+    "maker",
+    "industry",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isic-d",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISIC D, Electricity, gas, steam and air conditioning supply",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISIC:D"
+   ],
+   "collab": [
+    "practitioner",
+    "community",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isic-e",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISIC E, Water supply; sewerage, waste management and remediation activities",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISIC:E"
+   ],
+   "collab": [
+    "practitioner",
+    "community",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isic-f",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISIC F, Construction",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISIC:F"
+   ],
+   "collab": [
+    "practitioner",
+    "community",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isic-g",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISIC G, Wholesale and retail trade; repair of motor vehicles and motorcycles",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISIC:G"
+   ],
+   "collab": [
+    "practitioner",
+    "community",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isic-h",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISIC H, Transportation and storage",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISIC:H"
+   ],
+   "collab": [
+    "practitioner",
+    "community",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isic-i",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISIC I, Accommodation and food service activities",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISIC:I"
+   ],
+   "collab": [
+    "practitioner",
+    "community",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isic-j",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISIC J, Information and communication",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISIC:J"
+   ],
+   "collab": [
+    "swe",
+    "linguist",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isic-k",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISIC K, Financial and insurance activities",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISIC:K"
+   ],
+   "collab": [
+    "practitioner",
+    "community",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isic-l",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISIC L, Real estate activities",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISIC:L"
+   ],
+   "collab": [
+    "practitioner",
+    "community",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isic-m",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISIC M, Professional, scientific and technical activities",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISIC:M"
+   ],
+   "collab": [
+    "ai",
+    "pg",
+    "ug",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isic-n",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISIC N, Administrative and support service activities",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISIC:N"
+   ],
+   "collab": [
+    "practitioner",
+    "community",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isic-o",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISIC O, Public administration and defence; compulsory social security",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISIC:O"
+   ],
+   "collab": [
+    "policy",
+    "legal",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isic-p",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISIC P, Education",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISIC:P"
+   ],
+   "collab": [
+    "teacher",
+    "institution",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isic-q",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISIC Q, Human health and social work activities",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISIC:Q"
+   ],
+   "collab": [
+    "health",
+    "community",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isic-r",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISIC R, Arts, entertainment and recreation",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISIC:R"
+   ],
+   "collab": [
+    "artist",
+    "humanities",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isic-s",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISIC S, Other service activities",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISIC:S"
+   ],
+   "collab": [
+    "practitioner",
+    "community",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isic-t",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISIC T, Activities of households as employers; undifferentiated goods- and services-producing activities of households for own use",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISIC:T"
+   ],
+   "collab": [
+    "practitioner",
+    "community",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isic-u",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISIC U, Activities of extraterritorial organizations and bodies",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISIC:U"
+   ],
+   "collab": [
+    "practitioner",
+    "community",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isco-1",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISCO 1, Managers",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISCO:1"
+   ],
+   "collab": [
+    "industry",
+    "policy",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isco-2",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISCO 2, Professionals",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISCO:2"
+   ],
+   "collab": [
+    "pg",
+    "ai",
+    "ug",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isco-3",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISCO 3, Technicians and Associate Professionals",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISCO:3"
+   ],
+   "collab": [
+    "ug",
+    "teacher",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isco-4",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISCO 4, Clerical Support Workers",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISCO:4"
+   ],
+   "collab": [
+    "practitioner",
+    "community",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isco-5",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISCO 5, Service and Sales Workers",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISCO:5"
+   ],
+   "collab": [
+    "practitioner",
+    "community",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isco-6",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISCO 6, Skilled Agricultural, Forestry and Fishery Workers",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISCO:6"
+   ],
+   "collab": [
+    "practitioner",
+    "community",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isco-7",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISCO 7, Craft and Related Trades Workers",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISCO:7"
+   ],
+   "collab": [
+    "maker",
+    "practitioner",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isco-8",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISCO 8, Plant and Machine Operators, and Assemblers",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISCO:8"
+   ],
+   "collab": [
+    "maker",
+    "hwe",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isco-9",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISCO 9, Elementary Occupations",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISCO:9"
+   ],
+   "collab": [
+    "practitioner",
+    "community",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isco-0",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISCO 0, Armed Forces Occupations",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISCO:0"
+   ],
+   "collab": [
+    "practitioner",
+    "community",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isced-00",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISCED 00, Generic programmes and qualifications",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISCED:00"
+   ],
+   "collab": [
+    "practitioner",
+    "community",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isced-01",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISCED 01, Education",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISCED:01"
+   ],
+   "collab": [
+    "teacher",
+    "institution",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isced-02",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISCED 02, Arts and humanities",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISCED:02"
+   ],
+   "collab": [
+    "linguist",
+    "humanities",
+    "artist",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isced-03",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISCED 03, Social sciences, journalism and information",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISCED:03"
+   ],
+   "collab": [
+    "humanities",
+    "pg",
+    "ug",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isced-04",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISCED 04, Business, administration and law",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISCED:04"
+   ],
+   "collab": [
+    "legal",
+    "policy",
+    "industry",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isced-05",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISCED 05, Natural sciences, mathematics and statistics",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISCED:05"
+   ],
+   "collab": [
+    "ai",
+    "pg",
+    "ug",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isced-06",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISCED 06, Information and Communication Technologies (ICTs)",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISCED:06"
+   ],
+   "collab": [
+    "swe",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isced-07",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISCED 07, Engineering, manufacturing and construction",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISCED:07"
+   ],
+   "collab": [
+    "hwe",
+    "maker",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isced-08",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISCED 08, Agriculture, forestry, fisheries and veterinary",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISCED:08"
+   ],
+   "collab": [
+    "practitioner",
+    "community",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isced-09",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISCED 09, Health and welfare",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISCED:09"
+   ],
+   "collab": [
+    "health",
+    "pg",
+    "ug",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "lane-isced-10",
+   "phase": "PL",
+   "repo": "zistgah/fakir",
+   "title": "Domain lane: ISCED 10, Services",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "visit https://zistgah.org/fakir/",
+   "expect": "the family's points seed tasks, and at least one task from this lane is open",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "ISCED:10"
+   ],
+   "collab": [
+    "practitioner",
+    "community",
+    "ug",
+    "pg",
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "clane-school",
+   "phase": "PL",
+   "repo": "zistgah/governance",
+   "title": "Collaborator lane: School students, 10 to 17",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "read the issue",
+   "expect": "the lane has a named steward, or an open call pinned in this issue",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "cross"
+   ],
+   "collab": [
+    "school"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "clane-ug",
+   "phase": "PL",
+   "repo": "zistgah/governance",
+   "title": "Collaborator lane: Undergraduates: BE, BTech, BSc, BS",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "read the issue",
+   "expect": "the lane has a named steward, or an open call pinned in this issue",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "cross"
+   ],
+   "collab": [
+    "ug"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "clane-pg",
+   "phase": "PL",
+   "repo": "zistgah/governance",
+   "title": "Collaborator lane: Postgraduates and doctoral researchers",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "read the issue",
+   "expect": "the lane has a named steward, or an open call pinned in this issue",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "cross"
+   ],
+   "collab": [
+    "pg"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "clane-teacher",
+   "phase": "PL",
+   "repo": "zistgah/governance",
+   "title": "Collaborator lane: Teachers, lecturers and lab builders",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "read the issue",
+   "expect": "the lane has a named steward, or an open call pinned in this issue",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "cross"
+   ],
+   "collab": [
+    "teacher"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "clane-swe",
+   "phase": "PL",
+   "repo": "zistgah/governance",
+   "title": "Collaborator lane: Software engineers",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "read the issue",
+   "expect": "the lane has a named steward, or an open call pinned in this issue",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "cross"
+   ],
+   "collab": [
+    "swe"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "clane-hwe",
+   "phase": "PL",
+   "repo": "zistgah/governance",
+   "title": "Collaborator lane: Hardware, embedded and chip engineers",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "read the issue",
+   "expect": "the lane has a named steward, or an open call pinned in this issue",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "cross"
+   ],
+   "collab": [
+    "hwe"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "clane-linguist",
+   "phase": "PL",
+   "repo": "zistgah/governance",
+   "title": "Collaborator lane: Linguists, translators and language workers",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "read the issue",
+   "expect": "the lane has a named steward, or an open call pinned in this issue",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "cross"
+   ],
+   "collab": [
+    "linguist"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "clane-ai",
+   "phase": "PL",
+   "repo": "zistgah/governance",
+   "title": "Collaborator lane: Researchers in AI, quantum and cognition",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "read the issue",
+   "expect": "the lane has a named steward, or an open call pinned in this issue",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "cross"
+   ],
+   "collab": [
+    "ai"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "clane-humanities",
+   "phase": "PL",
+   "repo": "zistgah/governance",
+   "title": "Collaborator lane: Researchers in the humanities and social sciences",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "read the issue",
+   "expect": "the lane has a named steward, or an open call pinned in this issue",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "cross"
+   ],
+   "collab": [
+    "humanities"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "clane-health",
+   "phase": "PL",
+   "repo": "zistgah/governance",
+   "title": "Collaborator lane: Clinicians, health workers and medical researchers",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "read the issue",
+   "expect": "the lane has a named steward, or an open call pinned in this issue",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "cross"
+   ],
+   "collab": [
+    "health"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "clane-community",
+   "phase": "PL",
+   "repo": "zistgah/governance",
+   "title": "Collaborator lane: Community workers, NGOs and village institutions",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "read the issue",
+   "expect": "the lane has a named steward, or an open call pinned in this issue",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "cross"
+   ],
+   "collab": [
+    "community"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "clane-practitioner",
+   "phase": "PL",
+   "repo": "zistgah/governance",
+   "title": "Collaborator lane: Farmers, artisans and local enterprises",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "read the issue",
+   "expect": "the lane has a named steward, or an open call pinned in this issue",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "cross"
+   ],
+   "collab": [
+    "practitioner"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "clane-artist",
+   "phase": "PL",
+   "repo": "zistgah/governance",
+   "title": "Collaborator lane: Artists, writers, filmmakers and musicians",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "read the issue",
+   "expect": "the lane has a named steward, or an open call pinned in this issue",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "cross"
+   ],
+   "collab": [
+    "artist"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "clane-maker",
+   "phase": "PL",
+   "repo": "zistgah/governance",
+   "title": "Collaborator lane: Makers, roboticists and manufacturers",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "read the issue",
+   "expect": "the lane has a named steward, or an open call pinned in this issue",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "cross"
+   ],
+   "collab": [
+    "maker"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "clane-policy",
+   "phase": "PL",
+   "repo": "zistgah/governance",
+   "title": "Collaborator lane: Policy makers, administrators and public bodies",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "read the issue",
+   "expect": "the lane has a named steward, or an open call pinned in this issue",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "cross"
+   ],
+   "collab": [
+    "policy"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "clane-legal",
+   "phase": "PL",
+   "repo": "zistgah/governance",
+   "title": "Collaborator lane: Lawyers, IPR and standards professionals",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "read the issue",
+   "expect": "the lane has a named steward, or an open call pinned in this issue",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "cross"
+   ],
+   "collab": [
+    "legal"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "clane-industry",
+   "phase": "PL",
+   "repo": "zistgah/governance",
+   "title": "Collaborator lane: Industry partners and companies",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "read the issue",
+   "expect": "the lane has a named steward, or an open call pinned in this issue",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "cross"
+   ],
+   "collab": [
+    "industry"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "clane-funder",
+   "phase": "PL",
+   "repo": "zistgah/governance",
+   "title": "Collaborator lane: Funders, sponsors and investors",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "read the issue",
+   "expect": "the lane has a named steward, or an open call pinned in this issue",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "cross"
+   ],
+   "collab": [
+    "funder"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "clane-institution",
+   "phase": "PL",
+   "repo": "zistgah/governance",
+   "title": "Collaborator lane: Institutions: colleges, universities and labs",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "read the issue",
+   "expect": "the lane has a named steward, or an open call pinned in this issue",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "cross"
+   ],
+   "collab": [
+    "institution"
+   ],
+   "state": "planned",
+   "url": ""
+  },
+  {
+   "id": "clane-agent",
+   "phase": "PL",
+   "repo": "zistgah/governance",
+   "title": "Collaborator lane: AI agents working under a human",
+   "owner": "collab:open",
+   "area": "lane",
+   "gate": "read the issue",
+   "expect": "the lane has a named steward, or an open call pinned in this issue",
+   "depends": [
+    "forms"
+   ],
+   "domains": [
+    "cross"
+   ],
+   "collab": [
+    "agent"
+   ],
+   "state": "planned",
+   "url": ""
+  }
+ ],
+ "seed_space": {
+  "nodes": 1505,
+  "layers": 10,
+  "languages": 7867,
+  "points": 118398350
+ }
+}
