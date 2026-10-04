@@ -1,0 +1,18 @@
+{
+    "_type": "https://in-toto.io/Statement/v1",
+    "predicateType": "https://project-ilm.org/attestations/candor/v1",
+    "subject": [
+        {
+            "name": "zistgah/rahnuma",
+            "digest": {
+                "gitCommit": "2817920e65b80c5bdc1795b16d084346f8d56986"
+            }
+        }
+    ],
+    "predicate": {
+        "action": "PUSH",
+        "reason": "update",
+        "utc": "20261004T130714Z",
+        "host": "ilm01-lin"
+    }
+}
