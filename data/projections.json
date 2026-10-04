@@ -1,5 +1,5 @@
 {
- "status": "Kaivalyik, Zistgah and Cosmopolis are established projections; the names below for Kaivalyik, Cosmopolis and the two new projections are proposals for the author's ruling, and the two new projections also need consultation with speakers and communities of those cultures.",
+ "status": "A first cut for every project. Zistgah's names are in use; Jyotish and Hindawi are established; every other Kaivalyik, Cosmopolis, Datong and Vaka name is a proposal for the author's ruling, and the Datong and Vaka names also need confirmation with speakers of those languages. Infrastructure repositories (ops, scripts, foundry, record, legacy) stay stem-only. Acronyms and the names of people keep their name in every projection.",
  "projections": [
   {
    "id": "kaivalyik",
@@ -40,68 +40,674 @@
  ],
  "stems": [
   {
-   "stem": "The ground",
-   "zistgah": "Zamin, زمین",
-   "kaivalyik": "Bhūmi, भूमि",
-   "cosmopolis": "Gaia, Γαῖα",
-   "datong": "地 (dì, chi, ji 지, địa)",
-   "vaka": "Whenua (Māori), Honua (Hawaiian)"
+   "stem": "The ground: balanced-ternary silicon",
+   "repo": "zamin",
+   "zistgah": "Zamin زمین",
+   "kaivalyik": "Bhūmi भूमि",
+   "cosmopolis": "Gaia Γαῖα",
+   "datong": "地 dì, chi, ji 지, địa",
+   "vaka": "Whenua, Honua",
+   "note": ""
   },
   {
-   "stem": "The water",
-   "zistgah": "AAB, آب",
-   "kaivalyik": "Jala, जल",
-   "cosmopolis": "Hydōr, ὕδωρ",
-   "datong": "水 (shuǐ, sui, su 수, thủy)",
-   "vaka": "Wai"
+   "stem": "The water: the factory process",
+   "repo": "aab",
+   "zistgah": "AAB آب",
+   "kaivalyik": "Jala जल",
+   "cosmopolis": "Hydōr ὕδωρ",
+   "datong": "水 shuǐ, sui, su 수, thủy",
+   "vaka": "Wai",
+   "note": ""
   },
   {
-   "stem": "The air",
-   "zistgah": "Fiza, فضا",
-   "kaivalyik": "Vāyu, वायु",
-   "cosmopolis": "Aēr, ἀήρ",
-   "datong": "風 (fēng, fū, pung 풍, phong)",
-   "vaka": "Hau (Māori), Makani (Hawaiian)"
+   "stem": "The air: the environmental replica",
+   "repo": "fiza",
+   "zistgah": "Fiza فضا",
+   "kaivalyik": "Vāyu वायु",
+   "cosmopolis": "Aēr ἀήρ",
+   "datong": "風 fēng, fū, pung 풍, phong",
+   "vaka": "Hau, Makani",
+   "note": ""
   },
   {
-   "stem": "The sky and its calendars",
+   "stem": "The sky: the observatory",
+   "repo": "chakra",
    "zistgah": "Chakra",
-   "kaivalyik": "Jyotish, ज्योतिष (established)",
-   "cosmopolis": "Ouranos, Οὐρανός",
-   "datong": "天 (tiān, ten, cheon 천, thiên)",
-   "vaka": "Rangi (Māori), Lani (Hawaiian)"
+   "kaivalyik": "Jyotish ज्योतिष (established)",
+   "cosmopolis": "Ouranos Οὐρανός",
+   "datong": "天 tiān, ten, cheon 천, thiên",
+   "vaka": "Rangi, Lani",
+   "note": ""
   },
   {
-   "stem": "The desk",
-   "zistgah": "Mez, میز",
-   "kaivalyik": "Pīṭha, पीठ",
-   "cosmopolis": "Trapeza, τράπεζα",
-   "datong": "卓 (zhuō, taku, tak 탁, trác)",
-   "vaka": "Papa"
+   "stem": "The calendars of the sky",
+   "repo": "jyotish",
+   "zistgah": "Taqvīm تقویم",
+   "kaivalyik": "Pañcāṅga पञ्चाङ्ग",
+   "cosmopolis": "Hēmerologion ἡμερολόγιον",
+   "datong": "曆 lì, reki, ryeok 력, lịch",
+   "vaka": "Maramataka",
+   "note": "Jyotish is the established Kaivalyik name of this stem"
+  },
+  {
+   "stem": "The shared virtual dome",
+   "repo": "dome",
+   "zistgah": "Gumbad گنبد",
+   "kaivalyik": "Maṇḍapa मण्डप",
+   "cosmopolis": "Tholos θόλος",
+   "datong": "穹 qióng, kyū, gung 궁, khung",
+   "vaka": "Whare, Hale",
+   "note": ""
+  },
+  {
+   "stem": "The desk, the Cognitive Workbench",
+   "repo": "mez",
+   "zistgah": "Mez میز",
+   "kaivalyik": "Pīṭha पीठ",
+   "cosmopolis": "Trapeza τράπεζα",
+   "datong": "卓 zhuō, taku, tak 탁, trác",
+   "vaka": "Papa",
+   "note": ""
   },
   {
    "stem": "The press",
-   "zistgah": "Matba, مطبع",
-   "kaivalyik": "Mudraṇa, मुद्रण",
-   "cosmopolis": "Typographeion, τυπογραφεῖον",
-   "datong": "印 (yìn, in, in 인, ấn)",
-   "vaka": "Tā (Māori)"
+   "repo": "matba",
+   "zistgah": "Matba مطبع",
+   "kaivalyik": "Mudraṇa मुद्रण",
+   "cosmopolis": "Typographeion τυπογραφεῖον",
+   "datong": "印 yìn, in, in 인, ấn",
+   "vaka": "Tā",
+   "note": ""
   },
   {
-   "stem": "The guide",
-   "zistgah": "Rahnuma, رہنما",
-   "kaivalyik": "Mārgadarśaka, मार्गदर्शक",
-   "cosmopolis": "Periēgētēs, περιηγητής",
-   "datong": "導 (dǎo, dō, do 도, đạo)",
-   "vaka": "Kaiārahi (Māori)"
+   "stem": "The cutting room, the visual cycler",
+   "repo": "khwab",
+   "zistgah": "Khwab خواب",
+   "kaivalyik": "Svapna स्वप्न",
+   "cosmopolis": "Oneiros ὄνειρος",
+   "datong": "夢 mèng, mu, mong 몽, mộng",
+   "vaka": "Moemoeā",
+   "note": ""
+  },
+  {
+   "stem": "The listening room, the audio cycler",
+   "repo": "awaz",
+   "zistgah": "Awaz آواز",
+   "kaivalyik": "Svara स्वर",
+   "cosmopolis": "Phōnē φωνή",
+   "datong": "聲 shēng, sei, seong 성, thanh",
+   "vaka": "Reo",
+   "note": ""
+  },
+  {
+   "stem": "The immersive cycler",
+   "repo": "tilasm",
+   "zistgah": "Tilasm طلسم",
+   "kaivalyik": "Indrajāla इन्द्रजाल",
+   "cosmopolis": "Phantasia φαντασία",
+   "datong": "幻 huàn, gen, hwan 환, huyễn",
+   "vaka": "Whakaata",
+   "note": ""
+  },
+  {
+   "stem": "The embodied cycler",
+   "repo": "pench",
+   "zistgah": "Pench",
+   "kaivalyik": "Yantra यन्त्र",
+   "cosmopolis": "Mēchanē μηχανή",
+   "datong": "機 jī, ki, gi 기, cơ",
+   "vaka": "Mīhini",
+   "note": ""
   },
   {
    "stem": "The record",
-   "zistgah": "Yadein, یادیں",
-   "kaivalyik": "Smṛti, स्मृति",
-   "cosmopolis": "Mnēmē, μνήμη",
-   "datong": "記 (jì, ki, gi 기, ký)",
-   "vaka": "Mahara (Māori)"
+   "repo": "yadein",
+   "zistgah": "Yadein یادیں",
+   "kaivalyik": "Smṛti स्मृति",
+   "cosmopolis": "Mnēmē μνήμη",
+   "datong": "記 jì, ki, gi 기, ký",
+   "vaka": "Mahara",
+   "note": ""
+  },
+  {
+   "stem": "Small work, cycled with any AI",
+   "repo": "alam",
+   "zistgah": "Alam",
+   "kaivalyik": "Loka लोक",
+   "cosmopolis": "Kosmos κόσμος",
+   "datong": "界 jiè, kai, gye 계, giới",
+   "vaka": "Ao",
+   "note": ""
+  },
+  {
+   "stem": "The cycles",
+   "repo": "cycles",
+   "zistgah": "Daur دور",
+   "kaivalyik": "Āvarta आवर्त",
+   "cosmopolis": "Kyklos κύκλος",
+   "datong": "環 huán, kan, hwan 환, hoàn",
+   "vaka": "Porohita",
+   "note": ""
+  },
+  {
+   "stem": "The book template",
+   "repo": "kitab",
+   "zistgah": "Kitab کتاب",
+   "kaivalyik": "Grantha ग्रन्थ",
+   "cosmopolis": "Biblos βίβλος",
+   "datong": "書 shū, sho, seo 서, thư",
+   "vaka": "Pukapuka",
+   "note": ""
+  },
+  {
+   "stem": "The guide",
+   "repo": "rahnuma",
+   "zistgah": "Rahnuma رہنما",
+   "kaivalyik": "Mārgadarśaka मार्गदर्शक",
+   "cosmopolis": "Periēgētēs περιηγητής",
+   "datong": "導 dǎo, dō, do 도, đạo",
+   "vaka": "Kaiārahi",
+   "note": ""
+  },
+  {
+   "stem": "The domain spine",
+   "repo": "dhancha",
+   "zistgah": "Dhancha ڈھانچہ",
+   "kaivalyik": "Merudaṇḍa मेरुदण्ड",
+   "cosmopolis": "Rhachis ῥάχις",
+   "datong": "骨 gǔ, kotsu, gol 골, cốt",
+   "vaka": "Tuarā",
+   "note": ""
+  },
+  {
+   "stem": "Communication engineering",
+   "repo": "ertabat",
+   "zistgah": "Ertabat ارتباط",
+   "kaivalyik": "Saṃvāda संवाद",
+   "cosmopolis": "Angelia ἀγγελία",
+   "datong": "信 xìn, shin, sin 신, tín",
+   "vaka": "Kōrero",
+   "note": ""
+  },
+  {
+   "stem": "Device control",
+   "repo": "asab",
+   "zistgah": "Zasab اعصاب",
+   "kaivalyik": "Nāḍī नाडी",
+   "cosmopolis": "Neuron νεῦρον",
+   "datong": "脈 mài, myaku, maek 맥, mạch",
+   "vaka": "Uaua",
+   "note": ""
+  },
+  {
+   "stem": "The door for any AI",
+   "repo": "darwaza",
+   "zistgah": "Darwaza دروازہ",
+   "kaivalyik": "Dvāra द्वार",
+   "cosmopolis": "Thyra θύρα",
+   "datong": "門 mén, mon, mun 문, môn",
+   "vaka": "Tatau",
+   "note": ""
+  },
+  {
+   "stem": "Scan and store",
+   "repo": "tasvir",
+   "zistgah": "Tasvir تصویر",
+   "kaivalyik": "Citra चित्र",
+   "cosmopolis": "Eikōn εἰκών",
+   "datong": "像 xiàng, zō, sang 상, tượng",
+   "vaka": "Whakaahua",
+   "note": ""
+  },
+  {
+   "stem": "The plates",
+   "repo": "lawh",
+   "zistgah": "Lawh لوح",
+   "kaivalyik": "Phalaka फलक",
+   "cosmopolis": "Pinax πίναξ",
+   "datong": "板 bǎn, ban, pan 판, bản",
+   "vaka": "Pou",
+   "note": ""
+  },
+  {
+   "stem": "The parser federation",
+   "repo": "tajziya",
+   "zistgah": "Tajziya تجزیہ",
+   "kaivalyik": "Vyākaraṇa व्याकरण",
+   "cosmopolis": "Analysis ἀνάλυσις",
+   "datong": "析 xī, seki, seok 석, tích",
+   "vaka": "Wetewete",
+   "note": ""
+  },
+  {
+   "stem": "The Geometry of Becoming",
+   "repo": "tabdili",
+   "zistgah": "Tabdili تبدیلی",
+   "kaivalyik": "Parivartana परिवर्तन",
+   "cosmopolis": "Genesis γένεσις",
+   "datong": "變 biàn, hen, byeon 변, biến",
+   "vaka": "Panoni",
+   "note": ""
+  },
+  {
+   "stem": "The Geometry of Living",
+   "repo": "zindagi",
+   "zistgah": "Zindagi زندگی",
+   "kaivalyik": "Jīvana जीवन",
+   "cosmopolis": "Bios βίος",
+   "datong": "生 shēng, sei, saeng 생, sinh",
+   "vaka": "Ora",
+   "note": ""
+  },
+  {
+   "stem": "The Geometry of Persisting",
+   "repo": "qaem",
+   "zistgah": "Qaem قائم",
+   "kaivalyik": "Sthiti स्थिति",
+   "cosmopolis": "Monē μονή",
+   "datong": "恒 héng, kō, hang 항, hằng",
+   "vaka": "Mau",
+   "note": ""
+  },
+  {
+   "stem": "Topological Bildung",
+   "repo": "tarbiyat",
+   "zistgah": "Tarbiyat تربیت",
+   "kaivalyik": "Śikṣā शिक्षा",
+   "cosmopolis": "Paideia παιδεία",
+   "datong": "育 yù, iku, yuk 육, dục",
+   "vaka": "Ako",
+   "note": ""
+  },
+  {
+   "stem": "Kaivalyik AGI, the posters",
+   "repo": "amal",
+   "zistgah": "Amal عمل",
+   "kaivalyik": "Karma कर्म",
+   "cosmopolis": "Ergon ἔργον",
+   "datong": "業 yè, gyō, eop 업, nghiệp",
+   "vaka": "Mahi",
+   "note": ""
+  },
+  {
+   "stem": "The 28 nm tape-out catalogue",
+   "repo": "jugaad28",
+   "zistgah": "Tadbīr28 تدبیر",
+   "kaivalyik": "Yukti युक्ति",
+   "cosmopolis": "Mētis μῆτις",
+   "datong": "巧 qiǎo, kō, gyo 교, xảo",
+   "vaka": "Mōhio",
+   "note": ""
+  },
+  {
+   "stem": "The estate's register",
+   "repo": "estate",
+   "zistgah": "Fehrist فہرست",
+   "kaivalyik": "Sūcī सूची",
+   "cosmopolis": "Katalogos κατάλογος",
+   "datong": "錄 lù, roku, rok 록, lục",
+   "vaka": "Rārangi",
+   "note": ""
+  },
+  {
+   "stem": "The contracts",
+   "repo": "governance",
+   "zistgah": "Qānūn قانون",
+   "kaivalyik": "Niyama नियम",
+   "cosmopolis": "Nomos νόμος",
+   "datong": "律 lǜ, ritsu, yul 율, luật",
+   "vaka": "Ture",
+   "note": ""
+  },
+  {
+   "stem": "A research map",
+   "repo": "research-kundali",
+   "zistgah": "Zāicha زائچہ",
+   "kaivalyik": "Kuṇḍalī कुण्डली",
+   "cosmopolis": "Horoskopos ὡροσκόπος",
+   "datong": "譜 pǔ, fu, bo 보, phổ",
+   "vaka": "Mahere",
+   "note": ""
+  },
+  {
+   "stem": "The Paradox of Innovation",
+   "repo": "paradox",
+   "zistgah": "Tanāquz تناقض",
+   "kaivalyik": "Virodhābhāsa विरोधाभास",
+   "cosmopolis": "Paradoxon παράδοξον",
+   "datong": "矛盾 máodùn, mujun, mosun 모순, mâu thuẫn",
+   "vaka": "to be named with speakers",
+   "note": ""
+  },
+  {
+   "stem": "Inclinations",
+   "repo": "inclinations",
+   "zistgah": "Mayl میل",
+   "kaivalyik": "Pravṛtti प्रवृत्ति",
+   "cosmopolis": "Rhopē ῥοπή",
+   "datong": "傾 qīng, kei, gyeong 경, khuynh",
+   "vaka": "to be named with speakers",
+   "note": ""
+  },
+  {
+   "stem": "Health",
+   "repo": "marham",
+   "zistgah": "Marham مرہم",
+   "kaivalyik": "Auṣadha औषध",
+   "cosmopolis": "Pharmakon φάρμακον",
+   "datong": "藥 yào, yaku, yak 약, dược",
+   "vaka": "Rongoā",
+   "note": ""
+  },
+  {
+   "stem": "Exercise",
+   "repo": "varzish",
+   "zistgah": "Varzish ورزش",
+   "kaivalyik": "Vyāyāma व्यायाम",
+   "cosmopolis": "Gymnasia γυμνασία",
+   "datong": "練 liàn, ren, yeon 련, luyện",
+   "vaka": "Korikori",
+   "note": ""
+  },
+  {
+   "stem": "Waking",
+   "repo": "wake",
+   "zistgah": "Bedārī بیداری",
+   "kaivalyik": "Jāgṛti जागृति",
+   "cosmopolis": "Egersis ἔγερσις",
+   "datong": "醒 xǐng, sei, seong 성, tỉnh",
+   "vaka": "Oho",
+   "note": ""
+  },
+  {
+   "stem": "ILM's lexicon",
+   "repo": "ilm-lexicon",
+   "zistgah": "ILM Lughat لغت",
+   "kaivalyik": "Śabdakośa शब्दकोश",
+   "cosmopolis": "Lexikon λεξικόν",
+   "datong": "辭 cí, ji, sa 사, từ",
+   "vaka": "Papakupu",
+   "note": "ILM keeps its name; the part is named"
+  },
+  {
+   "stem": "ILM's phonology",
+   "repo": "ilm-phonology",
+   "zistgah": "ILM Sautiyāt صوتیات",
+   "kaivalyik": "Dhvani ध्वनि",
+   "cosmopolis": "Phthongos φθόγγος",
+   "datong": "音 yīn, on, eum 음, âm",
+   "vaka": "Oro",
+   "note": "ILM keeps its name; the part is named"
+  },
+  {
+   "stem": "ILM's orthography",
+   "repo": "ilm-orthography",
+   "zistgah": "ILM Imlā املا",
+   "kaivalyik": "Lipi लिपि",
+   "cosmopolis": "Graphē γραφή",
+   "datong": "字 zì, ji, ja 자, tự",
+   "vaka": "Tuhi",
+   "note": "ILM keeps its name; the part is named"
+  },
+  {
+   "stem": "The programming system",
+   "repo": "hps",
+   "zistgah": "Urdu edition (urdu-ilm)",
+   "kaivalyik": "Hindawi (established)",
+   "cosmopolis": "HPS, Latin and Greek",
+   "datong": "HPS, Han characters",
+   "vaka": "HPS, Te Reo Māori",
+   "note": "Kaivalyik: Hindawi (established); Cosmopolis: HPS in Latin and Greek; Datong: HPS in Han characters; Vaka: HPS in Te Reo Māori"
+  },
+  {
+   "stem": "humanesque",
+   "repo": "humanesque",
+   "zistgah": "same",
+   "kaivalyik": "same",
+   "cosmopolis": "same",
+   "datong": "same",
+   "vaka": "same",
+   "note": "stem name kept in every projection"
+  },
+  {
+   "stem": "ilm",
+   "repo": "ilm",
+   "zistgah": "same",
+   "kaivalyik": "same",
+   "cosmopolis": "same",
+   "datong": "same",
+   "vaka": "same",
+   "note": "stem name kept in every projection"
+  },
+  {
+   "stem": "romenagri",
+   "repo": "romenagri",
+   "zistgah": "same",
+   "kaivalyik": "same",
+   "cosmopolis": "same",
+   "datong": "same",
+   "vaka": "same",
+   "note": "stem name kept in every projection"
+  },
+  {
+   "stem": "panini",
+   "repo": "panini",
+   "zistgah": "same",
+   "kaivalyik": "same",
+   "cosmopolis": "same",
+   "datong": "same",
+   "vaka": "same",
+   "note": "stem name kept in every projection"
+  },
+  {
+   "stem": "paniniq",
+   "repo": "paniniq",
+   "zistgah": "same",
+   "kaivalyik": "same",
+   "cosmopolis": "same",
+   "datong": "same",
+   "vaka": "same",
+   "note": "stem name kept in every projection"
+  },
+  {
+   "stem": "paninib",
+   "repo": "paninib",
+   "zistgah": "same",
+   "kaivalyik": "same",
+   "cosmopolis": "same",
+   "datong": "same",
+   "vaka": "same",
+   "note": "stem name kept in every projection"
+  },
+  {
+   "stem": "paniniphy",
+   "repo": "paniniphy",
+   "zistgah": "same",
+   "kaivalyik": "same",
+   "cosmopolis": "same",
+   "datong": "same",
+   "vaka": "same",
+   "note": "stem name kept in every projection"
+  },
+  {
+   "stem": "pedler",
+   "repo": "pedler",
+   "zistgah": "same",
+   "kaivalyik": "same",
+   "cosmopolis": "same",
+   "datong": "same",
+   "vaka": "same",
+   "note": "stem name kept in every projection"
+  },
+  {
+   "stem": "qedler",
+   "repo": "qedler",
+   "zistgah": "same",
+   "kaivalyik": "same",
+   "cosmopolis": "same",
+   "datong": "same",
+   "vaka": "same",
+   "note": "stem name kept in every projection"
+  },
+  {
+   "stem": "pratik",
+   "repo": "pratik",
+   "zistgah": "same",
+   "kaivalyik": "same",
+   "cosmopolis": "same",
+   "datong": "same",
+   "vaka": "same",
+   "note": "stem name kept in every projection"
+  },
+  {
+   "stem": "fakir",
+   "repo": "fakir",
+   "zistgah": "same",
+   "kaivalyik": "same",
+   "cosmopolis": "same",
+   "datong": "same",
+   "vaka": "same",
+   "note": "stem name kept in every projection"
+  },
+  {
+   "stem": "ukop",
+   "repo": "ukop",
+   "zistgah": "same",
+   "kaivalyik": "same",
+   "cosmopolis": "same",
+   "datong": "same",
+   "vaka": "same",
+   "note": "stem name kept in every projection"
+  },
+  {
+   "stem": "genie",
+   "repo": "genie",
+   "zistgah": "same",
+   "kaivalyik": "same",
+   "cosmopolis": "same",
+   "datong": "same",
+   "vaka": "same",
+   "note": "stem name kept in every projection"
+  },
+  {
+   "stem": "transeg",
+   "repo": "transeg",
+   "zistgah": "same",
+   "kaivalyik": "same",
+   "cosmopolis": "same",
+   "datong": "same",
+   "vaka": "same",
+   "note": "stem name kept in every projection"
+  },
+  {
+   "stem": "transeg-idgov",
+   "repo": "transeg-idgov",
+   "zistgah": "same",
+   "kaivalyik": "same",
+   "cosmopolis": "same",
+   "datong": "same",
+   "vaka": "same",
+   "note": "stem name kept in every projection"
+  },
+  {
+   "stem": "copa",
+   "repo": "copa",
+   "zistgah": "same",
+   "kaivalyik": "same",
+   "cosmopolis": "same",
+   "datong": "same",
+   "vaka": "same",
+   "note": "stem name kept in every projection"
+  },
+  {
+   "stem": "vgc",
+   "repo": "vgc",
+   "zistgah": "same",
+   "kaivalyik": "same",
+   "cosmopolis": "same",
+   "datong": "same",
+   "vaka": "same",
+   "note": "stem name kept in every projection"
+  },
+  {
+   "stem": "candor",
+   "repo": "candor",
+   "zistgah": "same",
+   "kaivalyik": "same",
+   "cosmopolis": "same",
+   "datong": "same",
+   "vaka": "same",
+   "note": "stem name kept in every projection"
+  },
+  {
+   "stem": "misty-doi",
+   "repo": "misty-doi",
+   "zistgah": "same",
+   "kaivalyik": "same",
+   "cosmopolis": "same",
+   "datong": "same",
+   "vaka": "same",
+   "note": "stem name kept in every projection"
+  },
+  {
+   "stem": "tok-doi",
+   "repo": "tok-doi",
+   "zistgah": "same",
+   "kaivalyik": "same",
+   "cosmopolis": "same",
+   "datong": "same",
+   "vaka": "same",
+   "note": "stem name kept in every projection"
+  },
+  {
+   "stem": "spiguard",
+   "repo": "spiguard",
+   "zistgah": "same",
+   "kaivalyik": "same",
+   "cosmopolis": "same",
+   "datong": "same",
+   "vaka": "same",
+   "note": "stem name kept in every projection"
+  },
+  {
+   "stem": "dukedom",
+   "repo": "dukedom",
+   "zistgah": "same",
+   "kaivalyik": "same",
+   "cosmopolis": "same",
+   "datong": "same",
+   "vaka": "same",
+   "note": "stem name kept in every projection"
+  },
+  {
+   "stem": "duke2",
+   "repo": "duke2",
+   "zistgah": "same",
+   "kaivalyik": "same",
+   "cosmopolis": "same",
+   "datong": "same",
+   "vaka": "same",
+   "note": "stem name kept in every projection"
+  },
+  {
+   "stem": "janapad",
+   "repo": "janapad",
+   "zistgah": "same",
+   "kaivalyik": "same",
+   "cosmopolis": "same",
+   "datong": "same",
+   "vaka": "same",
+   "note": "stem name kept in every projection"
+  },
+  {
+   "stem": "poie",
+   "repo": "poie",
+   "zistgah": "same",
+   "kaivalyik": "same",
+   "cosmopolis": "same",
+   "datong": "same",
+   "vaka": "same",
+   "note": "stem name kept in every projection"
   }
  ]
 }

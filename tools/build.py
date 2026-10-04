@@ -625,7 +625,7 @@ def main():
     P = jload("personas.json")
     view_data = dict(json.loads((DATA / "audiences.json").read_text(encoding="utf-8")), chapters=chapter_list,
                      components={c["id"]: {"name": c["name"], "aud": c["aud"]} for g in comps["groups"] for c in g["items"]},
-                     roles=P["roles"], fields=P["fields"], goals=P["goals"], editions=[{"id": e["id"], "title": e["title"]} for e in P["editions"]],
+                     roles=P["roles"], fields=P["fields"], goals=P["goals"], modules={m["id"]: m["title"] for m in jload("standard-syllabus.json")["modules"]}, editions=[{"id": e["id"], "title": e["title"]} for e in P["editions"]],
                      boards=jload("syllabi.json")["boards"], rules=jload("correlation.json")["rules"])
     data_json = json.dumps(view_data, ensure_ascii=False).replace("</", "<\\/")
     tpl = (TOOLS / "template.html").read_text(encoding="utf-8")

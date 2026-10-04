@@ -1,5 +1,5 @@
 {
- "built_utc": "2026-10-04T10:34:05Z",
+ "built_utc": "2026-10-04T11:32:35Z",
  "version": "2.0.0",
  "inputs": {
   "content/00-part1.md": "df0aa8b3296af38e3bbdbfb6a0f2d9d3c6dd59b8ab6659da451311b87153ea0f",
@@ -59,7 +59,7 @@
   "data/personas.json": "0bf87c60bd2bf79cbba75a69d92b343f72ac5b1a037052a8d8faf98b37155a3f",
   "data/pii-allow.json": "50a106c5328d383689a660dea28ffdeb25427926b497b24fa17c3db419010369",
   "data/plain.json": "aa301e7ab6e0fd1ad7d4c91aaa63a9c853a57351c885a61e8c87f9db1485addf",
-  "data/projections.json": "be75d884309acd2df4ade98cb8b935fda88ec3e448f57781d418aad9079a7d98",
+  "data/projections.json": "86819798cc19bca65a80d83ce84a26515f6c8579e60beede6659f87cd978d6e5",
   "data/release.json": "2e3c8e02f3a0d5083565ab646a7febf7d7a9c4b08478f1339a93ba9b1b0411f9",
   "data/review.json": "6ca62c2244c6aca5acb78050882ab91eb4a9fcc525a0c5f606c117b2f66447c9",
   "data/roadmap.json": "6afb8ab4b7a97565892b3bdcf1a32a2aa73cebbcdab521a2764ad29ff13b5e12",
@@ -68,13 +68,14 @@
   "data/glossary-estate.md": "be39754d6e2888111f6919ac766e9883c79a90ad4d7343e9685cbd154067a9ea",
   "data/logs/paniniq-demo-2026-09-29.txt": "74eecdc5e7508a9267ef6a060e4f5223bd443311b439dc05f2790952a85fa8da",
   "data/logs/paniniq-run-2026-09-29.txt": "1ff2d9b201150f6b334628677d578bf0afe940578b67de794cabff1b2ac33d4a",
-  "tools/build.py": "ef9017b00390fe557bc6620cbcb53aae094b7d4ec86f83abebe44a53b7f913aa",
+  "tools/build.py": "d2a8f95488ebe81798da8fc62ba63a90be4d475c0adb2686d33600ac773e48de",
   "tools/diagrams.py": "e611294c48892529f6de1a835472d1b258220b0869bc5f76a4441f0ebc3faf61",
   "tools/graph.py": "b6c26f4229af8825a71999dd4271404d82c596a563584ff78342261b882f8329",
   "tools/pii_scan.py": "0da3d1e48cf496194d0fdb075a6170c2afc4c80928fb0ba0fce0f36f0267c9a7",
   "tools/review.py": "5d1119053290496e6aa457ae789ebbf5c32d4861a64ef5d04966588ec8275118",
+  "tools/syllabus_fetch.py": "f79af15cee97655b38717bfb27f42dad353f1fe100ecf96773dd1b39896001c0",
   "tools/mathjax_page.mjs": "45f655475cb958ac7d007457e123c01dbf3c123dba297a46f99a6f4f23e7104e",
-  "tools/template.html": "830ca4334f5a3f79199f376fac07da9ba4b0a3aea6b2c7988510ef9ff09c9f74",
+  "tools/template.html": "7ebe3f80a7f2800d5feee35a4feb957c0029ab322b1c3a0a1b40ee77e4ca4629",
   "tools/style.css": "6a7d679e85fd9334c6dc1500f453de0720c9bf62af3343c8e7188dc3613e33fb",
   "tools/package.json": "da48fd1e07effc86eae87f05a7b9cde76300a270de8f94b42d16d23016f0b038",
   "misty.json": "b0942f1995e371a1bcf3c10d88e20b54cba4245bfbc985d22cb18c2f03b01d9b",
@@ -259,9 +260,9 @@
   }
  ],
  "outputs": {
-  "docs/index.html": "fce9fe37e55990d5b277c2ad53e18087027faa723d5b4f30866dfc296a830bf8",
-  "docs/rahnuma.md": "2a96ab71b08d952894331a33164240808a04c0a98f1298ace3c511cb245a4bf0",
-  "docs/rahnuma.pdf": "99f74d3d78c2afc88c59864ec64ebc3157a6e453deb4256f9f1fcef141e29124",
+  "docs/index.html": "64ea55ab1e799651964b07b8492e0d63146fd5792c09ce393b7ccc8a0be77326",
+  "docs/rahnuma.md": "daf1b873ae600eb809ce083a14a7fbb474efe168f0fa377e0d049ba75ac7d9eb",
+  "docs/rahnuma.pdf": "5eca7f90a247b00b3b8cba0824ae304b5af3fb01ec45f9a99d4fa098f290f61d",
   "editions": {
    "docs/editions/role-school.pdf": "c00f8e6b308926355323c8b061f39824d7d1969d4e6448b2aec0280d6805d0d4",
    "docs/editions/role-college.pdf": "fb4fbd3d8b16ea7a4aa702bb8aa24903bd037b73a24f3c606e65488a13d18a63",
@@ -285,7 +286,7 @@
    "docs/editions/field-09.pdf": "23ce00ec6974958032590ef5f7dd53b97043c1c275170fcda642c52db710d4cd",
    "docs/editions/field-10.pdf": "379d18a118114d0adb7ac7bb9aa3b269c424bdbf9c35fae107544fa36fa8b5c1"
   },
-  "pdf_pages": 132
+  "pdf_pages": 143
  },
  "tools": {
   "python": "3.12.3",

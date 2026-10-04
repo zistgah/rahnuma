@@ -516,14 +516,73 @@ Humanesque holds the stems; each projection gives them names, sites and branding
 
 | Stem, in Humanesque | Zistgah | Kaivalyik, proposed | Cosmopolis, proposed | Datong, proposed | Vaka, proposed |
 |:--|:--|:--|:--|:--|:--|
-| The ground | Zamin, زمین | Bhūmi, भूमि | Gaia, Γαῖα | 地 (dì, chi, ji 지, địa) | Whenua (Māori), Honua (Hawaiian) |
-| The water | AAB, آب | Jala, जल | Hydōr, ὕδωρ | 水 (shuǐ, sui, su 수, thủy) | Wai |
-| The air | Fiza, فضا | Vāyu, वायु | Aēr, ἀήρ | 風 (fēng, fū, pung 풍, phong) | Hau (Māori), Makani (Hawaiian) |
-| The sky and its calendars | Chakra | Jyotish, ज्योतिष (established) | Ouranos, Οὐρανός | 天 (tiān, ten, cheon 천, thiên) | Rangi (Māori), Lani (Hawaiian) |
-| The desk | Mez, میز | Pīṭha, पीठ | Trapeza, τράπεζα | 卓 (zhuō, taku, tak 탁, trác) | Papa |
-| The press | Matba, مطبع | Mudraṇa, मुद्रण | Typographeion, τυπογραφεῖον | 印 (yìn, in, in 인, ấn) | Tā (Māori) |
-| The guide | Rahnuma, رہنما | Mārgadarśaka, मार्गदर्शक | Periēgētēs, περιηγητής | 導 (dǎo, dō, do 도, đạo) | Kaiārahi (Māori) |
-| The record | Yadein, یادیں | Smṛti, स्मृति | Mnēmē, μνήμη | 記 (jì, ki, gi 기, ký) | Mahara (Māori) |
+| The ground: balanced-ternary silicon | Zamin زمین | Bhūmi भूमि | Gaia Γαῖα | 地 dì, chi, ji 지, địa | Whenua, Honua |
+| The water: the factory process | AAB آب | Jala जल | Hydōr ὕδωρ | 水 shuǐ, sui, su 수, thủy | Wai |
+| The air: the environmental replica | Fiza فضا | Vāyu वायु | Aēr ἀήρ | 風 fēng, fū, pung 풍, phong | Hau, Makani |
+| The sky: the observatory | Chakra | Jyotish ज्योतिष (established) | Ouranos Οὐρανός | 天 tiān, ten, cheon 천, thiên | Rangi, Lani |
+| The calendars of the sky | Taqvīm تقویم | Pañcāṅga पञ्चाङ्ग | Hēmerologion ἡμερολόγιον | 曆 lì, reki, ryeok 력, lịch | Maramataka |
+| The shared virtual dome | Gumbad گنبد | Maṇḍapa मण्डप | Tholos θόλος | 穹 qióng, kyū, gung 궁, khung | Whare, Hale |
+| The desk, the Cognitive Workbench | Mez میز | Pīṭha पीठ | Trapeza τράπεζα | 卓 zhuō, taku, tak 탁, trác | Papa |
+| The press | Matba مطبع | Mudraṇa मुद्रण | Typographeion τυπογραφεῖον | 印 yìn, in, in 인, ấn | Tā |
+| The cutting room, the visual cycler | Khwab خواب | Svapna स्वप्न | Oneiros ὄνειρος | 夢 mèng, mu, mong 몽, mộng | Moemoeā |
+| The listening room, the audio cycler | Awaz آواز | Svara स्वर | Phōnē φωνή | 聲 shēng, sei, seong 성, thanh | Reo |
+| The immersive cycler | Tilasm طلسم | Indrajāla इन्द्रजाल | Phantasia φαντασία | 幻 huàn, gen, hwan 환, huyễn | Whakaata |
+| The embodied cycler | Pench | Yantra यन्त्र | Mēchanē μηχανή | 機 jī, ki, gi 기, cơ | Mīhini |
+| The record | Yadein یادیں | Smṛti स्मृति | Mnēmē μνήμη | 記 jì, ki, gi 기, ký | Mahara |
+| Small work, cycled with any AI | Alam | Loka लोक | Kosmos κόσμος | 界 jiè, kai, gye 계, giới | Ao |
+| The cycles | Daur دور | Āvarta आवर्त | Kyklos κύκλος | 環 huán, kan, hwan 환, hoàn | Porohita |
+| The book template | Kitab کتاب | Grantha ग्रन्थ | Biblos βίβλος | 書 shū, sho, seo 서, thư | Pukapuka |
+| The guide | Rahnuma رہنما | Mārgadarśaka मार्गदर्शक | Periēgētēs περιηγητής | 導 dǎo, dō, do 도, đạo | Kaiārahi |
+| The domain spine | Dhancha ڈھانچہ | Merudaṇḍa मेरुदण्ड | Rhachis ῥάχις | 骨 gǔ, kotsu, gol 골, cốt | Tuarā |
+| Communication engineering | Ertabat ارتباط | Saṃvāda संवाद | Angelia ἀγγελία | 信 xìn, shin, sin 신, tín | Kōrero |
+| Device control | Zasab اعصاب | Nāḍī नाडी | Neuron νεῦρον | 脈 mài, myaku, maek 맥, mạch | Uaua |
+| The door for any AI | Darwaza دروازہ | Dvāra द्वार | Thyra θύρα | 門 mén, mon, mun 문, môn | Tatau |
+| Scan and store | Tasvir تصویر | Citra चित्र | Eikōn εἰκών | 像 xiàng, zō, sang 상, tượng | Whakaahua |
+| The plates | Lawh لوح | Phalaka फलक | Pinax πίναξ | 板 bǎn, ban, pan 판, bản | Pou |
+| The parser federation | Tajziya تجزیہ | Vyākaraṇa व्याकरण | Analysis ἀνάλυσις | 析 xī, seki, seok 석, tích | Wetewete |
+| The Geometry of Becoming | Tabdili تبدیلی | Parivartana परिवर्तन | Genesis γένεσις | 變 biàn, hen, byeon 변, biến | Panoni |
+| The Geometry of Living | Zindagi زندگی | Jīvana जीवन | Bios βίος | 生 shēng, sei, saeng 생, sinh | Ora |
+| The Geometry of Persisting | Qaem قائم | Sthiti स्थिति | Monē μονή | 恒 héng, kō, hang 항, hằng | Mau |
+| Topological Bildung | Tarbiyat تربیت | Śikṣā शिक्षा | Paideia παιδεία | 育 yù, iku, yuk 육, dục | Ako |
+| Kaivalyik AGI, the posters | Amal عمل | Karma कर्म | Ergon ἔργον | 業 yè, gyō, eop 업, nghiệp | Mahi |
+| The 28 nm tape-out catalogue | Tadbīr28 تدبیر | Yukti युक्ति | Mētis μῆτις | 巧 qiǎo, kō, gyo 교, xảo | Mōhio |
+| The estate's register | Fehrist فہرست | Sūcī सूची | Katalogos κατάλογος | 錄 lù, roku, rok 록, lục | Rārangi |
+| The contracts | Qānūn قانون | Niyama नियम | Nomos νόμος | 律 lǜ, ritsu, yul 율, luật | Ture |
+| A research map | Zāicha زائچہ | Kuṇḍalī कुण्डली | Horoskopos ὡροσκόπος | 譜 pǔ, fu, bo 보, phổ | Mahere |
+| The Paradox of Innovation | Tanāquz تناقض | Virodhābhāsa विरोधाभास | Paradoxon παράδοξον | 矛盾 máodùn, mujun, mosun 모순, mâu thuẫn | to be named with speakers |
+| Inclinations | Mayl میل | Pravṛtti प्रवृत्ति | Rhopē ῥοπή | 傾 qīng, kei, gyeong 경, khuynh | to be named with speakers |
+| Health | Marham مرہم | Auṣadha औषध | Pharmakon φάρμακον | 藥 yào, yaku, yak 약, dược | Rongoā |
+| Exercise | Varzish ورزش | Vyāyāma व्यायाम | Gymnasia γυμνασία | 練 liàn, ren, yeon 련, luyện | Korikori |
+| Waking | Bedārī بیداری | Jāgṛti जागृति | Egersis ἔγερσις | 醒 xǐng, sei, seong 성, tỉnh | Oho |
+| ILM's lexicon | ILM Lughat لغت | Śabdakośa शब्दकोश | Lexikon λεξικόν | 辭 cí, ji, sa 사, từ | Papakupu |
+| ILM's phonology | ILM Sautiyāt صوتیات | Dhvani ध्वनि | Phthongos φθόγγος | 音 yīn, on, eum 음, âm | Oro |
+| ILM's orthography | ILM Imlā املا | Lipi लिपि | Graphē γραφή | 字 zì, ji, ja 자, tự | Tuhi |
+| The programming system | Urdu edition (urdu-ilm) | Hindawi (established) | HPS, Latin and Greek | HPS, Han characters | HPS, Te Reo Māori |
+| humanesque | same | same | same | same | same |
+| ilm | same | same | same | same | same |
+| romenagri | same | same | same | same | same |
+| panini | same | same | same | same | same |
+| paniniq | same | same | same | same | same |
+| paninib | same | same | same | same | same |
+| paniniphy | same | same | same | same | same |
+| pedler | same | same | same | same | same |
+| qedler | same | same | same | same | same |
+| pratik | same | same | same | same | same |
+| fakir | same | same | same | same | same |
+| ukop | same | same | same | same | same |
+| genie | same | same | same | same | same |
+| transeg | same | same | same | same | same |
+| transeg-idgov | same | same | same | same | same |
+| copa | same | same | same | same | same |
+| vgc | same | same | same | same | same |
+| candor | same | same | same | same | same |
+| misty-doi | same | same | same | same | same |
+| tok-doi | same | same | same | same | same |
+| spiguard | same | same | same | same | same |
+| dukedom | same | same | same | same | same |
+| duke2 | same | same | same | same | same |
+| janapad | same | same | same | same | same |
+| poie | same | same | same | same | same |
 
 The two proposed projections:
 
@@ -3580,7 +3639,7 @@ A reader view is a sequence of chapters $(c_1, \ldots, c_k)$, a walk on the chap
 
 Every chapter, figure, component card, syllabus module, edition and proposed name in this guide is an object with an identifier, and each carries a mark: reviewed by the author, with the date, or not yet reviewed. The site shows the mark beside each object. The author marks an object with `bash ops/review.sh <identifier> [note]`, and the gate fails if any object is missing from this register.
 
-0 of 188 objects reviewed by the author.
+0 of 424 objects reviewed by the author.
 
 | Object | Kind | Mark |
 |:--|:--|:--|
@@ -3740,38 +3799,274 @@ Every chapter, figure, component card, syllabus module, edition and proposed nam
 | `ed-field-08` Rahnuma, the edition for the field: Agriculture, forestry, fisheries and veterinary | edition | not yet reviewed |
 | `ed-field-09` Rahnuma, the edition for the field: Health and welfare | edition | not yet reviewed |
 | `ed-field-10` Rahnuma, the edition for the field: Services | edition | not yet reviewed |
-| `name-kaivalyik-the-ground` The ground: Bhūmi, भूमि | proposed name | not yet reviewed |
-| `name-cosmopolis-the-ground` The ground: Gaia, Γαῖα | proposed name | not yet reviewed |
-| `name-datong-the-ground` The ground: 地 (dì, chi, ji 지, địa) | proposed name | not yet reviewed |
-| `name-vaka-the-ground` The ground: Whenua (Māori), Honua (Hawaiian) | proposed name | not yet reviewed |
-| `name-kaivalyik-the-water` The water: Jala, जल | proposed name | not yet reviewed |
-| `name-cosmopolis-the-water` The water: Hydōr, ὕδωρ | proposed name | not yet reviewed |
-| `name-datong-the-water` The water: 水 (shuǐ, sui, su 수, thủy) | proposed name | not yet reviewed |
-| `name-vaka-the-water` The water: Wai | proposed name | not yet reviewed |
-| `name-kaivalyik-the-air` The air: Vāyu, वायु | proposed name | not yet reviewed |
-| `name-cosmopolis-the-air` The air: Aēr, ἀήρ | proposed name | not yet reviewed |
-| `name-datong-the-air` The air: 風 (fēng, fū, pung 풍, phong) | proposed name | not yet reviewed |
-| `name-vaka-the-air` The air: Hau (Māori), Makani (Hawaiian) | proposed name | not yet reviewed |
-| `name-kaivalyik-the-sky-and-its-calendars` The sky and its calendars: Jyotish, ज्योतिष (established) | proposed name | not yet reviewed |
-| `name-cosmopolis-the-sky-and-its-calendars` The sky and its calendars: Ouranos, Οὐρανός | proposed name | not yet reviewed |
-| `name-datong-the-sky-and-its-calendars` The sky and its calendars: 天 (tiān, ten, cheon 천, thiên) | proposed name | not yet reviewed |
-| `name-vaka-the-sky-and-its-calendars` The sky and its calendars: Rangi (Māori), Lani (Hawaiian) | proposed name | not yet reviewed |
-| `name-kaivalyik-the-desk` The desk: Pīṭha, पीठ | proposed name | not yet reviewed |
-| `name-cosmopolis-the-desk` The desk: Trapeza, τράπεζα | proposed name | not yet reviewed |
-| `name-datong-the-desk` The desk: 卓 (zhuō, taku, tak 탁, trác) | proposed name | not yet reviewed |
-| `name-vaka-the-desk` The desk: Papa | proposed name | not yet reviewed |
-| `name-kaivalyik-the-press` The press: Mudraṇa, मुद्रण | proposed name | not yet reviewed |
-| `name-cosmopolis-the-press` The press: Typographeion, τυπογραφεῖον | proposed name | not yet reviewed |
-| `name-datong-the-press` The press: 印 (yìn, in, in 인, ấn) | proposed name | not yet reviewed |
-| `name-vaka-the-press` The press: Tā (Māori) | proposed name | not yet reviewed |
-| `name-kaivalyik-the-guide` The guide: Mārgadarśaka, मार्गदर्शक | proposed name | not yet reviewed |
-| `name-cosmopolis-the-guide` The guide: Periēgētēs, περιηγητής | proposed name | not yet reviewed |
-| `name-datong-the-guide` The guide: 導 (dǎo, dō, do 도, đạo) | proposed name | not yet reviewed |
-| `name-vaka-the-guide` The guide: Kaiārahi (Māori) | proposed name | not yet reviewed |
-| `name-kaivalyik-the-record` The record: Smṛti, स्मृति | proposed name | not yet reviewed |
-| `name-cosmopolis-the-record` The record: Mnēmē, μνήμη | proposed name | not yet reviewed |
-| `name-datong-the-record` The record: 記 (jì, ki, gi 기, ký) | proposed name | not yet reviewed |
-| `name-vaka-the-record` The record: Mahara (Māori) | proposed name | not yet reviewed |
+| `name-kaivalyik-the-ground-balanced-ternary-silicon` The ground: balanced-ternary silicon: Bhūmi भूमि | proposed name | not yet reviewed |
+| `name-cosmopolis-the-ground-balanced-ternary-silicon` The ground: balanced-ternary silicon: Gaia Γαῖα | proposed name | not yet reviewed |
+| `name-datong-the-ground-balanced-ternary-silicon` The ground: balanced-ternary silicon: 地 dì, chi, ji 지, địa | proposed name | not yet reviewed |
+| `name-vaka-the-ground-balanced-ternary-silicon` The ground: balanced-ternary silicon: Whenua, Honua | proposed name | not yet reviewed |
+| `name-kaivalyik-the-water-the-factory-process` The water: the factory process: Jala जल | proposed name | not yet reviewed |
+| `name-cosmopolis-the-water-the-factory-process` The water: the factory process: Hydōr ὕδωρ | proposed name | not yet reviewed |
+| `name-datong-the-water-the-factory-process` The water: the factory process: 水 shuǐ, sui, su 수, thủy | proposed name | not yet reviewed |
+| `name-vaka-the-water-the-factory-process` The water: the factory process: Wai | proposed name | not yet reviewed |
+| `name-kaivalyik-the-air-the-environmental-replica` The air: the environmental replica: Vāyu वायु | proposed name | not yet reviewed |
+| `name-cosmopolis-the-air-the-environmental-replica` The air: the environmental replica: Aēr ἀήρ | proposed name | not yet reviewed |
+| `name-datong-the-air-the-environmental-replica` The air: the environmental replica: 風 fēng, fū, pung 풍, phong | proposed name | not yet reviewed |
+| `name-vaka-the-air-the-environmental-replica` The air: the environmental replica: Hau, Makani | proposed name | not yet reviewed |
+| `name-kaivalyik-the-sky-the-observatory` The sky: the observatory: Jyotish ज्योतिष (established) | proposed name | not yet reviewed |
+| `name-cosmopolis-the-sky-the-observatory` The sky: the observatory: Ouranos Οὐρανός | proposed name | not yet reviewed |
+| `name-datong-the-sky-the-observatory` The sky: the observatory: 天 tiān, ten, cheon 천, thiên | proposed name | not yet reviewed |
+| `name-vaka-the-sky-the-observatory` The sky: the observatory: Rangi, Lani | proposed name | not yet reviewed |
+| `name-kaivalyik-the-calendars-of-the-sky` The calendars of the sky: Pañcāṅga पञ्चाङ्ग | proposed name | not yet reviewed |
+| `name-cosmopolis-the-calendars-of-the-sky` The calendars of the sky: Hēmerologion ἡμερολόγιον | proposed name | not yet reviewed |
+| `name-datong-the-calendars-of-the-sky` The calendars of the sky: 曆 lì, reki, ryeok 력, lịch | proposed name | not yet reviewed |
+| `name-vaka-the-calendars-of-the-sky` The calendars of the sky: Maramataka | proposed name | not yet reviewed |
+| `name-kaivalyik-the-shared-virtual-dome` The shared virtual dome: Maṇḍapa मण्डप | proposed name | not yet reviewed |
+| `name-cosmopolis-the-shared-virtual-dome` The shared virtual dome: Tholos θόλος | proposed name | not yet reviewed |
+| `name-datong-the-shared-virtual-dome` The shared virtual dome: 穹 qióng, kyū, gung 궁, khung | proposed name | not yet reviewed |
+| `name-vaka-the-shared-virtual-dome` The shared virtual dome: Whare, Hale | proposed name | not yet reviewed |
+| `name-kaivalyik-the-desk-the-cognitive-workbench` The desk, the Cognitive Workbench: Pīṭha पीठ | proposed name | not yet reviewed |
+| `name-cosmopolis-the-desk-the-cognitive-workbench` The desk, the Cognitive Workbench: Trapeza τράπεζα | proposed name | not yet reviewed |
+| `name-datong-the-desk-the-cognitive-workbench` The desk, the Cognitive Workbench: 卓 zhuō, taku, tak 탁, trác | proposed name | not yet reviewed |
+| `name-vaka-the-desk-the-cognitive-workbench` The desk, the Cognitive Workbench: Papa | proposed name | not yet reviewed |
+| `name-kaivalyik-the-press` The press: Mudraṇa मुद्रण | proposed name | not yet reviewed |
+| `name-cosmopolis-the-press` The press: Typographeion τυπογραφεῖον | proposed name | not yet reviewed |
+| `name-datong-the-press` The press: 印 yìn, in, in 인, ấn | proposed name | not yet reviewed |
+| `name-vaka-the-press` The press: Tā | proposed name | not yet reviewed |
+| `name-kaivalyik-the-cutting-room-the-visual-cycler` The cutting room, the visual cycler: Svapna स्वप्न | proposed name | not yet reviewed |
+| `name-cosmopolis-the-cutting-room-the-visual-cycler` The cutting room, the visual cycler: Oneiros ὄνειρος | proposed name | not yet reviewed |
+| `name-datong-the-cutting-room-the-visual-cycler` The cutting room, the visual cycler: 夢 mèng, mu, mong 몽, mộng | proposed name | not yet reviewed |
+| `name-vaka-the-cutting-room-the-visual-cycler` The cutting room, the visual cycler: Moemoeā | proposed name | not yet reviewed |
+| `name-kaivalyik-the-listening-room-the-audio-cycler` The listening room, the audio cycler: Svara स्वर | proposed name | not yet reviewed |
+| `name-cosmopolis-the-listening-room-the-audio-cycler` The listening room, the audio cycler: Phōnē φωνή | proposed name | not yet reviewed |
+| `name-datong-the-listening-room-the-audio-cycler` The listening room, the audio cycler: 聲 shēng, sei, seong 성, thanh | proposed name | not yet reviewed |
+| `name-vaka-the-listening-room-the-audio-cycler` The listening room, the audio cycler: Reo | proposed name | not yet reviewed |
+| `name-kaivalyik-the-immersive-cycler` The immersive cycler: Indrajāla इन्द्रजाल | proposed name | not yet reviewed |
+| `name-cosmopolis-the-immersive-cycler` The immersive cycler: Phantasia φαντασία | proposed name | not yet reviewed |
+| `name-datong-the-immersive-cycler` The immersive cycler: 幻 huàn, gen, hwan 환, huyễn | proposed name | not yet reviewed |
+| `name-vaka-the-immersive-cycler` The immersive cycler: Whakaata | proposed name | not yet reviewed |
+| `name-kaivalyik-the-embodied-cycler` The embodied cycler: Yantra यन्त्र | proposed name | not yet reviewed |
+| `name-cosmopolis-the-embodied-cycler` The embodied cycler: Mēchanē μηχανή | proposed name | not yet reviewed |
+| `name-datong-the-embodied-cycler` The embodied cycler: 機 jī, ki, gi 기, cơ | proposed name | not yet reviewed |
+| `name-vaka-the-embodied-cycler` The embodied cycler: Mīhini | proposed name | not yet reviewed |
+| `name-kaivalyik-the-record` The record: Smṛti स्मृति | proposed name | not yet reviewed |
+| `name-cosmopolis-the-record` The record: Mnēmē μνήμη | proposed name | not yet reviewed |
+| `name-datong-the-record` The record: 記 jì, ki, gi 기, ký | proposed name | not yet reviewed |
+| `name-vaka-the-record` The record: Mahara | proposed name | not yet reviewed |
+| `name-kaivalyik-small-work-cycled-with-any-ai` Small work, cycled with any AI: Loka लोक | proposed name | not yet reviewed |
+| `name-cosmopolis-small-work-cycled-with-any-ai` Small work, cycled with any AI: Kosmos κόσμος | proposed name | not yet reviewed |
+| `name-datong-small-work-cycled-with-any-ai` Small work, cycled with any AI: 界 jiè, kai, gye 계, giới | proposed name | not yet reviewed |
+| `name-vaka-small-work-cycled-with-any-ai` Small work, cycled with any AI: Ao | proposed name | not yet reviewed |
+| `name-kaivalyik-the-cycles` The cycles: Āvarta आवर्त | proposed name | not yet reviewed |
+| `name-cosmopolis-the-cycles` The cycles: Kyklos κύκλος | proposed name | not yet reviewed |
+| `name-datong-the-cycles` The cycles: 環 huán, kan, hwan 환, hoàn | proposed name | not yet reviewed |
+| `name-vaka-the-cycles` The cycles: Porohita | proposed name | not yet reviewed |
+| `name-kaivalyik-the-book-template` The book template: Grantha ग्रन्थ | proposed name | not yet reviewed |
+| `name-cosmopolis-the-book-template` The book template: Biblos βίβλος | proposed name | not yet reviewed |
+| `name-datong-the-book-template` The book template: 書 shū, sho, seo 서, thư | proposed name | not yet reviewed |
+| `name-vaka-the-book-template` The book template: Pukapuka | proposed name | not yet reviewed |
+| `name-kaivalyik-the-guide` The guide: Mārgadarśaka मार्गदर्शक | proposed name | not yet reviewed |
+| `name-cosmopolis-the-guide` The guide: Periēgētēs περιηγητής | proposed name | not yet reviewed |
+| `name-datong-the-guide` The guide: 導 dǎo, dō, do 도, đạo | proposed name | not yet reviewed |
+| `name-vaka-the-guide` The guide: Kaiārahi | proposed name | not yet reviewed |
+| `name-kaivalyik-the-domain-spine` The domain spine: Merudaṇḍa मेरुदण्ड | proposed name | not yet reviewed |
+| `name-cosmopolis-the-domain-spine` The domain spine: Rhachis ῥάχις | proposed name | not yet reviewed |
+| `name-datong-the-domain-spine` The domain spine: 骨 gǔ, kotsu, gol 골, cốt | proposed name | not yet reviewed |
+| `name-vaka-the-domain-spine` The domain spine: Tuarā | proposed name | not yet reviewed |
+| `name-kaivalyik-communication-engineering` Communication engineering: Saṃvāda संवाद | proposed name | not yet reviewed |
+| `name-cosmopolis-communication-engineering` Communication engineering: Angelia ἀγγελία | proposed name | not yet reviewed |
+| `name-datong-communication-engineering` Communication engineering: 信 xìn, shin, sin 신, tín | proposed name | not yet reviewed |
+| `name-vaka-communication-engineering` Communication engineering: Kōrero | proposed name | not yet reviewed |
+| `name-kaivalyik-device-control` Device control: Nāḍī नाडी | proposed name | not yet reviewed |
+| `name-cosmopolis-device-control` Device control: Neuron νεῦρον | proposed name | not yet reviewed |
+| `name-datong-device-control` Device control: 脈 mài, myaku, maek 맥, mạch | proposed name | not yet reviewed |
+| `name-vaka-device-control` Device control: Uaua | proposed name | not yet reviewed |
+| `name-kaivalyik-the-door-for-any-ai` The door for any AI: Dvāra द्वार | proposed name | not yet reviewed |
+| `name-cosmopolis-the-door-for-any-ai` The door for any AI: Thyra θύρα | proposed name | not yet reviewed |
+| `name-datong-the-door-for-any-ai` The door for any AI: 門 mén, mon, mun 문, môn | proposed name | not yet reviewed |
+| `name-vaka-the-door-for-any-ai` The door for any AI: Tatau | proposed name | not yet reviewed |
+| `name-kaivalyik-scan-and-store` Scan and store: Citra चित्र | proposed name | not yet reviewed |
+| `name-cosmopolis-scan-and-store` Scan and store: Eikōn εἰκών | proposed name | not yet reviewed |
+| `name-datong-scan-and-store` Scan and store: 像 xiàng, zō, sang 상, tượng | proposed name | not yet reviewed |
+| `name-vaka-scan-and-store` Scan and store: Whakaahua | proposed name | not yet reviewed |
+| `name-kaivalyik-the-plates` The plates: Phalaka फलक | proposed name | not yet reviewed |
+| `name-cosmopolis-the-plates` The plates: Pinax πίναξ | proposed name | not yet reviewed |
+| `name-datong-the-plates` The plates: 板 bǎn, ban, pan 판, bản | proposed name | not yet reviewed |
+| `name-vaka-the-plates` The plates: Pou | proposed name | not yet reviewed |
+| `name-kaivalyik-the-parser-federation` The parser federation: Vyākaraṇa व्याकरण | proposed name | not yet reviewed |
+| `name-cosmopolis-the-parser-federation` The parser federation: Analysis ἀνάλυσις | proposed name | not yet reviewed |
+| `name-datong-the-parser-federation` The parser federation: 析 xī, seki, seok 석, tích | proposed name | not yet reviewed |
+| `name-vaka-the-parser-federation` The parser federation: Wetewete | proposed name | not yet reviewed |
+| `name-kaivalyik-the-geometry-of-becoming` The Geometry of Becoming: Parivartana परिवर्तन | proposed name | not yet reviewed |
+| `name-cosmopolis-the-geometry-of-becoming` The Geometry of Becoming: Genesis γένεσις | proposed name | not yet reviewed |
+| `name-datong-the-geometry-of-becoming` The Geometry of Becoming: 變 biàn, hen, byeon 변, biến | proposed name | not yet reviewed |
+| `name-vaka-the-geometry-of-becoming` The Geometry of Becoming: Panoni | proposed name | not yet reviewed |
+| `name-kaivalyik-the-geometry-of-living` The Geometry of Living: Jīvana जीवन | proposed name | not yet reviewed |
+| `name-cosmopolis-the-geometry-of-living` The Geometry of Living: Bios βίος | proposed name | not yet reviewed |
+| `name-datong-the-geometry-of-living` The Geometry of Living: 生 shēng, sei, saeng 생, sinh | proposed name | not yet reviewed |
+| `name-vaka-the-geometry-of-living` The Geometry of Living: Ora | proposed name | not yet reviewed |
+| `name-kaivalyik-the-geometry-of-persisting` The Geometry of Persisting: Sthiti स्थिति | proposed name | not yet reviewed |
+| `name-cosmopolis-the-geometry-of-persisting` The Geometry of Persisting: Monē μονή | proposed name | not yet reviewed |
+| `name-datong-the-geometry-of-persisting` The Geometry of Persisting: 恒 héng, kō, hang 항, hằng | proposed name | not yet reviewed |
+| `name-vaka-the-geometry-of-persisting` The Geometry of Persisting: Mau | proposed name | not yet reviewed |
+| `name-kaivalyik-topological-bildung` Topological Bildung: Śikṣā शिक्षा | proposed name | not yet reviewed |
+| `name-cosmopolis-topological-bildung` Topological Bildung: Paideia παιδεία | proposed name | not yet reviewed |
+| `name-datong-topological-bildung` Topological Bildung: 育 yù, iku, yuk 육, dục | proposed name | not yet reviewed |
+| `name-vaka-topological-bildung` Topological Bildung: Ako | proposed name | not yet reviewed |
+| `name-kaivalyik-kaivalyik-agi-the-posters` Kaivalyik AGI, the posters: Karma कर्म | proposed name | not yet reviewed |
+| `name-cosmopolis-kaivalyik-agi-the-posters` Kaivalyik AGI, the posters: Ergon ἔργον | proposed name | not yet reviewed |
+| `name-datong-kaivalyik-agi-the-posters` Kaivalyik AGI, the posters: 業 yè, gyō, eop 업, nghiệp | proposed name | not yet reviewed |
+| `name-vaka-kaivalyik-agi-the-posters` Kaivalyik AGI, the posters: Mahi | proposed name | not yet reviewed |
+| `name-kaivalyik-the-nm-tape-out-catalogue` The 28 nm tape-out catalogue: Yukti युक्ति | proposed name | not yet reviewed |
+| `name-cosmopolis-the-nm-tape-out-catalogue` The 28 nm tape-out catalogue: Mētis μῆτις | proposed name | not yet reviewed |
+| `name-datong-the-nm-tape-out-catalogue` The 28 nm tape-out catalogue: 巧 qiǎo, kō, gyo 교, xảo | proposed name | not yet reviewed |
+| `name-vaka-the-nm-tape-out-catalogue` The 28 nm tape-out catalogue: Mōhio | proposed name | not yet reviewed |
+| `name-kaivalyik-the-estate-s-register` The estate's register: Sūcī सूची | proposed name | not yet reviewed |
+| `name-cosmopolis-the-estate-s-register` The estate's register: Katalogos κατάλογος | proposed name | not yet reviewed |
+| `name-datong-the-estate-s-register` The estate's register: 錄 lù, roku, rok 록, lục | proposed name | not yet reviewed |
+| `name-vaka-the-estate-s-register` The estate's register: Rārangi | proposed name | not yet reviewed |
+| `name-kaivalyik-the-contracts` The contracts: Niyama नियम | proposed name | not yet reviewed |
+| `name-cosmopolis-the-contracts` The contracts: Nomos νόμος | proposed name | not yet reviewed |
+| `name-datong-the-contracts` The contracts: 律 lǜ, ritsu, yul 율, luật | proposed name | not yet reviewed |
+| `name-vaka-the-contracts` The contracts: Ture | proposed name | not yet reviewed |
+| `name-kaivalyik-a-research-map` A research map: Kuṇḍalī कुण्डली | proposed name | not yet reviewed |
+| `name-cosmopolis-a-research-map` A research map: Horoskopos ὡροσκόπος | proposed name | not yet reviewed |
+| `name-datong-a-research-map` A research map: 譜 pǔ, fu, bo 보, phổ | proposed name | not yet reviewed |
+| `name-vaka-a-research-map` A research map: Mahere | proposed name | not yet reviewed |
+| `name-kaivalyik-the-paradox-of-innovation` The Paradox of Innovation: Virodhābhāsa विरोधाभास | proposed name | not yet reviewed |
+| `name-cosmopolis-the-paradox-of-innovation` The Paradox of Innovation: Paradoxon παράδοξον | proposed name | not yet reviewed |
+| `name-datong-the-paradox-of-innovation` The Paradox of Innovation: 矛盾 máodùn, mujun, mosun 모순, mâu thuẫn | proposed name | not yet reviewed |
+| `name-vaka-the-paradox-of-innovation` The Paradox of Innovation: to be named with speakers | proposed name | not yet reviewed |
+| `name-kaivalyik-inclinations` Inclinations: Pravṛtti प्रवृत्ति | proposed name | not yet reviewed |
+| `name-cosmopolis-inclinations` Inclinations: Rhopē ῥοπή | proposed name | not yet reviewed |
+| `name-datong-inclinations` Inclinations: 傾 qīng, kei, gyeong 경, khuynh | proposed name | not yet reviewed |
+| `name-vaka-inclinations` Inclinations: to be named with speakers | proposed name | not yet reviewed |
+| `name-kaivalyik-health` Health: Auṣadha औषध | proposed name | not yet reviewed |
+| `name-cosmopolis-health` Health: Pharmakon φάρμακον | proposed name | not yet reviewed |
+| `name-datong-health` Health: 藥 yào, yaku, yak 약, dược | proposed name | not yet reviewed |
+| `name-vaka-health` Health: Rongoā | proposed name | not yet reviewed |
+| `name-kaivalyik-exercise` Exercise: Vyāyāma व्यायाम | proposed name | not yet reviewed |
+| `name-cosmopolis-exercise` Exercise: Gymnasia γυμνασία | proposed name | not yet reviewed |
+| `name-datong-exercise` Exercise: 練 liàn, ren, yeon 련, luyện | proposed name | not yet reviewed |
+| `name-vaka-exercise` Exercise: Korikori | proposed name | not yet reviewed |
+| `name-kaivalyik-waking` Waking: Jāgṛti जागृति | proposed name | not yet reviewed |
+| `name-cosmopolis-waking` Waking: Egersis ἔγερσις | proposed name | not yet reviewed |
+| `name-datong-waking` Waking: 醒 xǐng, sei, seong 성, tỉnh | proposed name | not yet reviewed |
+| `name-vaka-waking` Waking: Oho | proposed name | not yet reviewed |
+| `name-kaivalyik-ilm-s-lexicon` ILM's lexicon: Śabdakośa शब्दकोश | proposed name | not yet reviewed |
+| `name-cosmopolis-ilm-s-lexicon` ILM's lexicon: Lexikon λεξικόν | proposed name | not yet reviewed |
+| `name-datong-ilm-s-lexicon` ILM's lexicon: 辭 cí, ji, sa 사, từ | proposed name | not yet reviewed |
+| `name-vaka-ilm-s-lexicon` ILM's lexicon: Papakupu | proposed name | not yet reviewed |
+| `name-kaivalyik-ilm-s-phonology` ILM's phonology: Dhvani ध्वनि | proposed name | not yet reviewed |
+| `name-cosmopolis-ilm-s-phonology` ILM's phonology: Phthongos φθόγγος | proposed name | not yet reviewed |
+| `name-datong-ilm-s-phonology` ILM's phonology: 音 yīn, on, eum 음, âm | proposed name | not yet reviewed |
+| `name-vaka-ilm-s-phonology` ILM's phonology: Oro | proposed name | not yet reviewed |
+| `name-kaivalyik-ilm-s-orthography` ILM's orthography: Lipi लिपि | proposed name | not yet reviewed |
+| `name-cosmopolis-ilm-s-orthography` ILM's orthography: Graphē γραφή | proposed name | not yet reviewed |
+| `name-datong-ilm-s-orthography` ILM's orthography: 字 zì, ji, ja 자, tự | proposed name | not yet reviewed |
+| `name-vaka-ilm-s-orthography` ILM's orthography: Tuhi | proposed name | not yet reviewed |
+| `name-kaivalyik-the-programming-system` The programming system: Hindawi (established) | proposed name | not yet reviewed |
+| `name-cosmopolis-the-programming-system` The programming system: HPS, Latin and Greek | proposed name | not yet reviewed |
+| `name-datong-the-programming-system` The programming system: HPS, Han characters | proposed name | not yet reviewed |
+| `name-vaka-the-programming-system` The programming system: HPS, Te Reo Māori | proposed name | not yet reviewed |
+| `name-kaivalyik-humanesque` humanesque: same | proposed name | not yet reviewed |
+| `name-cosmopolis-humanesque` humanesque: same | proposed name | not yet reviewed |
+| `name-datong-humanesque` humanesque: same | proposed name | not yet reviewed |
+| `name-vaka-humanesque` humanesque: same | proposed name | not yet reviewed |
+| `name-kaivalyik-ilm` ilm: same | proposed name | not yet reviewed |
+| `name-cosmopolis-ilm` ilm: same | proposed name | not yet reviewed |
+| `name-datong-ilm` ilm: same | proposed name | not yet reviewed |
+| `name-vaka-ilm` ilm: same | proposed name | not yet reviewed |
+| `name-kaivalyik-romenagri` romenagri: same | proposed name | not yet reviewed |
+| `name-cosmopolis-romenagri` romenagri: same | proposed name | not yet reviewed |
+| `name-datong-romenagri` romenagri: same | proposed name | not yet reviewed |
+| `name-vaka-romenagri` romenagri: same | proposed name | not yet reviewed |
+| `name-kaivalyik-panini` panini: same | proposed name | not yet reviewed |
+| `name-cosmopolis-panini` panini: same | proposed name | not yet reviewed |
+| `name-datong-panini` panini: same | proposed name | not yet reviewed |
+| `name-vaka-panini` panini: same | proposed name | not yet reviewed |
+| `name-kaivalyik-paniniq` paniniq: same | proposed name | not yet reviewed |
+| `name-cosmopolis-paniniq` paniniq: same | proposed name | not yet reviewed |
+| `name-datong-paniniq` paniniq: same | proposed name | not yet reviewed |
+| `name-vaka-paniniq` paniniq: same | proposed name | not yet reviewed |
+| `name-kaivalyik-paninib` paninib: same | proposed name | not yet reviewed |
+| `name-cosmopolis-paninib` paninib: same | proposed name | not yet reviewed |
+| `name-datong-paninib` paninib: same | proposed name | not yet reviewed |
+| `name-vaka-paninib` paninib: same | proposed name | not yet reviewed |
+| `name-kaivalyik-paniniphy` paniniphy: same | proposed name | not yet reviewed |
+| `name-cosmopolis-paniniphy` paniniphy: same | proposed name | not yet reviewed |
+| `name-datong-paniniphy` paniniphy: same | proposed name | not yet reviewed |
+| `name-vaka-paniniphy` paniniphy: same | proposed name | not yet reviewed |
+| `name-kaivalyik-pedler` pedler: same | proposed name | not yet reviewed |
+| `name-cosmopolis-pedler` pedler: same | proposed name | not yet reviewed |
+| `name-datong-pedler` pedler: same | proposed name | not yet reviewed |
+| `name-vaka-pedler` pedler: same | proposed name | not yet reviewed |
+| `name-kaivalyik-qedler` qedler: same | proposed name | not yet reviewed |
+| `name-cosmopolis-qedler` qedler: same | proposed name | not yet reviewed |
+| `name-datong-qedler` qedler: same | proposed name | not yet reviewed |
+| `name-vaka-qedler` qedler: same | proposed name | not yet reviewed |
+| `name-kaivalyik-pratik` pratik: same | proposed name | not yet reviewed |
+| `name-cosmopolis-pratik` pratik: same | proposed name | not yet reviewed |
+| `name-datong-pratik` pratik: same | proposed name | not yet reviewed |
+| `name-vaka-pratik` pratik: same | proposed name | not yet reviewed |
+| `name-kaivalyik-fakir` fakir: same | proposed name | not yet reviewed |
+| `name-cosmopolis-fakir` fakir: same | proposed name | not yet reviewed |
+| `name-datong-fakir` fakir: same | proposed name | not yet reviewed |
+| `name-vaka-fakir` fakir: same | proposed name | not yet reviewed |
+| `name-kaivalyik-ukop` ukop: same | proposed name | not yet reviewed |
+| `name-cosmopolis-ukop` ukop: same | proposed name | not yet reviewed |
+| `name-datong-ukop` ukop: same | proposed name | not yet reviewed |
+| `name-vaka-ukop` ukop: same | proposed name | not yet reviewed |
+| `name-kaivalyik-genie` genie: same | proposed name | not yet reviewed |
+| `name-cosmopolis-genie` genie: same | proposed name | not yet reviewed |
+| `name-datong-genie` genie: same | proposed name | not yet reviewed |
+| `name-vaka-genie` genie: same | proposed name | not yet reviewed |
+| `name-kaivalyik-transeg` transeg: same | proposed name | not yet reviewed |
+| `name-cosmopolis-transeg` transeg: same | proposed name | not yet reviewed |
+| `name-datong-transeg` transeg: same | proposed name | not yet reviewed |
+| `name-vaka-transeg` transeg: same | proposed name | not yet reviewed |
+| `name-kaivalyik-transeg-idgov` transeg-idgov: same | proposed name | not yet reviewed |
+| `name-cosmopolis-transeg-idgov` transeg-idgov: same | proposed name | not yet reviewed |
+| `name-datong-transeg-idgov` transeg-idgov: same | proposed name | not yet reviewed |
+| `name-vaka-transeg-idgov` transeg-idgov: same | proposed name | not yet reviewed |
+| `name-kaivalyik-copa` copa: same | proposed name | not yet reviewed |
+| `name-cosmopolis-copa` copa: same | proposed name | not yet reviewed |
+| `name-datong-copa` copa: same | proposed name | not yet reviewed |
+| `name-vaka-copa` copa: same | proposed name | not yet reviewed |
+| `name-kaivalyik-vgc` vgc: same | proposed name | not yet reviewed |
+| `name-cosmopolis-vgc` vgc: same | proposed name | not yet reviewed |
+| `name-datong-vgc` vgc: same | proposed name | not yet reviewed |
+| `name-vaka-vgc` vgc: same | proposed name | not yet reviewed |
+| `name-kaivalyik-candor` candor: same | proposed name | not yet reviewed |
+| `name-cosmopolis-candor` candor: same | proposed name | not yet reviewed |
+| `name-datong-candor` candor: same | proposed name | not yet reviewed |
+| `name-vaka-candor` candor: same | proposed name | not yet reviewed |
+| `name-kaivalyik-misty-doi` misty-doi: same | proposed name | not yet reviewed |
+| `name-cosmopolis-misty-doi` misty-doi: same | proposed name | not yet reviewed |
+| `name-datong-misty-doi` misty-doi: same | proposed name | not yet reviewed |
+| `name-vaka-misty-doi` misty-doi: same | proposed name | not yet reviewed |
+| `name-kaivalyik-tok-doi` tok-doi: same | proposed name | not yet reviewed |
+| `name-cosmopolis-tok-doi` tok-doi: same | proposed name | not yet reviewed |
+| `name-datong-tok-doi` tok-doi: same | proposed name | not yet reviewed |
+| `name-vaka-tok-doi` tok-doi: same | proposed name | not yet reviewed |
+| `name-kaivalyik-spiguard` spiguard: same | proposed name | not yet reviewed |
+| `name-cosmopolis-spiguard` spiguard: same | proposed name | not yet reviewed |
+| `name-datong-spiguard` spiguard: same | proposed name | not yet reviewed |
+| `name-vaka-spiguard` spiguard: same | proposed name | not yet reviewed |
+| `name-kaivalyik-dukedom` dukedom: same | proposed name | not yet reviewed |
+| `name-cosmopolis-dukedom` dukedom: same | proposed name | not yet reviewed |
+| `name-datong-dukedom` dukedom: same | proposed name | not yet reviewed |
+| `name-vaka-dukedom` dukedom: same | proposed name | not yet reviewed |
+| `name-kaivalyik-duke` duke2: same | proposed name | not yet reviewed |
+| `name-cosmopolis-duke` duke2: same | proposed name | not yet reviewed |
+| `name-datong-duke` duke2: same | proposed name | not yet reviewed |
+| `name-vaka-duke` duke2: same | proposed name | not yet reviewed |
+| `name-kaivalyik-janapad` janapad: same | proposed name | not yet reviewed |
+| `name-cosmopolis-janapad` janapad: same | proposed name | not yet reviewed |
+| `name-datong-janapad` janapad: same | proposed name | not yet reviewed |
+| `name-vaka-janapad` janapad: same | proposed name | not yet reviewed |
+| `name-kaivalyik-poie` poie: same | proposed name | not yet reviewed |
+| `name-cosmopolis-poie` poie: same | proposed name | not yet reviewed |
+| `name-datong-poie` poie: same | proposed name | not yet reviewed |
+| `name-vaka-poie` poie: same | proposed name | not yet reviewed |
 
 
 <!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->

@@ -167,7 +167,35 @@
     dl.appendChild(pr);
     if (S.board) { var sy = link("#ch-syllabus", "Link your syllabus"); sy.onclick = function () { pick(S.board); }; dl.appendChild(sy); }
     box.appendChild(dl);
+    if (S.board) syllabusMap(box);
     if (scroll) st.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+  var MAP = null;
+  function syllabusMap(box) {
+    var wrap = el("div", "symap"); box.appendChild(wrap);
+    wrap.appendChild(el("h4", "", "Your syllabus, mapped onto ours"));
+    var show = function (M) {
+      var docs = (M.documents || []).filter(function (d) { return d.board === S.board && (!d.class_hint || !S.cls || d.class_hint === S.cls.replace(/^Classes /, "")); });
+      if (!docs.length) {
+        wrap.appendChild(el("p", "", "This board's syllabus has not been fetched yet; the next publish fetches it from the board's own site. You can map it now, in your own browser, in the Syllabus chapter."));
+        return;
+      }
+      docs.forEach(function (d) {
+        var h = el("p", "symeta"); var a = el("a", "", d.title || d.url); a.href = d.url; a.rel = "noopener"; a.target = "_blank";
+        h.appendChild(a); h.appendChild(document.createTextNode(", fetched " + d.fetched_utc.slice(0, 10) + " from the official site, " + d.pages + " pages; nothing of it is stored here."));
+        wrap.appendChild(h);
+        var t = el("table", "symt"), hd = el("tr"); ["In your syllabus", "Pages", "Our module", "Read"].forEach(function (x) { hd.appendChild(el("th", "", x)); }); t.appendChild(hd);
+        d.matches.forEach(function (m) {
+          var tr = el("tr"); tr.appendChild(el("td", "", m.label)); tr.appendChild(el("td", "", m.pages.join(", ")));
+          var lv = { "Classes 6 to 8": "F", "Classes 9 and 10": "FS", "Classes 11 and 12": "SH" }[S.cls] || ""; var mm = m.modules.filter(function (x) { return !lv || lv.indexOf(x.charAt(0)) >= 0; }); tr.appendChild(el("td", "", mm.map(function (x) { return x + " " + (D.modules[x] || ""); }).join("; ") || "not yet in our syllabus at this level"));
+          var td = el("td"), ra = el("a", "", (byId[m.target] || {}).title || m.target); ra.href = "#" + m.target; td.appendChild(ra); tr.appendChild(td); t.appendChild(tr);
+        });
+        wrap.appendChild(t);
+      });
+    };
+    if (MAP) return show(MAP);
+    fetch("syllabus-map.json").then(function (r) { return r.ok ? r.json() : { documents: [] }; }).then(function (M) { MAP = M; show(M); })
+      .catch(function () { show({ documents: [] }); });
   }
   function draw(scroll) { drawRoles(); drawTwo(); drawGoals(); drawPath(scroll); applyLook(); }
   function applyLook() {
