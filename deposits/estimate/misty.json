@@ -1,0 +1,29 @@
+{
+ "creators": [
+  {
+   "name": "Choudhary, Abhishek",
+   "affiliation": "AyeAI",
+   "orcid": "0009-0002-0684-8320"
+  }
+ ],
+ "access_right": "open",
+ "language": "eng",
+ "title": "Model-based size, complexity and cost estimate of the estate, with an AI-assisted scenario",
+ "version": "2.0.0",
+ "upload_type": "software",
+ "license": "GPL-3.0-or-later",
+ "description": "Scripts that measure every repository of the estate once, apply COCOMO II.2000, and price the effort with published salary data and an AI-assisted scenario bounded by two controlled trials; with the demonstration report on 38 repositories.",
+ "keywords": [
+  "Rahnuma",
+  "AyeAI",
+  "Zistgah",
+  "estimate"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23062059",
+   "relation": "isSupplementTo",
+   "resource_type": "publication-book"
+  }
+ ]
+}

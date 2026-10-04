@@ -18,3 +18,8 @@ Each clause is checked by `bash ops/verify.sh`, which prints PASS, FAIL or UNJUD
 | R10 | Every internal link in the site resolves to an anchor that exists. |
 | R11 | Every estate repository the guide links to is in the retrieved listing, `data/estate-snapshot.json`. |
 | R12 | The site, the Markdown file and the PDF are present and match the hashes recorded in `docs/BUILD.json`. |
+
+- **R13** No personal data: `tools/pii_scan.py` finds no email address, telephone number, identity or account number, or date of birth in any source, beyond the published identifiers in `data/pii-allow.json`.
+- **R14** Version 1 is frozen: every file under `docs/v1/` matches `docs/v1/MANIFEST.sha256`.
+- **R15** Every object is in the review register, and every mark in `data/review.json` names an object that exists.
+- **R16** Every deposit descriptor in `deposits/` is valid and every file it names exists.

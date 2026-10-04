@@ -1,0 +1,4 @@
+{
+ "note": "Objects the author has reviewed by hand. Every other object is shown as not yet reviewed. Mark with: bash ops/review.sh <object-id> [note]",
+ "reviewed": {}
+}

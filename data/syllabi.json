@@ -1,0 +1,293 @@
+{
+ "note": "Only links are stored here, never syllabus text; correlation runs in the reader's browser on a document the reader opens.",
+ "boards": [
+  {
+   "id": "gate-cs",
+   "name": "GATE 2027, Computer Science and Information Technology",
+   "body": "IIT Madras",
+   "levels": "Graduate",
+   "url": "https://gate2027.iitm.ac.in/static/doc/GATE2027_Syllabus/CS_GATE2027_Syllabus.pdf",
+   "provenance": "retrieved for Rahnuma, 29 September 2026",
+   "region": "India"
+  },
+  {
+   "id": "gate-ra",
+   "name": "GATE 2027, Robotics and Automation",
+   "body": "IIT Madras",
+   "levels": "Graduate",
+   "url": "https://gate2027.iitm.ac.in/static/doc/GATE2027_Syllabus/RA_GATE2027_Syllabus.pdf",
+   "provenance": "retrieved for Rahnuma, 29 September 2026",
+   "region": "India"
+  },
+  {
+   "id": "gate-in",
+   "name": "GATE 2027, Instrumentation Engineering",
+   "body": "IIT Madras",
+   "levels": "Graduate",
+   "url": "https://gate2027.iitm.ac.in/static/doc/GATE2027_Syllabus/IN_GATE2027_Syllabus.pdf",
+   "provenance": "retrieved for Rahnuma, 29 September 2026",
+   "region": "India"
+  },
+  {
+   "id": "gate-ga",
+   "name": "GATE 2027, General Aptitude",
+   "body": "IIT Madras",
+   "levels": "Graduate",
+   "url": "https://gate2027.iitm.ac.in/static/doc/GATE2027_Syllabus/GA_GATE2027_Syllabus.pdf",
+   "provenance": "retrieved for Rahnuma, 29 September 2026",
+   "region": "India"
+  },
+  {
+   "id": "gate",
+   "name": "GATE 2027, every paper",
+   "body": "IIT Madras",
+   "levels": "Graduate",
+   "url": "https://gate2027.iitm.ac.in",
+   "provenance": "retrieved for Rahnuma, 29 September 2026",
+   "region": "India"
+  },
+  {
+   "id": "cbse",
+   "name": "CBSE, classes 9 to 12",
+   "body": "Central Board of Secondary Education",
+   "levels": "Secondary, senior secondary",
+   "url": "https://cbseacademic.nic.in/",
+   "provenance": "official site; open it to find the current syllabus",
+   "region": "India"
+  },
+  {
+   "id": "ncert",
+   "name": "NCERT textbooks",
+   "body": "National Council of Educational Research and Training",
+   "levels": "Classes 1 to 12",
+   "url": "https://ncert.nic.in/textbook.php",
+   "provenance": "official site; open it to find the current syllabus",
+   "region": "India"
+  },
+  {
+   "id": "icse",
+   "name": "ICSE, class 10",
+   "body": "Council for the Indian School Certificate Examinations",
+   "levels": "Secondary",
+   "url": "https://cisce.org/",
+   "provenance": "official site; open it to find the current syllabus",
+   "region": "India"
+  },
+  {
+   "id": "isc",
+   "name": "ISC, class 12",
+   "body": "Council for the Indian School Certificate Examinations",
+   "levels": "Senior secondary",
+   "url": "https://cisce.org/",
+   "provenance": "official site; open it to find the current syllabus",
+   "region": "India"
+  },
+  {
+   "id": "nios",
+   "name": "NIOS",
+   "body": "National Institute of Open Schooling",
+   "levels": "Secondary, senior secondary",
+   "url": "https://www.nios.ac.in/",
+   "provenance": "official site; open it to find the current syllabus",
+   "region": "India"
+  },
+  {
+   "id": "igcse",
+   "name": "Cambridge IGCSE",
+   "body": "Cambridge International Education",
+   "levels": "Secondary",
+   "url": "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse/",
+   "provenance": "official site; open it to find the current syllabus",
+   "region": "International"
+  },
+  {
+   "id": "alevel",
+   "name": "Cambridge International AS and A Level",
+   "body": "Cambridge International Education",
+   "levels": "Senior secondary",
+   "url": "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-international-as-and-a-level/",
+   "provenance": "official site; open it to find the current syllabus",
+   "region": "International"
+  },
+  {
+   "id": "ib-dp",
+   "name": "IB Diploma Programme",
+   "body": "International Baccalaureate",
+   "levels": "Senior secondary",
+   "url": "https://www.ibo.org/programmes/diploma-programme/curriculum/",
+   "provenance": "official site; open it to find the current syllabus",
+   "region": "International"
+  },
+  {
+   "id": "ib-myp",
+   "name": "IB Middle Years Programme",
+   "body": "International Baccalaureate",
+   "levels": "Middle, secondary",
+   "url": "https://www.ibo.org/programmes/middle-years-programme/curriculum/",
+   "provenance": "official site; open it to find the current syllabus",
+   "region": "International"
+  },
+  {
+   "id": "ap",
+   "name": "Advanced Placement courses",
+   "body": "College Board",
+   "levels": "Senior secondary",
+   "url": "https://apcentral.collegeboard.org/courses",
+   "provenance": "official site; open it to find the current syllabus",
+   "region": "United States"
+  },
+  {
+   "id": "ccss",
+   "name": "Common Core State Standards",
+   "body": "National Governors Association and CCSSO",
+   "levels": "Kindergarten to grade 12",
+   "url": "https://www.thecorestandards.org/",
+   "provenance": "official site; open it to find the current syllabus",
+   "region": "United States"
+  },
+  {
+   "id": "aqa",
+   "name": "AQA GCSE and A level",
+   "body": "AQA",
+   "levels": "Secondary, senior secondary",
+   "url": "https://www.aqa.org.uk/",
+   "provenance": "official site; open it to find the current syllabus",
+   "region": "United Kingdom"
+  },
+  {
+   "id": "edexcel",
+   "name": "Pearson Edexcel qualifications",
+   "body": "Pearson",
+   "levels": "Secondary, senior secondary",
+   "url": "https://qualifications.pearson.com/",
+   "provenance": "official site; open it to find the current syllabus",
+   "region": "United Kingdom"
+  },
+  {
+   "id": "ocr",
+   "name": "OCR qualifications",
+   "body": "OCR",
+   "levels": "Secondary, senior secondary",
+   "url": "https://www.ocr.org.uk/",
+   "provenance": "official site; open it to find the current syllabus",
+   "region": "United Kingdom"
+  },
+  {
+   "id": "acara",
+   "name": "Australian Curriculum, version 9",
+   "body": "ACARA",
+   "levels": "Foundation to year 10",
+   "url": "https://v9.australiancurriculum.edu.au/",
+   "provenance": "official site; open it to find the current syllabus",
+   "region": "Australia"
+  },
+  {
+   "id": "seab",
+   "name": "Singapore national examinations",
+   "body": "SEAB",
+   "levels": "Secondary, pre-university",
+   "url": "https://www.seab.gov.sg/",
+   "provenance": "official site; open it to find the current syllabus",
+   "region": "Singapore"
+  },
+  {
+   "id": "ts",
+   "name": "Telangana Board of Secondary Education",
+   "body": "Government of Telangana",
+   "levels": "Secondary",
+   "url": "https://bse.telangana.gov.in/",
+   "provenance": "official site; open it to find the current syllabus",
+   "region": "India, state board"
+  },
+  {
+   "id": "ap-bse",
+   "name": "Andhra Pradesh Board of Secondary Education",
+   "body": "Government of Andhra Pradesh",
+   "levels": "Secondary",
+   "url": "https://bse.ap.gov.in/",
+   "provenance": "official site; open it to find the current syllabus",
+   "region": "India, state board"
+  },
+  {
+   "id": "mh",
+   "name": "Maharashtra State Board",
+   "body": "Government of Maharashtra",
+   "levels": "Secondary, higher secondary",
+   "url": "https://mahahsscboard.in/",
+   "provenance": "official site; open it to find the current syllabus",
+   "region": "India, state board"
+  },
+  {
+   "id": "ka",
+   "name": "Karnataka School Examination and Assessment Board",
+   "body": "Government of Karnataka",
+   "levels": "Secondary",
+   "url": "https://kseab.karnataka.gov.in/",
+   "provenance": "official site; open it to find the current syllabus",
+   "region": "India, state board"
+  },
+  {
+   "id": "tn",
+   "name": "Tamil Nadu Directorate of Government Examinations",
+   "body": "Government of Tamil Nadu",
+   "levels": "Secondary, higher secondary",
+   "url": "https://dge.tn.gov.in/",
+   "provenance": "official site; open it to find the current syllabus",
+   "region": "India, state board"
+  },
+  {
+   "id": "kl",
+   "name": "Kerala SCERT",
+   "body": "Government of Kerala",
+   "levels": "School",
+   "url": "https://scert.kerala.gov.in/",
+   "provenance": "official site; open it to find the current syllabus",
+   "region": "India, state board"
+  },
+  {
+   "id": "wb",
+   "name": "West Bengal Board of Secondary Education",
+   "body": "Government of West Bengal",
+   "levels": "Secondary",
+   "url": "https://wbbse.wb.gov.in/",
+   "provenance": "official site; open it to find the current syllabus",
+   "region": "India, state board"
+  },
+  {
+   "id": "up",
+   "name": "Uttar Pradesh Madhyamik Shiksha Parishad",
+   "body": "Government of Uttar Pradesh",
+   "levels": "Secondary, intermediate",
+   "url": "https://upmsp.edu.in/",
+   "provenance": "official site; open it to find the current syllabus",
+   "region": "India, state board"
+  },
+  {
+   "id": "rj",
+   "name": "Board of Secondary Education, Rajasthan",
+   "body": "Government of Rajasthan",
+   "levels": "Secondary, senior secondary",
+   "url": "https://rajeduboard.rajasthan.gov.in/",
+   "provenance": "official site; open it to find the current syllabus",
+   "region": "India, state board"
+  },
+  {
+   "id": "gj",
+   "name": "Gujarat Secondary and Higher Secondary Education Board",
+   "body": "Government of Gujarat",
+   "levels": "Secondary, higher secondary",
+   "url": "https://www.gseb.org/",
+   "provenance": "official site; open it to find the current syllabus",
+   "region": "India, state board"
+  },
+  {
+   "id": "pb",
+   "name": "Punjab School Education Board",
+   "body": "Government of Punjab",
+   "levels": "Secondary, senior secondary",
+   "url": "https://www.pseb.ac.in/",
+   "provenance": "official site; open it to find the current syllabus",
+   "region": "India, state board"
+  }
+ ]
+}

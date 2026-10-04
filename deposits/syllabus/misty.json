@@ -1,0 +1,29 @@
+{
+ "creators": [
+  {
+   "name": "Choudhary, Abhishek",
+   "affiliation": "AyeAI",
+   "orcid": "0009-0002-0684-8320"
+  }
+ ],
+ "access_right": "open",
+ "language": "eng",
+ "title": "Rahnuma syllabus links and a standard syllabus, draft",
+ "version": "2.0.0",
+ "upload_type": "dataset",
+ "license": "CC-BY-SA-4.0",
+ "description": "Links to the official syllabi of CBSE, CISCE (ICSE and ISC), Cambridge IGCSE and A Level, the IB, GATE, Indian state boards and boards abroad, with the guide's own correlation keywords, matched on the reader's device, and a standard syllabus built from the guide, level by level, as a draft for review. No syllabus text is stored.",
+ "keywords": [
+  "Rahnuma",
+  "AyeAI",
+  "Zistgah",
+  "syllabus"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23062059",
+   "relation": "isSupplementTo",
+   "resource_type": "publication-book"
+  }
+ ]
+}

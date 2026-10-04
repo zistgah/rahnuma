@@ -1,0 +1,137 @@
+{
+ "note": "Our own keywords. Each pattern is matched, case-insensitively, against the text of a syllabus the reader opens; a match links to the place in this guide.",
+ "rules": [
+  {
+   "id": "num",
+   "label": "Number systems and data representation",
+   "pattern": "binary|number system|base[- ]?(2|8|16)|hexadecimal|octal|two'?s complement|floating[- ]point|bits? and bytes",
+   "target": "ch-09"
+  },
+  {
+   "id": "enc",
+   "label": "Character encoding",
+   "pattern": "ascii|unicode|utf-?8|character (set|encoding)|encoding scheme",
+   "target": "ch-10"
+  },
+  {
+   "id": "script",
+   "label": "Scripts, sounds and transliteration",
+   "pattern": "transliterat|devanagari|phonetic|phonolog|phoneme|alphabet|writing system|script",
+   "target": "ch-11"
+  },
+  {
+   "id": "lang",
+   "label": "Indian and world languages in computing",
+   "pattern": "hindi|urdu|sanskrit|telugu|tamil|bengali|kannada|malayalam|marathi|gujarati|punjabi|multilingual",
+   "target": "ch-11"
+  },
+  {
+   "id": "gram",
+   "label": "Grammar as a formal system",
+   "pattern": "grammar|p[aā]ṇini|panini|morpholog|syntax|semantics|formal language|regular expression|context[- ]free|automat",
+   "target": "ch-12"
+  },
+  {
+   "id": "comp",
+   "label": "Compilers and translation",
+   "pattern": "compiler|interpreter|translator|lexical|pars(e|ing)|assembler|linker|loader|machine code|high[- ]level language|low[- ]level language|object code",
+   "target": "ch-13"
+  },
+  {
+   "id": "prog",
+   "label": "Programming and problem solving",
+   "pattern": "programming|python|algorithm|pseudocode|flow ?chart|iteration|loop|recursion|function|procedure|array|list|stack|queue|file handling",
+   "target": "ch-run"
+  },
+  {
+   "id": "logic",
+   "label": "Logic, gates and the processor",
+   "pattern": "logic gate|boolean|truth table|karnaugh|transistor|cmos|flip[- ]?flop|register|alu|processor|cpu|microprocessor|memory (unit|hierarchy)|cache",
+   "target": "ch-14"
+  },
+  {
+   "id": "quantum",
+   "label": "Quantum ideas",
+   "pattern": "quantum|qubit|superposition|entanglement",
+   "target": "ch-15"
+  },
+  {
+   "id": "osc",
+   "label": "Oscillations and waves",
+   "pattern": "oscillat|simple harmonic|wave|resonance|frequency|pendulum",
+   "target": "ch-15"
+  },
+  {
+   "id": "ai",
+   "label": "Artificial intelligence and its use",
+   "pattern": "artificial intelligence|\\bai\\b|machine learning|neural network|deep learning|chatbot|data (science|ethics)|bias",
+   "target": "ch-16"
+  },
+  {
+   "id": "net",
+   "label": "Networks, the internet and security",
+   "pattern": "network|internet|protocol|cyber|encrypt|cryptograph|hash|digital signature|blockchain|authentication",
+   "target": "ch-17"
+  },
+  {
+   "id": "ip",
+   "label": "Open source, licences and intellectual property",
+   "pattern": "open source|licen[cs]e|copyright|intellectual property|patent|plagiarism|version control|\\bgit\\b",
+   "target": "ch-17"
+  },
+  {
+   "id": "db",
+   "label": "Databases",
+   "pattern": "database|\\bsql\\b|dbms|relational|query|table",
+   "target": "ch-13"
+  },
+  {
+   "id": "math",
+   "label": "Mathematics used in the guide",
+   "pattern": "matri(x|ces)|graph theory|probability|statistics|logarithm|set theory|relations and functions|complex number|vector",
+   "target": "app-math"
+  },
+  {
+   "id": "bio",
+   "label": "Biology and health",
+   "pattern": "\\bdna\\b|gene|genetic|protein|cell|neuron|brain|nervous system|health|disease",
+   "target": "app-stem"
+  },
+  {
+   "id": "env",
+   "label": "Environment, habitat and resources",
+   "pattern": "environment|ecolog|habitat|sustainab|natural resources|climate",
+   "target": "ch-03"
+  },
+  {
+   "id": "astro",
+   "label": "The sky, time and calendars",
+   "pattern": "calendar|astronom|planet|moon|sun|eclipse|solar system|time ?keeping",
+   "target": "ch-families"
+  },
+  {
+   "id": "civics",
+   "label": "Civics, rights and self-governance",
+   "pattern": "constitution|rights|democracy|governance|panchayat|village|rural|local self|gandhi|swaraj",
+   "target": "ch-families"
+  },
+  {
+   "id": "econ",
+   "label": "Work, occupations and economic activity",
+   "pattern": "economic activit|occupation|employment|sector|industry|livelihood",
+   "target": "ch-roadmap"
+  },
+  {
+   "id": "hist",
+   "label": "History of computing",
+   "pattern": "history of comput|generations of computer|evolution of computer",
+   "target": "ch-05"
+  },
+  {
+   "id": "robot",
+   "label": "Robots and automation",
+   "pattern": "robot|automation|sensor|actuator|drone|embedded",
+   "target": "app-stem"
+  }
+ ]
+}

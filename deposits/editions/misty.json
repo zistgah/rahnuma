@@ -1,0 +1,30 @@
+{
+ "creators": [
+  {
+   "name": "Choudhary, Abhishek",
+   "affiliation": "AyeAI",
+   "orcid": "0009-0002-0684-8320"
+  }
+ ],
+ "access_right": "open",
+ "language": "eng",
+ "title": "Rahnuma reader editions: the guide for each kind of reader and each field of study",
+ "version": "2.0.0",
+ "upload_type": "publication",
+ "license": "CC-BY-SA-4.0",
+ "description": "Twenty-one PDF editions of Rahnuma 2.0.0, each a printed selection of the one guide: one for each kind of reader, from school students to industry partners, and one for each broad field of study in ISCED-F 2013.",
+ "keywords": [
+  "Rahnuma",
+  "AyeAI",
+  "Zistgah",
+  "editions"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23062059",
+   "relation": "isSupplementTo",
+   "resource_type": "publication-book"
+  }
+ ],
+ "publication_type": "book"
+}

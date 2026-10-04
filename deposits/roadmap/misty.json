@@ -1,0 +1,29 @@
+{
+ "creators": [
+  {
+   "name": "Choudhary, Abhishek",
+   "affiliation": "AyeAI",
+   "orcid": "0009-0002-0684-8320"
+  }
+ ],
+ "access_right": "open",
+ "language": "eng",
+ "title": "The estate's roadmap: phases, collaborator lanes and domain lanes",
+ "version": "2.0.0",
+ "upload_type": "dataset",
+ "license": "CC-BY-SA-4.0",
+ "description": "The plan for completing the estate's releases and opening it to collaborators, as data: phases, epics and issues, with a lane for every kind of collaborator and for each of the 42 domain families of ISIC, ISCO and ISCED.",
+ "keywords": [
+  "Rahnuma",
+  "AyeAI",
+  "Zistgah",
+  "roadmap"
+ ],
+ "related_identifiers": [
+  {
+   "identifier": "10.5281/zenodo.23062059",
+   "relation": "isSupplementTo",
+   "resource_type": "publication-book"
+  }
+ ]
+}

@@ -19,17 +19,21 @@
 <header class="cover" id="top">
 {{HERO}}
 </header>
-<section class="start" id="start" aria-label="Read it your way">
+<section class="start" id="start" aria-label="Find your way in">
 <div class="start-inner">
-<h2 class="start-title">Read it your way</h2>
-<p class="start-lede">Choose who you are, and the guide lays out your path through it, with the components to try first. Nothing is hidden for good: every chapter stays one tap away.</p>
-<div class="aud-grid" id="aud-grid"></div>
+<h2 class="start-title">Find your way in</h2>
+<p class="start-lede">Four steps, and the guide shows your part of it, with a PDF edition made for you. Nothing is hidden for good: every chapter stays one tap away.</p>
+<ol class="steps">
+<li class="step" id="st-role"><h3>1. Who are you?</h3><div class="opts" id="opt-role"></div></li>
+<li class="step" id="st-two" hidden><h3 id="st-two-title">2. Your board and class</h3><div id="opt-two"></div></li>
+<li class="step" id="st-goal" hidden><h3>3. What do you want to do?</h3><div class="opts" id="opt-goal"></div></li>
+<li class="step" id="st-path" hidden><h3>4. Your path</h3><div id="yourpath"></div></li>
+</ol>
 <div class="controls">
 <div class="ctl"><span class="ctl-label">Age</span><div class="chips" id="age-chips"></div></div>
 <div class="ctl"><span class="ctl-label">Depth</span><div class="seg" id="depth-seg"><button type="button" data-depth="plain">Plain words</button><button type="button" data-depth="standard">Standard</button><button type="button" data-depth="deep">Full depth</button></div></div>
 <div class="ctl"><button type="button" class="tog" id="tog-size" aria-pressed="false">Larger text</button><button type="button" class="tog" id="tog-theme">Light or dark</button><button type="button" class="tog" id="tog-reset">Start again</button></div>
 </div>
-<div class="yourpath" id="yourpath" hidden></div>
 </div>
 </section>
 <details class="toc-mobile">
@@ -57,96 +61,224 @@
 </div>
 <a class="totop" href="#top" aria-label="Back to the top">&#8593;</a>
 <!--PROTECT--><script id="rahnuma-data" type="application/json">{{DATA}}</script>
+<div class="modal" id="privacy" hidden role="dialog" aria-modal="true" aria-labelledby="privacy-title"><div class="modal-box">
+<h3 id="privacy-title">Before you link a syllabus</h3>
+<p>Everything here runs in your own browser. The syllabus you open or drop on this page is read on your device and is never uploaded, stored or sent anywhere. This guide keeps only the official address of each syllabus and its own keywords; the syllabus remains the property of its publisher.</p>
+<p>Your choices on this page, your path and the chapters you tick, are kept only in this browser, and "Start again" clears them.</p>
+<button type="button" class="tog" id="privacy-ok">I understand</button></div></div>
 <script>
 (function () {
   var D = JSON.parse(document.getElementById("rahnuma-data").textContent);
-  var KEY = "rahnuma.view.v1";
-  var S = { aud: null, age: null, depth: "standard", large: false, theme: null, done: {} };
+  var KEY = "rahnuma.v2";
+  var S = { role: null, board: null, cls: null, field: null, goal: null, depth: "standard", large: false, theme: null, age: null, done: {}, privacy: false };
   try { var saved = JSON.parse(localStorage.getItem(KEY) || "null"); if (saved) { for (var k in saved) S[k] = saved[k]; } } catch (e) {}
   function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+  function $(id) { return document.getElementById(id); }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  var order = D.chapters.map(function (c) { return c.id; });
   var byId = {}; D.chapters.forEach(function (c) { byId[c.id] = c; });
-  var grid = document.getElementById("aud-grid");
-  D.audiences.forEach(function (a) {
-    var b = document.createElement("button"); b.type = "button"; b.className = "aud"; b.dataset.aud = a.id;
-    b.innerHTML = '<span class="mono">' + a.mono + '</span><span class="aud-label">' + a.label + '</span><span class="aud-blurb">' + a.blurb + "</span>";
-    b.onclick = function () { S.aud = S.aud === a.id ? null : a.id; if (S.aud) S.depth = a.depth; save(); apply(true); };
-    grid.appendChild(b);
-  });
-  var chips = document.getElementById("age-chips");
-  D.ages.forEach(function (g) {
-    var b = document.createElement("button"); b.type = "button"; b.className = "chip"; b.dataset.age = g.id; b.textContent = g.label;
-    b.onclick = function () { S.age = S.age === g.id ? null : g.id; if (S.age) { S.depth = g.depth; S.large = g.large; } save(); apply(false); };
-    chips.appendChild(b);
-  });
-  document.querySelectorAll("#depth-seg button").forEach(function (b) { b.onclick = function () { S.depth = b.dataset.depth; save(); apply(false); }; });
-  document.getElementById("tog-size").onclick = function () { S.large = !S.large; save(); apply(false); };
-  document.getElementById("tog-theme").onclick = function () {
-    var dark = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches;
-    var cur = S.theme || (dark ? "dark" : "light"); S.theme = cur === "dark" ? "light" : "dark"; save(); apply(false);
-  };
-  document.getElementById("tog-reset").onclick = function () { S = { aud: null, age: null, depth: "standard", large: false, theme: S.theme, done: {} }; save(); apply(false); };
-  document.querySelectorAll("section.chapter").forEach(function (sec) {
-    var b = document.createElement("button"); b.type = "button"; b.className = "unfold"; b.textContent = "Read the whole chapter";
-    b.onclick = function () { sec.classList.toggle("open"); b.textContent = sec.classList.contains("open") ? "Fold the chapter" : "Read the whole chapter"; };
-    sec.insertBefore(b, sec.querySelector(".chapter-body"));
-  });
-  function apply(scroll) {
+  var roleBy = {}; D.roles.forEach(function (r) { roleBy[r.id] = r; });
+  var fieldBy = {}, detailed = [];
+  D.fields.forEach(function (f) { fieldBy[f.code] = f; f.narrow.forEach(function (n) { (n.detailed.length ? n.detailed : [n]).forEach(function (d) { detailed.push({ code: d.code, name: d.name, broad: f.code, group: n.name }); }); }); });
+  function btn(label, sub, on, pressed) {
+    var b = el("button", "opt"); b.type = "button"; b.setAttribute("aria-pressed", String(!!pressed));
+    b.appendChild(el("span", "opt-label", label)); if (sub) b.appendChild(el("span", "opt-sub", sub)); b.onclick = on; return b;
+  }
+  function drawRoles() {
+    var box = $("opt-role"); box.innerHTML = "";
+    D.roles.forEach(function (r) { box.appendChild(btn(r.label, r.blurb, function () { S.role = r.id; S.board = S.cls = S.field = S.goal = null; save(); draw(true); }, S.role === r.id)); });
+  }
+  function drawTwo() {
+    var r = roleBy[S.role], box = $("opt-two"), st = $("st-two");
+    box.innerHTML = "";
+    if (!r || r.step === "none") { st.hidden = true; return; }
+    st.hidden = false;
+    if (r.step === "board") {
+      $("st-two-title").textContent = "2. Your board and class";
+      var sel = el("select", "pick"); sel.setAttribute("aria-label", "Board");
+      sel.appendChild(new Option("Choose your board", ""));
+      D.boards.filter(function (b) { return b.id.indexOf("gate") !== 0; }).forEach(function (b) { sel.appendChild(new Option(b.name + " (" + b.region + ")", b.id, false, S.board === b.id)); });
+      sel.onchange = function () { S.board = sel.value || null; save(); draw(false); };
+      box.appendChild(sel);
+      var cl = el("div", "opts small");
+      ["Classes 6 to 8", "Classes 9 and 10", "Classes 11 and 12"].forEach(function (c) { cl.appendChild(btn(c, "", function () { S.cls = c; save(); draw(false); }, S.cls === c)); });
+      box.appendChild(cl);
+    } else {
+      $("st-two-title").textContent = "2. Your field of study or work";
+      var inp = el("input", "pick"); inp.type = "search"; inp.placeholder = "Type your subject, for example political science, physics or nursing";
+      inp.setAttribute("aria-label", "Your field");
+      var list = el("div", "fieldlist");
+      function show() {
+        var q = inp.value.toLowerCase().trim(); list.innerHTML = "";
+        detailed.filter(function (d) { return !q || (d.name + " " + d.group).toLowerCase().indexOf(q) >= 0; }).slice(0, q ? 12 : 0).forEach(function (d) {
+          list.appendChild(btn(d.name, fieldBy[d.broad].name, function () { S.field = d.code; S.fieldBroad = d.broad; S.fieldName = d.name; save(); draw(false); }, S.field === d.code));
+        });
+      }
+      inp.oninput = show; box.appendChild(inp); box.appendChild(list);
+      if (S.field) box.appendChild(el("p", "picked", "Chosen: " + S.fieldName + ", in " + fieldBy[S.fieldBroad].name + "."));
+    }
+  }
+  function drawGoals() {
+    var r = roleBy[S.role], ready = r && (r.step === "none" || (r.step === "board" ? S.board && S.cls : S.field));
+    $("st-goal").hidden = !ready; var box = $("opt-goal"); box.innerHTML = "";
+    if (!ready) return;
+    D.goals.forEach(function (g) { box.appendChild(btn(g.label, "", function () { S.goal = g.id; save(); draw(true); }, S.goal === g.id)); });
+  }
+  function pathNow() {
+    var r = roleBy[S.role]; if (!r) return [];
+    var want = {}; r.path.forEach(function (c) { want[c] = 1; });
+    if (S.fieldBroad && fieldBy[S.fieldBroad]) fieldBy[S.fieldBroad].path.forEach(function (c) { want[c] = 1; });
+    D.goals.forEach(function (g) { if (g.id === S.goal) g.adds.forEach(function (c) { want[c] = 1; }); });
+    return order.filter(function (c) { return want[c]; });
+  }
+  function drawPath(scroll) {
+    var r = roleBy[S.role], st = $("st-path"), box = $("yourpath");
+    var ready = r && S.goal; st.hidden = !ready; box.innerHTML = "";
+    var path = ready ? pathNow() : [];
+    document.querySelectorAll("section.chapter").forEach(function (sec) { var on = path.indexOf(sec.dataset.ch) >= 0; sec.classList.toggle("on-path", on); sec.classList.toggle("off-path", ready && !on); });
+    document.querySelectorAll(".toc a").forEach(function (l) { l.classList.toggle("on-path", path.indexOf((l.getAttribute("href") || "").slice(1)) >= 0); });
+    var tryit = r ? r.tryit : [];
+    document.querySelectorAll(".component").forEach(function (c) { var id = (c.previousElementSibling && c.previousElementSibling.id || "").replace(/^c-/, ""); c.classList.toggle("for-you", !!ready && tryit.indexOf(id) >= 0); });
+    if (!ready) return;
+    var total = 0, ol = el("ol", "pathlist");
+    path.forEach(function (id) {
+      var c = byId[id]; if (!c) return; total += c.mins;
+      var li = el("li", S.done[id] ? "done" : ""), lab = el("label"), cb = el("input"); cb.type = "checkbox"; cb.checked = !!S.done[id];
+      cb.onchange = function () { if (cb.checked) S.done[id] = 1; else delete S.done[id]; save(); li.classList.toggle("done", cb.checked); };
+      var a = el("a", "", c.title); a.href = "#" + id; lab.appendChild(cb); lab.appendChild(document.createTextNode(" ")); lab.appendChild(a);
+      li.appendChild(lab); li.appendChild(el("span", "mins", c.mins + " min")); ol.appendChild(li);
+    });
+    box.appendChild(ol);
+    box.appendChild(el("p", "pathnote", "About " + total + " minutes in all. Tick a chapter when you have read it; this browser remembers."));
+    if (tryit.length) {
+      box.appendChild(el("h4", "", "Try these first"));
+      var ul = el("ul", "trylist");
+      tryit.forEach(function (t) { var c = D.components[t]; if (!c) return; var li = el("li"), a = el("a", "", c.name); a.href = "#c-" + t; li.appendChild(a); ul.appendChild(li); });
+      box.appendChild(ul);
+    }
+    box.appendChild(el("h4", "", "Your PDF"));
+    var dl = el("div", "downloads");
+    function link(href, text) { var a = el("a", "tog", text); a.href = href; return a; }
+    if (S.role !== "agent") dl.appendChild(link("editions/role-" + S.role + ".pdf", "The edition for you"));
+    else dl.appendChild(link("rahnuma.md", "The whole guide as one Markdown file"));
+    if (S.fieldBroad) dl.appendChild(link("editions/field-" + S.fieldBroad + ".pdf", "The edition for your field"));
+    var pr = el("button", "tog", "Print exactly this path"); pr.type = "button";
+    pr.onclick = function () { document.body.classList.add("print-path"); window.print(); setTimeout(function () { document.body.classList.remove("print-path"); }, 500); };
+    dl.appendChild(pr);
+    if (S.board) { var sy = link("#ch-syllabus", "Link your syllabus"); sy.onclick = function () { pick(S.board); }; dl.appendChild(sy); }
+    box.appendChild(dl);
+    if (scroll) st.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+  function draw(scroll) { drawRoles(); drawTwo(); drawGoals(); drawPath(scroll); applyLook(); }
+  function applyLook() {
     var R = document.documentElement, B = document.body;
     B.classList.remove("depth-plain", "depth-standard", "depth-deep"); B.classList.add("depth-" + S.depth);
     B.classList.toggle("text-large", !!S.large);
     if (S.theme) R.setAttribute("data-theme", S.theme); else R.removeAttribute("data-theme");
-    document.querySelectorAll(".aud").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.aud === S.aud)); });
     document.querySelectorAll(".chip").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.age === S.age)); });
     document.querySelectorAll("#depth-seg button").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.depth === S.depth)); });
-    document.getElementById("tog-size").setAttribute("aria-pressed", String(!!S.large));
-    var a = D.audiences.filter(function (x) { return x.id === S.aud; })[0], path = a ? a.path : [];
-    document.querySelectorAll("section.chapter").forEach(function (sec) {
-      var on = path.indexOf(sec.dataset.ch) >= 0; sec.classList.toggle("on-path", on); sec.classList.toggle("off-path", !!a && !on);
-    });
-    document.querySelectorAll(".toc a").forEach(function (l) { l.classList.toggle("on-path", path.indexOf((l.getAttribute("href") || "").slice(1)) >= 0); });
-    document.querySelectorAll(".component").forEach(function (c) { c.classList.toggle("for-you", !!a && (c.dataset.aud || "").split(" ").indexOf(a.id) >= 0); });
-    var box = document.getElementById("yourpath");
-    if (!a) { box.hidden = true; box.innerHTML = ""; return; }
-    var total = 0, h = '<h3>Your path: ' + a.label + '</h3><ol class="pathlist">';
-    path.forEach(function (id) {
-      var c = byId[id]; if (!c) return; total += c.mins; var d = !!S.done[id];
-      h += "<li class='" + (d ? "done" : "") + "'><label><input type='checkbox' data-done='" + id + "'" + (d ? " checked" : "") + "> <a href='#" + id + "'>" + c.title + "</a></label><span class='mins'>" + c.mins + " min</span></li>";
-    });
-    h += '</ol><p class="pathnote">About ' + total + " minutes in all. Tick a chapter when you have read it; this browser remembers.</p>";
-    if (a.tryit && a.tryit.length) {
-      h += '<h4>Try these first</h4><ul class="trylist">';
-      a.tryit.forEach(function (t) { var c = D.components[t]; if (c) h += "<li><a href='#c-" + t + "'>" + c.name + "</a></li>"; });
-      h += "</ul>";
-    }
-    box.innerHTML = h; box.hidden = false;
-    box.querySelectorAll("input[data-done]").forEach(function (cb) {
-      cb.onchange = function () { if (cb.checked) S.done[cb.dataset.done] = 1; else delete S.done[cb.dataset.done]; save(); cb.closest("li").classList.toggle("done", cb.checked); };
-    });
-    if (scroll) box.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    $("tog-size").setAttribute("aria-pressed", String(!!S.large));
   }
-  apply(false);
-  var q = document.getElementById("toc-search");
-  if (q) q.oninput = function () {
-    var v = q.value.toLowerCase();
-    document.querySelectorAll(".toc-side .toc li").forEach(function (li) { li.style.display = !v || li.textContent.toLowerCase().indexOf(v) >= 0 ? "" : "none"; });
-  };
+  (D.ages || []).forEach(function (g) {
+    var b = el("button", "chip", g.label); b.type = "button"; b.dataset.age = g.id;
+    b.onclick = function () { S.age = S.age === g.id ? null : g.id; if (S.age) { S.depth = g.depth; S.large = g.large; } save(); applyLook(); };
+    $("age-chips").appendChild(b);
+  });
+  document.querySelectorAll("#depth-seg button").forEach(function (b) { b.onclick = function () { S.depth = b.dataset.depth; save(); applyLook(); }; });
+  $("tog-size").onclick = function () { S.large = !S.large; save(); applyLook(); };
+  $("tog-theme").onclick = function () { var dark = window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches; S.theme = (S.theme || (dark ? "dark" : "light")) === "dark" ? "light" : "dark"; save(); applyLook(); };
+  $("tog-reset").onclick = function () { try { localStorage.removeItem(KEY); } catch (e) {} location.reload(); };
+  document.querySelectorAll("section.chapter").forEach(function (sec) {
+    var b = el("button", "unfold", "Read the whole chapter"); b.type = "button";
+    b.onclick = function () { sec.classList.toggle("open"); b.textContent = sec.classList.contains("open") ? "Fold the chapter" : "Read the whole chapter"; };
+    sec.insertBefore(b, sec.querySelector(".chapter-body"));
+  });
+  draw(false);
+  // the syllabus link: runs entirely in the reader's browser
+  var cor = $("correlator");
+  function privacy(then) {
+    if (S.privacy) { then(); return; }
+    var m = $("privacy"); m.hidden = false;
+    $("privacy-ok").onclick = function () { S.privacy = true; save(); m.hidden = true; then(); };
+  }
+  function pick(id) { var s = $("cor-board"); if (s) { s.value = id; s.onchange(); } }
+  if (cor) {
+    cor.innerHTML = "";
+    var sel = el("select", "pick"); sel.id = "cor-board"; sel.setAttribute("aria-label", "Board or exam");
+    sel.appendChild(new Option("Choose a board or exam", ""));
+    D.boards.forEach(function (b) { sel.appendChild(new Option(b.name + " (" + b.region + ")", b.id)); });
+    var info = el("div", "cor-info"), drop = el("label", "drop"), file = el("input"), out = el("div", "cor-out");
+    file.type = "file"; file.accept = ".pdf,.html,.htm,.txt"; drop.appendChild(el("span", "", "Drop the syllabus file here, or choose it")); drop.appendChild(file);
+    cor.appendChild(sel); cor.appendChild(info); cor.appendChild(drop); cor.appendChild(out);
+    sel.onchange = function () {
+      var b = D.boards.filter(function (x) { return x.id === sel.value; })[0]; info.innerHTML = ""; if (!b) return;
+      var a = el("a", "tog", "Open the official syllabus"); a.href = b.url; a.target = "_blank"; a.rel = "noopener";
+      var rd = el("button", "tog", "Read it here"); rd.type = "button";
+      rd.onclick = function () { privacy(function () { fetchDoc(b.url); }); };
+      info.appendChild(a); info.appendChild(rd);
+      info.appendChild(el("p", "meta", b.body + ". " + b.provenance + "."));
+    };
+    drop.addEventListener("dragover", function (e) { e.preventDefault(); drop.classList.add("over"); });
+    drop.addEventListener("dragleave", function () { drop.classList.remove("over"); });
+    drop.addEventListener("drop", function (e) { e.preventDefault(); drop.classList.remove("over"); if (e.dataTransfer.files[0]) privacy(function () { readFile(e.dataTransfer.files[0]); }); });
+    file.onchange = function () { if (file.files[0]) privacy(function () { readFile(file.files[0]); }); };
+    function say(t) { out.innerHTML = ""; out.appendChild(el("p", "meta", t)); }
+    function fetchDoc(url) {
+      say("Reading " + url + " ...");
+      fetch(url, { mode: "cors" }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.arrayBuffer().then(function (buf) { return { buf: buf, type: r.headers.get("content-type") || "" }; }); })
+        .then(function (x) { return x.type.indexOf("pdf") >= 0 ? pdfText(x.buf) : new TextDecoder().decode(x.buf).replace(/<[^>]+>/g, " "); })
+        .then(match)
+        .catch(function () { say("This publisher does not let other sites read its pages, which protects its own copy. Open the official syllabus, save it, and drop the file above; it will be read here, on your device."); });
+    }
+    function readFile(f) {
+      say("Reading " + f.name + " on your device ...");
+      f.arrayBuffer().then(function (buf) { return /\.pdf$/i.test(f.name) ? pdfText(buf) : new TextDecoder().decode(buf).replace(/<[^>]+>/g, " "); }).then(match)
+        .catch(function (e) { say("The file could not be read: " + e); });
+    }
+    function pdfText(buf) {
+      return loadPdfJs().then(function (lib) {
+        return lib.getDocument({ data: buf }).promise.then(function (doc) {
+          var pages = []; for (var i = 1; i <= doc.numPages; i++) pages.push(doc.getPage(i).then(function (p) { return p.getTextContent(); }).then(function (tc) { return tc.items.map(function (x) { return x.str; }).join(" "); }));
+          return Promise.all(pages).then(function (t) { return t.join("\n"); });
+        });
+      });
+    }
+    var pdfjs = null;
+    function loadPdfJs() {
+      if (pdfjs) return Promise.resolve(pdfjs);
+      return new Promise(function (ok, no) {
+        var sc = document.createElement("script"); sc.src = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js";
+        sc.onload = function () { pdfjs = window.pdfjsLib; pdfjs.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js"; ok(pdfjs); };
+        sc.onerror = function () { no(new Error("the PDF reader could not be loaded")); }; document.head.appendChild(sc);
+      });
+    }
+    function match(text) {
+      var lines = text.split(/\n|(?<=[.;:])\s+/).map(function (l) { return l.trim(); }).filter(function (l) { return l.length > 3; });
+      out.innerHTML = ""; var hits = 0;
+      D.rules.forEach(function (r) {
+        var re = new RegExp(r.pattern, "i"), found = lines.filter(function (l) { return re.test(l); });
+        if (!found.length) return; hits++;
+        var card = el("div", "cor-hit"), h = el("a", "", r.label + " (" + found.length + ")"); h.href = "#" + r.target;
+        card.appendChild(h); var ul = el("ul");
+        found.slice(0, 3).forEach(function (l) { ul.appendChild(el("li", "", l.slice(0, 160))); }); card.appendChild(ul); out.appendChild(card);
+      });
+      out.insertBefore(el("p", "meta", hits ? hits + " topics of this syllabus are taught in this guide. The lines shown are from your own copy and stay on your device." : "No topic of this guide was found in this document."), out.firstChild);
+    }
+  }
   var bar = document.querySelector(".progress span");
   function prog() { var e = document.documentElement, p = e.scrollTop / ((e.scrollHeight - e.clientHeight) || 1); if (bar) bar.style.width = (100 * p).toFixed(1) + "%"; }
   addEventListener("scroll", prog, { passive: true }); prog();
+  var q = $("toc-search");
+  if (q) q.oninput = function () { var v = q.value.toLowerCase(); document.querySelectorAll(".toc-side .toc li").forEach(function (li) { li.style.display = !v || li.textContent.toLowerCase().indexOf(v) >= 0 ? "" : "none"; }); };
   var svg = document.querySelector(".graph-svg");
   if (svg && svg.getAttribute("viewBox")) {
     var vb0 = svg.getAttribute("viewBox").split(/[ ,]+/).map(Number), vb = vb0.slice();
     var setvb = function () { svg.setAttribute("viewBox", vb.join(" ")); };
     var zoom = function (f) { var cx = vb[0] + vb[2] / 2, cy = vb[1] + vb[3] / 2; vb[2] *= f; vb[3] *= f; vb[0] = cx - vb[2] / 2; vb[1] = cy - vb[3] / 2; setvb(); };
-    document.querySelectorAll(".graph-ctrl button").forEach(function (b) {
-      b.onclick = function () { var z = b.dataset.z; if (z === "in") zoom(0.8); else if (z === "out") zoom(1.25); else { vb = vb0.slice(); setvb(); } };
-    });
+    document.querySelectorAll(".graph-ctrl button").forEach(function (b) { b.onclick = function () { var z = b.dataset.z; if (z === "in") zoom(0.8); else if (z === "out") zoom(1.25); else { vb = vb0.slice(); setvb(); } }; });
     var drag = null;
     svg.addEventListener("pointerdown", function (e) { if (e.target.closest("a")) return; drag = { x: e.clientX, y: e.clientY, v: vb.slice() }; svg.setPointerCapture(e.pointerId); });
-    svg.addEventListener("pointermove", function (e) {
-      if (!drag) return; var r = svg.getBoundingClientRect();
-      vb[0] = drag.v[0] - (e.clientX - drag.x) * vb[2] / r.width; vb[1] = drag.v[1] - (e.clientY - drag.y) * vb[3] / r.height; setvb();
-    });
+    svg.addEventListener("pointermove", function (e) { if (!drag) return; var r = svg.getBoundingClientRect(); vb[0] = drag.v[0] - (e.clientX - drag.x) * vb[2] / r.width; vb[1] = drag.v[1] - (e.clientY - drag.y) * vb[3] / r.height; setvb(); });
     svg.addEventListener("pointerup", function () { drag = null; });
   }
 })();

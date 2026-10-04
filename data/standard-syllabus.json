@@ -1,0 +1,290 @@
+{
+ "status": "draft for the author's review",
+ "modules": [
+  {
+   "id": "F1",
+   "level": "Foundation, classes 6 to 8",
+   "title": "Numbers inside the machine",
+   "hours": 6,
+   "outcomes": [
+    "Count in binary and convert to decimal",
+    "Explain why a computer needs only two symbols"
+   ],
+   "chapters": [
+    "ch-09"
+   ],
+   "labs": []
+  },
+  {
+   "id": "F2",
+   "level": "Foundation, classes 6 to 8",
+   "title": "Letters, scripts and your language",
+   "hours": 6,
+   "outcomes": [
+    "Show that every letter is stored as a number",
+    "Write a word in two scripts and say what stays the same"
+   ],
+   "chapters": [
+    "ch-10",
+    "ch-11"
+   ],
+   "labs": []
+  },
+  {
+   "id": "F3",
+   "level": "Foundation, classes 6 to 8",
+   "title": "The sky and the calendar",
+   "hours": 4,
+   "outcomes": [
+    "Read sunrise, moonrise and the tithi for a day",
+    "Explain why calendars differ"
+   ],
+   "chapters": [
+    "ch-families"
+   ],
+   "labs": [
+    "chakra",
+    "jyotish"
+   ]
+  },
+  {
+   "id": "F4",
+   "level": "Foundation, classes 6 to 8",
+   "title": "Making with a cycler, safely",
+   "hours": 4,
+   "outcomes": [
+    "Make a short story or picture with a cycler",
+    "Say what you checked before keeping the result"
+   ],
+   "chapters": [
+    "ch-16"
+   ],
+   "labs": [
+    "genie"
+   ]
+  },
+  {
+   "id": "S1",
+   "level": "Secondary, classes 9 and 10",
+   "title": "Binary, logic and circuits",
+   "hours": 10,
+   "outcomes": [
+    "Build truth tables for basic gates",
+    "Relate a gate to transistors"
+   ],
+   "chapters": [
+    "ch-09",
+    "ch-14"
+   ],
+   "labs": []
+  },
+  {
+   "id": "S2",
+   "level": "Secondary, classes 9 and 10",
+   "title": "Encoding and reversible transliteration",
+   "hours": 8,
+   "outcomes": [
+    "Explain UTF-8",
+    "Run a Romenagri round trip and judge whether it is exact"
+   ],
+   "chapters": [
+    "ch-10",
+    "ch-11"
+   ],
+   "labs": [
+    "hindawi"
+   ]
+  },
+  {
+   "id": "S3",
+   "level": "Secondary, classes 9 and 10",
+   "title": "Programming in your own language",
+   "hours": 10,
+   "outcomes": [
+    "Compile and run a Hindi program",
+    "Find the same names in the debugger"
+   ],
+   "chapters": [
+    "ch-13"
+   ],
+   "labs": [
+    "hindawi",
+    "urdu"
+   ]
+  },
+  {
+   "id": "S4",
+   "level": "Secondary, classes 9 and 10",
+   "title": "Using AI and checking it",
+   "hours": 6,
+   "outcomes": [
+    "Use any AI on a task and record each step",
+    "Tell an AI's claim from a verified result"
+   ],
+   "chapters": [
+    "ch-16",
+    "ch-onto"
+   ],
+   "labs": [
+    "alam"
+   ]
+  },
+  {
+   "id": "H1",
+   "level": "Senior secondary, classes 11 and 12",
+   "title": "Grammar as a formal system",
+   "hours": 10,
+   "outcomes": [
+    "Write a regular expression and a small grammar",
+    "Read a Pāṇinian rule as a rewrite rule"
+   ],
+   "chapters": [
+    "ch-12",
+    "ch-13"
+   ],
+   "labs": [
+    "tajziya"
+   ]
+  },
+  {
+   "id": "H2",
+   "level": "Senior secondary, classes 11 and 12",
+   "title": "From source code to machine",
+   "hours": 12,
+   "outcomes": [
+    "Trace a program from source through compiler, assembler and linker",
+    "Read symbols in an ELF file"
+   ],
+   "chapters": [
+    "ch-13",
+    "ch-14"
+   ],
+   "labs": [
+    "hindawi"
+   ]
+  },
+  {
+   "id": "H3",
+   "level": "Senior secondary, classes 11 and 12",
+   "title": "Open source, provenance and contributing",
+   "hours": 6,
+   "outcomes": [
+    "Make a commit, open a pull request and pass a gate",
+    "Explain a hash, a manifest and a DOI"
+   ],
+   "chapters": [
+    "ch-17"
+   ],
+   "labs": [
+    "rahnuma"
+   ]
+  },
+  {
+   "id": "H4",
+   "level": "Senior secondary, classes 11 and 12",
+   "title": "A project seeded from FAKIR",
+   "hours": 15,
+   "outcomes": [
+    "Choose a domain, a language and a layer and state a gate",
+    "Deliver the work with its evidence"
+   ],
+   "chapters": [
+    "ch-roadmap"
+   ],
+   "labs": [
+    "fakir"
+   ]
+  },
+  {
+   "id": "U1",
+   "level": "Undergraduate and GATE",
+   "title": "Theory of computation and compilers",
+   "hours": 30,
+   "outcomes": [
+    "Automata, grammars and parsing",
+    "Build and debug a compiler pipeline"
+   ],
+   "chapters": [
+    "ch-12",
+    "ch-13",
+    "ch-18"
+   ],
+   "labs": [
+    "hindawi",
+    "panini_by_claude"
+   ]
+  },
+  {
+   "id": "U2",
+   "level": "Undergraduate and GATE",
+   "title": "Digital logic and architecture",
+   "hours": 30,
+   "outcomes": [
+    "From gates to a processor",
+    "Ternary logic and its trade-offs"
+   ],
+   "chapters": [
+    "ch-14",
+    "ch-18"
+   ],
+   "labs": [
+    "pratik",
+    "zamin"
+   ]
+  },
+  {
+   "id": "U3",
+   "level": "Undergraduate and GATE",
+   "title": "Quantum and physical computing",
+   "hours": 20,
+   "outcomes": [
+    "Qubits, gates and QAOA",
+    "Oscillator networks and Ising problems"
+   ],
+   "chapters": [
+    "ch-15"
+   ],
+   "labs": [
+    "paniniq"
+   ]
+  },
+  {
+   "id": "P1",
+   "level": "Postgraduate and research",
+   "title": "Research on the open questions",
+   "hours": 60,
+   "outcomes": [
+    "Choose an open question from Appendix C or D",
+    "Publish a measured, reproducible result"
+   ],
+   "chapters": [
+    "app-hum",
+    "app-stem",
+    "app-math"
+   ],
+   "labs": [
+    "paniniq",
+    "tajziya"
+   ]
+  },
+  {
+   "id": "Q1",
+   "level": "Professional",
+   "title": "Adopting a component",
+   "hours": 12,
+   "outcomes": [
+    "Run a component's gate",
+    "Integrate it with its contract and provenance intact"
+   ],
+   "chapters": [
+    "ch-run",
+    "ch-17",
+    "app-prac"
+   ],
+   "labs": [
+    "dhancha",
+    "humanesque"
+   ]
+  }
+ ]
+}

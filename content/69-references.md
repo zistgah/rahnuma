@@ -1,5 +1,5 @@
 <!-- © 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI. -->
-## G. References {#app-refs}
+## H. References {#app-refs}
 
 - Aho, A. V., Lam, M. S., Sethi, R. and Ullman, J. D. (2006). *Compilers: Principles, Techniques, and Tools*, 2nd edition. Addison-Wesley.
 - Bureau of Indian Standards (1991). IS 13194:1991, Indian Script Code for Information Interchange (ISCII).

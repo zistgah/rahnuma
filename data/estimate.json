@@ -1,0 +1,44 @@
+{
+ "scope": "38 repositories cloned for Rahnuma, about a fifth of the estate, most without their full history",
+ "unique_sloc": 243719,
+ "duplicate_sloc": 341227,
+ "words": 368689,
+ "functions": 9288,
+ "over_10": 546,
+ "over_20": 191,
+ "pm": {
+  "low": 701,
+  "likely": 1239,
+  "high": 2279
+ },
+ "tdev": {
+  "low": 27.1,
+  "likely": 35.3,
+  "high": 47.3
+ },
+ "cost_india_crore": {
+  "low": 12.9,
+  "likely": 41.0,
+  "high": 130.7
+ },
+ "cost_us_million": {
+  "low": 7.5,
+  "likely": 18.6,
+  "high": 49.9
+ },
+ "ai_usd": {
+  "low": 140,
+  "likely": 578,
+  "high": 5861
+ },
+ "ai_pm": {
+  "low": 554,
+  "likely": 944,
+  "high": 1498
+ },
+ "ai_ratio": {
+  "low": 0.44,
+  "likely": 0.75,
+  "high": 1.19
+ }
+}

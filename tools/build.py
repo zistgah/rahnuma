@@ -168,7 +168,93 @@ def roadmap_block():
             "", f"$$ |S| = |D| \\times |L| \\times |\\Lambda| = {ss['nodes']:,} \\times {ss['layers']} \\times {ss['languages']:,} = {ss['points']:,}. $$".replace(",", "{,}")]
     return "\n".join(out)
 
-DIRECTIVE = re.compile(r"<!--\s*(run|capture|include|log|estate|records|counts|md|components|figure|roadmap)\s*(?::\s*(.*?))?\s*-->")
+APPX = {"app-a": "A", "app-read": "B", "app-hum": "C", "app-stem": "D", "app-prac": "E", "app-math": "F", "app-review": "G", "app-refs": "H"}
+
+def ref(cid):
+    return f"Appendix {APPX[cid]}" if cid in APPX else f"Chapter [[{cid}]]"
+
+def jload(name):
+    return json.loads((DATA / name).read_text(encoding="utf-8"))
+
+def editions_block():
+    P = jload("personas.json")
+    rows = ["| Edition | PDF |", "|:--|:--|"]
+    for e in P["editions"]:
+        rows.append(f"| {e['title'].split(': ', 1)[1]} | [{e['id']}.pdf](editions/{e['id']}.pdf) |")
+    return "\n".join(rows)
+
+def syllabi_block():
+    S = jload("syllabi.json")
+    rows = ["| Board or exam | Body | Levels | Region | Official page |", "|:--|:--|:--|:--|:--|"]
+    for b in S["boards"]:
+        host = b["url"].split("//")[1].split("/")[0]
+        rows.append(f"| {b['name']} | {b['body']} | {b['levels']} | {b['region']} | [{host}]({b['url']}) |")
+    return "\n".join(rows) + "\n\nThe GATE papers' addresses were retrieved for this guide on 29 September 2026; the other addresses are the publishers' own sites, where the current syllabus is published. Each carries its review mark in the register."
+
+def standard_block():
+    S = jload("standard-syllabus.json")
+    out, level = [], None
+    for m in S["modules"]:
+        if m["level"] != level:
+            level = m["level"]
+            out += ["", f"#### {level}", "", "| Module | Title | Hours | Outcomes | In this guide | Laboratory |", "|:--|:--|--:|:--|:--|:--|"]
+        labs = ", ".join(f"[{x}](#c-{x})" for x in m["labs"]) or ""
+        out.append(f"| {m['id']} | {m['title']} | {m['hours']} | {'; '.join(m['outcomes'])} | {', '.join(ref(c) for c in m['chapters'])} | {labs} |")
+    return "\n".join(out)
+
+def projections_block():
+    P = jload("projections.json")
+    out = ["| Stem, in Humanesque | Zistgah | Kaivalyik, proposed | Cosmopolis, proposed | Datong, proposed | Vaka, proposed |", "|:--|:--|:--|:--|:--|:--|"]
+    for r in P["stems"]:
+        out.append(f"| {r['stem']} | {r['zistgah']} | {r['kaivalyik']} | {r['cosmopolis']} | {r['datong']} | {r['vaka']} |")
+    out += ["", "The two proposed projections:", ""]
+    for pj in P["projections"]:
+        if pj["status"] == "proposed":
+            out.append(f"- **{pj['name']}**, for the {pj['culture']} world: {pj['meaning']}. Alternatives: {pj['alternatives']}. Care: {pj['care']}.")
+    return "\n".join(out)
+
+def estimate_block():
+    E = jload("estimate.json")
+    f = lambda d, k: f"{d[k]:,}"
+    return "\n".join([f"Demonstration on {E['scope']}:", "",
+        "| Measure | Value |", "|:--|--:|",
+        f"| Unique source lines, each file counted once | {E['unique_sloc']:,} |",
+        f"| Lines repeated across repositories, counted once | {E['duplicate_sloc']:,} |",
+        f"| Words of prose | {E['words']:,} |",
+        f"| Functions measured; above complexity 10; above 20 | {E['functions']:,}; {E['over_10']:,}; {E['over_20']:,} |", "",
+        "| Case | Effort, person-months | Schedule, months | Cost, India | Cost, United States |", "|:--|--:|--:|--:|--:|"] +
+        [f"| {k} | {E['pm'][k]:,} | {E['tdev'][k]} | ₹{E['cost_india_crore'][k]} crore | ${E['cost_us_million'][k]} million |" for k in ("low", "likely", "high")] +
+        ["", "| AI in the process | Time ratio | Human effort, person-months | AI usage |", "|:--|--:|--:|--:|"] +
+        [f"| {k} | {E['ai_ratio'][k]} | {E['ai_pm'][k]:,} | ${E['ai_usd'][k]:,} |" for k in ("low", "likely", "high")] +
+        ["", "The AI usage costs a few hundred to a few thousand dollars at list prices; the outcome turns on the time ratio, which the trials put between 0.44 and 1.19."])
+
+def review_objects():
+    objs = []
+    for p in sorted(CONTENT.glob("*.md")):
+        for m in re.finditer(r"(?m)^## (.+?) \{#([\w-]+)\}", p.read_text(encoding="utf-8")):
+            objs.append((m.group(2), "chapter", re.sub(r"^[A-H]\. ", "", m.group(1))))
+    objs += [("fig-" + k, "figure", v["caption"]) for k, v in jload("diagrams.json").items()] + [("dependency-graph", "figure", "The dependency graph")]
+    objs += [("c-" + c["id"], "component card", c["name"]) for g in jload("components.json")["groups"] for c in g["items"]]
+    objs += [("mod-" + m["id"], "syllabus module", m["title"]) for m in jload("standard-syllabus.json")["modules"]]
+    objs += [("board-" + b["id"], "syllabus link", b["name"]) for b in jload("syllabi.json")["boards"]]
+    objs += [("ed-" + e["id"], "edition", e["title"]) for e in jload("personas.json")["editions"]]
+    P = jload("projections.json")
+    for r in P["stems"]:
+        for pj in ("kaivalyik", "cosmopolis", "datong", "vaka"):
+            objs.append((f"name-{pj}-{re.sub(r'[^a-z]+', '-', r['stem'].lower()).strip('-')}", "proposed name", f"{r['stem']}: {r[pj]}"))
+    return objs
+
+def review_block():
+    R = jload("review.json")["reviewed"]
+    rows = ["| Object | Kind | Mark |", "|:--|:--|:--|"]
+    for oid, kind, title in review_objects():
+        r = R.get(oid)
+        mark = f"reviewed {r['date']}" + (f", {r['note']}" if r.get("note") else "") if r else "not yet reviewed"
+        rows.append(f"| `{oid}` {title} | {kind} | {mark} |")
+    done = sum(1 for o in review_objects() if o[0] in R)
+    return f"{done} of {len(review_objects())} objects reviewed by the author.\n\n" + "\n".join(rows)
+
+DIRECTIVE = re.compile(r"<!--\s*(run|capture|include|log|estate|records|counts|md|components|figure|roadmap|editions|syllabi|standard-syllabus|projections|estimate|review)\s*(?::\s*(.*?))?\s*-->")
 
 def expand(md):
     def rep(m):
@@ -196,6 +282,18 @@ def expand(md):
             return figure_block(arg)
         if kind == "roadmap":
             return roadmap_block()
+        if kind == "editions":
+            return editions_block()
+        if kind == "syllabi":
+            return syllabi_block()
+        if kind == "standard-syllabus":
+            return standard_block()
+        if kind == "projections":
+            return projections_block()
+        if kind == "estimate":
+            return estimate_block()
+        if kind == "review":
+            return review_block()
         return m.group(0)
     return DIRECTIVE.sub(rep, md)
 
@@ -318,7 +416,11 @@ def hero():
 {''.join(rows)}</div>
 <figcaption>One identity, many scripts. Telugu and Bengali meet Devanagari in one hub, become the same Romenagri word, and come back exactly. Urdu meets the hub at what is written: without its short-vowel marks the word reads hanadawee; with zer and sukun it is hindawi. Every cell here was produced by the Hindawi tools while this guide was built.</figcaption></figure>
 <p class="byline">Abhishek Choudhary, AyeAI. Version {META['version']}, {REL['date_text']}.</p>
+<p class="edition-line"></p>
+<p class="v1-link"><a href="v1/index.html">Version 1, the edition for advanced readers, stays as it was</a></p>
 </div>"""
+
+REVIEWED = {}
 
 def wrap_chapters(body):
     """Each chapter becomes a section the reader views can show, fold or mark; returns the chapter list too."""
@@ -337,10 +439,12 @@ def wrap_chapters(body):
         plain_html = pm.group(1) if pm else ""
         rest = rest[pm.end():] if pm else rest
         chapters.append({"id": cid, "title": title, "mins": mins})
+        rv = REVIEWED.get(cid)
+        mark = (f'<span class="rv rv-yes">reviewed {rv["date"]}</span>' if rv else '<span class="rv rv-no">not yet reviewed</span>')
         out.append(f'<section class="chapter" id="sec-{cid}" data-ch="{cid}" data-mins="{mins}">{head}'
-                   f'<p class="ch-meta"><span class="mins">{mins} min read</span></p>{plain_html}'
-                   f'<div class="chapter-body">{rest}</div></section>')
-    return "".join(out), chapters
+                   f'<p class="ch-meta"><span class="mins">{mins} min read</span>{mark}</p>{plain_html}'
+                   f'<div class="chapter-body">{rest}</div></section><!--/SEC-->')
+    return "".join(out).replace("<h1 id=", "<!--PART--><h1 id=") + "<!--ENDPARTS-->", chapters
 
 def inline_graph(body):
     svg = (DOCS / "dependency-graph.svg").read_text(encoding="utf-8")
@@ -371,12 +475,40 @@ def norm(s):
     s = unicodedata.normalize("NFKD", s)
     return re.sub(r"[^a-z0-9]", "", "".join(c for c in s if not unicodedata.combining(c)).lower())
 
-def pdf(items):
+def toc_print_html(items):
+    out = ['<ol class="toc">']
+    for p in items:
+        out.append(f'<li class="toc-part"><a href="#{p["id"]}">{html.escape(p["text"])}</a><span class="pg" data-id="{p["id"]}"></span><ol>')
+        for c in p["children"]:
+            out.append(f'<li><a href="#{c["id"]}">{html.escape(c["text"])}</a><span class="pg" data-id="{c["id"]}"></span></li>')
+        out.append("</ol></li>")
+    out.append("</ol>")
+    return "\n".join(out)
+
+def edition_page(full, items, keep):
+    pre, rest = full.split("<!--PART-->", 1)
+    body, post = rest.split("<!--ENDPARTS-->", 1)
+    sec = re.compile(r'<section class="chapter" id="sec-([^"]+)".*?</section><!--/SEC-->', re.S)
+    head = sec.sub(lambda m: m.group(0) if m.group(1) in keep else "", pre)
+    chunks = []
+    for chunk in body.split("<!--PART-->"):
+        c = sec.sub(lambda m: m.group(0) if m.group(1) in keep else "", chunk)
+        if '<section class="chapter"' in c:
+            chunks.append("<!--PART-->" + c)
+    ed_items = [dict(p, children=[c for c in p["children"] if c["id"] in keep]) for p in items]
+    ed_items = [p for p in ed_items if p["children"]]
+    page = head + "".join(chunks) + "<!--ENDPARTS-->" + post
+    i = page.index('class="toc-print"')
+    a = page.index('<ol class="toc">', i)
+    b = page.rindex("</ol>", i, page.index("</section>", a)) + len("</ol>")
+    return page[:a] + toc_print_html(ed_items) + page[b:], ed_items
+
+def pdf(items, page=None, out=None, subtitle=None):
     from playwright.sync_api import sync_playwright
     from pypdf import PdfReader, PdfWriter
     work = ROOT / ".build"
     work.mkdir(exist_ok=True)
-    uri = (DOCS / "index.html").resolve().as_uri()
+    uri = (page or (DOCS / "index.html")).resolve().as_uri()
     footer = ('<div style="width:100%;font-family:\'Noto Serif\',serif;font-size:7.5pt;color:#5a6078;'
               'padding:0 16mm;display:flex;justify-content:space-between"><span>Rahnuma ' + META["version"] +
               '</span><span class="pageNumber"></span></div>')
@@ -388,6 +520,8 @@ def pdf(items):
         pg.wait_for_load_state("networkidle")
         pg.evaluate("document.fonts.ready")
         pg.emulate_media(media="print")
+        if subtitle:
+            pg.evaluate("t => { const e = document.querySelector('.edition-line'); if (e) e.textContent = t; }", subtitle)
         pg.evaluate("document.body.classList.add('print-cover')")
         pg.pdf(path=str(work / "cover.pdf"), format="A4", print_background=True, margin={"top": "0", "bottom": "0", "left": "0", "right": "0"})
         pg.evaluate("document.body.classList.remove('print-cover'); document.body.classList.add('print-body')")
@@ -419,14 +553,51 @@ def pdf(items):
     w = PdfWriter()
     w.append(str(work / "cover.pdf"))
     w.append(str(work / "body.pdf"), import_outline=True)
-    w.add_metadata({"/Title": META["title"], "/Author": "Abhishek Choudhary, AyeAI", "/Subject": "Version " + META["version"],
+    w.add_metadata({"/Title": subtitle or META["title"], "/Author": "Abhishek Choudhary, AyeAI", "/Subject": "Version " + META["version"],
                     "/Keywords": ", ".join(META["keywords"]), "/Creator": "tools/build.py (Chromium, MathJax, pandoc)"})
-    out = DOCS / "rahnuma.pdf"
+    out = out or (DOCS / "rahnuma.pdf")
     with open(out, "wb") as f:
         w.write(f)
     n = len(PdfReader(str(out)).pages)
     shutil.rmtree(work)
     return n
+
+def write_deposits(P):
+    """Descriptors for the deposits beside the guide's own record: one record per document family, each a
+    supplement to the guide. The seeder mints them under one typed gate; nothing here contacts a registrar."""
+    base = json.loads((ROOT / "misty.json").read_text(encoding="utf-8"))
+    rel = [{"identifier": "10.5281/zenodo.23062059", "relation": "isSupplementTo", "resource_type": "publication-book"}]
+    common = {k: base[k] for k in ("creators", "access_right", "language")}
+    v = META["version"]
+    D = {
+     "editions": ("Rahnuma reader editions: the guide for each kind of reader and each field of study", "publication",
+                  "CC-BY-SA-4.0", f"Twenty-one PDF editions of Rahnuma {v}, each a printed selection of the one guide: one for each kind of reader, from school students to industry partners, and one for each broad field of study in ISCED-F 2013.",
+                  [f"docs/editions/{e['id']}.pdf" for e in P["editions"]]),
+     "syllabus": ("Rahnuma syllabus links and a standard syllabus, draft", "dataset", "CC-BY-SA-4.0",
+                  "Links to the official syllabi of CBSE, CISCE (ICSE and ISC), Cambridge IGCSE and A Level, the IB, GATE, Indian state boards and boards abroad, with the guide's own correlation keywords, matched on the reader's device, and a standard syllabus built from the guide, level by level, as a draft for review. No syllabus text is stored.",
+                  ["data/syllabi.json", "data/correlation.json", "data/standard-syllabus.json"]),
+     "estimate": ("Model-based size, complexity and cost estimate of the estate, with an AI-assisted scenario", "software", "GPL-3.0-or-later",
+                  "Scripts that measure every repository of the estate once, apply COCOMO II.2000, and price the effort with published salary data and an AI-assisted scenario bounded by two controlled trials; with the demonstration report on 38 repositories.",
+                  ["estimate/estimate.sh", "estimate/estimator.py", "estimate/rates.json", "estimate/model.json", "estimate/demonstration-report.md"]),
+     "roadmap": ("The estate's roadmap: phases, collaborator lanes and domain lanes", "dataset", "CC-BY-SA-4.0",
+                 "The plan for completing the estate's releases and opening it to collaborators, as data: phases, epics and issues, with a lane for every kind of collaborator and for each of the 42 domain families of ISIC, ISCO and ISCED.",
+                 ["data/roadmap.json", "data/personas.json"]),
+    }
+    root = ROOT / "deposits"
+    if root.exists():
+        shutil.rmtree(root)
+    for name, (title, kind, lic, desc, files) in D.items():
+        for f in files:
+            if not (ROOT / f).is_file():
+                die(f"deposit {name} names a file that does not exist: {f}")
+        d = root / name
+        d.mkdir(parents=True)
+        meta = dict(common, title=title, version=v, upload_type=kind, license=lic, description=desc,
+                    keywords=["Rahnuma", "AyeAI", "Zistgah"] + name.split(), related_identifiers=rel)
+        if kind == "publication":
+            meta["publication_type"] = "book"
+        (d / "misty.json").write_text(json.dumps(meta, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
+        (d / "files.txt").write_text("\n".join(files) + "\n", encoding="utf-8")
 
 # ------------------------------------------------------------------ main
 def main():
@@ -448,10 +619,14 @@ def main():
     (DOCS / "rahnuma.md").write_text(full_md, encoding="utf-8")
     body = wrap_tables(pandoc(body_md))
     toc_side, toc_print, items = build_toc(body)
+    REVIEWED.update(jload("review.json")["reviewed"])
     body, chapter_list = wrap_chapters(inline_graph(body))
     comps = json.loads((DATA / "components.json").read_text(encoding="utf-8"))
+    P = jload("personas.json")
     view_data = dict(json.loads((DATA / "audiences.json").read_text(encoding="utf-8")), chapters=chapter_list,
-                     components={c["id"]: {"name": c["name"], "aud": c["aud"]} for g in comps["groups"] for c in g["items"]})
+                     components={c["id"]: {"name": c["name"], "aud": c["aud"]} for g in comps["groups"] for c in g["items"]},
+                     roles=P["roles"], fields=P["fields"], goals=P["goals"], editions=[{"id": e["id"], "title": e["title"]} for e in P["editions"]],
+                     boards=jload("syllabi.json")["boards"], rules=jload("correlation.json")["rules"])
     data_json = json.dumps(view_data, ensure_ascii=False).replace("</", "<\\/")
     tpl = (TOOLS / "template.html").read_text(encoding="utf-8")
     style = (TOOLS / "style.css").read_text(encoding="utf-8")
@@ -484,6 +659,7 @@ def main():
         llms += [f"  - [{c['text']}](index.html#{c['id']})" for c in p_["children"]]
     (DOCS / "llms.txt").write_text("\n".join(llms) + "\n", encoding="utf-8")
     pages = None
+    editions = {}
     if make_pdf:
         for attempt in (1, 2):   # headless Chromium occasionally stalls on start; one retry, then fail loudly
             try:
@@ -493,6 +669,26 @@ def main():
                 if attempt == 2:
                     die(f"the PDF could not be printed: {e}")
                 print(f"build: the PDF step stalled ({type(e).__name__}); retrying once", file=sys.stderr)
+        ed_dir = DOCS / "editions"
+        if ed_dir.exists():
+            shutil.rmtree(ed_dir)
+        ed_dir.mkdir()
+        full = (DOCS / "index.html").read_text(encoding="utf-8")
+        known = {c["id"] for c in chapter_list}
+        for e in P["editions"]:
+            keep = [c for c in e["path"] if c in known]
+            missing = [c for c in e["path"] if c not in known]
+            if missing:
+                die(f"edition {e['id']} names chapters that do not exist: {missing}")
+            page_html, ed_items = edition_page(full, items, set(keep))
+            tmp = DOCS / f".edition-{e['id']}.html"
+            tmp.write_text(page_html, encoding="utf-8")
+            n = pdf(ed_items, page=tmp, out=ed_dir / f"{e['id']}.pdf", subtitle=e["title"])
+            tmp.unlink()
+            editions[f"docs/editions/{e['id']}.pdf"] = sha((ed_dir / f"{e['id']}.pdf").read_bytes())
+            print(f"build: edition {e['id']}: {n} pages", file=sys.stderr)
+    if make_pdf:
+        write_deposits(P)
     inputs = {}
     for pat in ("content/*.md", "examples/*", "data/*.json", "data/*.csv", "data/*.md", "data/logs/*", "tools/*.py", "tools/*.mjs",
                 "tools/*.html", "tools/*.css", "tools/package.json", "misty.json"):
@@ -511,6 +707,7 @@ def main():
              "inputs": inputs, "runs": RUNS, "captures": CAPTURES,
              "outputs": {"docs/index.html": sha((DOCS / "index.html").read_bytes()), "docs/rahnuma.md": sha(full_md),
                          "docs/rahnuma.pdf": sha((DOCS / "rahnuma.pdf").read_bytes()) if (DOCS / "rahnuma.pdf").exists() else None,
+                         "editions": editions,
                          "pdf_pages": pages if pages is not None else json.loads((DOCS / "BUILD.json").read_text()).get("outputs", {}).get("pdf_pages") if (DOCS / "BUILD.json").exists() else None},
              "tools": {"python": sys.version.split()[0], "pandoc": ver("pandoc --version"), "node": ver("node --version"),
                        "gcc": ver("gcc --version"), "mathjax-full": json.loads((TOOLS / "node_modules" / "mathjax-full" / "package.json").read_text())["version"]}}

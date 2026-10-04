@@ -32,5 +32,10 @@
  "app-prac": "A guide for teachers, policy makers, community workers, artists and engineers: where to start and how to take part.",
  "app-refs": "The books and papers this guide draws on.",
  "ch-roadmap": "The plan to finish the releases and open the work to everyone: what happens when, which lane each kind of person can join, and every field of work, from farming to medicine to software.",
- "app-math": "The same ideas written as mathematics, for readers who want the formal version."
+ "app-math": "The same ideas written as mathematics, for readers who want the formal version.",
+ "ch-start": "Four steps to find your part of the guide: who you are, your board or field, what you want to do, and your path with a PDF made for you.",
+ "ch-syllabus": "Links from your school or exam syllabus to the chapters that teach the same ideas, worked out on your own device, and a draft syllabus of our own.",
+ "ch-projections": "The names each culture gives the shared parts, with new names proposed for review, and the steps for raising a part into the common core.",
+ "ch-estimate": "A measured estimate of how much work the estate holds and what it would cost to rebuild, with and without AI.",
+ "app-review": "A list of every part of this guide, showing which parts the author has checked by hand."
 }

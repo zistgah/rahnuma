@@ -1,0 +1,107 @@
+{
+ "status": "Kaivalyik, Zistgah and Cosmopolis are established projections; the names below for Kaivalyik, Cosmopolis and the two new projections are proposals for the author's ruling, and the two new projections also need consultation with speakers and communities of those cultures.",
+ "projections": [
+  {
+   "id": "kaivalyik",
+   "name": "Kaivalyik",
+   "culture": "Indic, Sanskrit",
+   "status": "established"
+  },
+  {
+   "id": "zistgah",
+   "name": "Zistgah, زیستگاه",
+   "culture": "Persian and Islamicate",
+   "status": "established"
+  },
+  {
+   "id": "cosmopolis",
+   "name": "Cosmopolis",
+   "culture": "Greek, Western and classical",
+   "status": "established"
+  },
+  {
+   "id": "datong",
+   "name": "Datong, 大同 (Dàtóng, Daidō, Daedong 대동, Đại đồng)",
+   "culture": "Chinese, Japanese, Korean and Vietnamese",
+   "status": "proposed",
+   "meaning": "the Great Unity, the ideal of a shared world in the Book of Rites; one written form read in all four languages",
+   "alternatives": "和 (harmony: hé, wa, hwa 화, hòa)",
+   "care": "the term also carries political uses in modern China; consultation should weigh that"
+  },
+  {
+   "id": "vaka",
+   "name": "Vaka (vaka, waka, va'a, wa'a)",
+   "culture": "Polynesian",
+   "status": "proposed",
+   "meaning": "the voyaging canoe that carried people across the Pacific, a habitat in motion",
+   "alternatives": "Moana (ocean), Fenua or Whenua (land)",
+   "care": "Polynesian names should be confirmed with Māori, Hawaiian, Samoan, Tongan and Tahitian speakers; sacred names, such as Hawaiki, are deliberately not proposed"
+  }
+ ],
+ "stems": [
+  {
+   "stem": "The ground",
+   "zistgah": "Zamin, زمین",
+   "kaivalyik": "Bhūmi, भूमि",
+   "cosmopolis": "Gaia, Γαῖα",
+   "datong": "地 (dì, chi, ji 지, địa)",
+   "vaka": "Whenua (Māori), Honua (Hawaiian)"
+  },
+  {
+   "stem": "The water",
+   "zistgah": "AAB, آب",
+   "kaivalyik": "Jala, जल",
+   "cosmopolis": "Hydōr, ὕδωρ",
+   "datong": "水 (shuǐ, sui, su 수, thủy)",
+   "vaka": "Wai"
+  },
+  {
+   "stem": "The air",
+   "zistgah": "Fiza, فضا",
+   "kaivalyik": "Vāyu, वायु",
+   "cosmopolis": "Aēr, ἀήρ",
+   "datong": "風 (fēng, fū, pung 풍, phong)",
+   "vaka": "Hau (Māori), Makani (Hawaiian)"
+  },
+  {
+   "stem": "The sky and its calendars",
+   "zistgah": "Chakra",
+   "kaivalyik": "Jyotish, ज्योतिष (established)",
+   "cosmopolis": "Ouranos, Οὐρανός",
+   "datong": "天 (tiān, ten, cheon 천, thiên)",
+   "vaka": "Rangi (Māori), Lani (Hawaiian)"
+  },
+  {
+   "stem": "The desk",
+   "zistgah": "Mez, میز",
+   "kaivalyik": "Pīṭha, पीठ",
+   "cosmopolis": "Trapeza, τράπεζα",
+   "datong": "卓 (zhuō, taku, tak 탁, trác)",
+   "vaka": "Papa"
+  },
+  {
+   "stem": "The press",
+   "zistgah": "Matba, مطبع",
+   "kaivalyik": "Mudraṇa, मुद्रण",
+   "cosmopolis": "Typographeion, τυπογραφεῖον",
+   "datong": "印 (yìn, in, in 인, ấn)",
+   "vaka": "Tā (Māori)"
+  },
+  {
+   "stem": "The guide",
+   "zistgah": "Rahnuma, رہنما",
+   "kaivalyik": "Mārgadarśaka, मार्गदर्शक",
+   "cosmopolis": "Periēgētēs, περιηγητής",
+   "datong": "導 (dǎo, dō, do 도, đạo)",
+   "vaka": "Kaiārahi (Māori)"
+  },
+  {
+   "stem": "The record",
+   "zistgah": "Yadein, یادیں",
+   "kaivalyik": "Smṛti, स्मृति",
+   "cosmopolis": "Mnēmē, μνήμη",
+   "datong": "記 (jì, ki, gi 기, ký)",
+   "vaka": "Mahara (Māori)"
+  }
+ ]
+}

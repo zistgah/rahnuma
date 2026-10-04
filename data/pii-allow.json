@@ -1,0 +1,7 @@
+{
+ "note": "Public identifiers the author publishes on purpose; anything else that looks personal fails the gate.",
+ "allow": [
+  "0009-0002-0684-8320",
+  "obonac"
+ ]
+}

@@ -204,10 +204,59 @@ else:
             bad.append(f"differs from the build record: {p}")
     if (ROOT / "docs/rahnuma.pdf").is_file() and not (ROOT / "docs/rahnuma.pdf").read_bytes().startswith(b"%PDF"):
         bad.append("docs/rahnuma.pdf is not a PDF")
+    for p, h in (BUILD["outputs"].get("editions") or {}).items():
+        f = ROOT / p
+        if not f.is_file():
+            bad.append(f"missing edition: {p}")
+        elif sha(f.read_bytes()) != h:
+            bad.append(f"edition differs from the build record: {p}")
     for p in ("docs/llms.txt", "docs/.nojekyll"):
         if not (ROOT / p).is_file():
             bad.append(f"missing: {p}")
     report("R12", "the site, the Markdown and the PDF match docs/BUILD.json", "FAIL" if bad else "PASS", bad)
+
+# R13 no personal data beyond the published identifiers
+r = subprocess.run([sys.executable, str(ROOT / "tools/pii_scan.py")], capture_output=True, text=True)
+report("R13", "no personal data beyond the published identifiers", "PASS" if r.returncode == 0 else "FAIL",
+       [l for l in r.stdout.splitlines() if not l.startswith("pii_scan:")][:10])
+
+# R14 version 1 is frozen
+v1 = ROOT / "docs/v1"
+if not (v1 / "MANIFEST.sha256").is_file():
+    report("R14", "version 1 is frozen under docs/v1", "FAIL", ["docs/v1/MANIFEST.sha256 is missing"])
+else:
+    r = subprocess.run(["sha256sum", "--quiet", "-c", "MANIFEST.sha256"], cwd=v1, capture_output=True, text=True)
+    listed = {l.split("  ", 1)[1].lstrip("./") for l in (v1 / "MANIFEST.sha256").read_text().splitlines() if "  " in l}
+    extra = [str(p.relative_to(v1)) for p in v1.rglob("*") if p.is_file() and p.name != "MANIFEST.sha256" and str(p.relative_to(v1)) not in listed]
+    report("R14", "version 1 is frozen under docs/v1", "PASS" if r.returncode == 0 and not extra else "FAIL",
+           (r.stdout + r.stderr).splitlines()[:5] + [f"not in the manifest: {x}" for x in extra[:5]])
+
+# R15 the review register
+r = subprocess.run([sys.executable, str(ROOT / "tools/review.py"), "check"], capture_output=True, text=True, cwd=ROOT)
+report("R15", "every object is in the review register, and every mark names an object", "PASS" if r.returncode == 0 else "FAIL",
+       [l for l in r.stdout.splitlines() if not l.startswith("review:")][:10])
+
+# R16 the deposit descriptors
+bad = []
+META = json.loads((ROOT / "misty.json").read_text(encoding="utf-8"))
+deps = sorted((ROOT / "deposits").glob("*/misty.json"))
+if not deps:
+    bad.append("no deposit descriptors in deposits/")
+for m in deps:
+    try:
+        d = json.loads(m.read_text(encoding="utf-8"))
+    except Exception as e:
+        bad.append(f"{m.parent.name}: not JSON ({e})")
+        continue
+    for k in ("title", "version", "upload_type", "description", "license", "creators"):
+        if not d.get(k):
+            bad.append(f"{m.parent.name}: no {k}")
+    if d.get("version") != META.get("version"):
+        bad.append(f"{m.parent.name}: version {d.get('version')} is not the guide's {META.get('version')}")
+    for line in (m.parent / "files.txt").read_text(encoding="utf-8").split():
+        if not (ROOT / line).is_file():
+            bad.append(f"{m.parent.name}: names a missing file, {line}")
+report("R16", "every deposit descriptor is valid and every file it names exists", "FAIL" if bad else "PASS", bad)
 
 n_pass, n_fail, n_unj = results.count("PASS"), results.count("FAIL"), results.count("UNJUDGED")
 print(f"  {n_pass} passed, {n_fail} failed, {n_unj} unjudged")
