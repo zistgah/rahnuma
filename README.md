@@ -48,3 +48,11 @@ bash ops/verify.sh
 ## Licence
 
 The text is licensed CC BY-SA 4.0 ([LICENSE-docs](LICENSE-docs)); the scripts are GPL-3.0-or-later ([LICENSE](LICENSE)). The typefaces in `docs/fonts/` are under the SIL Open Font Licence, with their licences beside them. MathJax is used at build time only. Cite it with [CITATION.cff](CITATION.cff).
+
+<!-- trademarks:begin -->
+---
+AyeAI®, AyeCNSe® and AyeAM® are registered trademarks of Abhishek Choudhary in India, used and claimed worldwide since
+2019. The names of his products and projects are his trademarks; see [legal/TRADEMARKS.md](legal/TRADEMARKS.md). Code
+licences in this repository grant copyright permissions only and no right in any mark.
+© 1993–2026 Abhishek Choudhary. All rights reserved. AyeAI.
+<!-- trademarks:end -->
